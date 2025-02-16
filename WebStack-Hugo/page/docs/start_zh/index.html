@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#f9f9f9" />
+    <title>WL 网址导航</title>
+    <link rel="shortcut icon" href="https://weilong66.github.io/WebStack-Hugo/assets/images/wl-favicon.png" />
+    <meta name="keywords" content="WL 网址导航" />
+    
+    <link rel="stylesheet" id="block-library-css"
+        href="https://weilong66.github.io/WebStack-Hugo/assets/css/block-library.min-5.6.2.css" type="text/css" media="all" />
+    <link rel="stylesheet" id="iconfont-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/iconfont-3.03029.1.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="bootstrap-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/bootstrap.min-4.3.1.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="fancybox-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/fancybox.min-3.5.7.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="iowen-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/style-3.03029.1.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="custom-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/custom-style.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="custom-css" href="https://weilong66.github.io/WebStack-Hugo/assets/icon/QWeather-Icons-1.6.0/font/qweather-icons.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="fortawesome-css" href="https://weilong66.github.io/WebStack-Hugo/assets/icon/fontawesome-free-6.7.2-web/css/all.min.css" type="text/css" />
+    <script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.min-3.2.1.js" id="jquery-js"></script>
+    
+     
+    
+
+    
+    
+    
+
+    
+     
+    
+
+    
+    
+    
+
+    
+    
+    <link rel="stylesheet" id="fancybox-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/fancybox.min-3.5.7.css">
+      <script type="text/javascript" id="fancybox-js" src="https://weilong66.github.io/WebStack-Hugo/assets/js/fancybox.min-3.5.7.js"></script>
+    
+    
+
+    <script>
+        
+        const absURL = "https:\/\/weilong66.github.io\/WebStack-Hugo\/";
+        console.log("当前站点根URL：", absURL);
+    </script>
+</head>
+
+
+<div class="main-content flex-fill grid-bg">
+    <div class="big-header-banner">
+        <div id="header" class="page-header sticky">
+            <div class="navbar navbar-expand-md">
+                <div class="container-fluid p-0">
+
+                    <a href="" class="navbar-brand d-md-none" title="WL 网址导航">
+                        <img src="https://weilong66.github.io/WebStack-Hugo/assets/images/wl.png" class="logo-light"
+                            alt="WL 网址导航">
+                        <img src="https://weilong66.github.io/WebStack-Hugo/assets/images/wl.png" class="logo-dark d-none"
+                            alt="WL 网址导航">
+                    </a>
+
+                    <div class="collapse navbar-collapse order-2 order-md-1">
+                        <div class="header-mini-btn">
+                            <label>
+                                <input id="mini-button" type="checkbox">
+                                <svg viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+                                    <path class="line--2" d="M0 50h80"></path>
+                                    <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+                                </svg>
+                            </label>
+
+                        </div>
+
+                        <ul class="navbar-nav site-menu" style="margin-right: 16px;">
+                            
+                            <li >
+                                <a href="/WebStack-Hugo/">
+                                    <i class="fa fa-home fa-lg mr-2"></i>
+                                    <span>首页</span>
+                                </a>
+                                <ul class="sub-menu">
+                                    
+                                </ul>
+                            </li>
+                            
+                            <li class="menu-item-has-children" >
+                                <a href="">
+                                    <i class="fa fa-cog fa-lg mr-2"></i>
+                                    <span>关于</span>
+                                </a>
+                                <ul class="sub-menu">
+                                    
+                                    <li><a href="/WebStack-Hugo/page/docs/start_zh/">教程</a></li>
+                                    
+                                    <li><a href="https://github.com/weilong66/WebStack-Hugo-WL">源码</a></li>
+                                    
+                                    <li><a href="javascript-load-asteroidsa-script">彩蛋</a></li>
+                                    
+                                    <li><a href="javascript-load-floating-widget-script">宠物</a></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                        
+                        
+                          
+                            
+<div class="rounded-circle weather">
+  <div id="he-plugin-simple" style="display: contents">
+    <ul class="navbar-nav site-menu" style="margin-right: 16px;">
+      <li class="weather-details" style="display: none;">
+
+        
+
+        
+        
+
+        <ul style="background-color: transparent; box-shadow: none;">
+          
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<script defer>
+  console.log("加载天气插件...");
+  
+  var iframeLi = document.createElement('iframe');
+
+  
+  iframeLi.src = 'https://i.tianqi.com?c=code&id=34&color=%23e6ac0c&icon=1&site=14&lang=cn'; 
+  iframeLi.width = '300';
+  iframeLi.height = '28';
+  iframeLi.scrolling = 'no';
+  iframeLi.frameBorder = '0';
+  iframeLi.allowtransparency = 'true';
+
+
+  
+  var iframeUl = document.createElement('iframe');
+  
+  iframeUl.src = 'https://i.tianqi.com/?c=code&a=getcode&id=27&icon=1'; 
+  iframeUl.width = '400';
+  iframeUl.height = '270';
+  iframeUl.frameBorder = '0';
+  iframeUl.style.display = 'none'; 
+  
+  $('li.weather-details').first().prepend(iframeLi);
+  $('li.weather-details ul').first().append(iframeUl);
+
+  
+  iframeLi.onload = function () {
+    $('li.weather-details').css('display', 'block');
+  };
+  
+  iframeUl.onload = function () {
+    iframeUl.style.display = 'block';
+    console.log("天气插件加载完成！");
+  };
+</script>
+                          
+                        
+                        
+                    </div>
+
+                    <ul class="nav navbar-menu text-xs order-1 order-md-2">
+                        
+                        
+                        <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
+                            <script>
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            const hitokoto = document.getElementById('hitokoto_text')
+            hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+            hitokoto.innerText = data.hitokoto
+        })
+        .catch(error => {
+            console.error("一言 服务请求失败：", error)
+        })
+</script>
+
+<div id="hitokoto"><a href="#" target="_blank" id="hitokoto_text">疏影横斜水清浅，暗香浮动月黄昏。</a></div>
+                        </li>
+                        
+                        
+                         
+                        
+                        
+                        <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4">
+                            <a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i
+                                    class="iconfont icon-classification icon-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="placeholder" style="height:74px"></div>
+    </div>
+
+<body class="page-body boxed-container">
+    <main role="main" class="flex-shrink-0">
+    <div class="container">
+        <h1 class="mt-5"></h1>
+        <div class="content">
+            <h1 id="开始使用">🚀开始使用</h1>
+<h2 id="本地安装部署">本地安装部署</h2>
+<h3 id="1安装配置">1、安装配置</h3>
+<ol>
+<li>克隆项目到本地</li>
+<li>修改 <code>config.toml</code> 配置项,按照你自己的需求修改。</li>
+<li>在 <code>webstack.yml</code> 中添加新网站，修改和删除已有网站。</li>
+<li>在项目根目录下执行 <code>hugo</code>，执行后等待hugo生成静态文件，静态文件存放在根目录下 <code>public</code> 文件夹中。
+<ul>
+<li>注意，项目附带的hugo为Window版本，其它系统请自行下载替换成你的系统支持的<a href="https://github.com/gohugoio/hugo/releases">Hugo</a>版本。</li>
+</ul>
+</li>
+<li>可以执行下面命令运行一个开发服务器，用于实时预览网站效果。（<strong>不建议使用该服务器部署网站</strong>）
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo server
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="2本地部署">2、本地部署</h3>
+<ol>
+<li>网站效果满意后，执行 <code>hugo.exe</code> 生成静态文件。</li>
+<li>将在根目录下 <code>public</code> 文件夹中生成的静态文件托管到<strong>Nginx</strong>或其它Web服务器上即可。</li>
+</ol>
+<h2 id="使用githubio和githubactions自动部署">使用github.io和GitHubActions自动部署</h2>
+<ol>
+<li><code>fork</code> 或 <code>clone</code> 此项目到你的GitHub仓库。</li>
+<li>从你的GitHub仓库中克隆项目到本地</li>
+<li>打开 <code>.github/workflows/HugoAction.yml</code> ，找到下面这些配置项并修改（未提及的保持默认即可）
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy Pages</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v3</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 具体发布到哪个仓库，需要把这里的&#34;yourName&#34;改成你自己的GitHub用户名</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">external_repository</span>: <span style="color:#ae81ff">yourName/yourName.github.io	  </span>
+</span></span></code></pre></div></li>
+<li>按照步骤创建操作token：
+<ol>
+<li>点击：GitHub 个人账号 -&gt; Settings -&gt; Developer settings -&gt; Personal access tokens -&gt;  Tokens (classic) -&gt; New personal access token (classic)</li>
+<li>点击：Generate new token -&gt; Generate new token (classic) 生成新令牌，
+<ul>
+<li><em>Note</em>：输入任意名称</li>
+<li><em>Expiration</em>：选择生命周期。推荐<code>No expiration</code>或者尽量长一些。</li>
+<li><em>Select scopes</em>：勾选<code>repo:status</code>、<code>repo_deployment</code>、<code>public_repo</code></li>
+<li>最后点击 <strong>Generate token</strong> 生成令牌，并复制保存。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>设置Token
+<ol>
+<li>从你的仓库中打开此项目</li>
+<li>依次进入：Settings -&gt; Security -&gt; Secrets and variables -&gt; Actions</li>
+<li>点击 <strong>New repository secret</strong></li>
+<li><em>Name</em> 使用PERSONAL_ACCESS_TOKEN，<em>Secret</em> 使用刚生成的Token</li>
+</ol>
+</li>
+<li>Github中创建一个新项目，名称设置为 <code>&lt;你的用户名&gt;.github.io</code></li>
+<li>配置完成后，每次本地推送项目到远程仓库的<strong>main</strong>分支时，就会自动通过GitHubActions下载运行hugo生成静态资源，然后将静态资源推送到<code>&lt;你的用户名&gt;.github.io</code>远程仓库中。</li>
+</ol>
+<h1 id="配置说明">🛠️配置说明</h1>
+<h2 id="configtoml">config.toml</h2>
+<p>主要的配置信息都集成到了 <code>config.toml</code>，一键完成各种自定义的配置。<br/>
+每个配置项都有注释，这里不再解释。</p>
+<p>建议修改的配置项：</p>
+<ul>
+<li>baseURL：基础URL，需要设置成你的域名根路径，即访问主页的路径；如果为空，则使用使用相对路径。
+<ul>
+<li>例如：网站地址为 <code>https://yourname.github.io/WebStack-Hugo/</code>，则baseURL也需要设置成该值，否则网站中所有资源路径会出错。</li>
+</ul>
+</li>
+<li>title：网站标题。</li>
+<li>textPreLoad：网站加载动画显示的文本。</li>
+<li>copyright：网站底部文本。</li>
+</ul>
+<h2 id="webstackyml">webstack.yml</h2>
+<p>导航的各个信息都集成在 <code>data</code> 文件夹中<code>.yml</code>后缀文件中，方便后续增删改动。</p>
+<ul>
+<li>webstack.yml：所有网站导航信息。</li>
+<li>headers.yml：友情链接中的网站信息。</li>
+<li>friendlinks.yml：配置顶部“关于”菜单下的网站信息。</li>
+</ul>
+<p>具体参数说明：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#f92672">taxonomy</span>: <span style="color:#ae81ff">常用网站                       </span> <span style="color:#75715e"># 左侧导航条顶级菜单名称。</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">far fa-star                       </span> <span style="color:#75715e"># 左侧导航条顶级菜单最左侧图标。使用Font Awesome图标，直接输入图标对应名称即可。</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">list</span>:                                
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">term</span>: <span style="color:#ae81ff">常用网站                       </span> <span style="color:#75715e"># 导航条子菜单名称。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">links</span>:                           
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">title</span>: <span style="color:#ae81ff">邮箱                      </span> <span style="color:#75715e"># 网站名称</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">logo</span>: <span style="color:#ae81ff">邮箱.png                   </span> <span style="color:#75715e"># 网站Logo</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">http://mail.email.com/      </span> <span style="color:#75715e"># 网站URL</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">邮箱网站。          </span> <span style="color:#75715e"># 网站介绍</span>
+</span></span></code></pre></div><p><strong>icon</strong>：左侧导航条顶级菜单最左侧图标。使用<a href="https://fontawesome.com/icons">Font Awesome 6.7.2</a>图标，直接输入图标对应名称即可加载。</p>
+<p><strong>logo</strong>: 网站logo。</p>
+<ul>
+<li>默认使用 <code>config.toml</code> 中的 <code>baseURL</code>+<code>logosPath</code> 配置值作为前缀，拼接 <code>logo</code> 的值作为网站LOGO图片的资源路径。</li>
+<li>如果使用 <code>/</code> 开头，则只使用 <code>config.toml</code> 中的 <code>baseURL</code> 配置值作为前缀，拼接 <code>logo</code> 的值作为完整URL设置为图片路径。</li>
+<li>如果使用 <code>http://</code> 或 <code>https://</code> 开头，则直接将 <code>logo</code> 的值作为完整URL设置为图片路径。</li>
+<li>如果不设置值，且 <code>config.toml</code> 中的 <code>websiteLogo</code> 值为 <code>true</code>，则会使用 <code>url</code> 的值拼接 <code>favicon.ico</code> 作为网站logo图片的资源路径。<br/>（因为大部分网站logo路径都是 <code>https://&lt;网站域名&gt;/favicon.ico</code>）</li>
+</ul>
+
+        </div>
+    </div>
+    </main>
+
+    <style>
+        .content{font-size:14px;}
+	.content a{color:#007bff;}
+	.content a:hover{color:#f1404b;}
+	.content h1,.content h2,.content h3,.content h4{margin: 15px 15px 15px 0px;}
+	.content p{line-height:1.5;margin:15px 0;}
+	.big-header-banner .page-header{background:gray;}
+	.main-content{margin-left:0px;}
+	.page-header{left:0px;}
+        img{max-width:100%;}
+    </style>
+
+        <footer class="main-footer footer-type-1 text-xs">
+            <div id="footer-tools" class="d-flex flex-column">
+                
+                <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+                    <i class="iconfont icon-to-up"></i>
+                </a>
+                
+
+                
+                <a href="javascript:" data-toggle="modal" data-target="#search-modal" class="btn rounded-circle m-1"
+                    rel="search" one-link-mark="yes">
+                    <i class="iconfont icon-search"></i>
+                </a>
+                
+
+                
+                
+                <a href="javascript:" onclick="window.location.href='javascript:switchNightMode()'"
+                    class="btn rounded-circle switch-dark-mode m-1" id="yejian" data-toggle="tooltip"
+                    data-placement="left" title="夜间模式">
+                    <i class="mode-ico iconfont icon-night"></i>
+                </a>
+                
+                
+            </div>
+            <div class="footer-inner">
+                <div class="footer-text">本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系邮箱：zsetang@qq.com <br/>© 2021 - 2025 By <a href="https://github.com/shenweiyan/WebStack-Hugo">WebStack-Hugo</a> | <a href="https://www.bioitee.com/">Bio IT 爱好者</a> <br/>
+                </div>
+            </div>
+        </footer>
+        
+        
+<link rel="stylesheet" id="floating-widget-css" href="https://weilong66.github.io/WebStack-Hugo/assets/plugin/floating-widget/floating-widget.css"
+    type="text/css" />
+
+<div class="floating-widget">
+    
+     <div class="floating-widget-div" style="display: none;">
+        
+        <button class="floating-widget-close" onclick="disablefloatingWidget()" title="关闭"><i class="fa-solid fa-xmark"></i></button>
+        <button class="floating-widget-link" onclick="openIframeURL()" title="新窗口打开"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+     </div>
+</div>
+<script id="floating-widget-config" type="application/json">
+    {
+        "floatingWidgetState": "false",
+        "floatingWidgetType": "hamster"
+    }
+</script>
+<script src="https://weilong66.github.io/WebStack-Hugo/assets/plugin/floating-widget/floating-widget.js"></script>
+<script>
+    
+    const aFloatingWidget = $('ul.site-menu a[href="javascript-load-floating-widget-script"]');
+    aFloatingWidget.css('display', 'none'); 
+    
+    $(function () {
+        
+        aFloatingWidget.css('display', 'block');
+    })
+</script>
+
+
+        
+
+        </div>
+        </div>
+
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.ui.touch-punch.min-0.2.2.js"
+    id='jqueryui-touch-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/clipboard.min-5.6.2.js" id='clipboard-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/tooltip-extend.js" id='iplaycode-nav-js'></script>
+<script type='text/javascript' id='popper-js-extra'>
+
+     
+    var theme = {
+        "ajaxurl": "https:\/\/weilong66.github.io\/WebStack-Hugo\/",
+        "addico": "https:\/\/nav.baidu.cn\/wp-content\/themes\/onenav\/images\/add.png",
+        "order": "asc",
+        "formpostion": "top",
+        "defaultclass": "io-grey-mode",
+        "isCustomize": "1",
+        "icourl": "",
+        "icopng": ".png",
+        "urlformat": "1",
+        "customizemax": "10",
+        "newWindow": "0",
+        "lazyload": "1",
+        "minNav": "1",
+        "loading": "1",
+        "hotWords": "baidu",
+        "classColumns": " col-sm-6 col-md-4 col-xl-5a col-xxl-6a ",
+        "apikey": "TWpBeU1UVTNOekk1TWpVMEIvZ1M2bFVIQllUMmxsV1dZelkxQTVPVzB3UW04eldGQmxhM3BNWW14bVNtWk4="
+    };
+     
+</script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/popper.min.js" id='popper-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/bootstrap.min-4.3.1.js" id='bootstrap-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/theia-sticky-sidebar-1.5.0.js" id='sidebar-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/lazyload.min-12.4.0.js" id='lazyload-js-12'></script>
+
+
+
+
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/app-anim.js" id='appanim-js'></script>
+
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/app-search.js" id='appmini-js'></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var siteWelcome = $('#loading');
+        siteWelcome.addClass('close');
+        setTimeout(function () {
+            siteWelcome.remove();
+        }, 600);
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            if ($('a.smooth[href="' + window.location.hash + '"]')[0]) {
+                $('a.smooth[href="' + window.location.hash + '"]').click();
+            } else if (window.location.hash != '') {
+                $("html, body").animate({
+                    scrollTop: $(window.location.hash).offset().top - 90
+                }, {
+                    duration: 500,
+                    easing: "swing"
+                });
+            }
+        }, 300);
+        
+        $(document).on('click', 'a.smooth', function (ev) {
+            if ($('#sidebar').hasClass('show') && !$(this).hasClass('change-href')) {
+                $('#sidebar').modal('toggle');
+            }
+            if ($(this).attr("href").substr(0, 1) == "#") {
+                $("html, body").animate({
+                    scrollTop: $($(this).attr("href")).offset().top - 90
+                }, {
+                    duration: 500,
+                    easing: "swing"
+                });
+            }
+            if ($(this).hasClass('go-search-btn')) {
+                $('#search-text').focus();
+            }
+            if (!$(this).hasClass('change-href')) {
+                var menu = $("a" + $(this).attr("href"));
+                menu.click();
+                toTarget(menu.parent().parent(), true, true);
+            }
+        });
+        $(document).on('click', 'a.tab-noajax', function (ev) {
+            var url = $(this).data('link');
+            if (url)
+                $(this).parents('.d-flex.flex-fill.flex-tab').children('.btn-move.tab-move').show()
+                    .attr('href', url);
+            else
+                $(this).parents('.d-flex.flex-fill.flex-tab').children('.btn-move.tab-move').hide();
+        });
+
+    });
+</script>
+
+<script>
+    
+    (function () {
+        
+        if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
+            if (new Date().getHours() > 22 || new Date().getHours() < 6) {
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
+                document.body.classList.remove('io-grey-mode');
+                document.body.classList.add('io-black-mode');
+                document.cookie = "night=1;path=/"
+                console.log('进入晚上，夜间模式开启');
+                
+                $(".switch-dark-mode").attr("data-original-title", "日间模式");
+                $(".mode-ico").removeClass("icon-night");
+                $(".mode-ico").addClass("icon-light");
+            } else {
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
+                document.body.classList.remove('io-black-mode');
+                document.body.classList.add('io-grey-mode');
+                document.cookie = "night=0;path=/";
+                console.log('进入白天，夜间模式关闭');
+                
+                $(".switch-dark-mode").attr("data-original-title", "夜间模式");
+                $(".mode-ico").removeClass("icon-light");
+                $(".mode-ico").addClass("icon-night");
+            }
+        } else {
+            var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+            if (night == '1') {
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
+                document.body.classList.remove('io-grey-mode');
+                document.body.classList.add('io-black-mode');
+                document.cookie = "night=1;path=/"
+                console.log('切换夜间模式');
+                
+                $(".switch-dark-mode").attr("data-original-title", "日间模式");
+                $(".mode-ico").removeClass("icon-night");
+                $(".mode-ico").addClass("icon-light");
+            } else {
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
+                document.body.classList.remove('io-black-mode');
+                document.body.classList.add('io-grey-mode');
+                document.cookie = "night=0;path=/"
+                console.log('切换日间模式');
+                
+                $(".switch-dark-mode").attr("data-original-title", "夜间模式");
+                $(".mode-ico").removeClass("icon-light");
+                $(".mode-ico").addClass("icon-night");
+            }
+        }
+
+        
+        if ("cover") { 
+            $("#search-bg").css("background-size", "cover");
+        }
+        if ("center") { 
+            $("#search-bg").css("background-position", "center");
+        }
+        if ("no-repeat") { 
+            $("#search-bg").css("background-repeat", "no-repeat");
+        }
+    })();
+
+    
+    function switchNightMode() {
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+        if (night == '0') {
+            $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
+            document.body.classList.remove('io-grey-mode');
+            document.body.classList.add('io-black-mode');
+            document.cookie = "night=1;path=/"
+            console.log('切换夜间模式');
+            
+            $(".switch-dark-mode").attr("data-original-title", "日间模式");
+            $(".mode-ico").removeClass("icon-night");
+            $(".mode-ico").addClass("icon-light");
+        } else {
+            $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
+            document.body.classList.remove('io-black-mode');
+            document.body.classList.add('io-grey-mode');
+            document.cookie = "night=0;path=/"
+            console.log('切换日间模式');
+            
+            $(".switch-dark-mode").attr("data-original-title", "夜间模式");
+            $(".mode-ico").removeClass("icon-light");
+            $(".mode-ico").addClass("icon-night");
+        }
+    }
+</script>
+
+<script src="https://weilong66.github.io/WebStack-Hugo/assets/plugin/website-asteroidsa/load-start.js"></script>
+
+</body>
+
+</html>

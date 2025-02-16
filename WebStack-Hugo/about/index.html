@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#f9f9f9" />
+    <title>WL 网址导航</title>
+    <link rel="shortcut icon" href="https://weilong66.github.io/WebStack-Hugo/assets/images/wl-favicon.png" />
+    <meta name="keywords" content="WL 网址导航" />
+    
+    <link rel="stylesheet" id="block-library-css"
+        href="https://weilong66.github.io/WebStack-Hugo/assets/css/block-library.min-5.6.2.css" type="text/css" media="all" />
+    <link rel="stylesheet" id="iconfont-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/iconfont-3.03029.1.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="bootstrap-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/bootstrap.min-4.3.1.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="fancybox-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/fancybox.min-3.5.7.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="iowen-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/style-3.03029.1.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="custom-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/custom-style.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="custom-css" href="https://weilong66.github.io/WebStack-Hugo/assets/icon/QWeather-Icons-1.6.0/font/qweather-icons.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" id="fortawesome-css" href="https://weilong66.github.io/WebStack-Hugo/assets/icon/fontawesome-free-6.7.2-web/css/all.min.css" type="text/css" />
+    <script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.min-3.2.1.js" id="jquery-js"></script>
+    
+     
+    
+
+    
+    
+    
+
+    
+     
+    
+
+    
+    
+    
+
+    
+    
+    <link rel="stylesheet" id="fancybox-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/fancybox.min-3.5.7.css">
+      <script type="text/javascript" id="fancybox-js" src="https://weilong66.github.io/WebStack-Hugo/assets/js/fancybox.min-3.5.7.js"></script>
+    
+    
+
+    <script>
+        
+        const absURL = "https:\/\/weilong66.github.io\/WebStack-Hugo\/";
+        console.log("当前站点根URL：", absURL);
+    </script>
+</head>
+
+
+<div class="main-content flex-fill grid-bg">
+    <div class="big-header-banner">
+        <div id="header" class="page-header sticky">
+            <div class="navbar navbar-expand-md">
+                <div class="container-fluid p-0">
+
+                    <a href="" class="navbar-brand d-md-none" title="WL 网址导航">
+                        <img src="https://weilong66.github.io/WebStack-Hugo/assets/images/wl.png" class="logo-light"
+                            alt="WL 网址导航">
+                        <img src="https://weilong66.github.io/WebStack-Hugo/assets/images/wl.png" class="logo-dark d-none"
+                            alt="WL 网址导航">
+                    </a>
+
+                    <div class="collapse navbar-collapse order-2 order-md-1">
+                        <div class="header-mini-btn">
+                            <label>
+                                <input id="mini-button" type="checkbox">
+                                <svg viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+                                    <path class="line--2" d="M0 50h80"></path>
+                                    <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+                                </svg>
+                            </label>
+
+                        </div>
+
+                        <ul class="navbar-nav site-menu" style="margin-right: 16px;">
+                            
+                            <li >
+                                <a href="/WebStack-Hugo/">
+                                    <i class="fa fa-home fa-lg mr-2"></i>
+                                    <span>首页</span>
+                                </a>
+                                <ul class="sub-menu">
+                                    
+                                </ul>
+                            </li>
+                            
+                            <li class="menu-item-has-children" >
+                                <a href="">
+                                    <i class="fa fa-cog fa-lg mr-2"></i>
+                                    <span>关于</span>
+                                </a>
+                                <ul class="sub-menu">
+                                    
+                                    <li><a href="/WebStack-Hugo/page/docs/start_zh/">教程</a></li>
+                                    
+                                    <li><a href="https://github.com/weilong66/WebStack-Hugo-WL">源码</a></li>
+                                    
+                                    <li><a href="javascript-load-asteroidsa-script">彩蛋</a></li>
+                                    
+                                    <li><a href="javascript-load-floating-widget-script">宠物</a></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                        
+                        
+                          
+                            
+<div class="rounded-circle weather">
+  <div id="he-plugin-simple" style="display: contents">
+    <ul class="navbar-nav site-menu" style="margin-right: 16px;">
+      <li class="weather-details" style="display: none;">
+
+        
+
+        
+        
+
+        <ul style="background-color: transparent; box-shadow: none;">
+          
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<script defer>
+  console.log("加载天气插件...");
+  
+  var iframeLi = document.createElement('iframe');
+
+  
+  iframeLi.src = 'https://i.tianqi.com?c=code&id=34&color=%23e6ac0c&icon=1&site=14&lang=cn'; 
+  iframeLi.width = '300';
+  iframeLi.height = '28';
+  iframeLi.scrolling = 'no';
+  iframeLi.frameBorder = '0';
+  iframeLi.allowtransparency = 'true';
+
+
+  
+  var iframeUl = document.createElement('iframe');
+  
+  iframeUl.src = 'https://i.tianqi.com/?c=code&a=getcode&id=27&icon=1'; 
+  iframeUl.width = '400';
+  iframeUl.height = '270';
+  iframeUl.frameBorder = '0';
+  iframeUl.style.display = 'none'; 
+  
+  $('li.weather-details').first().prepend(iframeLi);
+  $('li.weather-details ul').first().append(iframeUl);
+
+  
+  iframeLi.onload = function () {
+    $('li.weather-details').css('display', 'block');
+  };
+  
+  iframeUl.onload = function () {
+    iframeUl.style.display = 'block';
+    console.log("天气插件加载完成！");
+  };
+</script>
+                          
+                        
+                        
+                    </div>
+
+                    <ul class="nav navbar-menu text-xs order-1 order-md-2">
+                        
+                        
+                        <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
+                            <script>
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            const hitokoto = document.getElementById('hitokoto_text')
+            hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+            hitokoto.innerText = data.hitokoto
+        })
+        .catch(error => {
+            console.error("一言 服务请求失败：", error)
+        })
+</script>
+
+<div id="hitokoto"><a href="#" target="_blank" id="hitokoto_text">疏影横斜水清浅，暗香浮动月黄昏。</a></div>
+                        </li>
+                        
+                        
+                         
+                        
+                        
+                        <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4">
+                            <a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i
+                                    class="iconfont icon-classification icon-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="placeholder" style="height:74px"></div>
+    </div>
+
+<body class="page-body boxed-container">
+    <main role="main" class="flex-shrink-0">
+    <div class="container">
+        <h1 class="mt-5"></h1>
+        <div class="content">
+            <h1 id="一个基于-hugo-的静态响应式网址导航主题">一个基于 Hugo 的静态响应式网址导航主题</h1>
+<p><a href="https://github.com/gohugoio/hugo">
+<div class="post-img-view">
+<a data-fancybox="gallery" href="https://img.shields.io/badge/Hugo-v0.143.1-red.svg">
+<img src="https://img.shields.io/badge/Hugo-v0.143.1-red.svg" alt="Hugo"  />
+</a>
+</div>
+<p></a></p></p>
+<p>本项目是基于<strong>纯静态</strong>的网址导航网站 <a href="https://github.com/WebStackPage/WebStackPage.github.io">webstack.cc</a> 制作的 <a href="https://gohugo.io/">Hugo</a> 主题，是一个基于 Hugo 的静态响应式网址导航主题。<br/></p>
+<h2 id="说明">说明</h2>
+<p>该导航页基于 <a href="https://github.com/shenweiyan/WebStack-Hugo">shenweiyan/WebStack-Hugo</a> 这个版本修改而来。</p>
+<h2 id="主题地址">主题地址</h2>
+<ul>
+<li><a href="https://github.com/weilong66/WebStack-Hugo-WL">WebStack-Hugo-WL</a></li>
+</ul>
+<h2 id="主题演示地址">主题演示地址</h2>
+<ul>
+<li>站点：<a href="https://weilong66.github.io/WebStack-Hugo/">https://weilong66.github.io/WebStack-Hugo/</a></li>
+<li>源码：<a href="https://github.com/weilong66/weilong66.github.io">https://github.com/weilong66/weilong66.github.io</a></li>
+</ul>
+<h2 id="特色功能">特色功能</h2>
+<p>这是 Hugo 版 WebStack 主题。可以借助下面的平台直接托管部署，无需服务器。</p>
+<ul>
+<li><a href="https://webify.cloudbase.net/">Webify</a> | <a href="https://app.netlify.com/">Netlify</a> | <a href="https://pages.cloudflare.com">Cloudflare Pages</a> | <a href="https://vercel.com">Vercel</a> | <a href="https://pages.github.com/">Github Pages</a></li>
+</ul>
+<p>特点：</p>
+<ul>
+<li>采用 Hugo 部署方式，方便高效。</li>
+<li>主要的配置信息都集成到了 <code>config.toml</code>，一键完成各种自定义的配置。</li>
+<li>导航的各个信息都集成在 <code>data/webstack.yml</code> 文件中，方便后续增删改动。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#f92672">taxonomy</span>: <span style="color:#ae81ff">常用网站                       </span> <span style="color:#75715e"># 左侧导航条顶级菜单名称。</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">far fa-star                       </span> <span style="color:#75715e"># 左侧导航条顶级菜单最左侧Font Awesome图标。</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">list</span>:                                
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">term</span>: <span style="color:#ae81ff">常用网站                       </span> <span style="color:#75715e"># 导航条子菜单名称。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">links</span>:                           
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">title</span>: <span style="color:#ae81ff">邮箱                      </span> <span style="color:#75715e"># 网站名称</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">logo</span>: <span style="color:#ae81ff">邮箱.png                   </span> <span style="color:#75715e"># 网站Logo</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">http://mail.email.com/      </span> <span style="color:#75715e"># 网站URL</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">邮箱网站。          </span> <span style="color:#75715e"># 网站介绍</span>
+</span></span></code></pre></div></li>
+<li>支持手机电脑自适应以及夜间模式。</li>
+<li>支持搜索收录的站点</li>
+<li>支持调用互联网搜索功能</li>
+</ul>
+<h2 id="功能">功能</h2>
+<ul>
+<li>添加 <a href="https://hitokoto.cn/">一言API</a>。</li>
+<li>添加 <a href="https://dev.qweather.com/">和风天气</a> 插件。
+<ul>
+<li>因和风天气官方插件失效，这里改为使用自己粗略制作的天气插件。</li>
+</ul>
+</li>
+<li>添加 <a href="https://www.tianqi.com/plugin/">天气+</a> 插件。（与 <a href="https://dev.qweather.com/">和风天气</a> 插件二选一）</li>
+<li>添加小飞机彩蛋和仓鼠宠物插件。</li>
+<li>添加本地小游戏站点。</li>
+</ul>
+<h2 id="安装说明">安装说明</h2>
+<p>关于 Windows/Linux 下详细的安装与使用说明，请参考文档：</p>
+<p>📄 本地文档：<strong>《<a href="../page/docs/start_zh">start_zh.md</a>》</strong></p>
+<ul>
+<li><a href="../page/docs/start_zh">链接1 - 🚀开始使用</a></li>
+</ul>
+<p>📗 参考博客： <strong>《<a href="https://github.com/shenweiyan/Knowledge-Garden/discussions/10">WebStack-Hugo | 一个静态响应式导航主题</a>》</strong></p>
+<ul>
+<li><a href="https://github.com/shenweiyan/Knowledge-Garden/discussions/10">链接1 - GitHub Discussions</a></li>
+<li><a href="https://weiyan.cc/kg-discussions-10">链接2 - 维燕的知识花园</a></li>
+</ul>
+<h2 id="感谢">感谢</h2>
+<p>本主题的部分代码参考了以下几个开源项目，特此感谢。</p>
+<ul>
+<li><a href="https://github.com/shenweiyan/WebStack-Hugo">shenweiyan/WebStack-Hugo</a></li>
+<li><a href="https://github.com/WebStackPage/WebStackPage.github.io">WebStackPage/WebStackPage.github.io)</a></li>
+<li><a href="https://github.com/liutongxu/liutongxu.github.io">liutongxu/liutongxu.github.io</a></li>
+<li><a href="https://github.com/iplaycode/webstack-hugo">iplaycode/webstack-hugo</a></li>
+</ul>
+
+        </div>
+    </div>
+    </main>
+
+    <style>
+        .content{font-size:14px;}
+	.content a{color:#007bff;}
+	.content a:hover{color:#f1404b;}
+	.content h1,.content h2,.content h3,.content h4{margin: 15px 15px 15px 0px;}
+	.content p{line-height:1.5;margin:15px 0;}
+	.big-header-banner .page-header{background:gray;}
+	.main-content{margin-left:0px;}
+	.page-header{left:0px;}
+        img{max-width:100%;}
+    </style>
+
+        <footer class="main-footer footer-type-1 text-xs">
+            <div id="footer-tools" class="d-flex flex-column">
+                
+                <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+                    <i class="iconfont icon-to-up"></i>
+                </a>
+                
+
+                
+                <a href="javascript:" data-toggle="modal" data-target="#search-modal" class="btn rounded-circle m-1"
+                    rel="search" one-link-mark="yes">
+                    <i class="iconfont icon-search"></i>
+                </a>
+                
+
+                
+                
+                <a href="javascript:" onclick="window.location.href='javascript:switchNightMode()'"
+                    class="btn rounded-circle switch-dark-mode m-1" id="yejian" data-toggle="tooltip"
+                    data-placement="left" title="夜间模式">
+                    <i class="mode-ico iconfont icon-night"></i>
+                </a>
+                
+                
+            </div>
+            <div class="footer-inner">
+                <div class="footer-text">本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系邮箱：zsetang@qq.com <br/>© 2021 - 2025 By <a href="https://github.com/shenweiyan/WebStack-Hugo">WebStack-Hugo</a> | <a href="https://www.bioitee.com/">Bio IT 爱好者</a> <br/>
+                </div>
+            </div>
+        </footer>
+        
+        
+<link rel="stylesheet" id="floating-widget-css" href="https://weilong66.github.io/WebStack-Hugo/assets/plugin/floating-widget/floating-widget.css"
+    type="text/css" />
+
+<div class="floating-widget">
+    
+     <div class="floating-widget-div" style="display: none;">
+        
+        <button class="floating-widget-close" onclick="disablefloatingWidget()" title="关闭"><i class="fa-solid fa-xmark"></i></button>
+        <button class="floating-widget-link" onclick="openIframeURL()" title="新窗口打开"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+     </div>
+</div>
+<script id="floating-widget-config" type="application/json">
+    {
+        "floatingWidgetState": "false",
+        "floatingWidgetType": "hamster"
+    }
+</script>
+<script src="https://weilong66.github.io/WebStack-Hugo/assets/plugin/floating-widget/floating-widget.js"></script>
+<script>
+    
+    const aFloatingWidget = $('ul.site-menu a[href="javascript-load-floating-widget-script"]');
+    aFloatingWidget.css('display', 'none'); 
+    
+    $(function () {
+        
+        aFloatingWidget.css('display', 'block');
+    })
+</script>
+
+
+        
+
+        </div>
+        </div>
+
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.ui.touch-punch.min-0.2.2.js"
+    id='jqueryui-touch-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/clipboard.min-5.6.2.js" id='clipboard-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/tooltip-extend.js" id='iplaycode-nav-js'></script>
+<script type='text/javascript' id='popper-js-extra'>
+
+     
+    var theme = {
+        "ajaxurl": "https:\/\/weilong66.github.io\/WebStack-Hugo\/",
+        "addico": "https:\/\/nav.baidu.cn\/wp-content\/themes\/onenav\/images\/add.png",
+        "order": "asc",
+        "formpostion": "top",
+        "defaultclass": "io-grey-mode",
+        "isCustomize": "1",
+        "icourl": "",
+        "icopng": ".png",
+        "urlformat": "1",
+        "customizemax": "10",
+        "newWindow": "0",
+        "lazyload": "1",
+        "minNav": "1",
+        "loading": "1",
+        "hotWords": "baidu",
+        "classColumns": " col-sm-6 col-md-4 col-xl-5a col-xxl-6a ",
+        "apikey": "TWpBeU1UVTNOekk1TWpVMEIvZ1M2bFVIQllUMmxsV1dZelkxQTVPVzB3UW04eldGQmxhM3BNWW14bVNtWk4="
+    };
+     
+</script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/popper.min.js" id='popper-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/bootstrap.min-4.3.1.js" id='bootstrap-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/theia-sticky-sidebar-1.5.0.js" id='sidebar-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/lazyload.min-12.4.0.js" id='lazyload-js-12'></script>
+
+
+
+
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/app-anim.js" id='appanim-js'></script>
+
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/app-search.js" id='appmini-js'></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var siteWelcome = $('#loading');
+        siteWelcome.addClass('close');
+        setTimeout(function () {
+            siteWelcome.remove();
+        }, 600);
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            if ($('a.smooth[href="' + window.location.hash + '"]')[0]) {
+                $('a.smooth[href="' + window.location.hash + '"]').click();
+            } else if (window.location.hash != '') {
+                $("html, body").animate({
+                    scrollTop: $(window.location.hash).offset().top - 90
+                }, {
+                    duration: 500,
+                    easing: "swing"
+                });
+            }
+        }, 300);
+        
+        $(document).on('click', 'a.smooth', function (ev) {
+            if ($('#sidebar').hasClass('show') && !$(this).hasClass('change-href')) {
+                $('#sidebar').modal('toggle');
+            }
+            if ($(this).attr("href").substr(0, 1) == "#") {
+                $("html, body").animate({
+                    scrollTop: $($(this).attr("href")).offset().top - 90
+                }, {
+                    duration: 500,
+                    easing: "swing"
+                });
+            }
+            if ($(this).hasClass('go-search-btn')) {
+                $('#search-text').focus();
+            }
+            if (!$(this).hasClass('change-href')) {
+                var menu = $("a" + $(this).attr("href"));
+                menu.click();
+                toTarget(menu.parent().parent(), true, true);
+            }
+        });
+        $(document).on('click', 'a.tab-noajax', function (ev) {
+            var url = $(this).data('link');
+            if (url)
+                $(this).parents('.d-flex.flex-fill.flex-tab').children('.btn-move.tab-move').show()
+                    .attr('href', url);
+            else
+                $(this).parents('.d-flex.flex-fill.flex-tab').children('.btn-move.tab-move').hide();
+        });
+
+    });
+</script>
+
+<script>
+    
+    (function () {
+        
+        if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
+            if (new Date().getHours() > 22 || new Date().getHours() < 6) {
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
+                document.body.classList.remove('io-grey-mode');
+                document.body.classList.add('io-black-mode');
+                document.cookie = "night=1;path=/"
+                console.log('进入晚上，夜间模式开启');
+                
+                $(".switch-dark-mode").attr("data-original-title", "日间模式");
+                $(".mode-ico").removeClass("icon-night");
+                $(".mode-ico").addClass("icon-light");
+            } else {
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
+                document.body.classList.remove('io-black-mode');
+                document.body.classList.add('io-grey-mode');
+                document.cookie = "night=0;path=/";
+                console.log('进入白天，夜间模式关闭');
+                
+                $(".switch-dark-mode").attr("data-original-title", "夜间模式");
+                $(".mode-ico").removeClass("icon-light");
+                $(".mode-ico").addClass("icon-night");
+            }
+        } else {
+            var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+            if (night == '1') {
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
+                document.body.classList.remove('io-grey-mode');
+                document.body.classList.add('io-black-mode');
+                document.cookie = "night=1;path=/"
+                console.log('切换夜间模式');
+                
+                $(".switch-dark-mode").attr("data-original-title", "日间模式");
+                $(".mode-ico").removeClass("icon-night");
+                $(".mode-ico").addClass("icon-light");
+            } else {
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
+                document.body.classList.remove('io-black-mode');
+                document.body.classList.add('io-grey-mode');
+                document.cookie = "night=0;path=/"
+                console.log('切换日间模式');
+                
+                $(".switch-dark-mode").attr("data-original-title", "夜间模式");
+                $(".mode-ico").removeClass("icon-light");
+                $(".mode-ico").addClass("icon-night");
+            }
+        }
+
+        
+        if ("cover") { 
+            $("#search-bg").css("background-size", "cover");
+        }
+        if ("center") { 
+            $("#search-bg").css("background-position", "center");
+        }
+        if ("no-repeat") { 
+            $("#search-bg").css("background-repeat", "no-repeat");
+        }
+    })();
+
+    
+    function switchNightMode() {
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+        if (night == '0') {
+            $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
+            document.body.classList.remove('io-grey-mode');
+            document.body.classList.add('io-black-mode');
+            document.cookie = "night=1;path=/"
+            console.log('切换夜间模式');
+            
+            $(".switch-dark-mode").attr("data-original-title", "日间模式");
+            $(".mode-ico").removeClass("icon-night");
+            $(".mode-ico").addClass("icon-light");
+        } else {
+            $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
+            document.body.classList.remove('io-black-mode');
+            document.body.classList.add('io-grey-mode');
+            document.cookie = "night=0;path=/"
+            console.log('切换日间模式');
+            
+            $(".switch-dark-mode").attr("data-original-title", "夜间模式");
+            $(".mode-ico").removeClass("icon-light");
+            $(".mode-ico").addClass("icon-night");
+        }
+    }
+</script>
+
+<script src="https://weilong66.github.io/WebStack-Hugo/assets/plugin/website-asteroidsa/load-start.js"></script>
+
+</body>
+
+</html>

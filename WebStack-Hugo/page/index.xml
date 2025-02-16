@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on WL 网址导航</title>
+    <link>https://weilong66.github.io/WebStack-Hugo/page/</link>
+    <description>Recent content in Pages on WL 网址导航</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <atom:link href="https://weilong66.github.io/WebStack-Hugo/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://weilong66.github.io/WebStack-Hugo/page/docs/start_zh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://weilong66.github.io/WebStack-Hugo/page/docs/start_zh/</guid>
+      <description>🚀开始使用 本地安装部署 1、安装配置 克隆项目到本地 修改 config.toml 配置项,按照你自己的需求修改。 在 webstack.yml 中添加新网站，修改和删除已有网站。 在项目根目录下执行</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,44 @@
+/* 本地搜索结果样式 */
+
+/* 本地搜索结果列表样式 */
+.search-smart-tips ul{
+    max-height: 314px; /* 设置高度 */
+    overflow-y: auto; /* 当内容超出设定的高度时，显示垂直滚动条 */
+    overflow-x: hidden; /* 如果不需要水平滚动条，则可以隐藏 */
+}
+
+/* 每列样式 */
+.search-smart-tips ul li{
+    list-style-type: none;
+    padding: 4px 12px; /*内边距：上下,左右*/
+    line-height: 1.5; /* 设置行距 */
+
+}
+
+.search-smart-tips ul li i,
+.search-smart-tips ul li a {
+    display: inline-block; /* 使<i>和<a>标签都成为行内块级元素 */
+    vertical-align: middle; /* 垂直居中对齐，使<i>和<a>标签内的内容垂直方向上对齐 */
+}
+
+.search-smart-tips ul li a {
+    white-space: nowrap; /* 防止换行 */
+    overflow: hidden; /* 隐藏超出宽度的内容 */
+    text-overflow: ellipsis; /* 超出部分用省略号表示 */
+    width: calc(100% - 20px); /* 设置宽度为父元素的100%，确保溢出能够被隐藏并显示省略号 */
+    
+}
+
+/* logo样式 */
+.search-smart-tips img{
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+
+/* 热词提示列表-链接-高亮样式 */
+.search-smart-tips ul li.current:has(> a) a{
+    color: #F1404B;
+}
+

@@ -1,0 +1,33 @@
+{
+    "request": {
+        "response_type": "json",
+        "pieces": ["designer", "ship"],
+        "original_request": ["designer", "ship", "325", "construction"]
+    },
+    "data": {
+        "points": [
+            [-10, 10],
+            [0, -15],
+            [10, 10]
+        ],
+        "thrusters": [{
+          "s": {
+            "w": 20,
+            "h": 7
+          },
+          "p": {
+            "x": 0,
+            "y": 14
+          },
+          "a": 0
+        }],
+        "cannons": [{
+          "p": {
+            "x": 0,
+            "y": -15
+          },
+          "a": 0
+        }],
+        "name": "Ships Standard"
+    }
+}
