@@ -1,0 +1,165 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .game-wrapper {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .score-container {
+            font-size: 1em;
+        }
+
+        .score, .high-score {
+            margin: 5px 0;
+        }
+
+        #score, #highScore {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        #startBtn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        #startBtn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .game-board-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        #gameBoard {
+            width: 513px;
+            height: 513px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .snake-body {
+            width: 15px;
+            height: 15px;
+            background: #4CAF50;
+            position: absolute;
+            border-radius: 4px;
+        }
+
+        .snake-body.head {
+            background: #66bb6a;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
+        }
+
+        .food {
+            width: 15px;
+            height: 15px;
+            background: #ff4444;
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 68, 68, 0.7);
+        }
+
+        .controls-info {
+            text-align: center;
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8em;
+            line-height: 1.4;
+        }
+
+        .controls-info p {
+            margin: 5px 0;
+        }
+
+        .key-space {
+            display: inline-block;
+            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            margin: 0 3px;
+        }
+
+        @media (max-width: 768px) {
+            #gameBoard {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .snake-body, .food {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        .pause-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            border-radius: 10px;
+            z-index: 100;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }

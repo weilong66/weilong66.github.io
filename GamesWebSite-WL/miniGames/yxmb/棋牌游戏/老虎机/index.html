@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>jQuery网页版老虎机小游戏</title>
+
+<!--可无视-->
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+
+<style type="text/css">
+.line { padding: 100px 0px;}
+.slotMachineButton { width: 100px; height: 100px; overflow: hidden; display: inline-block; text-align: center; }
+.slotMachineButton { -moz-box-shadow: inset 0px 1px 0px 0px #fce2c1; -webkit-box-shadow: inset 0px 1px 0px 0px #fce2c1; box-shadow: inset 0px 1px 0px 0px #fce2c1; background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25) ); background: -moz-linear-gradient( center top, #ffc477 5%, #fb9e25 100% );  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25');
+					 background-color: #ffc477; border-radius: 75px; border: 6px solid #eeb44f; display: inline-block; color: #ffffff; font: 700 40px/100px "Microsoft Yahei"; height: 100px; width: 100px; text-decoration: none; text-align: center; text-shadow: 1px 1px 0px #cc9f52; margin-left: 50px; cursor: pointer; }
+.slotMachineButton:hover { background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) ); background: -moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
+						   background-color: #fb9e25; }
+.slotMachineButton:active { position: relative; top: 1px; }
+.slotMachine { width: 100px; height: 100px; overflow: hidden; display: inline-block; text-align: center; border: 5px solid #000; background-color: #ffffff; }
+.noBorder { border: none !important; background: transparent !important; font: 14px arial;}
+.slotMachine .slot { width: 100px; height: 100px; }
+.slot1 { background-image: url("img/slot1.png"); }
+.slot2 { background-image: url("img/slot2.png"); }
+.slot3 { background-image: url("img/slot3.png"); }
+.slot4 { background-image: url("img/slot4.png"); }
+.slot5 { background-image: url("img/slot5.png"); }
+.slot6 { background-image: url("img/slot6.png"); }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+	<div class="demo">
+		<h3>
+			<a href="index.html" class="cur">演示1：简单效果</a> 
+			<a href="index2.html">演示2：开始暂停效果</a> 
+			<a href="index3.html">演示3：幻灯片</a> 
+		</h3>
+		<div class="line">
+			<div class="content" style="text-align: center">
+				<div class="clear">
+					<div id="machine1" class="slotMachine">
+						<div class="slot slot1"></div>
+						<div class="slot slot2"></div>
+						<div class="slot slot3"></div>
+						<div class="slot slot4"></div>
+						<div class="slot slot5"></div>
+						<div class="slot slot6"></div>
+					</div>
+					<div id="machine2" class="slotMachine">
+						<div class="slot slot1"></div>
+						<div class="slot slot2"></div>
+						<div class="slot slot3"></div>
+						<div class="slot slot4"></div>
+						<div class="slot slot5"></div>
+						<div class="slot slot6"></div>
+					</div>
+					<div id="machine3" class="slotMachine">
+						<div class="slot slot1"></div>
+						<div class="slot slot2"></div>
+						<div class="slot slot3"></div>
+						<div class="slot slot4"></div>
+						<div class="slot slot5"></div>
+						<div class="slot slot6"></div>
+					</div>
+					<div id="slotMachineButton1" class="slotMachineButton">GO!</div>
+				</div>
+				<div class="clear">
+					<div id="machine1Result" class="slotMachine noBorder" style="text-align:left"></div>
+					<div id="machine2Result" class="slotMachine noBorder" style="text-align:left"></div>
+					<div id="machine3Result" class="slotMachine noBorder" style="text-align:left"></div>
+					<div class="slotMachine noBorder"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.slotmachine.js"></script>
+<script type="text/javascript">
+	$(function() { 
+		var machine1 = $("#machine1").slotMachine({  //第一个老虎机设置
+			active: 0, //初始化时显示第几张图案
+			delay: 500 //延迟
+		});
+
+		var machine2 = $("#machine2").slotMachine({
+			active: 1,
+			delay: 500
+		});
+
+		var machine3 = $("#machine3").slotMachine({
+			active: 2,
+			delay: 500
+		});
+
+		function onComplete($el, active) { //抽奖回调
+			switch ($el[0].id) {
+				case 'machine1':
+					$("#machine1Result").html("<span class='red'>" + active.index + "</span>");
+					break;
+				case 'machine2':
+					$("#machine2Result").html("<span class='red'>" + active.index + "</span>");
+					break;
+				case 'machine3':
+					$("#machine3Result").html("<span class='red'>" + active.index + "</span>");
+					break;
+			}
+		}
+
+		$("#slotMachineButton1").click(function() { //开始抽奖
+			machine1.shuffle(3, onComplete); //调用第一个老虎机
+			setTimeout(function() { //500秒后调用第二个老虎机
+				machine2.shuffle(3, onComplete);
+			}, 500);
+			setTimeout(function() { //1000秒后调用第三个老虎机
+				machine3.shuffle(3, onComplete);
+			}, 1000);
+		})
+	});
+</script>  
+
+</body>
+</html>

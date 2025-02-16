@@ -1,0 +1,340 @@
+﻿<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML5 canvas趣味飞机捡金币小游戏</title>
+	<style class="cp-pen-styles">
+	@import url(http://fonts.googleapis.com/css?family=Michroma);
+	body {
+	  background: #090909 url(img/space-tile.png);
+	  color: #ccc;
+	  font: 100%/1.5 sans-serif;
+	  text-shadow: 0 1px 0 #000;
+		overflow: hidden
+	}
+
+	canvas {  
+	  display: block;
+	}
+
+	.panel {
+	  background: hsla(0, 0%, 0%, 0.5);
+	  font-size: 12px;
+	  left: 0;
+	  padding: 15px 20px;
+	  position: absolute;
+	  top: 0;
+	}
+
+	.profit {
+	  color: #fff;
+	  font-family: Michroma, sans-serif;
+	  font-size: 18px;
+	  margin: 0 0 5px;  
+	}
+
+	.profit span {
+	  margin: 0 0 0 2px;
+	}
+
+	input {
+	  margin: 0 0 0 3px;
+	  vertical-align: middle;
+	}</style>
+	
+</head>
+<body>
+	<div class="panel">
+		<header class="htmleaf-header">
+			<h1>飞船捡金币小游戏</h1>
+		</header>
+	 <p class="profit">
+	    $<span>0</span>
+	  </p>
+	  <p><strong>WASD</strong> or &uarr; &darr; &larr; &rarr; to fly!</p>
+	  <label>
+	    <span>Show Bounding Box</span>
+	    <input type="checkbox" class="bounding-box" />
+	  </label>
+	</div>
+	
+<script src="js/jquery.min.js"></script>
+<script src='js/sketch.min.js'></script>
+<script>
+(function() {
+  var Coin, Ship, shipImg;
+
+  shipImg = new Image();
+
+  shipImg.src = 'img/rocket-sprite.png';
+
+  Ship = (function() {
+    function Ship(ctx) {
+      this.width = shipImg.width;
+      this.height = shipImg.height;
+      this.halfWidth = this.width / 2;
+      this.halfHeight = this.height / 2;
+      this.x = (ctx.width / 2) - this.halfWidth;
+      this.y = (ctx.height / 2) - this.halfHeight;
+      this.maxLength = max(this.width, this.height);
+      this.diagLength = sqrt(this.halfWidth * this.halfWidth + this.halfHeight * this.halfHeight);
+      this.rotationSpeed = 0.05;
+      this.rotation = 0;
+      this.vx = 0;
+      this.vy = 0;
+      this.thrust = 0;
+    }
+
+    Ship.prototype.update = function(ctx) {
+      var ax, ay;
+      if (ctx.keys[87] || ctx.keys[38]) {
+        this.thrust = 0.15;
+      } else {
+        this.thrust = 0;
+      }
+      if (ctx.keys[68] || ctx.keys[39]) {
+        this.rotation += this.rotationSpeed * ctx.ndt;
+      }
+      if (ctx.keys[83] || ctx.keys[40]) {
+        this.vx *= 0.95;
+        this.vy *= 0.95;
+      }
+      if (ctx.keys[65] || ctx.keys[37]) {
+        this.rotation -= this.rotationSpeed;
+      }
+      ax = cos(this.rotation) * this.thrust;
+      ay = sin(this.rotation) * this.thrust;
+      this.vx += ax;
+      this.vy += ay;
+      this.vx *= 0.99;
+      this.vy *= 0.99;
+      this.x += this.vx * ctx.ndt;
+      this.y += this.vy * ctx.ndt;
+      this.tlx = this.x + (this.width / 2) - cos(-atan2(this.halfHeight, this.halfWidth) - this.rotation) * this.diagLength;
+      this.tly = this.y + (this.height / 2) + sin(-atan2(this.halfHeight, this.halfWidth) - this.rotation) * this.diagLength;
+      this.trx = this.x + (this.width / 2) - cos(-atan2(this.halfHeight, this.halfWidth) + this.rotation) * -this.diagLength;
+      this["try"] = this.y + (this.height / 2) - sin(-atan2(this.halfHeight, this.halfWidth) + this.rotation) * -this.diagLength;
+      this.brx = this.x + (this.width / 2) + cos(-atan2(this.halfHeight, this.halfWidth) - this.rotation) * this.diagLength;
+      this.bry = this.y + (this.height / 2) - sin(-atan2(this.halfHeight, this.halfWidth) - this.rotation) * this.diagLength;
+      this.blx = this.x + (this.width / 2) + cos(-atan2(this.halfHeight, this.halfWidth) + this.rotation) * -this.diagLength;
+      this.bly = this.y + (this.height / 2) + sin(-atan2(this.halfHeight, this.halfWidth) + this.rotation) * -this.diagLength;
+      this.xMin = min(this.tlx, this.trx, this.brx, this.blx);
+      this.xMax = max(this.tlx, this.trx, this.brx, this.blx);
+      this.yMin = min(this.tly, this["try"], this.bry, this.bly);
+      this.yMax = max(this.tly, this["try"], this.bry, this.bly);
+      this.bWidth = this.xMax - this.xMin;
+      this.bHeight = this.yMax - this.yMin;
+      if (this.xMin > ctx.width + this.maxLength) {
+        this.x = -this.maxLength;
+      } else if (this.xMax < -this.maxLength) {
+        this.x = ctx.width;
+      }
+      if (this.yMin > ctx.height + this.maxLength) {
+        return this.y = -this.maxLength;
+      } else if (this.yMax < -this.maxLength) {
+        return this.y = ctx.height;
+      }
+    };
+
+    Ship.prototype.draw = function(ctx) {
+      ctx.save();
+      ctx.translate(this.x + this.width / 2, this.y + this.height / 2);
+      ctx.rotate(this.rotation);
+      ctx.drawImage(shipImg, -this.width / 2, -this.height / 2);
+      if (this.thrust) {
+        ctx.beginPath();
+        ctx.arc(-this.width / 2 - 10, 0, random(1, 10), 0, TWO_PI);
+        ctx.fillStyle = 'hsla(' + random(0, 60) + ', 100%, ' + random(60, 80) + '%, 1)';
+        ctx.fill();
+      }
+      ctx.restore();
+      if (this.flashFlag) {
+        this.flashFlag = false;
+        ctx.save();
+        ctx.globalCompositeOperation = 'source-in';
+        ctx.fillStyle = 'hsla(' + ctx.hue + ', 100%, 75%, 0.95)';
+        ctx.fillRect(this.xMin, this.yMin, this.bWidth, this.bHeight);
+        return ctx.restore();
+      }
+    };
+
+    Ship.prototype.drawCorners = function(ctx) {
+      ctx.beginPath();
+      ctx.arc(this.tlx, this.tly, 1, 0, TWO_PI);
+      ctx.arc(this.trx, this["try"], 1, 0, TWO_PI);
+      ctx.arc(this.brx, this.bry, 1, 0, TWO_PI);
+      ctx.arc(this.blx, this.bly, 1, 0, TWO_PI);
+      ctx.fillStyle = 'hsla(0, 0%, 100%, .75)';
+      return ctx.fill();
+    };
+
+    Ship.prototype.drawBoundingBox = function(ctx) {
+      ctx.fillStyle = 'hsla(0, 0%, 100%, .1)';
+      return ctx.fillRect(this.xMin, this.yMin, this.bWidth, this.bHeight);
+    };
+
+    return Ship;
+
+  })();
+
+  Coin = (function() {
+    function Coin(x, y, value) {
+      this.x = x;
+      this.y = y;
+      this.vx = random(-50, 100) / 100;
+      this.vy = random(-50, 100) / 100;
+      this.radius = 4;
+      this.value = value;
+      this.magnetized = false;
+      this.xScale = 1;
+      this.xScaleGrow = true;
+      this.collected = false;
+      this.alpha = 0;
+      this.cv = 0;
+    }
+
+    Coin.prototype.update = function(ctx, i) {
+      var angle, dist, dx, dy, mvx, mvy, power, scaleChange;
+      if (this.alpha < 1 && !this.collected) {
+        this.alpha += 0.05 * ctx.ndt;
+      }
+      if (this.xScaleGrow && this.xScale >= 1) {
+        this.xScaleGrow = false;
+      } else if (!this.xScaleGrow && this.xScale <= 0.1) {
+        this.xScaleGrow = true;
+      }
+      scaleChange = this.magnetized ? 0.15 : 0.05;
+      if (this.xScaleGrow) {
+        this.xScale += scaleChange;
+      } else {
+        this.xScale -= scaleChange;
+      }
+      if (!this.collected) {
+        dx = ctx.ship.x + ctx.ship.width / 2 - this.x;
+        dy = ctx.ship.y + ctx.ship.height / 2 - this.y;
+        dist = sqrt(dx * dx + dy * dy);
+        if (dist <= ctx.magnetRange) {
+          this.magnetized = true;
+          angle = atan2(dy, dx);
+          mvx = cos(angle);
+          mvy = sin(angle);
+          power = 3 + (100 / dist);
+          this.x += (mvx * power) * ctx.ndt;
+          this.y += (mvy * power) * ctx.ndt;
+        } else {
+          this.magnetized = false;
+          this.x += this.vx * ctx.ndt;
+          this.y += this.vy * ctx.ndt;
+        }
+        if (dist <= 15) {
+          ctx.ship.flashFlag = true;
+          ctx.profit += this.value;
+          this.collected = true;
+          this.magnetized = false;
+        }
+      } else {
+        this.alpha -= 0.03 * ctx.ndt;
+        this.cv += 0.15 * ctx.ndt;
+        this.y -= this.cv * ctx.ndt;
+      }
+      if (this.outOfBounds(ctx)) {
+        return ctx.coins.splice(i, 1);
+      }
+    };
+
+    Coin.prototype.outOfBounds = function(ctx) {
+      return this.x > ctx.width + this.radius || this.x < -this.radius || this.y > ctx.height + this.radius || this.y < -this.radius;
+    };
+
+    Coin.prototype.draw = function(ctx, i) {
+      if (!this.collected) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.scale(this.xScale, 1);
+        ctx.beginPath();
+        ctx.arc(0, 0, (this.radius < 0 ? 0 : this.radius), 0, TWO_PI, false);
+        if (this.magnetized) {
+          ctx.fillStyle = 'hsla(0, 0%, ' + (this.xScale * 140) + '%, ' + this.alpha + ')';
+        } else {
+          ctx.fillStyle = 'hsla(' + ctx.hue + ', 100%, ' + (this.xScale * 70) + '%, ' + this.alpha + ')';
+        }
+        ctx.fill();
+        return ctx.restore();
+      } else {
+        ctx.fillStyle = 'hsla(0, 0%, 0%, ' + (this.alpha < 0 ? 0 : this.alpha) + ')';
+        ctx.fillText('+' + this.value, this.x, this.y + 1);
+        ctx.fillStyle = 'hsla(' + ctx.hue + ', 100%, 60%, ' + (this.alpha < 0 ? 0 : this.alpha) + ')';
+        return ctx.fillText('+' + this.value, this.x, this.y);
+      }
+    };
+
+    return Coin;
+
+  })();
+
+  shipImg.onload = function() {
+    return Sketch.create({
+      setup: function() {
+        var self;
+        this.profit = 0;
+        this.profitDisplayVal = 0;
+        this.profitDisplay = $('.profit span');
+        this.magnetRange = 250;
+        this.hue = 60;
+        this.ndt = 1;
+        this.coins = [];
+        this.numberWithCommas = function(x) {
+          x = Math.round(x);
+          return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        };
+        this.ship = new Ship(this);
+        this.font = 'bold 14px arial';
+        this.textAlign = 'center';
+        self = this;
+        this.boundingBoxCheck = $('.bounding-box');
+        this.showBoundingBox = false;
+        this.boundingBoxCheck.on('change', function() {
+          return self.showBoundingBox = $(this).is(':checked');
+        });
+        return setInterval(function() {
+          return self.coins.push(new Coin(random(0, self.width), random(0, self.height), floor(random(1, 100))));
+        }, 150);
+      },
+      clear: function() {
+        return this.clearRect(0, 0, this.width, this.height);
+      },
+      update: function() {
+        var i;
+        this.ndt = this.dt / 16;
+        this.hue += 0.75;
+        this.ship.update(this);
+        i = this.coins.length;
+        while (i--) {
+          this.coins[i].update(this, i);
+        }
+        return this.profitDisplayVal += (this.profit - this.profitDisplayVal) * 0.1;
+      },
+      draw: function() {
+        var i;
+        if (this.showBoundingBox) {
+          this.ship.drawBoundingBox(this);
+          this.ship.drawCorners(this);
+        }
+        this.ship.draw(this);
+        i = this.coins.length;
+        while (i--) {
+          this.coins[i].draw(this, i);
+        }
+        return this.profitDisplay.text(this.numberWithCommas(this.profitDisplayVal));
+      }
+    });
+  };
+
+}).call(this);
+
+</script>
+
+</body>
+</html>

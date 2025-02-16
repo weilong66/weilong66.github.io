@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注意力游戏</title>
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="wrap">
+        <h3>15秒注意力大考验</h3>
+        <div id="main">
+            <div class="main">
+                <!-- Boxes will be generated here -->
+            </div>
+            <div class="control">
+                <button id="startGame">开始游戏</button>
+                <button id="stopGame" >停止游戏</button>
+                <p>用时：0 秒</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let items = [];
+            let times = 1; // 正确点击次数
+            let rest = false; // 游戏状态标识
+            let time = 0; // 计时
+            let timeSend = null;
+            let timeCount = false; // 方块点完标识
+
+            function buildBox() {
+                items = [];
+                while (items.length < 25) {
+                    let data = Math.floor(Math.random() * 25 + 1);
+                    if (!isRepeat(data, items)) {
+                        items.push({
+                            val: data,
+                            id: items.length
+                        });
+                    }
+                }
+                renderBoxes();
+            }
+
+            function isRepeat(element, arr) {
+                for (let j = 0; j < arr.length; j++) {
+                    if (arr[j].val === element) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function renderBoxes() {
+                $('.main').empty();
+                items.forEach(item => {
+                    $('.main').append(
+                        `<li class="box" data-id="${item.id}" data-val="${item.val}">${item.val}</li></ul>`
+                        );
+                });
+            }
+
+            $('#startGame').click(function () {
+                clearInterval(timeSend);
+                buildBox();
+                rest = true;
+                times = 1;
+                time = 0;
+                timeCount = false;
+                totalTime();
+                $('.control p').text('用时：0 秒');
+                $('.box').removeClass('right');
+            });
+
+            $(document).on('click', '.box', function () {
+                if (!rest) {
+                    alert('请开始游戏');
+                    return;
+                }
+                let numVal = parseInt($(this).data('val'));
+                if (numVal === times) {
+                    $(this).addClass('right');
+                    times++;
+                    if (times > 25) {
+                        clearInterval(timeSend);
+                        if (time > 20) {
+                            alert("一共花费：" + time + "秒！你是不是没有集中注意力？");
+                        } else if (time > 15 && time <= 20) {
+                            alert("一共花费：" + time + "秒！你的注意力好像有点差哦！");
+                        } else if (time > 13 && time <= 15) {
+                            alert("一共花费：" + time + "秒！你的注意力处于普通人范围！");
+                        } else if (time > 10 && time <= 13) {
+                            alert("一共花费：" + time + "秒！很棒，你的注意力比一般人强！");
+                        } else if (time > 0 && time <= 10) {
+                            alert("一共花费：" + time + "秒！你的注意力无人能敌！");
+                        } else if (time == 0) {
+                            alert("一共花费：" + time + "秒！你绝对作弊了！");
+                        }
+                        timeCount = false;
+                    }
+                }
+            });
+
+            //停止游戏
+            $('#stopGame').click(function () {
+                clearInterval(timeSend);
+                rest = false;
+                times = 1;
+                time = 0;
+                timeCount = false;
+                $('.control p').text('用时：0 秒');
+                $('.box').removeClass('right');
+            });
+
+            // 开始计时的函数
+            function totalTime() {
+                timeSend = setInterval(() => {
+                    time++;
+                    $('.control p').text('用时：' + time + ' 秒');
+                }, 1000);
+            }
+
+            // 停止计时的函数
+            function stopTimer() {
+                clearInterval(timeSend);
+            }
+
+            
+
+            // 初始化游戏
+            buildBox();
+        });
+    </script>
+
+</body>
+
+</html>

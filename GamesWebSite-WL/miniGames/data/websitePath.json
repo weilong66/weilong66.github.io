@@ -1,0 +1,47 @@
+[
+    {
+        "name": "全部游戏.html",
+        "icon": "fa fa-gamepad",
+        "type": "file"
+    },
+    {
+        "name": "休闲游戏.html",
+        "icon": "fa fa-modx",
+        "type": "file"
+    },
+    {
+        "name": "动作游戏.html",
+        "icon": "fa fa-reddit-alien",
+        "type": "file"
+    },
+    {
+        "name": "射击游戏.html",
+        "icon": "fa fa-rocket",
+        "type": "file"
+    },
+    {
+        "name": "手机游戏.html",
+        "icon": "fa fa-mobile",
+        "type": "file"
+    },
+    {
+        "name": "棋牌游戏.html",
+        "icon": "fa fa-delicious",
+        "type": "file"
+    },
+    {
+        "name": "消除游戏.html",
+        "icon": "fa fa-houzz",
+        "type": "file"
+    },
+    {
+        "name": "益智游戏.html",
+        "icon": "fa fa-twitch",
+        "type": "file"
+    },
+    {
+        "name": "策略游戏.html",
+        "icon": "fa fa-map",
+        "type": "file"
+    }
+]

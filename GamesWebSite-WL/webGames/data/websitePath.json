@@ -1,0 +1,12 @@
+[
+    {
+        "name": "全部游戏.html",
+        "icon": "fa fa-gamepad",
+        "type": "file"
+    },
+    {
+        "name": "策略游戏.html",
+        "icon": "fa fa-map",
+        "type": "file"
+    }
+]
