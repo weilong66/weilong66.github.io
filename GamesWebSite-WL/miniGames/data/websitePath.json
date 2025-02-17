@@ -43,5 +43,10 @@
         "name": "策略游戏.html",
         "icon": "fa fa-map",
         "type": "file"
+    },
+    {
+        "name": "大型游戏.html",
+        "icon": "fa fa-th-large",
+        "type": "file"
     }
 ]

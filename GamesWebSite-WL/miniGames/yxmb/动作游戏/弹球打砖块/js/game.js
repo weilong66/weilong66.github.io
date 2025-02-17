@@ -82,8 +82,8 @@
     //创建游戏开始和结束的画面
     var Screen = {
         welcome: function() {
-            this.text = '****';
-            this.textSub = 'www.xiaoqbk.com';
+            this.text = '开始游戏';
+            this.textSub = '【点击任意位置开始】';
             this.textColor = 'white';
             this.create();//调用本身的图像绘制方法
         },
@@ -100,7 +100,7 @@
         },
         gameover: function() {//游戏结束画面的设置
             this.text = 'Game Over';
-            this.textSub = 'Click To Retry';
+            this.textSub = '点击任意位置重新开始';
             this.textColor = 'red';
             this.create();//调用本身的图像绘制方法
         }
