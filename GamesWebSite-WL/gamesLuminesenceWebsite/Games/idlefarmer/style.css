@@ -239,7 +239,7 @@ select {
   text-transform:capitalize;
 }
 #fps 
-{background: url(http://board.4players.pl/uploads/monthly_2016_10/icon175x175.png.ebedf77abfe6da9c05d149bbd6612aa4.png) 96% / 15% no-repeat white;
+{background: url(FPS.png) 96% / 15% no-repeat white;
 }
 #tileSize {
   background: url(square.png) 96% / 15% no-repeat white;

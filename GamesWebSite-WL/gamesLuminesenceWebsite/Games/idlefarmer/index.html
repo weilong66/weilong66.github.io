@@ -25,70 +25,70 @@
       <div class="upbar" id=seasonbar></div>
     </div>
   </center>
-  <button id=openMenuBtn>Menu</button>
+  <button id=openMenuBtn>菜单</button>
   <div id="navbar">
     <ul>
       <li id=raceTimeLeft style="text-align: center;"></li>
-      <li><a href="#unlockTab" id=menuUnlock><i class="fa fa-unlock-alt"></i> Unlockables</a></li>
-      <li><a href="#upgradesTab" id=menuUpgrades><i class="fa fa-arrow-circle-up"></i> Upgrades</a></li>
-      <li><a href="#skillTab" id=menuSkill>&#9861; Skills</a></li>
-      <li><a href="#achievementsTab" id=menuAchievements>	&#127942; Achievements</a></li>
-      <li><a href="#debtTab" id=menuDebt style="display: none;">Debt challenge</a></li>
-      <li><a href="#statsTab" id=menuStats>&#128202; Statistics</a></li>
-      <li><a href="#settingsTab"><i class="fa fa-cog fa-spin"></i> Settings</a></li>
-      <li><a href="#creditsTab">&copy; Credits</a></li>
+      <li><a href="#unlockTab" id=menuUnlock><i class="fa fa-unlock-alt"></i> 解锁</a></li>
+      <li><a href="#upgradesTab" id=menuUpgrades><i class="fa fa-arrow-circle-up"></i> 升级</a></li>
+      <li><a href="#skillTab" id=menuSkill>&#9861; 技能</a></li>
+      <li><a href="#achievementsTab" id=menuAchievements>	&#127942; 成就</a></li>
+      <li><a href="#debtTab" id=menuDebt style="display: none;">债务挑战</a></li>
+      <li><a href="#statsTab" id=menuStats>&#128202; 统计</a></li>
+      <li><a href="#settingsTab"><i class="fa fa-cog fa-spin"></i> 设置</a></li>
+      <li><a href="#creditsTab">&copy; 版权</a></li>
     </ul>
   </div>
 
   <div id="contents">
     <menu id=unlockTab></menu>
     <menu id="upgradesTab" style="overflow: hidden;">
-      <code>To quick buy click the button and hold enter.</code><br>
+      <code>要快速购买，请单击按钮并按住enter键.</code><br>
 
       <button id=moreSpaceBtn onclick="buyMoreSpace();" class="btn-style"></button>
       <button id=growthSpeedBtn onclick="buyMoreGrowthSpeed();" class="btn-style info"></button>
       <button id=replantUpgradeBtn onclick="buyReplantChance();" class="btn-style info"></button>
       
-      <button onclick="buyMaxEff();">Buy 10x efficiency</button>
+      <button onclick="buyMaxEff();">使用全部金钱购买效率</button>
 
-      <button onclick="buyFill();" id=buyFillBtn class="btn-style info" title="£1 Million.">Unlock "fill all" button</button>
+      <button onclick="buyFill();" id=buyFillBtn class="btn-style info" title="价格：一百万.">解锁“一键种植”按钮</button>
     </menu>
     <menu id="settingsTab">
-      <label for="numberPopUps">Number pop ups</label>
+      <label for="numberPopUps">弹出收益数字</label>
       <div id=numberPopUps class=checkbox></div><br>
-      <label for="simplifyNumbers">Simplify numbers</label>
+      <label for="simplifyNumbers">简化数字</label>
       <div id=simplifyNumbers class="checkbox active"></div><br>
-      <label for="useSelectedPlant">Use selected plant in "Fill all".</label>
+      <label for="useSelectedPlant">点击"一键种植"时使用选定的植物.</label>
       <div id="useSelectedPlant" class="checkbox active"></div><br>
-      <label for="sunEnabled">Show sun</label>
+      <label for="sunEnabled">显示太阳</label>
       <div id="sunEnabled" class="checkbox active"></div><br>
-      <label for="plantTime">Toggle % / time</label>
+      <label for="plantTime">切换时间(百分比/秒)</label>
       <div id="plantTime" class="checkbox"></div><br>
-      <label for="replantEnable">Enable replant</label>
+      <label for="replantEnable">启用重新种植</label>
       <div id="replantEnable" class="checkbox active"></div>
       <br><br>
-      <label for="fps">FPS</label>
-      <select id=fps>
+      <label for="fps" title="(太卡时不妨试试降低FPS)">FPS</label>
+      <select id=fps >
       <optgroup label="Choose FPS:" id=fpsOption></optgroup>
     </select><br>
-      <label for="tileSize">Tile size</label>
+      <label for="tileSize" title="仅影响土地块外观尺寸">土地尺寸</label>
       <select id=tileSize>
       <optgroup label="Tile size:" id=tileSizeOption></optgroup>
     </select>
       <br>
-      <p onclick="saveTest();"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</p>
-      <p onclick="history.go(0);"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Load</p>
-      <p style="background-color: red;" onclick="reset();">Reset game</p>
+      <p onclick="saveTest();"><i class="fa fa-floppy-o" aria-hidden="true"></i> 保存</p>
+      <p onclick="history.go(0);"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> 读取</p>
+      <p style="background-color: red;" onclick="reset();">重置游戏进度</p>
     </menu>
     <menu id="creditsTab">
       <ul>
-        <u>Creator:</u>
-        <li>killereks (game design, scripts)</li>
+        <u>创作者:</u>
+        <li>killereks（游戏设计、脚本）</li>
       </ul>
       <ul>
-        <u>Helpers:</u>
-        <li>Richfest (glitches & ideas)</li>
-        <li>LeEclipse (glitches & ideas)</li>
+        <u>助手:</u>
+        <li>Richfest (技术 & 创意)</li>
+        <li>LeEclipse (技术 & 创意)</li>
       </ul>
     </menu>
     <menu id=skillTab>
@@ -118,7 +118,8 @@
     <div id=quest></div>
   </div>
 
-  <button onclick="fillAll();" disabled id=fillAllBtn><img src="http://downloadicons.net/sites/default/files/paint-bucket-icon-61620.png" style="width: 25px; height: 25px;"> Fill all</button><br>
+  <button onclick="fillAll();" disabled id=fillAllBtn>
+    <img src="paint-bucket-icon.png" style="width: 25px; height: 25px;">一键种植</button><br>
   <div id="money"></div>
   <div id="mps"></div>
   <select id="plant" style="width: 350px;"></select>
@@ -150,27 +151,27 @@
   <div id="currentChallenge"></div>
   <br>
   <label style="float: none;">
-    Tutorial?
+    启用教程?
     <div class=checkbox id=tutorial></div>
   </label>
   <br><br><br>
   <select style="width: 200px;" id=challengeOption>
-    <option value="No challenge">No challenge</option>
-    <optgroup label="Easy challenges">
-      <option value="wheat only">Wheat only</option>
-      <option value="winter only">Only winter</option>
+    <option value="无挑战">无挑战</option>
+    <optgroup label="简单挑战">
+      <option value="wheat only">只有小麦</option><!-- wheat only -->
+      <option value="winter only">只有冬天</option><!-- winter only -->
     </optgroup>
-    <optgroup label="Medium challenges">
-      <option value="hideout">Hideout</option>
-      <option value="race">Race</option>
-      <option value="slot loss">Slot loss</option>
+    <optgroup label="中等挑战">
+      <option value="hideout">藏匿</option><!-- hideout -->
+      <option value="race">竞争</option><!-- race -->
+      <option value="slot loss">土地丢失</option><!-- slot loss -->
     </optgroup>
-    <optgroup label="Hard challenges">
-      <option value="five slots">5 Slots max</option>
-      <option value="debt">Debt</option>
-      <option value="quest chaos">Quest chaos</option>
-      <option value="missing plants">Missing plants</option>
-      <option value="no upgrades">No upgrades</option>
+    <optgroup label="困难挑战">
+      <option value="five slots">最多5个土地</option><!-- five slots -->
+      <option value="debt">债务</option><!-- debt -->
+      <option value="quest chaos">任务混乱</option><!-- quest chaos -->
+      <option value="missing plants">植物会损毁</option><!-- missing plants -->
+      <option value="no upgrades">无升级</option><!-- no upgrades -->
     </optgroup>
   </select>
   <br>
@@ -182,7 +183,7 @@
     <option disabled>Medium</option>
     <option disabled>Hard</option>
   </select>
-  <button onclick="reset();" style="position:absolute;left:10px; bottom: 10px; background-color: red;">Reset game</button>
+  <button onclick="reset();" style="position:absolute;left:10px; bottom: 10px; background-color: red;">重置游戏进度</button>
 </div>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>

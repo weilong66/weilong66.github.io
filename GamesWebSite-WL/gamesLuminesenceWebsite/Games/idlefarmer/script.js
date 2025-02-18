@@ -53,66 +53,79 @@ spop.defaults = {
 
 var achievements = {
   wheat: {
+    nameZh: "小麦",
     amount: [],
     achieved: [],
     achievementName: ["Baby steps...","Learner...","Farmer student.","<img src=http://game-icons.net/icons/delapouite/originals/svg/farmer.svg>","Can't... stop... clicking.","Wheat so yellow...","Well done... for playing so long.","Wheat is soo cool","Farming so fun","Remember to mill the wheat!","Get a tractor already!","Super farmer","Pro farmer","You're getting good!","Wheat so cheap.","Try new plants.","почему вы перевести данный текст?","Plant problems ?","You don't have to play wheat all the game...","Flowers are better than wheat.","Wheat > Flowers","Haha you're not trying to win.","Want 100% Achievements?","So close...","Keep going.","One more to go!","There ya go!"]
   },
   flower: {
+    nameZh: "鲜花",
     amount: [],
     achieved: [],
     achievementName: ["Fresh start.","Flowers so much better than wheat.","Good luck getting next plant."],
   },
   herb: {
+    nameZh: "草药",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   grass: {
+    nameZh: "牧草",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   sunflower: {
+    nameZh: "向日葵",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   algae: {
+    nameZh: "水藻",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   corn: {
+    nameZh: "玉米",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   cabbage: {
+    nameZh: "卷心菜",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   jasmine: {
+    nameZh: "茉莉",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   strawberry: {
+    nameZh: "草莓",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   chocolate: {
+    nameZh: "巧克力",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   potato: {
+    nameZh: "土豆",
     amount: [],
     achieved: [],
     achievementName: [],
   },
   coconut: {
+    nameZh: "椰子",
     amount: [],
     achieved: [],
     achievementName: [],
@@ -132,7 +145,7 @@ for (var key in achievements){
   
   for (var d = 0; d < length; d++){
     if (d == 0){
-      $('#achievements').append("<div style='text-align:center;'>"+key+"</div><div style=clear:both;></div>")
+      $('#achievements').append("<div style='text-align:center;'>"+achievements[key].nameZh+"</div><div style=clear:both;></div>")
     }
     var id = key+achievements[key].amount[d];
     var element = '<div class=achievement id='+id+'>?</div>';
@@ -194,7 +207,8 @@ var profitBoost = 1;
 var xpBoost = 1;
 
 var currentSeason = 1;
-var seasons = ["Spring","Summer","Autumn","Winter"];
+// var seasons = ["Spring","Summer","Autumn","Winter"];
+var seasons = ["春天","夏天","秋天","冬天"];
 var seasonTime = 60;
 
 var growthSpeed = 1;
@@ -227,7 +241,7 @@ var wheat = {
   effPrice: 0.01,
   efficiencyMax: 20,
   unlockPrice: 0,
-  growsIn: "summer",
+  growsIn: "夏天",
   totalGrown: 0,
 }
 var flower = {
@@ -239,7 +253,7 @@ var flower = {
   effPrice: 1,
   efficiencyMax: 20,
   unlockPrice: 5,
-  growsIn: "spring",
+  growsIn: "春天",
   totalGrown: 0,
 }
 var herb = {
@@ -251,7 +265,7 @@ var herb = {
   effPrice: 2500,
   efficiencyMax: 20,
   unlockPrice: 4000,
-  growsIn: "summer",
+  growsIn: "夏天",
   totalGrown: 0,
 }
 var grass = {
@@ -263,7 +277,7 @@ var grass = {
   effPrice: 2.5e5,
   efficiencyMax: 20,
   unlockPrice: 1.5e6,
-  growsIn: "winter",
+  growsIn: "冬天",
   totalGrown: 0,
 }
 var sunflower = {
@@ -275,7 +289,7 @@ var sunflower = {
   effPrice: 8e9,
   efficiencyMax: 20,
   unlockPrice: 8e10,
-  growsIn: "summer",
+  growsIn: "夏天",
   totalGrown: 0,
 }
 
@@ -288,7 +302,7 @@ var algae = {
   effPrice: 3e12,
   efficiencyMax: 25,
   unlockPrice: 3e13,
-  growsIn: "autumn",
+  growsIn: "秋天",
   totalGrown: 0,
 }
 
@@ -301,7 +315,7 @@ var corn = {
   effPrice: 2e15,
   efficiencyMax: 25,
   unlockPrice: 3.14e16,
-  growsIn: "summer",
+  growsIn: "夏天",
   totalGrown: 0,
 }
 
@@ -314,7 +328,7 @@ var cabbage = {
   effPrice: 4e18,
   efficiencyMax: 25,
   unlockPrice: 5e19,
-  growsIn: "spring",
+  growsIn: "春天",
   totalGrown: 0,
 }
 
@@ -327,7 +341,7 @@ var jasmine = {
   effPrice: 2e22,
   efficiencyMax: 25,
   unlockPrice: 14.5e22,
-  growsIn: "winter",
+  growsIn: "冬天",
   totalGrown: 0,
 }
 
@@ -340,7 +354,7 @@ var strawberry = {
   effPrice: 2e25,
   efficiencyMax: 25,
   unlockPrice: 2e26,
-  growsIn: "spring",
+  growsIn: "春天",
   totalGrown: 0,
 }
 
@@ -353,7 +367,7 @@ var chocolate = {
   effPrice: 2.048e29,
   efficiencyMax: 25,
   unlockPrice: 80.0e29,
-  growsIn: "autumn",
+  growsIn: "秋天",
   totalGrown: 0,
 }
 
@@ -366,7 +380,7 @@ var potato = {
   effPrice: 8.192e32,
   efficiencyMax: 25,
   unlockPrice: 21.92e32,
-  growsIn: "autumn",
+  growsIn: "秋天",
   totalGrown: 0,
 }
 
@@ -379,12 +393,13 @@ var coconut = {
   effPrice: 3.2768e36,
   efficiencyMax: 25,
   unlockPrice: 1.2768e37,
-  growsIn: "summer",
+  growsIn: "夏天",
   totalGrown: 0,
 }
 
 
 
+var plantsZh = ["小麦","鲜花","草药","牧草","向日葵","水藻","玉米","卷心菜","茉莉","草莓","巧克力","土豆","椰子"];
 var plants = ["wheat","flower","herb","grass","sunflower","algae","corn","cabbage","jasmine","strawberry","chocolate","potato","coconut"];
 
 for (var i = 1; i <= 60; i++){
@@ -403,21 +418,24 @@ for (var ii = 10; ii <= 75; ii++){
 }
 
 for (var i = 0; i < plants.length; i++){
-  var elem1 = '<button id='+plants[i]+'EffBtn onclick=upEff("'+plants[i]+'")>'+plants[i]+' profits</button>';
+  var elem1 = '<button id='+plants[i]+'EffBtn onclick=upEff("'+plants[i]+'")>'+plantsZh[i]+' 收益</button>';
   var elem2 = '<div class="upbar-container"><div class="upbar" id='+plants[i]+'EffBar></div></div>';
   $('#upgradesTab').append(elem1,elem2);
   var price = window[plants[i]].cost;
-  var elem3 = '<option value="'+plants[i]+'" id='+plants[i]+'>'+plants[i]+' £'+simplify(price)+'</option>';
+  var elem3 = '<option value="'+plants[i]+'" id='+plants[i]+'>'+plantsZh[i]+' $'+simplify(price)+'</option>';
   $('#plant').append(elem3);
   var unlockPrice = window[plants[i]].unlockPrice;
-  var title = "£"+(simplify(unlockPrice));
+  var title = "$"+(simplify(unlockPrice));
   var elem4 = '<button onclick=unlock("'+plants[i]+'"); id='+plants[i]+'UnlockBtn title="'+title+'" class=info></button>';
   $('#unlockTab').append(elem4);
 }
 
+//种植事件
 function plant(obj,type){
   var item = type;
+  var plantIndex = $('#plant').prop('selectedIndex');
   if (!type) var item = $('#plant').val();
+  
   
   var profit = window[item].profit;
   var timeToGrow = window[item].timeToGrow;
@@ -432,8 +450,8 @@ function plant(obj,type){
   $(obj).attr('data-time',200);
   var id = obj.id;
   var price = window[item].cost;
-  add ("<span style='color: red;'>"+"-£"+simplify(price)+"</span>","log",0,100);
-  var element = "<div class=plant data-time="+timeToGrow+" data-timeMax="+timeToGrow+" data-profit="+profit+" data-type="+item+" data-efficiency="+efficiency+"></div>";
+  add ("<span style='color: red;'>"+"-$"+simplify(price)+"</span>","log",0,100);
+  var element = "<div class=plant data-time="+timeToGrow+" data-timeMax/*  */="+timeToGrow+" data-profit="+profit+" data-type="+item+" data-efficiency="+efficiency+"></div>";
   $(obj).html(element);
 }
 
@@ -441,11 +459,11 @@ function engine(){
   $('#skillpoints').html(skillpoints+" skillpoints left.");
   FPS = $('#fps').val();
   $('#season').html(seasons[currentSeason]+"<br>("+challenge+")");
-  $('#money').html("Money: £"+simplify(money));
-  $('#moreSpaceBtn').html("+1 plot ("+$('.tile').length+")<br>£"+simplify(moreSpacePrice));
-  $('#growthSpeedBtn').html("Faster growth"+"<br>£"+simplify(growthSpeedPrice));
-  $('#replantUpgradeBtn').html("Replant chance<br>"+replantChance+"%");
-  $('#replantUpgradeBtn').attr('title', "£"+simplify(replantPrice));
+  $('#money').html("金钱: $"+simplify(money));
+  $('#moreSpaceBtn').html("+1 土地 ("+$('.tile').length+")<br>$"+simplify(moreSpacePrice));
+  $('#growthSpeedBtn').html("加速生长"+"<br>$"+simplify(growthSpeedPrice));
+  $('#replantUpgradeBtn').html("重新种植机会<br>"+replantChance+"%");
+  $('#replantUpgradeBtn').attr('title', "$"+simplify(replantPrice));
   
   $('#seasonbar').html((format(seasonTime)));
   var perc = (seasonTime / 60 * 100);
@@ -461,15 +479,16 @@ function engine(){
     if (currentSeason >= seasons.length){
       currentSeason = 0;
     }
-    achievementUnlocked("<code style=font-size:20px;>"+seasons[currentSeason]+" has started!</code>",false)
+    achievementUnlocked("<code style=font-size:20px;>"+seasons[currentSeason]+" 已经开始!</code>",false)
     
+    // 设置农作物选择列表
     seasonTime = 60;
     for (var y = 0; y < plants.length; y++){
-      $('#'+plants[y]).html(plants[y]+" £"+simplify(window[plants[y]].cost));
+      $('#'+plants[y]).html(plantsZh[y]+" $"+simplify(window[plants[y]].cost));
       var p = window[plants[y]];
 
       if (p.growsIn == seasons[currentSeason].toLowerCase()){
-        $('#'+plants[y]).html(plants[y]+" £"+simplify(window[plants[y]].cost)+" ☀");
+        $('#'+plants[y]).html(plantsZh[y]+" $"+simplify(window[plants[y]].cost)+" ☀");
       }
     }
     
@@ -524,7 +543,7 @@ function engine(){
   
   for (var i = 0; i < length; i++){
     $('#cell'+i).removeAttr("data-time");
-    var element = $('#cell'+i).find(".plant");
+    var element = $('#cell'+i).find(".plant"); //获取土地控件
     
     var time = parseFloat($(element).attr("data-time"));
     
@@ -602,6 +621,7 @@ function engine(){
       
       extra += ""+format(timeLeft)+"";
       $(element).html("<b>"+plantt+"</b><br>"+extra);
+      
     }
     if ($('#plantTime').hasClass("active") == false){
       $(element).html("<b>"+plantt+"</b><br>"+Math.ceil(perc)+"%");
@@ -635,7 +655,7 @@ function engine(){
       var plantToAdd = $(element).attr('data-type');
       window[plantToAdd].totalGrown++;
       
-      add ("<span style='color: green;'>"+"+£"+simplify(profit*efficiency)+"</span>","log",0,100);
+      add ("<span style='color: green;'>"+"+$"+simplify(profit*efficiency)+"</span>","log",0,100);
       
       money += parseFloat(profit) * parseFloat(efficiency) * profitBoost;
       xp += parseFloat(profit * efficiency * 10 * xpBoost);
@@ -659,10 +679,10 @@ function engine(){
     if (p.unlocked){
       $('#'+plants[s]).css("display","block");
     }
-    var info = plants[s]+" efficiency<br>£"+simplify(window[plants[s]].effPrice);
+    var info = plantsZh[s]+" 效率<br>$"+simplify(window[plants[s]].effPrice);
     
     $('#'+plants[s]+"EffBtn").html(info);
-    $('#'+plants[s]+"UnlockBtn").html("Unlock "+plants[s])
+    $('#'+plants[s]+"UnlockBtn").html("解锁 "+plantsZh[s])
     if (p.unlocked){
       $('#'+plants[s]+"UnlockBtn").css({display: "none"})
     }
@@ -727,10 +747,11 @@ function engine(){
     $('#buyFillBtn').css({backgroundColor: "grey"})
   }
   
+  //左侧农作物信息
   var selected = $('#plant').val();
   var object = window[selected];
   info = "<ul>";
-  info += "<li>Profit: £"+simplify((object.profit*object.efficiency - object.cost) * profitBoost)+"</li><li>Cost: £"+simplify(object.cost)+"</li><li>Growth speed: "+Math.floor((object.timeToGrow/growthSpeed*100)/growthSpeedBoost)/100+"s<li>Grows in: "+object.growsIn+"</li>";
+  info += "<li>利润: $"+simplify((object.profit*object.efficiency - object.cost) * profitBoost)+"</li><li>费用: $"+simplify(object.cost)+"</li><li>生长速度: "+Math.floor((object.timeToGrow/growthSpeed*100)/growthSpeedBoost)/100+"s<li>种植季节: "+object.growsIn+"</li>";
   document.getElementById("info").innerHTML = info+"</ul>";
   
   var perc = xp/xpN * 100;
@@ -848,7 +869,7 @@ function tut(){
     }
     if (voice == 1){
       voice++;
-      speak("Click on upgrades and purchase your slot upgrade.")
+      speak("点击升级并购买插槽升级.")
     }
   }
   if (tutorial == 3){
@@ -856,7 +877,7 @@ function tut(){
       left: "800px",
       top: "150px",
     })
-    $('#tutorialMsg').html("<label>3/7</label>Now keep planting wheat and upgrade wheat efficiency to 1.3x");
+    $('#tutorialMsg').html("<label>3/7</label>现在继续种植小麦，将小麦效率提高到1.3倍");
     $('#tutorialMsg').animate({
       left: "650px",
       top: "100px",
@@ -867,7 +888,7 @@ function tut(){
     }
     if (voice == 2){
       voice++;
-      speak("Now keep planting wheat and upgrade wheat efficiency to 1.3 times")
+      speak("现在继续种植小麦，将小麦效率提高到1.3倍")
     }
   }
   if (tutorial == 4){
@@ -926,7 +947,7 @@ function tut(){
       left: "80%",
       top: "350px",
     })
-    $('#tutorialMsg').html("<label>7/7</label>You can also click this button to hide menu for less stuff on the screen. Have fun!<button onclick=tutNext();>Close</button>");
+    $('#tutorialMsg').html("<label>7/7</label>您还可以单击此按钮隐藏屏幕上较少内容的菜单。玩得高兴!<button onclick=tutNext();>Close</button>");
     $('#tutorialMsg').animate({
       left: "75%",
       top: "200px",
@@ -934,7 +955,7 @@ function tut(){
     $("#arrow").pointat({ target: "#openMenuBtn" });
     if (voice == 6){
       voice++;
-      speak("You can also click this button to hide menu for less stuff on the screen. Have fun!")
+      speak("您还可以单击此按钮隐藏屏幕上较少内容的菜单。玩得高兴!")
     }
   }
   if (tutorial >= 8 || tutorial == 0){
@@ -951,21 +972,21 @@ function tut(){
   if (challenge){
     $('#challengeOption').hide();
   }
-  $('#currentChallenge').html("Your current challenge: "+challenge);
+  $('#currentChallenge').html("您当前的挑战: "+challenge);
   if (!challenge){
-    $('#currentChallenge').html("You are not in a challenge.");
+    $('#currentChallenge').html("你没有挑战.");
   }
   var chal = $('#challengeOption').val();
-  if (chal == "winter only") $('#challengeDesc').html("Winter has been heavy for sometime, but no snow can stop you!");
-  if (chal == "hideout") $('#challengeDesc').html("Government has made farming illegal, and will inspect every farm every so often. Make sure you don't get caught!");
-  if (chal == "race") $('#challengeDesc').html("Race with your neighbour for the best plant competition. To win you have to reach Jasmine before time limit!");
-  if (chal == "debt") $('#challengeDesc').html("Your grandad has fallen into debt, now it has been passed onto you. Make sure to pay it off before time limit!");
-  if (chal == "quest chaos") $('#challengeDesc').html("Your boss has been not happy with you lately taking so many days off, he is giving you a lot of work while he is on holidays. How unfair!");
-  if (chal == "missing plants") $('#challengeDesc').html("There was a plague and half of the plants are missing! But that can't stop you from becoming greatest farmer of all time!");
-  if (chal == "five slots") $('#challengeDesc').html("Ground has been infected with unknown creatures. They like land and will fight for it if needed. You can have maximum of 5 slots before getting their attention.");
-  if (chal == "slot loss") $('#challengeDesc').html("Unknown creatures attack again! This time they will attack every 30 seconds if you have more than 2 slots. (Lose 1 slot every 30 sec.)");
-  if (chal == "wheat only") $('#challengeDesc').html("Every plant except wheat has been poisoned by unknown creatures. You can only plant wheat but because it is the only plant, the upgrades became cheaper.");
-  if (chal == "no upgrades") $('#challengeDesc').html("It is 300BC, technology has not evolved yet and you have to rely on the only land that king gave you.");
+  if (chal == "winter only") $('#challengeDesc').html("冬天已经持续了很长一段时间，但雪花无法阻止你！");
+  if (chal == "hideout") $('#challengeDesc').html("政府已经宣布农业为非法，并且会不定期检查每个农场。确保你不会被抓到！");
+  if (chal == "race") $('#challengeDesc').html("与你的邻居竞争最佳植物比赛。要想获胜，你必须在时间限制之前到达茉莉！");
+  if (chal == "debt") $('#challengeDesc').html("你的祖父已经负债累累，现在这个债务已经传给了你。确保在时间限制之前偿还债务！");
+  if (chal == "quest chaos") $('#challengeDesc').html("你的老板最近对你请了这么多天假很不满意，他度假的时候给你安排了很多工作。多么不公平！");
+  if (chal == "missing plants") $('#challengeDesc').html("曾经有过一场瘟疫，一半的植物都消失了！但这无法阻止你成为历史上最伟大的农民！");
+  if (chal == "five slots") $('#challengeDesc').html("地面已经被未知的生物感染。他们喜欢土地，如果需要的话，他们会为土地而战。你最多只能有5个土地，否则他们会注意到你。");
+  if (chal == "slot loss") $('#challengeDesc').html("未知的生物再次发动攻击！这次，如果你有超过2个土地，他们每30秒就会攻击一次。（每30秒失去1个土地。）");
+  if (chal == "wheat only") $('#challengeDesc').html("除了小麦之外，每种植物都被未知的生物毒害了。你只能种植小麦，但因为它是唯一的植物，所以升级变得更便宜了。");
+  if (chal == "no upgrades") $('#challengeDesc').html("现在是公元前300年，技术还没有发展，你必须依赖国王给你的唯一土地。");
   
   
   setTimeout(tut,500);
@@ -984,7 +1005,7 @@ function buyMoreSpace(){
   var element = '<div class=tile id=cell'+i+' onclick=plant(this);></div>';
   if (money >= moreSpacePrice){
     money -= moreSpacePrice;
-    add ("<span style='color: red;'>"+"-£"+simplify(moreSpacePrice)+"</span>","log",0,100);
+    add ("<span style='color: red;'>"+"-$"+simplify(moreSpacePrice)+"</span>","log",0,100);
     moreSpacePrice *= 1.35;
     $('#map').append(element);
   }
@@ -993,7 +1014,7 @@ function buyMoreSpace(){
 function buyMoreGrowthSpeed(){
   if (money >= growthSpeedPrice){
     money -= growthSpeedPrice;
-    add ("<span style='color: red;'>"+"-£"+simplify(growthSpeedPrice)+"</span>","log",0,100);
+    add ("<span style='color: red;'>"+"-$"+simplify(growthSpeedPrice)+"</span>","log",0,100);
     growthSpeedPrice *= 10;
     growthSpeed += 0.5;
   }
@@ -1103,7 +1124,7 @@ function unlock(obj){
     money -= price;
     $('#'+obj+"UnlockBtn").remove();
     window[obj].unlocked = true;
-    var name = "£"+window[obj].cost+" "+obj;
+    var name = "$"+window[obj].cost+" "+obj;
   }
 }
 
@@ -1199,7 +1220,7 @@ var property = ["cost","efficiency","efficiencyMax","effPrice","growsIn","profit
 var variables = ["xp","xpN","level","growthSpeed","currentSeason","moreSpacePrice","growthSpeedPrice","money","skillpoints","fillAllBtnUnlocked","challenge","debtLeft","debtTimeLeft","raceTimeLeft","inspectionTimeLeft","questTimeLeft","questCollected","currentQuest","slotTime","replantPrice","replantChance","seasonTime"];
 
 function saveTest(){
-  achievementUnlocked("<code style=font-size:20px;>Game has been saved!</code>",false);
+  achievementUnlocked("<code style=font-size:20px;>游戏已保存!</code>",false);
   var saveFile = {};
   for (var i = 0; i < plants.length; i++){
     for (var j = 0; j < property.length; j++){
@@ -1234,7 +1255,7 @@ function saveTest(){
 function loadTest(){
   var saveFile = JSON.parse(localStorage.getItem("saveFile"));
   if (!saveFile) return;
-  achievementUnlocked("<code style=font-size:20px;>Game has been loaded!</code>",false);
+  achievementUnlocked("<code style=font-size:20px;>游戏已加载!</code>",false);
   for (var i = 0; i < plants.length; i++){
     for (var j = 0; j < property.length; j++){
       if (!plants[i] || !property[j]) continue;
@@ -1267,7 +1288,7 @@ function loadTest(){
     for (var s = 0; s < achievements[key].amount.length; s++){
       if (achievements[key].achieved[s]){
         $('#'+key+achievements[key].amount[s]).html("");
-        var title = "Grow "+achievements[key].amount[s].toLocaleString()+" "+key+"(s).";
+        var title = "种植 "+achievements[key].amount[s].toLocaleString()+" "+achievements[key].nameZh+"(s).";
         $('#'+key+achievements[key].amount[s]).html("<img src=http://game-icons.net/icons/delapouite/originals/svg/trophy-cup.svg class=info title='"+title+"'>");
       }
     }
@@ -1362,7 +1383,7 @@ function loop(){
     if (maxlevel == level){
       btn.style.backgroundColor = "green";
       btn.style.border = "2px solid darkgreen";
-      btn.innerHTML = name+"<br>Max level<br>"+msg;
+      btn.innerHTML = name+"<br>最大等级<br>"+msg;
     }
   }
   
@@ -1376,18 +1397,19 @@ function loop(){
   for (var key in achievements){
     var amount = achievements[key].amount;
     var obj = window[key].totalGrown;
-    
     for (var i = 0; i < amount.length; i++){
       var achieved = achievements[key].achieved[i];
       if (obj >= amount[i] && achieved == false){
-        var text = achievements[key].achievementName[i] + "<br><span class=achievementText>Grow "+amount[i].toLocaleString()+" "+key+"</span>";
+        var text = achievements[key].achievementName[i] + "<br><span class=achievementText>种植 "+amount[i].toLocaleString()+" "+achievements[key].nameZh+"</span>";
         achievements[key].achieved[i] = true;
         text = text.replace(/undefined/g,"Achievement Unlocked!")
         window[key].efficiency += 0.04 * i + 0.04;
         
-        spop("&#127942;"+text+"<br> <span class=achievementRewardText>+"+(4*i+4)+"% "+key+" efficiency!</span>");
+        // spop("&#127942;"+text+"<br> <span class=achievementRewardText>+"+(4*i+4)+"% "+key+" 效率!</span>");
+          spop("&#127942;"+text+"<br> <span class=achievementRewardText>+"+(4*i+4)+"% "+achievements[key].nameZh+" 效率!</span>");
+
         // var title = achievements[key].achievementName[i]+"\nGrow "+amount[i].toLocaleString()+" "+key+"(s).";
-        var title = "Grow "+amount[i].toLocaleString()+" "+key+"(s).";
+        var title = "种植 "+amount[i].toLocaleString()+" "+achievements[key].nameZh+"(s).";
         $('#'+key+amount[i]).html("<img src=http://game-icons.net/icons/delapouite/originals/svg/trophy-cup.svg class=info title='"+title+"'>");
         tooltip();
         // $('#'+key+amount[i]).attr('title',title);
@@ -1396,11 +1418,12 @@ function loop(){
     }
   }
   var stats = "";
-  stats += "Skill tree<br>XP boost: "+xpBoost+"x<br>Profit boost: "+profitBoost+"x<br>Growth speed boost: "+growthSpeedBoost+"x<hr>";
+  stats += "技能树<br>经验值提升: "+xpBoost+"x<br>利润提升: "+profitBoost+"x<br>增长速度提升: "+growthSpeedBoost+"x<hr>";
   for (var l = 0; l < plants.length; l++){
     var p = window[plants[l]];
     if (p.unlocked == false) continue;
-    stats += plants[l]+": <br>Total grown: "+(p.totalGrown).toLocaleString()+"<br>Sell price: £"+(p.profit * p.efficiency * profitBoost).toLocaleString()+"<hr>";
+    // stats += plants[l]+": <br>总增长: "+(p.totalGrown).toLocaleString()+"<br>售价: $"+(p.profit * p.efficiency * profitBoost).toLocaleString()+"<hr>";
+    stats += plantsZh[l]+": <br>总增长: "+(p.totalGrown).toLocaleString()+"<br>售价: $"+(p.profit * p.efficiency * profitBoost).toLocaleString()+"<hr>";
   }
   
   
@@ -1472,7 +1495,7 @@ setInterval(tooltip,2500);
 
 
 function reset(){
-  var input = prompt("Type in 'yes' to confirm reset.");
+  var input = prompt("输入 'yes' 确认重置游戏进度.");
   input = input.toLowerCase();
   if (input == "yes"){
     localStorage.clear();
@@ -1529,7 +1552,7 @@ function challenges(){
     history.go(0);
   }
   $('#timeLeft').html(format(debtTimeLeft));
-  $('#debtLeft').html("£"+debtLeft.toLocaleString())
+  $('#debtLeft').html("$"+debtLeft.toLocaleString())
   if (challenge == "missing plants"){
     for (var k = 0; k < plants.length; k++){
       if (k % 2 == 0){
@@ -1564,13 +1587,13 @@ function challenges(){
         color: "red",
       })
     }
-    $('#raceTimeLeft').html("Inspection in: "+format(inspectionTimeLeft));
+    $('#raceTimeLeft').html("检查中: "+format(inspectionTimeLeft));
     if (inspectionTimeLeft <= 0){
       for (var h = 0; h < $('.tile').length; h++){
         var html = $('#cell'+h).html();
         
         if (html){
-          alert("Government has caught you on farming ! You lose! Better luck next time");
+          alert("政府抓到你务农了！你输了！祝你下次好运");
           localStorage.clear();
           history.go(0);
         }
@@ -1589,7 +1612,7 @@ function challenges(){
     $('#menuQuest').show();
     questTimeLeft--;
     $('#questTimeLeft').html(format(questTimeLeft));
-    $('#quest').html("Farm "+currentQuest+"<br>Collected: "+questCollected);
+    $('#quest').html("农场 "+currentQuest+"<br>收集: "+questCollected);
     var quest = currentQuest.split(" ");
     var amount = parseInt(quest[0]);
     if (questCollected >= amount){
