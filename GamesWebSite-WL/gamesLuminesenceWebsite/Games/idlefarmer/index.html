@@ -1,196 +1,211 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Idle Farmer</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-<link rel='stylesheet' href='https://silvio-r.github.io/spop/dist/spop.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/chosen/1.6.2/chosen.css'><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="assets/css/fontawesome/css/font-awesome.min.css">
+  <link rel='stylesheet' href='assets/css/jquery-ui.css'>
+  <link rel='stylesheet' href='assets/css/spop.min.css'>
+  <link rel='stylesheet' href='assets/css/tooltipster.css'>
+  <link rel='stylesheet' href='assets/css/chosen.css'>
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<div id="game">
+  <!-- partial:index.partial.html -->
+  <div id="game">
 
-  <div class="upbar-container">
-    <div class="upbar" id=levelbar></div>
-  </div>
-  <br>
-  <div id="sun"></div>
-  <center>
-    <div id="season"></div>
-    <div class="upbar-container" style="width: 250px; float: none; margin: 0 auto;">
-      <div class="upbar" id=seasonbar></div>
+    <div class="upbar-container">
+      <div class="upbar" id=levelbar></div>
     </div>
-  </center>
-  <button id=openMenuBtn>菜单</button>
-  <div id="navbar">
-    <ul>
-      <li id=raceTimeLeft style="text-align: center;"></li>
-      <li><a href="#unlockTab" id=menuUnlock><i class="fa fa-unlock-alt"></i> 解锁</a></li>
-      <li><a href="#upgradesTab" id=menuUpgrades><i class="fa fa-arrow-circle-up"></i> 升级</a></li>
-      <li><a href="#skillTab" id=menuSkill>&#9861; 技能</a></li>
-      <li><a href="#achievementsTab" id=menuAchievements>	&#127942; 成就</a></li>
-      <li><a href="#debtTab" id=menuDebt style="display: none;">债务挑战</a></li>
-      <li><a href="#statsTab" id=menuStats>&#128202; 统计</a></li>
-      <li><a href="#settingsTab"><i class="fa fa-cog fa-spin"></i> 设置</a></li>
-      <li><a href="#creditsTab">&copy; 版权</a></li>
-    </ul>
+    <br>
+    <div id="sun"></div>
+    <center>
+      <div id="season"></div>
+      <div class="upbar-container" style="width: 250px; float: none; margin: 0 auto;">
+        <div class="upbar" id=seasonbar></div>
+      </div>
+    </center>
+    <button id=openMenuBtn>菜单</button>
+    <div id="navbar">
+      <ul>
+        <li id=raceTimeLeft style="text-align: center;"></li>
+        <li><a href="#unlockTab" id=menuUnlock><i class="fa fa-unlock-alt"></i> 解锁</a></li>
+        <li><a href="#upgradesTab" id=menuUpgrades><i class="fa fa-arrow-circle-up"></i> 升级</a></li>
+        <li><a href="#skillTab" id=menuSkill>&#9861; 技能</a></li>
+        <li><a href="#achievementsTab" id=menuAchievements> &#127942; 成就</a></li>
+        <li><a href="#debtTab" id=menuDebt style="display: none;">债务挑战</a></li>
+        <li><a href="#statsTab" id=menuStats>&#128202; 统计</a></li>
+        <li><a href="#settingsTab"><i class="fa fa-cog"></i> 设置</a></li>
+        <li><a href="#creditsTab">&copy; 版权</a></li>
+      </ul>
+    </div>
+
+    <div id="contents">
+      <menu id="unlockTab"></menu>
+      <menu id="upgradesTab" style="overflow: hidden;">
+        <code>要快速购买，请单击按钮并按住enter键.</code><br>
+
+        <button id="moreSpaceBtn" onclick="buyMoreSpace();" class="btn-style"></button>
+        <button id="growthSpeedBtn" onclick="buyMoreGrowthSpeed();" class="btn-style info"></button>
+        <button id="replantUpgradeBtn" onclick="buyReplantChance();" class="btn-style"></button>
+
+        <button onclick="buyMaxEff();" title="费用根据下方单价计算">使用全部金钱购买利润乘数</button>
+
+        <button onclick="buyFill();" id=buyFillBtn class="btn-style info" title="价格：1,000,000">解锁“一键种植”按钮</button>
+      </menu>
+      <menu id="settingsTab">
+        <label for="numberPopUps">弹出收益数字</label>
+        <div id=numberPopUps class=checkbox></div><br>
+        <label for="simplifyNumbers">简化数字</label>
+        <div id=simplifyNumbers class="checkbox active"></div><br>
+        <label for="useSelectedPlant">点击"一键种植"时使用选定的植物.</label>
+        <div id="useSelectedPlant" class="checkbox active"></div><br>
+        <label for="sunEnabled">显示太阳</label>
+        <div id="sunEnabled" class="checkbox active"></div><br>
+        <label for="plantTime">切换时间(百分比/秒)</label>
+        <div id="plantTime" class="checkbox"></div><br>
+        <label for="replantEnable">启用重新种植</label>
+        <div id="replantEnable" class="checkbox active"></div><br>
+        <label for="autoPlantingEnable" class="leftMenu">启用自动种植</label>
+        <div id="autoPlantingEnable" class="checkbox"></div>
+        <br><br><br>
+        <label for="fps" title="(太卡时不妨试试降低FPS)">FPS</label>
+        <select id=fps>
+          <optgroup label="Choose FPS:" id=fpsOption></optgroup>
+        </select><br>
+        <label for="tileSize" title="仅影响土地块外观尺寸">土地尺寸</label>
+        <select id=tileSize>
+          <optgroup label="Tile size:" id=tileSizeOption></optgroup>
+        </select>
+        <br>
+        <p onclick="saveTest();" title="保存进度到浏览器储存"><i class="fa fa-floppy-o" aria-hidden="true"></i> 保存</p>
+        <p onclick="history.go(0);" title="重新加载页面"><i class="fa fa-rotate-right" aria-hidden="true" ></i> 读取</p>
+        <p style="background-color: red;" onclick="reset();">重置游戏进度</p>
+        <p onclick="saveFileDownload();" ><i class="fa fa-floppy-o" aria-hidden="true"></i> 下载存档</p>
+        <p onclick="saveFileUpload();"><i class="fa fa-upload" aria-hidden="true"></i> 上传存档<input type="file"
+            id="saveUploadInput" style="display: none;" onchange="handleFileUpload(event)"></p>
+
+      </menu>
+      <menu id="creditsTab">
+        <ul>
+          <u>创作者:</u>
+          <li>killereks（游戏设计、脚本）</li>
+        </ul>
+        <ul>
+          <u>助手:</u>
+          <li>Richfest (技术 & 创意)</li>
+          <li>LeEclipse (技术 & 创意)</li>
+        </ul>
+      </menu>
+      <menu id=skillTab>
+        <div id=skilltree>
+          <div id="skillpoints"></div>
+          <span class="title">技能树</span>
+        </div>
+      </menu>
+      <menu id=achievementsTab>
+        <div id="achievements">
+          <div id="achievementPercentage" style="margin-bottom: 10px;">Here</div>
+        </div>
+
+      </menu>
+      <menu id=statsTab>
+        <div id="stats"></div>
+      </menu>
+      <menu id=debtTab>
+        <div id="timeLeft"></div>
+        <div id=debtLeft></div>
+        <button id=debtBtn>支付100%的钱</button>
+      </menu>
+    </div>
+
+    <div id="menuQuest">
+      <div id="questTimeLeft"></div>
+      <div id=quest></div>
+    </div>
+
+    <button onclick="fillAll();" disabled id=fillAllBtn>
+      <img src="assets/image/paint-bucket-icon.png" style="width: 25px; height: 25px;">一键种植</button><br>
+    <div id="money"></div>
+    <div id="mps"></div>
+    <select id="plant" style="width: 350px;"></select>
+    <div id="info"></div>
+    <div id=log></div>
+    <div id=map></div>
+
+
+    <div class="ach">
+      <div class="icon"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+      <div class="text_wrap">
+        <div class="title"></div>
+        <span class="detail"></span>
+      </div>
+    </div>
+
+    <img src="assets/image/up-arrow.png" id=arrow style="width: 50px; height: 90px;">
+    <div id=tutorialMsg></div>
+
   </div>
 
-  <div id="contents">
-    <menu id=unlockTab></menu>
-    <menu id="upgradesTab" style="overflow: hidden;">
-      <code>要快速购买，请单击按钮并按住enter键.</code><br>
-
-      <button id=moreSpaceBtn onclick="buyMoreSpace();" class="btn-style"></button>
-      <button id=growthSpeedBtn onclick="buyMoreGrowthSpeed();" class="btn-style info"></button>
-      <button id=replantUpgradeBtn onclick="buyReplantChance();" class="btn-style info"></button>
-      
-      <button onclick="buyMaxEff();">使用全部金钱购买效率</button>
-
-      <button onclick="buyFill();" id=buyFillBtn class="btn-style info" title="价格：一百万.">解锁“一键种植”按钮</button>
-    </menu>
-    <menu id="settingsTab">
-      <label for="numberPopUps">弹出收益数字</label>
-      <div id=numberPopUps class=checkbox></div><br>
-      <label for="simplifyNumbers">简化数字</label>
-      <div id=simplifyNumbers class="checkbox active"></div><br>
-      <label for="useSelectedPlant">点击"一键种植"时使用选定的植物.</label>
-      <div id="useSelectedPlant" class="checkbox active"></div><br>
-      <label for="sunEnabled">显示太阳</label>
-      <div id="sunEnabled" class="checkbox active"></div><br>
-      <label for="plantTime">切换时间(百分比/秒)</label>
-      <div id="plantTime" class="checkbox"></div><br>
-      <label for="replantEnable">启用重新种植</label>
-      <div id="replantEnable" class="checkbox active"></div>
-      <br><br>
-      <label for="fps" title="(太卡时不妨试试降低FPS)">FPS</label>
-      <select id=fps >
-      <optgroup label="Choose FPS:" id=fpsOption></optgroup>
-    </select><br>
-      <label for="tileSize" title="仅影响土地块外观尺寸">土地尺寸</label>
-      <select id=tileSize>
-      <optgroup label="Tile size:" id=tileSizeOption></optgroup>
+  <div id=mainMenu>
+    <center><img src="assets/image/nicubunu_RPG_map_symbols_Farm.png" alt="" class="logo"></center>
+    <br><br><br><br>
+    <center id=gameTitle>Welcome to farming idle v2</center>
+    <br><br>
+    <button class=mainMenuBtn onclick="startGame();">开始游戏</button>
+    <br>
+    <div id="currentChallenge"></div>
+    <br>
+    <label style="float: none;">
+      启用教程?
+      <div class=checkbox id=tutorial></div>
+    </label>
+    <br><br><br>
+    <select style="width: 200px;" id=challengeOption>
+      <option value="无挑战">无挑战</option>
+      <optgroup label="简单挑战">
+        <option value="wheat only">只有小麦</option><!-- wheat only -->
+        <option value="winter only">只有冬天</option><!-- winter only -->
+      </optgroup>
+      <optgroup label="中等挑战">
+        <option value="hideout">藏匿</option><!-- hideout -->
+        <option value="race">竞争</option><!-- race -->
+        <option value="slot loss">土地丢失</option><!-- slot loss -->
+      </optgroup>
+      <optgroup label="困难挑战">
+        <option value="five slots">最多5个土地</option><!-- five slots -->
+        <option value="debt">债务</option><!-- debt -->
+        <option value="quest chaos">任务混乱</option><!-- quest chaos -->
+        <option value="missing plants">植物会损毁</option><!-- missing plants -->
+        <option value="no upgrades">无升级</option><!-- no upgrades -->
+      </optgroup>
     </select>
-      <br>
-      <p onclick="saveTest();"><i class="fa fa-floppy-o" aria-hidden="true"></i> 保存</p>
-      <p onclick="history.go(0);"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> 读取</p>
-      <p style="background-color: red;" onclick="reset();">重置游戏进度</p>
-    </menu>
-    <menu id="creditsTab">
-      <ul>
-        <u>创作者:</u>
-        <li>killereks（游戏设计、脚本）</li>
-      </ul>
-      <ul>
-        <u>助手:</u>
-        <li>Richfest (技术 & 创意)</li>
-        <li>LeEclipse (技术 & 创意)</li>
-      </ul>
-    </menu>
-    <menu id=skillTab>
-      <div id=skilltree>
-        <div id="skillpoints"></div>
-        <span class="title">Skill tree</span>
-      </div>
-    </menu>
-    <menu id=achievementsTab>
-      <div id="achievements">
-        <div id=achievementPercentage>Here</div>
-      </div>
-
-    </menu>
-    <menu id=statsTab>
-      <div id="stats"></div>
-    </menu>
-    <menu id=debtTab>
-      <div id="timeLeft"></div>
-      <div id=debtLeft></div>
-      <button id=debtBtn>Pay 100% of money</button>
-    </menu>
+    <br>
+    <div id="challengeDesc"
+      style="width: 200px; text-align: center; margin: 0 auto; border: 2px double black; padding: 10px;"></div>
+    <br>
+    <br>
+    <select id=difficultySelect>
+      <option>Easy</option>
+      <option disabled>Medium</option>
+      <option disabled>Hard</option>
+    </select>
+    <button onclick="reset();" style="position:absolute;left:10px; bottom: 10px; background-color: red;">重置游戏进度</button>
+    <button onclick="saveFileUpload();" style="position:absolute;left:170px; bottom: 10px;"><i class="fa fa-upload"
+        aria-hidden="true"></i> 上传存档<input type="file" id="saveUploadInput" style="display: none;"
+        onchange="handleFileUpload(event)"></button>
   </div>
-  
-  <div id="menuQuest">
-    <div id="questTimeLeft"></div>
-    <div id=quest></div>
-  </div>
-
-  <button onclick="fillAll();" disabled id=fillAllBtn>
-    <img src="paint-bucket-icon.png" style="width: 25px; height: 25px;">一键种植</button><br>
-  <div id="money"></div>
-  <div id="mps"></div>
-  <select id="plant" style="width: 350px;"></select>
-  <div id="info"></div>
-  <div id=log></div>
-  <div id=map></div>
-
-
-  <div class="ach">
-    <div class="icon"><i class="fa fa-bolt" aria-hidden="true"></i></div>
-    <div class="text_wrap">
-      <div class="title"></div>
-      <span class="detail"></span>
-    </div>
-  </div>
-  
-  <img src="up-arrow.png" id=arrow style="width: 50px; height: 90px;">
-  <div id=tutorialMsg></div>
-
-</div>
-
-<div id=mainMenu>
-  <center><img src="nicubunu_RPG_map_symbols_Farm.png" alt="" class="logo"></center>
-  <br><br><br><br>
-  <center id=gameTitle>Welcome to farming idle v2</center>
-  <br><br>
-  <button class=mainMenuBtn onclick="startGame();">Start</button>
-  <br>
-  <div id="currentChallenge"></div>
-  <br>
-  <label style="float: none;">
-    启用教程?
-    <div class=checkbox id=tutorial></div>
-  </label>
-  <br><br><br>
-  <select style="width: 200px;" id=challengeOption>
-    <option value="无挑战">无挑战</option>
-    <optgroup label="简单挑战">
-      <option value="wheat only">只有小麦</option><!-- wheat only -->
-      <option value="winter only">只有冬天</option><!-- winter only -->
-    </optgroup>
-    <optgroup label="中等挑战">
-      <option value="hideout">藏匿</option><!-- hideout -->
-      <option value="race">竞争</option><!-- race -->
-      <option value="slot loss">土地丢失</option><!-- slot loss -->
-    </optgroup>
-    <optgroup label="困难挑战">
-      <option value="five slots">最多5个土地</option><!-- five slots -->
-      <option value="debt">债务</option><!-- debt -->
-      <option value="quest chaos">任务混乱</option><!-- quest chaos -->
-      <option value="missing plants">植物会损毁</option><!-- missing plants -->
-      <option value="no upgrades">无升级</option><!-- no upgrades -->
-    </optgroup>
-  </select>
-  <br>
-  <div id="challengeDesc" style="width: 200px; text-align: center; margin: 0 auto; border: 2px double black; padding: 10px;"></div>
-  <br>
-  <br>
-  <select id=difficultySelect>
-    <option>Easy</option>
-    <option disabled>Medium</option>
-    <option disabled>Hard</option>
-  </select>
-  <button onclick="reset();" style="position:absolute;left:10px; bottom: 10px; background-color: red;">重置游戏进度</button>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script>
-<script src='https://silvio-r.github.io/spop/dist/spop.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/chosen/1.6.2/chosen.jquery.min.js'></script><script  src="./script.js"></script>
+  <!-- partial -->
+  <script src='assets/js/libs/jquery.min.js'></script>
+  <script src='assets/js/libs/jquery-ui.min.js'></script>
+  <script src='assets/js/libs/spop.min.js'></script>
+  <script src='assets/js/libs/jquery.tooltipster.js'></script>
+  <script src='assets/js/libs/chosen.jquery.min.js'></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
+
 </html>
