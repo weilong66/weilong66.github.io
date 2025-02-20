@@ -1,37 +1,49 @@
 <html>
-    <head>
-        <link rel='stylesheet' type='text/css' href='css/leveleditor.css'>
-    </head>
-    <body>
-        <div id='level_editor'>
-            <div class='header'>
-                <span>Save Level As</span>
-                <input class='save_level_name' value="mylevel">
-                <button class='btn save_btn'>
-                    SAVE
-                </button>
-                <button class='btn back_btn'>
-                    BACK TO MENU
-                </button>
+
+<head>
+    <link rel='stylesheet' type='text/css' href='css/leveleditor.css'>
+    <link rel="shortcut icon" href="./images/favicon.png">
+</head>
+
+<body>
+    <div id='level_editor'>
+        <div class='header'>
+            <span>关卡名称：</span>
+            <input class='save_level_name' value="mylevel">
+            <button class='btn save_btn'>
+                保存
+            </button>
+            <button class='btn back_btn'>
+                返回菜单
+            </button>
+            <button class='btn save_download_btn' title="下载全部已保存的关卡">
+                下载关卡
+            </button>
+            <button class='btn save_upload_btn' title="上传关卡文件">
+                上传关卡
+                <input type="file" id="saveUploadInput" style="display: none;" onchange="handleFileUpload(event)">
+            </button>
+        </div>
+        <div class='lbody'>
+            <div class='levels_list'>
+                <h2>已保存的关卡</h2>
+                <ul>
+                </ul>
             </div>
-            <div class='lbody'>
-                <div class='levels_list'>
-                    <h2>SAVED LEVELS</h2>
-                    <ul>
-                    </ul>
+            <div class='editor'>
+                <div class='obj grid'>
                 </div>
-                <div class='editor'>
-                    <div class='obj grid'>
-                    </div>
-                    <div class='obj toolbox'>
-                    </div>
+                <div class='obj toolbox'>
                 </div>
             </div>
         </div>
-        <script src='js/levelmanager.js'></script>
-        <script src='js/editor.js'></script>
+    </div>
+    <script src='js/levelmanager.js'></script>
+    <script src='js/editor.js'></script>
+    <script src='js/savefile.js'></script>
     <script>
-new LevelEditor('level_editor').init();
+        new LevelEditor('level_editor').init();
     </script>
-    </body>
+</body>
+
 </html>

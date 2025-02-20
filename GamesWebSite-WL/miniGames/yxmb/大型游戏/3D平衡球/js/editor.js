@@ -1,7 +1,8 @@
 function LevelEditor(id) {
     var main = document.getElementById(id);
     var grid = main.getElementsByClassName('grid')[0];
-    var w = 30, h = 30;
+    var w = 30,
+        h = 30;
     var rows = 20;
     var cols = 20;
     var self = this;
@@ -24,10 +25,10 @@ function LevelEditor(id) {
     var svgh = 3 * h;
     var line;
 
-    var svgInit = function() {
+    var svgInit = function () {
         svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svg.setAttribute('width', svgw);
-        svg.setAttribute('height', svgh); 
+        svg.setAttribute('height', svgh);
         svg.style.position = "absolute";
         svg.style.pointerEvents = "none";
 
@@ -43,59 +44,60 @@ function LevelEditor(id) {
 
     svgInit();
 
-    var createColorFill = function() {
+    var createColorFill = function () {
         var colorpicker;
         colorpicker = document.createElement('input');
         colorpicker.style.display = "block";
         colorpicker.type = "color";
-        colorpicker.onmousedown = function() {
+        colorpicker.title = "地面工具，可以设置不同颜色。";
+        colorpicker.onmousedown = function () {
+            // 阻止默认行为
+            event.preventDefault();
             cursel = COLOR_FILL;
         }
         return colorpicker;
     }
 
-    var createPicker = function() {
+    var createPicker = function () {
         var obj = document.createElement('div');
         obj.className = "btn";
-        obj.innerText = "PICKER";
-        obj.onmousedown = function() {
+        obj.innerText = "拾色器";
+        obj.title = "拾取某个地面颜色，拾取后自动切换到地面工具。";
+        obj.onmousedown = function () {
+            // 阻止默认行为
+            event.preventDefault();
             cursel = PICKER;
         }
         return obj;
 
     }
 
-    var createCube = function() {
+    var createCube = function () {
         var obj = document.createElement('div');
         obj.className = "btn";
-        obj.innerText = "CUBE";
-        obj.onmousedown = function() {
+        obj.innerText = "墙";
+        obj.onmousedown = function () {
+            // 阻止默认行为
+            event.preventDefault();
             cursel = CUBE;
         }
         return obj;
     }
 
-    var createCube = function() {
+    var createGoal = function () {
         var obj = document.createElement('div');
         obj.className = "btn";
-        obj.innerText = "CUBE";
-        obj.onmousedown = function() {
-            cursel = CUBE;
-        }
-        return obj;
-    }
-    
-    var createGoal = function() {
-        var obj = document.createElement('div');
-        obj.className = "btn";
-        obj.innerText = "GOAL";
-        obj.onmousedown = function() {
+        obj.innerText = "目标点";
+        obj.title = "吃完金币后需要让平衡球滚到目标点才能完成游戏";
+        obj.onmousedown = function () {
+            // 阻止默认行为
+            event.preventDefault();
             cursel = GOAL;
         }
         return obj;
     }
 
-    var get = function(row, col) {
+    var get = function (row, col) {
         var div = document.createElement('div');
         div.id = "cell" + row * cols + col;
         div.style.position = "absolute";
@@ -116,7 +118,7 @@ function LevelEditor(id) {
         return div;
     }
 
-    var addCoin = function(row, col) {
+    var addCoin = function (row, col) {
         var coin = document.createElement('div');
         coin.className = 'coin';
         coin.style.width = w + "px";
@@ -124,7 +126,7 @@ function LevelEditor(id) {
         divs[row][col].appendChild(coin);
     }
 
-    var addCube = function(row, col) {
+    var addCube = function (row, col) {
         var cube = document.createElement('div');
         cube.className = 'cube';
         divs[row][col].appendChild(cube);
@@ -133,22 +135,42 @@ function LevelEditor(id) {
     var neverball_info;
     var goal_info;
 
-    var resetInfo = function() {
-        neverball_info = {pos : {row:-1, col:-1}, dir:{u:0, v:0}, ball : null, mousedown : false};
-        goal_info = {pos : {row:-1, col:-1}, goal : null};
+    var resetInfo = function () {
+        neverball_info = {
+            pos: {
+                row: -1,
+                col: -1
+            },
+            dir: {
+                u: 0,
+                v: 0
+            },
+            ball: null,
+            mousedown: false
+        };
+        goal_info = {
+            pos: {
+                row: -1,
+                col: -1
+            },
+            goal: null
+        };
     }
 
     resetInfo();
 
     var down = 0;
-    var downpos = {x : 0, y : 0};
+    var downpos = {
+        x: 0,
+        y: 0
+    };
 
-    document.onmouseup = function() {
+    document.onmouseup = function () {
         neverball_info.mousedown = false;
         down = 0;
     }
 
-    var setLine = function(u, v) {
+    var setLine = function (u, v) {
         var r = Math.min(svgw / 2.0, svgh / 2.0);
         neverball_info.dir.u = u;
         neverball_info.dir.v = v;
@@ -156,8 +178,8 @@ function LevelEditor(id) {
         line.setAttribute('y2', svgh / 2 + r * v);
     }
 
-    document.onmousemove = function(e) {
-        if (neverball_info.mousedown == false) return ;
+    document.onmousemove = function (e) {
+        if (neverball_info.mousedown == false) return;
         var mx = e.clientX;
         var my = e.clientY;
         line.setAttribute('x1', svgw / 2);
@@ -175,7 +197,7 @@ function LevelEditor(id) {
         setLine(u, v);
     }
 
-    var addNeverball = function(row, col) {
+    var addNeverball = function (row, col) {
         var prow = neverball_info.pos.row;
         var pcol = neverball_info.pos.col;
         if (prow == -1) {
@@ -184,7 +206,9 @@ function LevelEditor(id) {
             neverball_info.ball = obj;
             setLine(0, -1);
             grid.appendChild(svg);
-            neverball_info.ball.onmousedown = function(e) {
+            neverball_info.ball.onmousedown = function (e) {
+                // 阻止默认行为
+                event.preventDefault();
                 neverball_info.mousedown = true;
                 downpos.x = e.clientX;
                 downpos.y = e.clientY;
@@ -197,12 +221,12 @@ function LevelEditor(id) {
         var b = svg.getBBox();
         var x = col * w + w / 2 - svgw / 2;
         var y = row * h + h / 2 - svgh / 2;
-        svg.style.left = x  + "px";
+        svg.style.left = x + "px";
         svg.style.top = y + "px";
         divs[row][col].appendChild(neverball_info.ball);
     }
-    
-    var addGoal = function(row, col) {
+
+    var addGoal = function (row, col) {
         var prow = goal_info.pos.row;
         var pcol = goal_info.pos.col;
         if (prow == -1) {
@@ -220,115 +244,116 @@ function LevelEditor(id) {
 
     var divs = {};
     var map = {};
-    var mouseEvent = function(row, col, move = false) {
-        if (move ) {
+    var mouseEvent = function (row, col, move = false) {
+        if (move) {
             if (neverball_info.mousedown == true) {
-                return ;
+                return;
             }
         }
         switch (cursel) {
-            case COLOR_FILL:
-                {
-                    map[row][col]["color"] = tools[COLOR_FILL].value;
-                    divs[row][col].style.backgroundColor = tools[COLOR_FILL].value;
-                }
-                break;
-            case PICKER:
-                {
-                    if ("color" in map[row][col]) {
-                        tools[COLOR_FILL].value = map[row][col]["color"];
-                        cursel = COLOR_FILL;
-                    }
-                }
-                break;
-            case COIN_FILL:
-                {
-                    var has = 'coin' in map[row][col] || 'cube' in map[row][col];
-                    if (!has) {
-                        map[row][col]['coin'] = 1;
-                        addCoin(row, col);
-                    }
-                }
-                break;
-            case CUBE:
-                {
-                    var has = 'coin' in map[row][col] || 'cube' in map[row][col];
-                    if (!has) {
-                        map[row][col]['cube'] = 1;
-                        addCube(row, col);
-                    }
-                }
-                break;
-            case DELETE:
-                {
-                    if ('coin' in map[row][col]) {
-                        delete map[row][col]['coin'];
-                        divs[row][col].removeChild(divs[row][col].getElementsByClassName('coin')[0]);
-                    } else if ('cube' in map[row][col]) {
-                        delete map[row][col]['cube'];
-                        divs[row][col].removeChild(divs[row][col].getElementsByClassName('cube')[0]);
-                    } else {
-                        map[row][col] = {};
-                        divs[row][col].style.background = "none";
-                    }
-                }
-                break;
-            case NEVERBALL:
-                {
-                    var has = 'coin' in map[row][col] || 'cube' in map[row][col];
-                    if (!has) {
-                        addNeverball(row, col);
-                        map["neverball"] = {pos : neverball_info.pos, dir : neverball_info.dir};
-                    }
-                }
-                break;
-            case GOAL:
-                {
-                    var has = 'cube' in map[row][col];
-                    if (!has) {
-                        addGoal(row, col);
-                        map["goal"] = {pos : goal_info.pos};
-                    }
-                }
-                break;
-            case NONE:
-                break;
-            default:
-                console.log("Invalid switch case");
-                break;
+            case COLOR_FILL: {
+                map[row][col]["color"] = tools[COLOR_FILL].value;
+                divs[row][col].style.backgroundColor = tools[COLOR_FILL].value;
+            }
+            break;
+        case PICKER: {
+            if ("color" in map[row][col]) {
+                tools[COLOR_FILL].value = map[row][col]["color"];
+                cursel = COLOR_FILL;
+            }
+        }
+        break;
+        case COIN_FILL: {
+            var has = 'coin' in map[row][col] || 'cube' in map[row][col];
+            if (!has) {
+                map[row][col]['coin'] = 1;
+                addCoin(row, col);
+            }
+        }
+        break;
+        case CUBE: {
+            var has = 'coin' in map[row][col] || 'cube' in map[row][col];
+            if (!has) {
+                map[row][col]['cube'] = 1;
+                addCube(row, col);
+            }
+        }
+        break;
+        case DELETE: {
+            if ('coin' in map[row][col]) {
+                delete map[row][col]['coin'];
+                divs[row][col].removeChild(divs[row][col].getElementsByClassName('coin')[0]);
+            } else if ('cube' in map[row][col]) {
+                delete map[row][col]['cube'];
+                divs[row][col].removeChild(divs[row][col].getElementsByClassName('cube')[0]);
+            } else {
+                map[row][col] = {};
+                divs[row][col].style.background = "none";
+            }
+        }
+        break;
+        case NEVERBALL: {
+            var has = 'coin' in map[row][col] || 'cube' in map[row][col];
+            if (!has) {
+                addNeverball(row, col);
+                map["neverball"] = {
+                    pos: neverball_info.pos,
+                    dir: neverball_info.dir
+                };
+            }
+        }
+        break;
+        case GOAL: {
+            var has = 'cube' in map[row][col];
+            if (!has) {
+                addGoal(row, col);
+                map["goal"] = {
+                    pos: goal_info.pos
+                };
+            }
+        }
+        break;
+        case NONE:
+            break;
+        default:
+            console.log("Invalid switch case");
+            break;
         }
     }
 
-    var createCoinFill = function() {
+    var createCoinFill = function () {
         var div = document.createElement('div');
         div.className = "coin";
-        div.onclick = function() {
+        div.title = "金币"
+        div.onclick = function () {
             cursel = COIN_FILL;
         }
         return div;
     }
 
-    var createDelete = function() {
+    var createDelete = function () {
         var div = document.createElement('div');
         div.className = "btn";
-        div.innerText = "DELETE";
-        div.onclick = function() {
+        div.innerText = "删除";
+        div.title = "删除已放置元素，但平衡球和目标点无法删除只能重设位置。";
+        div.onclick = function () {
             cursel = DELETE;
         }
         return div;
     }
 
-    var createNeverball = function() {
+    var createNeverball = function () {
         var div = document.createElement('div');
         div.className = 'btn';
-        div.innerText = "NEVERBALL";
-        div.onclick = function() {
+        div.innerText = "平衡球";
+        div.title = "放置后平衡球后，光标放到平衡球上长按并拖拽可设置初始方向";
+        div.onclick = function () {
             cursel = NEVERBALL;
         }
         return div;
     }
 
-    var createTools = function() {
+    var createTools = function () {
         tools[PICKER] = createPicker();
         tools[DELETE] = createDelete();
         tools[CUBE] = createCube();
@@ -345,7 +370,7 @@ function LevelEditor(id) {
     }
 
 
-    var createCells = function() {
+    var createCells = function () {
         divs = {};
         map = {};
         grid.style.position = "relative";
@@ -365,13 +390,15 @@ function LevelEditor(id) {
 
         for (var i = 0; i < rows; ++i) {
             for (var j = 0; j < cols; ++j) {
-                var o = function(i, j) {
-                    divs[i][j].onmousedown = function() {
+                var o = function (i, j) {
+                    divs[i][j].onmousedown = function () {
+                        // 阻止默认行为
+                        event.preventDefault();
                         down = 1;
                         mouseEvent(i, j);
                     }
 
-                    divs[i][j].onmousemove = function() {
+                    divs[i][j].onmousemove = function () {
                         if (down) mouseEvent(i, j, true);
                     }
 
@@ -382,23 +409,29 @@ function LevelEditor(id) {
 
     }
 
-    this.getLevel = function() {
-        var r = {meta : {rows : rows, cols : cols}, map : map};
+    this.getLevel = function () {
+        var r = {
+            meta: {
+                rows: rows,
+                cols: cols
+            },
+            map: map
+        };
         return r;
     }
 
-    this.save = function(name) {
+    this.save = function (name) {
         lmanager.addLevel(name, this.getLevel());
         lmanager.save();
         displayLevels();
     }
 
-    var deleteLevel = function(name) {
+    var deleteLevel = function (name) {
         lmanager.deleteLevel(name);
         displayLevels();
     }
 
-    var editLevel = function(name) {
+    var editLevel = function (name) {
         var inp = main.getElementsByClassName('save_level_name')[0];
         inp.value = name;
         var level = lmanager.getLevel(name);
@@ -434,7 +467,7 @@ function LevelEditor(id) {
         }
     }
 
-    var displayLevels = function() {
+    var displayLevels = function () {
         var obj = main.getElementsByTagName('ul')[0];
         var levels = lmanager.getLevels();
         obj.innerHTML = "";
@@ -448,11 +481,11 @@ function LevelEditor(id) {
             cross.innerText = 'X';
             cross.className = 'deletebtn';
 
-            var o = function(li, i) {
-                li.onclick = function() {
+            var o = function (li, i) {
+                li.onclick = function () {
                     editLevel(i);
                 }
-                cross.onclick = function(e) {
+                cross.onclick = function (e) {
                     e.stopPropagation();
                     deleteLevel(i);
                 }
@@ -464,24 +497,45 @@ function LevelEditor(id) {
     }
 
 
-    var createSaveTools = function() {
+    var createSaveTools = function () {
         var save_btn = main.getElementsByClassName('save_btn')[0];
-        save_btn.onclick = function() {
+        save_btn.onclick = function () {
             var inp = main.getElementsByClassName('save_level_name')[0];
             self.save(inp.value);
         }
     }
 
-    this.init = function() {
+    /* 创建存档下载工具 */
+    var createSaveDownloadTools = function () {
+        var save_download_btn = main.getElementsByClassName('save_download_btn')[0];
+        save_download_btn.onclick = function () {
+            saveFileDownload();
+        }
+    }
+
+    /* 创建存档上传工具 */
+    var createSaveUploadTools = function () {
+        var save_upload_btn = main.getElementsByClassName('save_upload_btn')[0];
+        save_upload_btn.onclick = function () {
+            saveFileUpload();
+        }
+    }
+
+    /* 初始化 */
+    this.init = function () {
         main.style.position = "relative";
         createCells();
         createTools();
         createSaveTools();
         displayLevels();
+        createSaveDownloadTools();
+        createSaveUploadTools();
         var back_btn = main.getElementsByClassName('back_btn')[0];
-        back_btn.onclick = function() {
+        back_btn.onclick = function () {
             window.location = "index.html";
         }
 
     }
+
+
 }

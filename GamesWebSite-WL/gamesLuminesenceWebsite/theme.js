@@ -1,14 +1,15 @@
-const themeMap = {
+var themeMap = {
   dark: 'light',
   light: 'solar',
   solar: 'dark'
 };
 
-const theme = localStorage.getItem('theme')
+var tmp;
+var theme = localStorage.getItem('theme')
   || (tmp = Object.keys(themeMap)[0],
       localStorage.setItem('theme', tmp),
       tmp);
-const bodyClass = document.body.classList;
+var bodyClass = document.body.classList;
 bodyClass.add(theme);
 
 function toggleTheme() {
@@ -46,7 +47,7 @@ function close() {
 
 if (currentDate < updateDate) {
   updateScreen.style.display = 'block';
-  const themeMap = {};
+  themeMap = {};
 }
 
 if (currentDate < updateDate - 8) {

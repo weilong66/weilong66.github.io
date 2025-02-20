@@ -250,7 +250,7 @@ function Game(container_id, options) {
         dinfo.context.font = "40px Monospace";
         dinfo.context.fillText("LEAPFROG INTERNSHIP PROJECT", dinfo.canvas.width / 2, dinfo.canvas.height / 2);
         dinfo.context.font = "20px Monospace";
-        dinfo.context.fillText("Created by Uttamraj Khanal", dinfo.canvas.width / 2, dinfo.canvas.height / 2 + 40);
+        dinfo.context.fillText("作者：Uttamraj Khanal", dinfo.canvas.width / 2, dinfo.canvas.height / 2 + 40);
     }
     
     var showHelp = function() {
@@ -258,9 +258,9 @@ function Game(container_id, options) {
         dinfo.context.fillRect(0, 0, dinfo.canvas.width, dinfo.canvas.height);
         dinfo.context.fillStyle = "black";
         dinfo.context.font = "20px Monospace";
-        dinfo.context.fillText("CONTROLS: ARROW KEYS, T (toggle tilt mode), ESCAPE / ENTER to return to main menu", dinfo.canvas.width / 2, dinfo.canvas.height / 2);
+        dinfo.context.fillText("控制：方向键(移动)、T(切换倾斜模式)、回车(确认)，ESC键(返回)", dinfo.canvas.width / 2, dinfo.canvas.height / 2);
         dinfo.context.font = "20px Monospace";
-        dinfo.context.fillText("You need to create levels first to play(or import levels somehow)", dinfo.canvas.width / 2, dinfo.canvas.height / 2 + 40);
+        dinfo.context.fillText("你需要先创建关卡才能玩（或以某种方式导入关卡）", dinfo.canvas.width / 2, dinfo.canvas.height / 2 + 40);
     }
 
     var level_sel = 0;
@@ -275,7 +275,7 @@ function Game(container_id, options) {
         if (level_list.length == 0) {
             dinfo.context.font = "20px Monospace";
             dinfo.context.fillStyle = "red";
-            dinfo.context.fillText("No levels found! You need to create some in order to play.", dinfo.canvas.width / 2, dinfo.canvas.height / 2);
+            dinfo.context.fillText("未找到关卡！你需要自己创建一些才能玩.", dinfo.canvas.width / 2, dinfo.canvas.height / 2);
         }
     }
 

@@ -661,8 +661,10 @@ function NeverBall(dinfo) {
             dinfo.context.fillRect(off, off, dinfo.canvas.width - 2 * off, dinfo.canvas.height - 2 * off);
             dinfo.context.fillStyle = "black";
             dinfo.context.font = "40px Monospace";
-            var txt = game_over == WIN ? "LEVEL FINISHED!" : "GAME OVER";
+            var txt = game_over == WIN ? "关卡完成!" : "游戏结束";
             dinfo.context.fillText(txt, dinfo.canvas.width / 2, dinfo.canvas.height / 2);
+            dinfo.context.font = "20px Monospace";
+            dinfo.context.fillText("(按下ESC键返回菜单)", dinfo.canvas.width / 2, dinfo.canvas.height / 2 + 40);
         }
 
 
