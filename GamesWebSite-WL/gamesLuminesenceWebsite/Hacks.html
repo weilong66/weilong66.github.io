@@ -327,9 +327,9 @@
     <a id='top'></a>
     <div class='info'>
       <h2>Hacks</h2>
-      <p>可嵌入的JavaScript，可以在任何页面上通过开发者工具的控制台执行。
-        非常有用，但要注意有些网站可能会因为使用过度而对你的IP进行封禁。
-        其他游戏脚本可以用来提高网站的整体质量。
+      <p>可嵌入的JavaScript脚本，可以在任何页面上通过开发者工具的控制台执行。<br>
+        非常有用，但要注意有些网站可能会因为滥用而对你的IP进行封禁。<br>
+        部分JavaScript脚本可以用来提高网站的整体质量。<br>
         请记住，如果这些JavaScript代码中的任何一个太旧，它们反而可能会破坏网站！</p>
     </div>
     <!-- 
@@ -1127,20 +1127,21 @@
     </div>
     <div class='info'>
       <h1>加密器</h1>
-      <p>想加密您发送的消息吗？只需输入信息并发送即可！输入您想要加密的文本，然后使用自定义密码以更好地保密。然后单击加密按钮获取加密文本</p>
-      ( 解密操作是相同的，但需要正确的密码(如果有的话) )<br />要加密的数据：<br />
-      <textarea id='text' type='text' placeholder='输入要加密的文本' style='display:inline;' class='text-field'></textarea>
+      <p>想加密您发送的消息吗？只需输入信息并发送即可！输入您想要加密的文本，然后使用自定义密码以更好地保密。然后单击加密按钮获取加密文本<br><small>( 解密操作是相同的，但需要正确的密码(如果有的话) )</small>
+      </p>
+      <br />文本：<br />
+      <textarea id='text' type='text' placeholder='输入文本' style='display:inline;' class='text-field'></textarea>
 
 
       <br />密码:<br /> <textarea id='password' type='text' placeholder='输入密码' style='display:inline;'
         class='text-field'></textarea>
 
-      <br /><button onclick='encrypt()' class='btn'>加密</button>
+      <br /><br /><button onclick='encrypt()' class='btn'>加密</button>
 
       <br />加密结果:<br /><span id='EncryptedValue' class="encrypted-decrypted" style="color: red;"></span>
 
-      <br />
-      <button onclick='decrypt()' class='btn encrypted-decrypted'>解密</button>
+      <br /><br />
+      <button onclick='decrypt()' class='btn'>解密</button>
       <br />解密结果: <br /><span id='decrypted' class="encrypted-decrypted" style="color: red;"></span>
     </div>
     <span class='mn'></span>
@@ -1175,7 +1176,7 @@
         <p class='footer-company-about'>
           <span>About</span>
           Making games for those who don't have them.
-          <h6>Some games may not work.</h6>
+        <h6>Some games may not work.</h6>
         </p>
         <div class='footer-icons' style='display: none;'>
           <a href='https://www.facebook.com/www.pknstan.ac.id/' class='icoFacebook' title='Facebook'><i
@@ -1239,23 +1240,33 @@
     document.getElementsByClassName('btn').innerHTML = 'hello';
   }
 
-  // encrypt-decrypt
+  // 加密和解密函数
   function encrypt() {
-    var encrypted = CryptoJS.AES.encrypt(
-      document.getElementById('text').value,
-      document.getElementById('password').value
-    );
-    document.getElementById('EncryptedValue').innerHTML = encrypted;
-    document.getElementById('decrypted').innerHTML = '';
+    var encryptedValue = document.getElementById('text').value;
+    if (encryptedValue) {
+      var encrypted = CryptoJS.AES.encrypt(
+        encryptedValue,
+        document.getElementById('password').value
+      );
+      document.getElementById('EncryptedValue').innerHTML = encrypted;
+      document.getElementById('decrypted').innerHTML = '';
+    }
   }
 
   function decrypt() {
-    var decrypted = CryptoJS.AES.decrypt(
-      document.getElementById('text').value,
-      document.getElementById('password').value
-    ).toString(CryptoJS.enc.Utf8);
-    document.getElementById('decrypted').innerHTML = decrypted;
-    document.getElementById('EncryptedValue').innerHTML = '';
+    var decryptValue = document.getElementById('text').value;
+    if (decryptValue) {
+      var decrypted = CryptoJS.AES.decrypt(
+        decryptValue,
+        document.getElementById('password').value
+      ).toString(CryptoJS.enc.Utf8);
+      if (decrypted) {
+        document.getElementById('decrypted').innerHTML = decrypted;
+        document.getElementById('EncryptedValue').innerHTML = '';
+      }else{
+        showTemporaryMessage("解密失败，请检查输入的加密文本是否正确", 2000);
+      }
+    }
   }
 </script>
 <script>
