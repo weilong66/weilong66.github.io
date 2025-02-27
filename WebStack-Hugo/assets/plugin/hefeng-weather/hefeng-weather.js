@@ -63,8 +63,8 @@ function getLocationAndFetchWeather(key, defaultLocation, adm) {
                 //检查经纬度缓存是否存在且有效
                 const geoCacheDateUsable = checkCacheDate(cachedGeoData);
                 if (!geoCacheDateUsable) {
-                    console.log("使用'位置信息'成功查询到所在城市.");
-                    getWeatherDate(key, `${longitude},${latitude}`, adm, geoCacheKey);
+                    console.log("使用'位置信息'权限成功查询到所在城市经纬度.");
+                    getWeatherDate(key, `${longitude},${latitude}`, "", geoCacheKey);
                 }
             },
             (error) => {
@@ -85,7 +85,7 @@ function getLocationAndFetchWeather(key, defaultLocation, adm) {
             }
         );
     } else {
-        console.warn("此浏览器不支持地理定位(使用默认城市).");
+        console.warn("此浏览器不支持地理定位功能(将使用默认城市).");
         /* 如果浏览器不支持地理定位，则使用配置项的城市天气缓存或使用配置项的locationName重新请求城市天气*/
         // 检查配置项的城市天气缓存是否存在且有效
         const cachedData = JSON.parse(localStorage.getItem(initialCacheKey));
@@ -187,7 +187,7 @@ function getWeatherDate(key, location, adm, cacheKey) {
                 // 更新全局变量
                 weatherData = data.now;
                 locationData = locationData;
-
+                
                 // 显示天气信息
                 displayWeatherInfo();
             })
@@ -203,7 +203,7 @@ function getWeatherDate(key, location, adm, cacheKey) {
 // 显示天气信息的函数
 function displayWeatherInfo() {
     // 获取容器元素
-    const container = document.getElementById("he-plugin-simple");
+    const container = document.getElementById("weather-plugin-simple");
 
     // 创建并插入天气信息
     if (weatherData) {

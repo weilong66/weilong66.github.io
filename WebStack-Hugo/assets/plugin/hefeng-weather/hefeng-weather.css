@@ -58,6 +58,13 @@
 .weather-details{
 	/*指定字体*/
 	font-family: '思源黑体 CN Bold','微软雅黑', sans-serif !important;
+	font-size: 15px;
+}
+
+/* 横向天气插件样式 */
+.weather-details a{
+	/*指定字体*/
+	font-size: 16px !important;
 }
 
 .weather-details ul{

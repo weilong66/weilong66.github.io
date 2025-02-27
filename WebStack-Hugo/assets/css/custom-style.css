@@ -40,6 +40,7 @@ html {
     transition: color .3s, background-color .3s
 }
 
+/* 顶部菜单栏不含(.header-bg)时的样式 */
 .big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a,
 .big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item) {
     color: #ffffff;

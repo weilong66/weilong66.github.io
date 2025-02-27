@@ -120,7 +120,7 @@
                           
                             
 <div class="rounded-circle weather">
-  <div id="he-plugin-simple" style="display: contents">
+  <div id="weather-plugin-simple" style="display: contents">
     <ul class="navbar-nav site-menu" style="margin-right: 16px;">
       <li class="weather-details" style="display: none;">
 
@@ -138,13 +138,18 @@
   </div>
 </div>
 <script defer>
+
   console.log("加载天气插件...");
-  
-  var iframeLi = document.createElement('iframe');
+
+
 
   
-  iframeLi.src = 'https://i.tianqi.com?c=code&id=34&color=%23e6ac0c&icon=1&site=14&lang=cn'; 
-  iframeLi.width = '300';
+  var iframeLi = document.createElement('iframe');
+  iframeLi.id = 'weather-iframeLi';
+
+  
+  iframeLi.src = 'https://i.tianqi.com?c=code&id=34&icon=4&site=15&lang=cn&color=%23ffffff'; 
+  iframeLi.width = '320';
   iframeLi.height = '28';
   iframeLi.scrolling = 'no';
   iframeLi.frameBorder = '0';
@@ -172,6 +177,38 @@
     iframeUl.style.display = 'block';
     console.log("天气插件加载完成！");
   };
+
+  $(function () {
+    var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+    if (night == '1') {
+      setWeatherTextColor('#ffffff');
+    } else {
+      setWeatherTextColor('#010101');
+    }
+     
+    $("#yejian").on('click', function () {
+      let classNames = $(this).find('i').eq(0).attr('class');
+      if (classNames.indexOf('icon-night') > -1) {
+        setWeatherTextColor('#ffffff');
+      } else {
+        setWeatherTextColor('#010101');
+      }
+    });
+  });
+</script>
+<script type='text/javascript'>
+  function setWeatherTextColor(newColor) {
+    
+    var colorPattern = /^#[0-9A-Fa-f]{6}$/;
+
+    
+    if (newColor && colorPattern.test(newColor)) {
+      let $iframeLi = $('#weather-iframeLi'); 
+      let updatedSrc = $iframeLi.attr('src').replace(/color=[^&]+/, 'color=' + encodeURIComponent(newColor));
+      
+      $iframeLi.attr('src', updatedSrc);
+    }
+  }
 </script>
                           
                         
@@ -478,7 +515,7 @@
     (function () {
         
         if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
-            if (new Date().getHours() > 22 || new Date().getHours() < 6) {
+            if (new Date().getHours() > 19 || new Date().getHours() < 6) {
                 $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
                 document.body.classList.remove('io-grey-mode');
                 document.body.classList.add('io-black-mode');
