@@ -148,7 +148,7 @@
   iframeLi.id = 'weather-iframeLi';
 
   
-  iframeLi.src = 'https://i.tianqi.com?c=code&id=34&icon=4&site=15&lang=cn&color=%23ffffff'; 
+  iframeLi.src = 'https://i.tianqi.com?c=code&id=34&icon=0&site=15&lang=cn&color=%23ffffff'; 
   iframeLi.width = '320';
   iframeLi.height = '28';
   iframeLi.scrolling = 'no';
@@ -159,7 +159,7 @@
   
   var iframeUl = document.createElement('iframe');
   
-  iframeUl.src = 'https://i.tianqi.com/?c=code&a=getcode&id=27&icon=1'; 
+  iframeUl.src = 'https://i.tianqi.com/?c=code&a=getcode&id=27&icon=3'; 
   iframeUl.width = '400';
   iframeUl.height = '270';
   iframeUl.frameBorder = '0';
@@ -320,6 +320,7 @@
 <li>baseURL：基础URL，需要设置成你的域名根路径，即访问主页的路径；如果为空，则使用使用相对路径。
 <ul>
 <li>例如：网站地址为 <code>https://yourname.github.io/WebStack-Hugo/</code>，则baseURL也需要设置成该值，否则网站中所有资源路径会出错。</li>
+<li>也可以使用hugo的启动命令参数 <code>--baseURL=</code> 来指定基础URL。</li>
 </ul>
 </li>
 <li>title：网站标题。</li>

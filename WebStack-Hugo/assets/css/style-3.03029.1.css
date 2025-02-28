@@ -2284,7 +2284,7 @@ footer.main-footer {
     border-bottom-color: #fff
 }
 
-/* 首页搜索框标签-样式 */
+/* 搜索框分类菜单-样式 */
 .s-type-list label {
     display: block;
     font-size: 16px;
@@ -2295,15 +2295,26 @@ footer.main-footer {
     padding: 2px 0;
     cursor: pointer;
     transition: .3s;
+
+}
+
+/* 搜索框分类菜单样式 */
+.s-type-list label:hover {
+    background: rgba(104, 104, 104, 0.1);
+}
+
+/* 悬浮搜索框分类菜单样式 */
+#search-list .s-type-list label:hover {
+    color: #f1432c;
+}
+
+/* 首页顶部搜索框分类菜单-样式 */
+#search-list-menu .s-type-list label {
     text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
 }
 
-.s-type-list label:hover {
-    background: rgba(136, 136, 136, .1)
-}
-
-/* 首页搜索框标签-选中before样式 */
-.s-type-list label.active::before {
+/* 首页顶部搜索框分类菜单-选中before样式 */
+#search-list-menu .s-type-list label.active::before {
     /* 使用伪元素需要设置content属性 */
     content: '';
     /* 圆角矩形的宽度 */
@@ -2321,6 +2332,8 @@ footer.main-footer {
     transform: translateX(-50%);
     box-shadow: 1px 2px 3px rgb(0, 0, 0,0.4);
 }
+
+
 
 .s-type-list .tile-lg {
     color: #fff;
@@ -2447,7 +2460,7 @@ footer.main-footer {
         padding: 5px 0
     }
 
-    .search-list {
+    #search-list {
         height: 30px;
         overflow-y: hidden;
         overflow-x: scroll;

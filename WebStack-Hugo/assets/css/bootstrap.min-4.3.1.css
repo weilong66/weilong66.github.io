@@ -6268,19 +6268,15 @@ a.close.disabled {
     overflow-y: auto
 }
 
-/* moedal搜索框样式 */
+/* 悬浮搜索框-通用样式*/
+/* (为了不同兼容性，尽量不要改动这里，改为使用@media来改动不同屏幕大小下的样式)  */
 .modal-dialog-centered {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
     align-items: center;
     min-height: calc(100% - 1rem);
-
-    top: -20%; /* 向上移动 */
-    position: relative; /* 确保 top 属性生效 */
-    transform: translateY(-30%); /* 向上移动 */
-    width: 50%; /* 缩小宽度 */
-    height: 50%; /* 缩小高度 */
+    top: -25%; /* 放置位置向上移动 */
 }
 
 .modal-dialog-centered::before {
@@ -6397,6 +6393,7 @@ a.close.disabled {
     overflow: scroll
 }
 
+/* 适用于屏幕宽度至少为576px或更宽的屏幕(如果电脑、平板等)-样式 */
 @media (min-width:576px) {
     .modal-dialog {
         max-width: 500px;
@@ -6411,8 +6408,9 @@ a.close.disabled {
         max-height: calc(100vh - 3.5rem)
     }
 
+    /* 悬浮搜索框样式 */
     .modal-dialog-centered {
-        min-height: calc(100% - 3.5rem)
+        min-height: calc(100% - 3.5rem);
     }
 
     .modal-dialog-centered::before {
