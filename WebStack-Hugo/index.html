@@ -466,7 +466,6 @@
   </div>
 </div>
 <script defer>
-
   console.log("加载天气插件...");
 
 
@@ -507,21 +506,13 @@
   };
 
   $(function () {
-    var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-    if (night == '1') {
-      setWeatherTextColor('#ffffff');
-    } else {
-      setWeatherTextColor('#010101');
-    }
      
-    $("#yejian").on('click', function () {
-      let classNames = $(this).find('i').eq(0).attr('class');
-      if (classNames.indexOf('icon-night') > -1) {
-        setWeatherTextColor('#ffffff');
-      } else {
-        setWeatherTextColor('#010101');
-      }
-    });
+    
+
+
+     
+    observeClassSetWeatherColor($('.big-header-banner')[0]);
+
   });
 </script>
 <script type='text/javascript'>
@@ -536,6 +527,43 @@
       
       $iframeLi.attr('src', updatedSrc);
     }
+  }
+
+   
+  function observeClassSetWeatherColor(DomElement) {
+    
+    var targetNode = DomElement;
+
+    
+    var config = {
+      attributes: true, 
+      childList: false, 
+      subtree: false, 
+      attributeFilter: ['class'] 
+    };
+
+    
+    var callback = function (mutationsList, observer) {
+      for (var mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          
+          if (mutation.target.className.indexOf('header-bg') > -1 && $('.io-grey-mode').length > 0) {
+            setWeatherTextColor('#010101'); 
+          } else if ($('.io-grey-mode').length > 0) {
+            setWeatherTextColor('#ffffff'); 
+          }
+        }
+      }
+    };
+
+    
+    var observer = new MutationObserver(callback);
+
+    
+    observer.observe(targetNode, config);
+
+    
+    
   }
 </script>
                           
@@ -12354,7 +12382,7 @@
         
         if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
             if (new Date().getHours() > 19 || new Date().getHours() < 6) {
-                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/cai-jihe-kuai-02.jpg)")
                 document.body.classList.remove('io-grey-mode');
                 document.body.classList.add('io-black-mode');
                 document.cookie = "night=1;path=/"
@@ -12364,7 +12392,7 @@
                 $(".mode-ico").removeClass("icon-night");
                 $(".mode-ico").addClass("icon-light");
             } else {
-                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/wallhaven-6dvgm7.png)");
                 document.body.classList.remove('io-black-mode');
                 document.body.classList.add('io-grey-mode');
                 document.cookie = "night=0;path=/";
@@ -12377,7 +12405,7 @@
         } else {
             var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
             if (night == '1') {
-                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/cai-jihe-kuai-02.jpg)")
                 document.body.classList.remove('io-grey-mode');
                 document.body.classList.add('io-black-mode');
                 document.cookie = "night=1;path=/"
@@ -12387,7 +12415,7 @@
                 $(".mode-ico").removeClass("icon-night");
                 $(".mode-ico").addClass("icon-light");
             } else {
-                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/wallhaven-6dvgm7.png)");
                 document.body.classList.remove('io-black-mode');
                 document.body.classList.add('io-grey-mode');
                 document.cookie = "night=0;path=/"
@@ -12415,7 +12443,7 @@
     function switchNightMode() {
         var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
         if (night == '0') {
-            $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
+            $("#search-bg").css("background-image", "url(assets\/images\/background\/cai-jihe-kuai-02.jpg)")
             document.body.classList.remove('io-grey-mode');
             document.body.classList.add('io-black-mode');
             document.cookie = "night=1;path=/"
@@ -12425,7 +12453,7 @@
             $(".mode-ico").removeClass("icon-night");
             $(".mode-ico").addClass("icon-light");
         } else {
-            $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
+            $("#search-bg").css("background-image", "url(assets\/images\/background\/wallhaven-6dvgm7.png)");
             document.body.classList.remove('io-black-mode');
             document.body.classList.add('io-grey-mode');
             document.cookie = "night=0;path=/"
