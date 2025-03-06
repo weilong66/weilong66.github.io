@@ -300,17 +300,27 @@ class GameBoyAdvance {
 			this.WARN("No save data available");
 			return null;
 		}
+		var timestamp = dayjs(new Date()).format("YYYYMMDDHHmmss");
 		if (window.URL) {
 			var url = window.URL.createObjectURL(
 				new Blob([sram.buffer], { type: "application/octet-stream" })
 			);
-			window.open(url);
+			//创建一个a标签下载数据，并且指定文件名及后缀
+			var a = document.createElement('a');
+			a.href = url;
+			a.download = this.rom.title+ "_" + timestamp + '.sav'; // 设置默认文件名和扩展名
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
+			window.URL.revokeObjectURL(url);
 		} else {
 			var data = this.encodeBase64(sram.view);
-			window.open(
-				"data:application/octet-stream;base64," + data,
-				this.rom.code + ".sav"
-			);
+			//创建一个a标签下载数据，并且指定文件名及后缀
+			a.href = 'data:application/octet-stream;base64,' + data;
+			a.download = this.rom.title + "_" + timestamp + ".sav";
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
 		}
 	}
 	storeSavedata() {
@@ -355,7 +365,7 @@ class GameBoyAdvance {
 		this.irq.defrost(frost.irq);
 		this.io.defrost(frost.io);
 	}
-	log(level, message) {}
+	log(level, message) { }
 	setLogger(logger) {
 		this.log = logger;
 	}

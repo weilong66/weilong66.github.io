@@ -1,47 +1,42 @@
 [
     {
-        "name": "休闲游戏.html",
+        "name": "休闲游戏",
         "icon": "",
-        "type": "file"
+        "type": "folder"
     },
     {
-        "name": "全部游戏.html",
+        "name": "动作游戏",
         "icon": "",
-        "type": "file"
+        "type": "folder"
     },
     {
-        "name": "动作游戏.html",
+        "name": "大型游戏",
         "icon": "",
-        "type": "file"
+        "type": "folder"
     },
     {
-        "name": "大型游戏.html",
+        "name": "射击游戏",
         "icon": "",
-        "type": "file"
+        "type": "folder"
     },
     {
-        "name": "射击游戏.html",
+        "name": "手机游戏",
         "icon": "",
-        "type": "file"
+        "type": "folder"
     },
     {
-        "name": "手机游戏.html",
+        "name": "棋牌游戏",
         "icon": "",
-        "type": "file"
+        "type": "folder"
     },
     {
-        "name": "棋牌游戏.html",
+        "name": "消除游戏",
         "icon": "",
-        "type": "file"
+        "type": "folder"
     },
     {
-        "name": "消除游戏.html",
+        "name": "益智游戏",
         "icon": "",
-        "type": "file"
-    },
-    {
-        "name": "益智游戏.html",
-        "icon": "",
-        "type": "file"
+        "type": "folder"
     }
 ]

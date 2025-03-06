@@ -1,0 +1,65 @@
+#floatingListContainer {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* 默认隐藏 */
+}
+
+#gameListContainer {
+    width: 400px;
+    height: 500px;
+    padding: 3px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#gameListContainer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 0px; */
+}
+#gameListContainer li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+    /* width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block; */
+}
+
+#gameListContainer li a:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+
+/* 关闭按钮样式 */
+#closeButton {
+    position: absolute;
+    top: 520px;
+    left: 45%;
+    padding: 10px 10px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+#closeButton:hover {
+    background-color: #e53935;
+}

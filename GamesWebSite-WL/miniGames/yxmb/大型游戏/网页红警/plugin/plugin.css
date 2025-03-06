@@ -1,0 +1,9 @@
+#about-button {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    cursor: pointer;
+    color: rgb(255, 255, 0) !important;
+}
