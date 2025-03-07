@@ -1,11 +1,14 @@
 import os
 import sys
 import json
-import tkinter as tk
-from tkinter import messagebox
+import msvcrt
+
 
 def dir_to_dict(path, depth=0):
     d = {'name': os.path.basename(path), 'type': 'folder', 'children': []}
+    if not os.path.exists(path):
+       return False
+    
     for child in sorted(os.listdir(path)):  # 获取并排序所有子项
         full_path = os.path.join(path, child)  # 构建完整路径
         if os.path.isdir(full_path):  # 只处理子目录
@@ -38,12 +41,13 @@ def read_desc_file(game_dir):
             return file.read().strip()
     return ''  # 如果没有找到描述文件，则返回空字符串
 
-combined_message="";
 def generate_html_from_dict(data):
-    global combined_message # 声明使用全局变量
-    print(f"\n开始识别【根目录/yxmb】目录及子目录结构，将在【./link】目录下生成对应的HTML文件：") #输出提示信息
+    print(f"\n-----开始识别【根目录/yxmb】目录及子目录结构，将在【./link】目录下生成对应的HTML文件：") #输出提示信息
     all_games = []
     for category in data['children']:
+        if not category['children']:
+            print(f"{data['name']}\\{category['name']} 目录为空，已跳过")
+            continue
         html_content = f"""
 <!DOCTYPE HTML>
 <html>
@@ -111,13 +115,12 @@ def generate_html_from_dict(data):
             output_file.write(html_content)
 
         print(f"{output_html_file_path}")
-        combined_message += f"\n{output_html_file_path}" #路径存到统一输出信息对象中
 
     # Generate the combined HTML page
     generate_combined_html(all_games)
+    tree['children'].insert(0,{'name': '全部游戏', 'type': 'folder', 'children':'all_folder'})
 
 def generate_combined_html(games):
-    global combined_message # 声明使用全局变量
     html_content = f"""
 <!DOCTYPE HTML>
 <html>
@@ -166,7 +169,6 @@ def generate_combined_html(games):
         output_file.write(html_content)
 
     print(f"创建总页面： {output_html_file_path}")
-    combined_message += "\n"+output_html_file_path #路径存到统一输出信息对象中
 
 def extract_files_for_json(tree):
     files_list = []
@@ -174,18 +176,22 @@ def extract_files_for_json(tree):
     for category in tree['children']:
         if category['type'] == 'folder':
             files_list.append({
-                "name": category['name'],
+                "name": category['name'] + '.html',# 添加 .html 后缀
                 "icon": "",
                 "type": category['type']
             })
     return files_list
 
+def remove_empty_children(tree):
+    if 'children' in tree:
+        tree['children'] = [remove_empty_children(child) for child in tree['children'] if 'children' in child and child['children']]
+    return tree
+
 def write_tree_to_json(tree, output_file):
-    global combined_message # 声明使用全局变量
-    print(f"\n开始根据HTML文件创建JSON文件") #输出提示信息
+    print(f"\n-----开始根据HTML文件创建JSON文件") #输出提示信息
+    
     # 提取文件信息
     files_list = extract_files_for_json(tree)
-    
     # 确保输出文件所在的目录存在，如果不存在则创建
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     
@@ -193,7 +199,7 @@ def write_tree_to_json(tree, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:  # 打开输出文件，指定编码为utf-8
         json.dump(files_list, f, ensure_ascii=False, indent=4)  # 将文件列表写入JSON文件，支持中文字符，缩进4个空格
     print(f"{relative_path}")
-    combined_message += "\n"+relative_path #路径存到统一输出信息对象中
+    print(f"-----JSON文件生成完成\n")
 
 
 # 获取当前脚本的目录
@@ -205,15 +211,6 @@ def get_base_path():
         # 在常规Python环境中运行时，__file__变量存在且有效
         return os.path.dirname(os.path.abspath(__file__))
         
-
-#显示提示框（用于打包后显示提示）
-def show_message(title,messageText):
-    # 创建Tkinter根窗口（不显示）
-    root = tk.Tk()
-    root.withdraw()  # 隐藏主窗口
-
-    # 显示消息框
-    messagebox.showinfo(title, messageText)
 
 # 获取脚本所在目录
 script_dir = get_base_path()
@@ -231,20 +228,24 @@ root_directory = os.path.join(script_dir, 'yxmb')
 
 # 获取目录结构字典
 tree = dir_to_dict(root_directory)
+if not tree:
+    print("脚本所在目录下未找到yxmb文件夹 或 yxmb文件夹为空，脚本运行结束！")
+    sys.exit(1)
 
 # 生成HTML页面
 generate_html_from_dict(tree)
+
+print(f"-----HTML页面生成完成\n")
 
 # 设置输出文件为脚本所在目录下的data子目录中的file.json
 output_json_file = os.path.join(script_dir, 'data', 'websitePath_New.json')
 
 
 # 生成JSON文件
-write_tree_to_json(tree, output_json_file)
+write_tree_to_json(remove_empty_children(tree), output_json_file)
 
-
-
-show_message("提示","脚本执行完成,已生成文件："+combined_message)
+print(f"\n脚本运行结束，按任意键退出...\n")
+msvcrt.getch()
 
 
 

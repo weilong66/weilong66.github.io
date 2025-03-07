@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="zh">
 
 <head>
 	<meta charset="utf-8" />
@@ -43,7 +43,6 @@
 							<p>全部游戏</p>
 						</a>
 					</li>-->
-
 				</ul>
 				<div align="center">
 					<hr><a id="back-home-link" href="../">返回首页</a>
@@ -52,34 +51,34 @@
 		</div>
 
 		<div class="main-panel">
-			<!-- 顶部导航条
+			<!-- 顶部导航条 -->
 			 <nav class="navbar navbar-transparent navbar-absolute" style="background-color: #fff;">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse">
 							<span class="sr-only">切换导航</span>
-							<span class="icon-bar">123</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
+							<i class="fa fa-bars"></i>
 						</button>
+						<!-- <button type="button" class="navbar-hide" data-toggle="collapse">
+							<span class="sr-only">隐藏导航条</span>
+							<i class="fa fa-eye-slash"></i>
+						</button> -->
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
 						</ul>
 					</div>
 				</div>
-			</nav> -->
+			</nav>
 			<div class="content">
 				<div class="container-fluid">
 					<div class="row" style="margin-top: -15px;">
-						<iframe src="link/全部游戏.html" width="100%" height="100%" name="right"
-							style="border: none;"></iframe>
+						<iframe src="link/全部游戏.html" name="right" width="100%" height="100%" style="border: none;" class="game-page"></iframe>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
+		<button id="full-screen" title="网页全屏" ><i class="fa fa-expand"></i></button>
 </body>
 
 <!--   Core JS Files   -->
@@ -90,7 +89,10 @@
 <!--  Charts Plugin -->
 <script src="js/chartist.min.js"></script>
 
-<script src="js/material-dashboard.js"></script>
+<script src="js/material-dashboard.js"></script><!--  -->
+
+<!-- 后编写的js脚本 -->
+<script src="js/plugin.js"></script>
 
 
 
@@ -105,7 +107,7 @@
 			.then(data => {
 				const navList = document.querySelector('.nav');
 				data.forEach((item, index) => {
-					if (item.type === 'file') {
+					if (item.type === 'folder') {
 						const li = document.createElement('li');
 						if (index === 0) {
 							li.className = 'active';
@@ -118,7 +120,7 @@
 						const i = document.createElement('i');
 						if (item.icon) {
 							i.className = item.icon;
-						}else{
+						} else {
 							i.className = 'fa fa-gamepad';
 						}
 
@@ -140,7 +142,7 @@
 <script type="text/javascript">
 	function navBindingClick() {
 		$(".nav li").click(function () {
-			
+
 			$(".nav li").removeClass("active");
 			$(this).addClass("active");
 

@@ -2,46 +2,51 @@
     {
         "name": "全部游戏.html",
         "icon": "fa fa-gamepad",
-        "type": "file"
+        "type": "folder"
     },
     {
         "name": "休闲游戏.html",
         "icon": "fa fa-modx",
-        "type": "file"
+        "type": "folder"
     },
     {
-        "name": "动作游戏.html",
+        "name": "体育竞速.html",
+        "icon": "fa fa-car",
+        "type": "folder"
+    },
+    {
+        "name": "动作闯关.html",
         "icon": "fa fa-reddit-alien",
-        "type": "file"
+        "type": "folder"
     },
     {
         "name": "射击游戏.html",
         "icon": "fa fa-rocket",
-        "type": "file"
+        "type": "folder"
     },
     {
         "name": "手机游戏.html",
         "icon": "fa fa-mobile",
-        "type": "file"
+        "type": "folder"
     },
     {
         "name": "棋牌游戏.html",
         "icon": "fa fa-delicious",
-        "type": "file"
+        "type": "folder"
     },
     {
         "name": "消除游戏.html",
         "icon": "fa fa-houzz",
-        "type": "file"
+        "type": "folder"
     },
     {
         "name": "益智游戏.html",
         "icon": "fa fa-twitch",
-        "type": "file"
+        "type": "folder"
     },
     {
         "name": "大型游戏.html",
         "icon": "fa fa-th-large",
-        "type": "file"
+        "type": "folder"
     }
 ]

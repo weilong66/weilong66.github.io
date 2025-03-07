@@ -12,7 +12,7 @@
   background: #fff;
   padding: 10px;
   min-width: 200px;
-  margin: 22px 0 0 2.1%;
+  margin: 20px 0 0 2.1%;
   float: left;
   overflow: hidden;
   transition: all .3s;
@@ -76,4 +76,16 @@
 
 .box a.togo:hover {
   background-color: #a1a1a1;
+}
+
+/* 适配小屏幕设备 */
+@media (max-width: 991px) {
+  .main .box .item {
+    min-width: 40%;
+    margin: 16px 0 0 2.1%;
+  }
+
+  .main .box .item .desc {
+    height: 40px;
+  }
 }

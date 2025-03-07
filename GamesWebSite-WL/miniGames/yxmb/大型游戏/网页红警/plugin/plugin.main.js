@@ -10,6 +10,7 @@ $(function(){
                 id: 'about-button',
                 href: './plugin/content/about.html',
                 target: '_blank',
+                title: '详细说明',
                 text: 'About' // 给新按钮添加一些文本
             });
 

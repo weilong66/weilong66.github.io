@@ -2030,7 +2030,7 @@ pre code {
     margin-left: -15px
 }
 
-
+/* 
 .row iframe {
     position: absolute;
     top: 1%;
@@ -2038,7 +2038,45 @@ pre code {
     width: 98%;
     height: 98%;
     border: none;
-  }
+  } */
+
+.row iframe.game-page{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    width: 98%;
+    height: 98%;
+    border: none;
+}
+
+/* 游戏页面部分-网页全屏 */
+.row iframe.game-page-full{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#full-screen{
+    position: fixed;
+    z-index: 1000;
+    top: 20px;
+    left: -26px;
+    padding: 0px;
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
+}
+#full-screen:hover{
+    left: 0;
+    opacity: 1;
+}
 
 .col-lg-1,
 .col-lg-10,
@@ -5426,10 +5464,10 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .navbar-toggle {
     position: relative;
     float: right;
-    padding: 9px 10px;
-    margin-top: 8px;
+    /* padding: 9px 10px; */
+    /* margin-top: 8px; */
     margin-right: 15px;
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
     background-color: transparent;
     background-image: none;
     border: 1px solid transparent;
