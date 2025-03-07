@@ -13,6 +13,28 @@ $(function () {
             $gamePage.css('top', '0');
         }
     })
+
+    /* 阻止触摸屏长按时间 */
+    document.addEventListener('touchstart', function(event) {
+        // 记录触摸开始的时间
+        event.target.startTouchTime = new Date().getTime();
+    }, { passive: false });
+    
+    document.addEventListener('touchend', function(event) {
+        // 获取当前时间
+        var endTouchTime = new Date().getTime();
+        // 如果触摸持续时间很短，则认为不是长按
+        if (endTouchTime - event.target.startTouchTime < 500) {
+            return;
+        }
+        // 阻止默认行为，比如显示上下文菜单
+        event.preventDefault();
+    }, { passive: false });
+    
+    // 对于一些浏览器，可能还需要阻止contextmenu事件
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    }, { passive: false });
 })
 
 function switchFullScreen(element) {
