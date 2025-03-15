@@ -321,27 +321,27 @@
         <h1 class="mt-5"></h1>
         <div class="content">
             <h1 id="开始使用">🚀开始使用</h1>
-<h2 id="本地安装部署">本地安装部署</h2>
+<h2 id="一本地安装部署">一、本地安装部署</h2>
 <h3 id="1安装配置">1、安装配置</h3>
 <ol>
 <li>克隆项目到本地</li>
 <li>修改 <code>config.toml</code> 配置项,按照你自己的需求修改。</li>
 <li>在 <code>webstack.yml</code> 中添加新网站，修改和删除已有网站。</li>
-<li>在项目根目录下执行 <code>hugo</code>，执行后等待hugo生成静态文件，静态文件存放在根目录下 <code>public</code> 文件夹中。
+<li>在项目根目录下执行 <code>hugo</code> 命令，命令执行后等待hugo生成静态文件，静态文件默认生成在项目根目录下 <code>public</code> 文件夹中。
 <ul>
 <li>注意，项目附带的hugo为Window版本，其它系统请自行下载替换成你的系统支持的<a href="https://github.com/gohugoio/hugo/releases">Hugo</a>版本。</li>
 </ul>
 </li>
-<li>可以执行下面命令运行一个开发服务器，用于实时预览网站效果。（<strong>不建议使用该服务器部署网站</strong>）
+<li>可以执行下面命令运行一个开发服务器，用于实时预览网站修改效果。（<strong>不建议使用该服务器部署网站</strong>）
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo server
 </span></span></code></pre></div></li>
 </ol>
 <h3 id="2本地部署">2、本地部署</h3>
 <ol>
-<li>网站效果满意后，执行 <code>hugo.exe</code> 生成静态文件。</li>
-<li>将在根目录下 <code>public</code> 文件夹中生成的静态文件托管到<strong>Nginx</strong>或其它Web服务器上即可。</li>
+<li>网站修改到满意后，在项目根目录下执行 <code>hugo</code> 命令生成静态文件。</li>
+<li>将项目根目录下 <code>public</code> 文件夹中生成的静态文件托管到 <a href="https://nginx.org/en/download.html">Nginx</a> 或其它Web服务器上即可。</li>
 </ol>
-<h2 id="使用githubio和githubactions自动部署">使用github.io和GitHubActions自动部署</h2>
+<h2 id="二使用githubio和githubactions自动部署">二、使用github.io和GitHubActions自动部署</h2>
 <ol>
 <li><code>fork</code> 或 <code>clone</code> 此项目到你的GitHub仓库。</li>
 <li>从你的GitHub仓库中克隆项目到本地</li>
@@ -376,9 +376,10 @@
 <li>Github中创建一个新项目，名称设置为 <code>&lt;你的用户名&gt;.github.io</code></li>
 <li>配置完成后，每次本地推送项目到远程仓库的<strong>main</strong>分支时，就会自动通过GitHubActions下载运行hugo生成静态资源，然后将静态资源推送到<code>&lt;你的用户名&gt;.github.io</code>远程仓库中。</li>
 </ol>
+<hr>
 <h1 id="配置说明">🛠️配置说明</h1>
 <h2 id="configtoml">config.toml</h2>
-<p>主要的配置信息都集成到了 <code>config.toml</code>，一键完成各种自定义的配置。<br/>
+<p>主要的配置信息都集成到了 <code>config.toml</code>，一个配置文件即可完成各种自定义的配置。<br/>
 每个配置项都有注释，这里不再解释。</p>
 <p>建议修改的配置项：</p>
 <ul>
@@ -395,9 +396,9 @@
 <h2 id="webstackyml">webstack.yml</h2>
 <p>导航的各个信息都集成在 <code>data</code> 文件夹中<code>.yml</code>后缀文件中，方便后续增删改动。</p>
 <ul>
-<li>webstack.yml：所有网站导航信息。</li>
-<li>headers.yml：友情链接中的网站信息。</li>
-<li>friendlinks.yml：配置顶部“关于”菜单下的网站信息。</li>
+<li><strong>webstack.yml</strong>：所有收录的网站导航信息。</li>
+<li><strong>headers.yml</strong>：网站底部友情链接中的网站信息。</li>
+<li><strong>friendlinks.yml</strong>：配置顶部导航条的选项及链接。</li>
 </ul>
 <p>具体参数说明：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#f92672">taxonomy</span>: <span style="color:#ae81ff">常用网站                       </span> <span style="color:#75715e"># 左侧导航条顶级菜单名称。</span>
@@ -409,13 +410,13 @@
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">logo</span>: <span style="color:#ae81ff">邮箱.png                   </span> <span style="color:#75715e"># 网站Logo</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">http://mail.email.com/      </span> <span style="color:#75715e"># 网站URL</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">邮箱网站。          </span> <span style="color:#75715e"># 网站介绍</span>
-</span></span></code></pre></div><p><strong>icon</strong>：左侧导航条顶级菜单最左侧图标。使用<a href="https://fontawesome.com/icons">Font Awesome 6.7.2</a>图标，直接输入图标对应名称即可加载。</p>
-<p><strong>logo</strong>: 网站logo。</p>
+</span></span></code></pre></div><p><strong>icon</strong>：左侧导航条菜单项的图标。使用 <a href="https://fontawesome.com/icons">Font Awesome</a> 图标，直接输入图标名称即可。</p>
+<p><strong>logo</strong>: 网站的logo。</p>
 <ul>
 <li>默认使用 <code>config.toml</code> 中的 <code>baseURL</code>+<code>logosPath</code> 配置值作为前缀，拼接 <code>logo</code> 的值作为网站LOGO图片的资源路径。</li>
-<li>如果使用 <code>/</code> 开头，则只使用 <code>config.toml</code> 中的 <code>baseURL</code> 配置值作为前缀，拼接 <code>logo</code> 的值作为完整URL设置为图片路径。</li>
+<li>如果使用 <code>/</code> 开头，则使用 <code>config.toml</code> 中的 <code>baseURL</code> 配置值作为前缀，拼接 <code>logo</code> 的值作为完整URL设置为图片路径。</li>
 <li>如果使用 <code>http://</code> 或 <code>https://</code> 开头，则直接将 <code>logo</code> 的值作为完整URL设置为图片路径。</li>
-<li>如果不设置值，且 <code>config.toml</code> 中的 <code>websiteLogo</code> 值为 <code>true</code>，则会使用 <code>url</code> 的值拼接 <code>favicon.ico</code> 作为网站logo图片的资源路径。<br/>（因为大部分网站logo路径都是 <code>https://&lt;网站域名&gt;/favicon.ico</code>）</li>
+<li>如果不设置值，且 <code>config.toml</code> 中的 <code>websiteLogo</code> 值为 <code>true</code>，则会使用 <code>url</code> 的值拼接 <code>favicon.ico</code> 作为网站logo图片的资源路径。<br/>（因为大部分网站都会有一个 <code>favicon.ico</code> 图标。</li>
 </ul>
 
         </div>

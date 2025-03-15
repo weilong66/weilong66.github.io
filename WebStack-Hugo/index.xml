@@ -19,7 +19,7 @@
       <link>https://weilong66.github.io/WebStack-Hugo/page/docs/start_zh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://weilong66.github.io/WebStack-Hugo/page/docs/start_zh/</guid>
-      <description>🚀开始使用 本地安装部署 1、安装配置 克隆项目到本地 修改 config.toml 配置项,按照你自己的需求修改。 在 webstack.yml 中添加新网站，修改和删除已有网站。 在项目根目录下执行</description>
+      <description>🚀开始使用 一、本地安装部署 1、安装配置 克隆项目到本地 修改 config.toml 配置项,按照你自己的需求修改。 在 webstack.yml 中添加新网站，修改和删除已有网站。 在项目根目录下</description>
     </item>
   </channel>
 </rss>
