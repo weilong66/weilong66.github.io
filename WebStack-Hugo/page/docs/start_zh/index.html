@@ -27,6 +27,7 @@
         type="text/css" media="all" />
     <link rel="stylesheet" id="fortawesome-css" href="https://weilong66.github.io/WebStack-Hugo/assets/icon/fontawesome-free-6.7.2-web/css/all.min.css" type="text/css" />
     <script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.min-3.2.1.js" id="jquery-js"></script>
+    <script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/lib/qrcode.min.js" id="jquery-js"></script>
     
      
     
@@ -87,29 +88,65 @@
                         <ul class="navbar-nav site-menu" style="margin-right: 16px;">
                             
                             <li >
-                                <a href="/WebStack-Hugo/">
+
+                                
+                                
+                                    
+                                    
+                                    
+                                    <a href="https://weilong66.github.io/WebStack-Hugo/">
+                                
                                     <i class="fa fa-home fa-lg mr-2"></i>
                                     <span>首页</span>
                                 </a>
+
                                 <ul class="sub-menu">
                                     
                                 </ul>
                             </li>
                             
                             <li class="menu-item-has-children" >
-                                <a href="">
+
+                                
+                                
+                                    <a href="">
+                                
                                     <i class="fa fa-cog fa-lg mr-2"></i>
                                     <span>关于</span>
                                 </a>
+
                                 <ul class="sub-menu">
                                     
-                                    <li><a href="/WebStack-Hugo/page/docs/start_zh/">教程</a></li>
+                                    <li>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <a href="https://weilong66.github.io/WebStack-Hugo/page/docs/start_zh/">教程</a>
+                                        
+                                    </li>
                                     
-                                    <li><a href="https://github.com/weilong66/WebStack-Hugo-WL">源码</a></li>
+                                    <li>
+                                        
+                                        
+                                        <a href="https://github.com/weilong66/WebStack-Hugo-WL">源码</a>
+                                        
+                                    </li>
                                     
-                                    <li><a href="javascript-load-asteroidsa-script">彩蛋</a></li>
+                                    <li>
+                                        
+                                        
+                                        <a href="javascript-load-asteroidsa-script">小飞机</a>
+                                        
+                                    </li>
                                     
-                                    <li><a href="javascript-load-floating-widget-script">宠物</a></li>
+                                    <li>
+                                        
+                                        
+                                        <a href="javascript-load-floating-widget-script">小宠物</a>
+                                        
+                                    </li>
                                     
                                 </ul>
                             </li>
@@ -117,8 +154,8 @@
                         </ul>
                         
                         
-                          
-                            
+                        
+                        
 <div class="rounded-circle weather">
   <div id="weather-plugin-simple" style="display: contents">
     <ul class="navbar-nav site-menu" style="margin-right: 16px;">
@@ -238,7 +275,7 @@
     
   }
 </script>
-                          
+                        
                         
                         
                     </div>
@@ -264,9 +301,9 @@
                         </li>
                         
                         
-                         
+
                         
-                        
+
                         <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4">
                             <a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i
                                     class="iconfont icon-classification icon-2x"></i></a>
@@ -397,42 +434,50 @@
         img{max-width:100%;}
     </style>
 
-        <footer class="main-footer footer-type-1 text-xs">
-            <div id="footer-tools" class="d-flex flex-column">
-                
-                <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
-                    <i class="iconfont icon-to-up"></i>
-                </a>
-                
+<footer class="main-footer footer-type-1 text-xs">
+    <div id="footer-tools" class="d-flex flex-column">
+        
+        <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+            <i class="iconfont icon-to-up"></i>
+        </a>
+        
 
-                
-                <a href="javascript:" data-toggle="modal" data-target="#search-modal" class="btn rounded-circle m-1"
-                    rel="search" one-link-mark="yes">
-                    <i class="iconfont icon-search"></i>
-                </a>
-                
+        
+        <a href="javascript:" data-toggle="modal" data-target="#search-modal" class="btn rounded-circle m-1"
+            rel="search" one-link-mark="yes">
+            <i class="iconfont icon-search"></i>
+        </a>
+        
 
-                
-                
-                <a href="javascript:" onclick="window.location.href='javascript:switchNightMode()'"
-                    class="btn rounded-circle switch-dark-mode m-1" id="yejian" data-toggle="tooltip"
-                    data-placement="left" title="夜间模式">
-                    <i class="mode-ico iconfont icon-night"></i>
-                </a>
-                
-                
-            </div>
-            <div class="footer-inner">
-                <div class="footer-text">本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系邮箱：zsetang@qq.com <br/>© 2021 - 2025 By <a href="https://github.com/shenweiyan/WebStack-Hugo">WebStack-Hugo</a> | <a href="https://www.bioitee.com/">Bio IT 爱好者</a> <br/>
-                </div>
-            </div>
-        </footer>
+        
+        <a href="javascript:" onclick="window.location.href='javascript:switchQrcodeWidget()'" 
+            id="qr-code" class="btn rounded-circle m-1" data-toggle="tooltip" data-placement="left"
+            title="获取当前页面二维码">
+            <i class="fas fa-qrcode"></i>
+        </a>
+        
+
         
         
+        <a href="javascript:" onclick="window.location.href='javascript:switchNightMode()'"
+            class="btn rounded-circle switch-dark-mode m-1" id="yejian" data-toggle="tooltip" data-placement="left"
+            title="夜间模式">
+            <i class="mode-ico iconfont icon-night"></i>
+        </a>
+        
+        
+    </div>
+    <div class="footer-inner">
+        <div class="footer-text">本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系邮箱：zsetang@qq.com <br/>© 2021 - 2025 By <a href="https://github.com/shenweiyan/WebStack-Hugo">WebStack-Hugo</a> | <a href="https://www.bioitee.com/">Bio IT 爱好者</a> <br/>
+        </div>
+    </div>
+</footer>
+
+
 <link rel="stylesheet" id="floating-widget-css" href="https://weilong66.github.io/WebStack-Hugo/assets/plugin/floating-widget/floating-widget.css"
     type="text/css" />
 
-<div class="floating-widget">
+<div class="floating-widget" id="floating-widget" >
     
      <div class="floating-widget-div" style="display: none;">
         
@@ -459,10 +504,57 @@
 </script>
 
 
-        
 
-        </div>
-        </div>
+
+
+
+
+<div class="floating-widget" id="floating-qrcode" style="display: none;">
+    
+    <div id="qrcode"></div>
+</div>
+
+<script type="text/javascript">
+    
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: window.location.href,
+        width: 128,
+        height: 128,
+        colorDark: "#000000", 
+        colorLight: "#ffffff", 
+        correctLevel: QRCode.CorrectLevel.H 
+    });
+
+    
+
+    function makeCode(text) {
+        if (text) {
+            
+            qrcode.makeCode(text);
+        }
+    }
+
+    
+
+    function switchQrcodeWidget(){
+        
+        if ($('#floating-qrcode').is(':hidden')) {
+            
+            $('#floating-qrcode').show();
+            
+            makeCode(window.location.href);
+        } else {
+            
+            $('#floating-qrcode').hide();
+        }
+    }
+</script>
+
+
+
+
+</div>
+</div>
 
 <script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.ui.touch-punch.min-0.2.2.js"
     id='jqueryui-touch-js'></script>

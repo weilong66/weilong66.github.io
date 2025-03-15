@@ -79,7 +79,7 @@ function togglefloatingWidget() {
 var removeTimer = null;
 /* 禁用 浮动小部件 函数 */
 function disablefloatingWidget() {
-  let $floatingWidgetIframe = $("iframe.floating-widget-iframe");
+  let $floatingWidgetIframe = $(".floating-widget-div");
   if ($floatingWidgetIframe.length > 0) {
     console.log("禁用浮动小部件.");
     // 隐藏浮动小部件
@@ -90,8 +90,8 @@ function disablefloatingWidget() {
     }
     //设置新定时器，指定时间后移除以节省资源
     removeTimer = setTimeout(() => {
-      // 移除浮动小部件
-      $floatingWidgetIframe.remove();
+      // 清空浮动小部件内元素
+      $floatingWidgetIframe.empty();
       // 移除后将定时器设为空
       removeTimer = null;
       console.log("浮动小部件长时间未启用，为节省资源已移除.")
