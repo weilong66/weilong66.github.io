@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bentham&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Game</title>
+</head>
+<body>
+    <div id="restart-screen">
+        <div id="high-score"></div>
+        <button id="restart-button" onclick="init()">START</button>
+		<div id="descText">
+			按下鼠标左键增加重力松开恢复；<br/>
+			目标：让球在圆圈内滚动时，找准合适时机增加和恢复重力以增加球的动量，来让球击中红点避开黑点.<br/>
+			击中红点得分并增加时间，击中黑点不得分并减少时间。
+		</div>
+    </div>
+    <div id="score-UI">
+        <div id="score"></div>
+        <div id="health">
+            <span id="health-bar"></span>
+        </div>
+    </div>
+    
+    <canvas id="canvas">  
+    </canvas>
+    <script src="script.js"></script>
+</body>
+</html>

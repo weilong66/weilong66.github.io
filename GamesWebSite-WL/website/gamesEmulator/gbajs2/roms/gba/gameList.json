@@ -1,0 +1,74 @@
+{
+    "gba": [
+        {
+            "name": "龙珠大冒险(通关存档)",
+            "gamePath": "./roms/gba/dragon_ball_advance_adventure/龙珠大冒险.gba",
+            "savePath": "./roms/gba/dragon_ball_advance_adventure/龙珠大冒险(通关存档).sav"
+        },
+        {
+            "name": "节奏天国(全金牌存档)",
+            "gamePath": "./roms/gba/rhythm_tengoku/节奏天国.gba",
+            "savePath": "./roms/gba/rhythm_tengoku/节奏天国全金牌存档.sav"
+        },
+        {
+            "name": "高级战争1(完美存档)",
+            "gamePath": "./roms/gba/advance_wars/高级战争1[千岛 & 高级战争吧](v1.03)[简](US)(42Mb).gba",
+            "savePath": "./roms/gba/advance_wars/高级战争1_个人完美存档.sav"
+        },
+        {
+            "name": "高级战争2(完美存档)",
+            "gamePath": "./roms/gba/advance_wars/高级战争2_黑洞的升起_完全汉化版_V1.02.gba",
+            "savePath": "./roms/gba/advance_wars/高级战争2_美版_修改出来的全黄金存档.sav"
+        },
+        {
+            "name": "瓦里奥制造(通关存档)",
+            "gamePath": "./roms/gba/WarioWare/瓦里奥制造.gba",
+            "savePath": "./roms/gba/WarioWare/瓦里奥制造(通关存档).sav"
+        },
+        {
+            "name": "马里奥赛车",
+            "gamePath": "./roms/gba/马里奥赛车/马里奥赛车.gba",
+            "savePath": ""
+        },
+        {
+            "name": "GT3锦标赛",
+            "gamePath": "./roms/gba/GT3锦标赛/GT3锦标赛.gba",
+            "savePath": ""
+        },
+        {
+            "name": "合金弹头",
+            "gamePath": "./roms/gba/合金弹头/合金弹头.gba",
+            "savePath": ""
+        },
+        {
+            "name": "拳皇EX2",
+            "gamePath": "./roms/gba/拳皇/拳皇EX2.gba",
+            "savePath": ""
+        },
+        {
+            "name": "街头霸王ZERO3",
+            "gamePath": "./roms/gba/街头霸王/街头霸王ZERO3.gba",
+            "savePath": ""
+        },
+        {
+            "name": "快打旋风One",
+            "gamePath": "./roms/gba/快打旋风/快打旋风One.gba",
+            "savePath": "./roms/gba/"
+        },
+        {
+            "name": "双截龙",
+            "gamePath": "./roms/gba/双截龙/双截龙.gba",
+            "savePath": ""
+        },
+        {
+            "name": "口袋妖怪弹珠台-红宝石&蓝宝石",
+            "gamePath": "./roms/gba/口袋妖怪弹珠台/口袋妖怪弹珠台_红宝石蓝宝石.gba",
+            "savePath": ""
+        },
+        {
+            "name": "超级马里奥弹珠台",
+            "gamePath": "./roms/gba/超级马里奥弹珠台/超级马里奥弹珠台.gba",
+            "savePath": ""
+        }
+    ]
+}

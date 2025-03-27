@@ -1,0 +1,134 @@
+* {
+    margin:0px;
+    padding:0px;
+    font-family:Monospace;
+}
+
+.editor {
+    margin-top:5px;
+}
+
+.header > div {
+    display:inline-block;
+}
+
+.header {
+    margin-top:10px;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+.obj {
+    display:inline-block;
+    vertical-align:top;
+}
+
+.levels_list ul {
+    list-style:none;
+}
+
+
+.levels_list ul li:hover {
+    background:grey;
+    color:white;
+}
+
+.lbody > div {
+    display:inline-block;
+    vertical-align:top;
+}
+
+.lbody {
+    text-align:center;
+}
+
+#level_editor {
+}
+
+.btn {
+    cursor:pointer;
+    border:none;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:15px;
+    padding-right:15px;
+    background:grey;
+    color:white;
+}
+
+.btn:hover {
+    background:silver;
+}
+
+.coin {
+    margin:0 auto;
+    width:40px;
+    height:40px;
+    background:orange;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.coin:hover {
+    background:grey;
+}
+
+.cube {
+    position:absolute;
+    width:60%;
+    height:60%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    border:1px solid black;
+    background:grey;
+}
+
+.neverball {
+    position:absolute;
+    margin:0 auto;
+    width:80%;
+    height:80%;
+    background:black;
+    border-radius:50%;
+    cursor:pointer;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+
+.deletebtn {
+    position:absolute;
+    padding-left:3px;
+    padding-right:3px;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    display:none;
+}
+
+.deletebtn:hover {
+    outline:1px solid white;
+}
+
+.level-li:hover > div {
+    display:block;
+}
+
+.level-li {
+    background:skyblue;
+    padding:5px;
+    cursor:pointer;
+    text-align:left;
+}
+
+.goal {
+    display:block;
+    position:absolute;
+    width:80%;
+    height:80%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    user-select:none;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WL游戏导航</title>
+    <link>https://weilong66.github.io/GameWebsite-WL/</link>
+    <description>Recent content on WL游戏导航</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <atom:link href="https://weilong66.github.io/GameWebsite-WL/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于网站</title>
+      <link>https://weilong66.github.io/GameWebsite-WL/about/</link>
+      <pubDate>Tue, 28 Jul 2020 19:27:08 +0800</pubDate>
+      <guid>https://weilong66.github.io/GameWebsite-WL/about/</guid>
+      <description>这是Hugo版WebStack主题 本项目是基于纯静态的网址导航网站webstack.cc 制作的Hogo主题，主题安装后，将exampleSi</description>
+    </item>
+  </channel>
+</rss>

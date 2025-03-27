@@ -1,0 +1,20 @@
+#play-pause-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* 音量滑块样式 */
+#volume-slider {
+    gap:10px;
+    padding:0px !important;
+}
+
+#volume-button {
+    margin-right: -12px;
+    margin-left: 14px;
+    width: 22px;
+    cursor: pointer;
+    font-size: 18px;
+}
