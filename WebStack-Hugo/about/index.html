@@ -638,7 +638,7 @@
         
         if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
             if (new Date().getHours() > 19 || new Date().getHours() < 6) {
-                $("#search-bg").css("background-image", "url(assets\/images\/background\/cai-jihe-kuai-02.jpg)")
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
                 document.body.classList.remove('io-grey-mode');
                 document.body.classList.add('io-black-mode');
                 document.cookie = "night=1;path=/"
@@ -648,7 +648,7 @@
                 $(".mode-ico").removeClass("icon-night");
                 $(".mode-ico").addClass("icon-light");
             } else {
-                $("#search-bg").css("background-image", "url(assets\/images\/background\/wallhaven-6dvgm7.png)");
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
                 document.body.classList.remove('io-black-mode');
                 document.body.classList.add('io-grey-mode');
                 document.cookie = "night=0;path=/";
@@ -661,7 +661,7 @@
         } else {
             var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
             if (night == '1') {
-                $("#search-bg").css("background-image", "url(assets\/images\/background\/cai-jihe-kuai-02.jpg)")
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
                 document.body.classList.remove('io-grey-mode');
                 document.body.classList.add('io-black-mode');
                 document.cookie = "night=1;path=/"
@@ -671,7 +671,7 @@
                 $(".mode-ico").removeClass("icon-night");
                 $(".mode-ico").addClass("icon-light");
             } else {
-                $("#search-bg").css("background-image", "url(assets\/images\/background\/wallhaven-6dvgm7.png)");
+                $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
                 document.body.classList.remove('io-black-mode');
                 document.body.classList.add('io-grey-mode');
                 document.cookie = "night=0;path=/"
@@ -699,7 +699,7 @@
     function switchNightMode() {
         var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
         if (night == '0') {
-            $("#search-bg").css("background-image", "url(assets\/images\/background\/cai-jihe-kuai-02.jpg)")
+            $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
             document.body.classList.remove('io-grey-mode');
             document.body.classList.add('io-black-mode');
             document.cookie = "night=1;path=/"
@@ -709,7 +709,7 @@
             $(".mode-ico").removeClass("icon-night");
             $(".mode-ico").addClass("icon-light");
         } else {
-            $("#search-bg").css("background-image", "url(assets\/images\/background\/wallhaven-6dvgm7.png)");
+            $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-21.jpg)");
             document.body.classList.remove('io-black-mode');
             document.body.classList.add('io-grey-mode');
             document.cookie = "night=0;path=/"
