@@ -1,0 +1,29 @@
+---
+
+- taxonomy: 悠闲娱乐
+  icon: fa-solid fa-gamepad
+  links: 
+    - title: WL小游戏平台
+      logo: ./website/miniGames/images/logo.png
+      url: ./website/miniGames/
+      description: WL小游戏站点，有许多可以在线游玩的小游戏。
+    - title: Luminesence游戏平台
+      logo: ./website/gamesLuminesenceWebsite/icons/favicon-96.png
+      url: ./website/gamesLuminesenceWebsite/
+      description: 一个在线电子游戏平台，有许多有趣的游戏，另外含有一些有趣的JavaScript脚本。
+    - title: Ruffle-Web
+      logo: ./website/gamesEmulator/ruffle-web/icon180.png
+      url: ./website/gamesEmulator/ruffle-web/
+      description: Ruffle是一个开源的Flash Player模拟器，支持浏览器插件、网站内嵌和桌面应用。该站点为内嵌Ruffle的演示页面，可在线运行Flash Player文件。
+    - title: GBA-JS-2
+      logo: ./website/gamesEmulator/gbajs2/resources/img/icon256x256.png
+      url: ./website/gamesEmulator/gbajs2/
+      description: gbajs2是一个使用JavaScript编写的在线GBA模拟器，可以在线运行GBA游戏镜像文件。
+    - title: EmulatorJS
+      logo: ./website/gamesEmulator/emulator-js/docs/Logo.png
+      url: ./website/gamesEmulator/emulator-js/
+      description: EmulatorJS是一个基于JavaScript和Webassembly实现的在线主机模拟器，可以在网页中运行各种经典主机游戏镜像文件。
+    - title: Webretro
+      logo: ./website/gamesEmulator/webretro/assets/icons/iconm256.png
+      url: ./website/gamesEmulator/webretro/
+      description: webretro是一个在线主机模拟器，通过将Retroarch用Emscripten移植到WebAssembly以实现通过浏览器在线运行各种经典主机游戏镜像文件。

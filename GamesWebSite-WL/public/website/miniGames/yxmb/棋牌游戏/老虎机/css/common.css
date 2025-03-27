@@ -1,0 +1,33 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,pre,a,code,em,img,small,strong,sub,sup,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label{margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent}
+a{color:#007bc4; text-decoration:none; cursor:pointer;}
+.table_parameters a:hover{text-decoration: none}
+a:hover{text-decoration:underline}
+ol,ul{list-style:none}
+table{border-collapse:collapse; border-spacing:0}
+html{background:url(../images/demo_bg.png)}
+body{height:100%; font:12px/18px "Microsoft Yahei",Tahoma,Helvetica,Arial,Verdana,"\5b8b\4f53",sans-serif; color:#51555c}
+img{border:0; cursor:pointer;}
+.clearfix:after{visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0}
+.head{border-bottom:1px solid #dadada; padding:0 0 5px}
+.head_inner{margin:0 auto; width:980px}
+.container{width:980px; min-height:600px; margin:30px auto 0 auto;}
+.demo>h2.title{margin:4px 0 30px; padding:15px 0 10px 20px; border-bottom:1px solid #d3d3d3; font-size:18px; color:#a84c10; background:url(../images/arrow.jpg) no-repeat 2px 14px}
+.foot{height:60px; padding:10px 2px; line-height:24px; text-align:center}
+.foot a:hover{color:#51555c}
+.btn{-webkit-border-radius:3px; -moz-border-radius:3px; -ms-border-radius:3px; -o-border-radius:3px; border-radius:3px; background-color:#ff8400; color:#fff; display:inline-block; height:28px; line-height:28px; text-align:center; padding:0 12px; transition:background-color .2s linear 0s; border:0; cursor:pointer}
+.btn:hover{background-color:#e95a00; text-decoration:none}
+.demo{width:700px; margin:0 auto}
+ul.ul_demo li{background:url("../images/demo_icon.gif") no-repeat scroll 0 6px; line-height:28px; padding-left:20px}
+.input,.table input[type='text']{border:1px solid #ccc; padding:0 5px; width:220px; height:26px; line-height:26px}
+#nav{float:right; margin:30px 0 0}
+#nav li{float:left; font-size:16px; margin-right:20px}
+.btn.loading{opacity:.5}
+h3 a.cur{color: #f30;}
+.demo h3 a{font-size: 14px; margin: 0 10px 5px 0; display: inline-block}
+.red{color:red}
+.notice{font-size: 14px; margin-bottom: 10px;}
+.table_parameters{border-left: 1px solid #d3d3d3; border-top: 1px solid #d3d3d3; margin: 6px auto; font-size: 14px}
+.table_parameters tr.tr_head{background: none repeat scroll 0 0 #f7f7f7; font-weight: bold; padding: 6px; text-align: center}
+.table_parameters td,.table_parameters th{border-bottom: 1px solid #d3d3d3; border-right: 1px solid #d3d3d3; line-height: 26px; padding: 2px}
+h1{font: 32px "Microsoft Yahei"; margin: 40px auto; text-align: center;}
+h2{font-size: 16px;margin:10px 0;}

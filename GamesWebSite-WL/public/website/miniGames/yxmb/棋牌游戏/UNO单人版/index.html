@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNO Game</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <h1>UNO-Solo</h1>
+    <button onclick="displayGameInfoModal()" class="info">i</button>
+  </header>
+  <main>
+
+    <div class="start-container">
+      <!-- <img src="" alt="">  --><!-- LOGO -->
+      <div class="start-overlay"></div>
+      <div class="modal-start-container">
+        <h2>欢迎来到 UNO-Solo</h2>
+        <div class="developers-name">
+          <h3>开发者</h3>
+          <p class="dev-name">Tristan Ehron A. Tumbaga</p>
+          <ul class="contributor-name">
+            <!-- contributor dynamically added -->
+          </ul>
+        </div> 
+
+        <button class="start-btn">开始</button>
+      </div>
+    </div>
+
+    <div class="mycards">
+      <div class="playerTag-container player1tag">
+        <h2 id="player1heading" class="player1">玩家 1</h2>
+        <div class="line">
+          <img src="./assets/imgs/misc/line.png" alt="line">
+        </div>
+      </div>
+      <div class="card-container" id="yourcards" >
+        <!-- dynamically added deck of cards -->
+      </div>
+    </div>
+
+
+    <div class="opponentcards hide-p2-cards" >
+      <div class="playerTag-container player2tag">
+        <h2 id="player2heading" class="player2">玩家 2</h2>
+        <div class="line">
+          <img src="./assets/imgs/misc/line.png" alt="line">
+        </div>
+      </div>
+      <div class="card-container" id="opponentcards">
+        <!-- dynamically added deck of cards -->
+      </div>
+    </div>
+
+    
+    <div class="deck-of-cards deck-of-cards-blur">
+      <div class="used-cards">
+        <!-- dynamically added -->
+      </div>
+      <div class="stack-cards">
+        <!-- dynamically added -->
+      </div>
+    </div>
+
+    <div class="score-container">
+      <div class="scores-section">
+        <p class="yourscore-p">你的分数 (玩家 1)</p>
+        <p class="scores" id="player1score">0</p>
+      </div>
+      <div class="scores-section">
+        <p class="opponentscore-p"> 玩家 2 分数</p>
+        <p class="scores" id="player2score">0</p>
+      </div>
+    </div>
+
+    <div class="changeColor-overlay"></div> <!-- Black background to avoid being touched the background of the modal  -->
+    <div class="changeColor-modal">
+      <h1>选择一种颜色</h1>
+      <div class="modal-container">
+        <div class="btn-color">
+          <button id="red" aria-label="Red button"></button>
+          <p>红色</p>
+        </div>
+        <div class="btn-color">
+          <button id="green" aria-label="Green button"></button>
+          <p>绿色</p>
+        </div>
+        <div class="btn-color">
+          <button id="blue" aria-label="Blue button"></button>
+          <p>蓝色</p>
+        </div>
+        <div class="btn-color">
+          <button id="yellow" aria-label="Yellow button"></button>
+          <p>黄色</p>
+        </div>        
+      </div>
+    </div>
+
+    <div class="gameInfo-overlay"></div>
+    <div class="gameInfo-modal">
+
+      <div class="left-toggle">
+        <!-- Button with left arrow icon -->
+         <button class="btnToggle-rules left" onclick="toggleLeftrules()"> 
+          <img src="./assets/imgs/icons/back-48.png" class="left" alt="left toggle arrow">
+        </button>
+      </div>
+
+      <div class="right-toggle">
+        <!-- Button with right arrow icon -->
+        <button class="btnToggle-rules right"  onclick="toggleRightrules()"> 
+          <img src="./assets/imgs/icons/back-48.png" class="right" alt="right toggle arrow">
+        </button>
+      </div>
+
+      <div class="rules-container">
+        <div class="rules rule1">
+          <!-- TODO: UI/CSS/ , create GIF/animation to display different cards that matches the rule -->
+          <div class="rules-img">
+            <img class="cards-rule" src="./assets/imgs/cards/blue/1b.png" alt="0 BLUE">
+          </div>
+          <p class="rules-p">按颜色或数字匹配卡片，第一个把手中的牌都出完的人胜利。</p>
+        </div>
+
+        <div class="rules rule2">
+          <div class="rules-img">
+            <img class="cards-rule" src="./assets/imgs/cards/blue/plus2blue.png" alt="0 BLUE">
+          </div>
+          <p class="rules-p">
+            有许多功能牌可以改变游戏进程！<br/>
+            例如：+2牌可以让你的下家被罚抽2张牌，并且暂停出牌1次。
+          </p>
+        </div>
+
+        <div class="rules rule3">
+          <div class="rules-img">
+            <img class="cards-rule" src="./assets/imgs/cards/blue/blockblue.png" alt="0 BLUE">
+
+          </div>
+          <p class="rules-p">禁止牌可以让你的下家暂停出牌1次</p>
+        </div>
+
+        <div class="rules rule4">
+          <div class="rules-img">
+            <img class="cards-rule" src="./assets/imgs/cards/blue/reverseblue.png" alt="0 BLUE">
+
+          </div>
+          <p class="rules-p">反转牌会让当前出牌顺序反转。<br/>(但是在1V1对战中，会变成让你的对手暂停出牌1次)</p>
+        </div>
+
+        <div class="rules rule5">
+          <div class="rules-img">
+            <img class="cards-rule" src="./assets/imgs/cards/special/changecolor.png" alt="0 BLUE">
+
+          </div>
+          <p class="rules-p">万能牌可以在任何时候打出，并允许你改变当前出牌颜色.</p>
+        </div>
+
+        <div class="rules rule6">
+          <div class="rules-img">
+            <img class="cards-rule" src="./assets/imgs/cards/special/plus4.png" alt="0 BLUE">
+
+          </div>
+          <p class="rules-p">+4牌可以在任何时候打出，并允许你改变当前出牌颜色，并且下家将被罚抽4张牌并且暂停出牌1次。<br/>
+            但+4牌只有出牌者手中没有与当前出牌颜色相同的牌才能合法出牌(不包括同数字或功能牌)。<br/>
+            下家可以质疑出牌者，如果如果出牌者不符合条件，质疑成功，出牌者抽4张牌；如果质疑失败，则质疑者抽6张牌。
+          </p>
+        </div>
+
+      </div>
+
+      <!-- skip tutorial -->
+      <div class="skip">
+        <button onclick="hideGameInfoModal()">
+          <img src="./assets/imgs/icons/back-48.png" class="skip" alt="right skip arrow">
+          <img src="./assets/imgs/icons/back-48.png" class="skip" alt="right skip arrow">
+        </button>
+
+      </div>
+    </div>
+
+
+    <div class="gameWinner-overlay"></div>
+    <div class="gameWinner-modal" id="win-modal">
+      <h1>Congratulations, Player 1 Wins!</h1>
+      <button onclick="addScore('player1')" id="continue">Continue</button>
+    </div>
+    
+    <div class="gameWinner-modal" id="lose-modal">
+      <h1>Better luck next time, Player 2 Wins!</h1>
+      <button onclick="addScore('player2')" id="continue">Continue</button>
+    </div>
+    
+    
+
+  </main>
+
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/contributors.js"></script>
+</body>
+</html>

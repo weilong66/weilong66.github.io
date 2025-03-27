@@ -1,0 +1,19 @@
+baseURL = ""
+languageCode = "zh-CN"
+title = "WL游戏导航"
+theme = "webstack-hugo"
+preserveTaxonomyNames = true
+disablePathToLower = true
+hasCJKLanguage = true
+copyright = ""
+
+[params]
+  author = "iplaycode"
+  description = "Webstack Hugo"
+  expandSidebar = true                                                               # 是否默认展开左侧边导航栏
+  defaultLogo = "./assets/images/logos/default/external_link.svg"                    # logo图片资源不存在或者错误时, 默认显示的logo; 
+
+[params.search]
+  enable = false
+[params.darkmode]
+  enable = false

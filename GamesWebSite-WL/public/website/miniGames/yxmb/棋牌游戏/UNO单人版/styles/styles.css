@@ -1,0 +1,618 @@
+@font-face {
+  font-family: 'Merienda'; /* Font family name */
+  src: url('./../assets/fonts/Merienda-Light.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merienda';
+  src: url('./../assets/fonts/Merienda-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular (default) */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merienda';
+  src: url('./../assets/fonts/Merienda-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merienda';
+  src: url('./../assets/fonts/Merienda-Semibold.ttf') format('truetype');
+  font-weight: 600; /* Semibold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merienda';
+  src: url('./../assets/fonts/Merienda-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merienda';
+  src: url('./../assets/fonts/Merienda-Extrabold.ttf') format('truetype');
+  font-weight: 800; /* Extrabold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merienda';
+  src: url('./../assets/fonts/Merienda-Black.ttf') format('truetype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body{
+  overflow: hidden;
+  color:white;
+  background-color: black;
+  font-family: 'Merienda', sans-serif; /* Fallback to sans-serif */
+  font-weight: 400;
+  background-image: radial-gradient(#642B73, rgba(36, 10, 43, 0.8), rgba(0, 0, 0, 0.9));
+ }
+
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+h1 {
+  font-size: clamp(15px, 5vw, 22px);
+}
+
+p, button {
+  font-family: 'Merienda', sans-serif;
+  font-weight: 100;
+}
+
+button.info {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border:none;
+  color: white;
+  background-color: #642B73;
+}
+
+button.info:hover{
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.37);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  flex: 1;
+}
+
+
+.score-container {
+  display: flex;
+  position: fixed;
+  width: 96vw;
+  justify-content: space-between;
+  padding-inline: 20px
+}
+
+.opponentcards {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.mycards {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h2.player1, h2.player2 {
+  opacity: 45%;
+  font-size: clamp(12px, 10vw, 15px);
+}
+
+
+.player1 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+div#yourcards, div#opponentcards {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* deck of cards */
+
+.deck-of-cards {
+  display: flex;
+  gap: 20px;
+  z-index: 1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
+.used-cards > img.cardimg{
+  position: absolute;
+  left: calc(50% - clamp(70px, 11vw, 100px));
+}
+
+/*blur deck of cards before start*/
+.deck-of-cards-blur {
+  filter: blur(10px);
+}
+
+img.cardimg {
+  width: 55px;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.hide-start{
+  display: none !important;
+}
+
+.hide-p2-cards{
+  display: none;
+}
+
+img.cardimg:hover {
+  cursor: pointer;
+}
+
+.stack-cards {
+  width: 55px;
+}
+
+
+/* The overlay layer to block background interaction */
+.changeColor-overlay {
+  display: none;
+  /* display: block; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2; 
+}
+
+/* The modal itself */
+.changeColor-modal {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  position: fixed;
+  z-index: 3; /* Above the overlay */
+  width: clamp(390px, 50vw, 100vw);
+  height: 45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #642B73;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.changeColor-modal h1 {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  gap: clamp(20px, 5vw, 50px);
+}
+
+.btn-color {
+  width: clamp(50px, 5vw, 70px);
+  height: clamp(50px, 5vw, 70px);
+}
+
+.btn-color > p {
+  top: 0;
+  transform: unset;
+  position: absolute;
+  top: 230px;
+  margin-left: clamp(0px, 1vw, 16px) !important;
+}
+
+.btn-color button{
+  width: 100%; 
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
+  position: relative;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.btn-color button:hover{
+  transform: scale(1.2);
+}
+
+button#red{
+  background-color: rgba(255, 0, 0, 0.80);
+}
+
+button#green{
+  background-color: rgba(0, 128, 0, 0.80);
+}
+
+button#blue{
+  background-color: rgba(0, 0, 255, 0.80);
+}
+
+button#yellow{
+  background-color: rgba(255, 255, 0, 0.80);
+}
+
+/* Scores */
+
+p.scores{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Game Info / Rules */
+
+.gameInfo-overlay, .gameWinner-overlay {
+  display: none;
+  /* display: block; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2; 
+}
+
+
+/* (TODO: Note done yet) */
+.gameInfo-modal, .gameWinner-modal {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  position: fixed;
+  z-index: 3; /* Above the overlay */
+  width: clamp(250px, 50vw, 650px);
+  height: 45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #642B73;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.btnToggle-rules {
+  display: flex;
+  margin: auto;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.btnToggle-rules.right{
+  right: clamp(2px, 20vw, 20px);
+}
+
+.btnToggle-rules.left{
+  left: clamp(2px, 20vw, 20px);
+}
+
+img.right {
+  transform: rotate(180deg);
+}
+
+img.left, img.right {
+  width: 30px;
+  height: auto;
+  filter: invert(1);
+  transition: transform 0.3s ease;
+}
+
+img.left:hover {
+  transform: scale(1.5);
+}
+
+img.right:hover {
+  transform: rotate(180deg) scale(1.5);
+}
+
+.rules-container {
+  width: 85%;
+  text-align: left;
+  margin: auto;
+}
+
+.rules {
+  /* display: flex; */
+  display: none;
+  height: 200px;
+  gap:10%;
+}
+
+.rules.active {
+  display: flex;
+}
+
+p.rules-p {
+  display: flex;
+  align-items: center;
+  font-size: clamp(10px, 2vw, 15px);
+  width: 300px;
+  
+}
+
+img.cards-rule {
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* (Note done yet) */
+.rules .rules-img {
+  width: 170px;
+  display: flex;
+}
+
+.right-toggle, .left-toggle{
+  display: none;
+}
+
+
+.skip {
+  display: flex;
+  justify-content: start;
+  transform: rotate(180deg);
+}
+
+.skip button {
+  display: flex; /* Align images horizontally */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+
+.skip img {
+  height: auto;
+  filter: invert(1);
+  transform: rotate(360deg);
+  /* transition: transform 0.3s ease;  */
+  margin-left: -25px;
+  width: 35px;
+}
+
+.skip button:hover {
+  transform: translateX(-20%);
+  margin-left: 15px;
+} 
+
+/* Win/lose modal */
+h1#win{
+  display: none;
+}
+
+h2#win{
+  display: none;
+}
+
+h1#win, h2#win {
+  gap: 25px;
+  flex-direction: column;
+}
+
+.gameWinner-overlay {
+  display: none;
+  /* display: block; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2; 
+}
+
+
+.gameWinner-modal {
+  display: none;
+  /* display: flex; */
+  position: absolute;
+  border: 1px solid #d042f3;
+  width: clamp(200px, 35vw, 806px);
+  padding: 20px 0;
+  height: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: #652b7373;
+  box-shadow: 0 0 15px 4px #642B73;
+  text-align: center;
+}
+
+
+/* Animations */
+img.cardimg.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+
+
+/*Start Modal Display*/
+.start-container
+{
+  width: 100%;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.hide-start{
+  display: none !important;
+}
+
+.start-overlay {
+  /* display: none; */
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2; 
+}
+
+.modal-start-container {
+  display: flex;
+  position: absolute;
+  border: 1px solid #d042f3;
+  width: clamp(200px, 35vw, 806px);
+  padding: 20px 0;
+  height: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: #652b7373;
+  box-shadow: 0 0 15px 4px #642B73;
+  text-align: center;
+}
+
+button.start-btn{
+  padding: 5px clamp(20px, 5vw, 40px);
+  border: 1px solid #642B73;
+  background-color: #d042f3;
+  color: black;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+button.start-btn:hover {
+  transform: scale(1.1);
+  background-color: #652b7357;
+  border: 1px solid #d042f3;
+  color: white;
+  font-weight: 700;
+}
+
+
+/* Contributors */
+ul.contributor-name {
+  text-decoration: none;
+  list-style: square;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+
+ul.contributor-name li {
+  width: fit-content;
+}
+
+ul.contributor-name li a {
+  text-decoration: none;
+  color: white;
+}
+
+li.dev-name::marker {
+  color: #007acc;
+}
+
+/*Media Query*/
+/*Responsive for tablets <770px*/
+@media screen and (max-width: 770px){
+  img.cardimg {
+    width: 45px;
+    height: auto;
+  }
+  .opponentcards{
+    width: 315px;
+  }
+}
+/*Responsive for mobile <435px to 290px*/
+@media screen and (max-width: 435px){
+  .score-container {
+    position: absolute;
+    top: 10%;
+  }
+}
+
+.line {
+  text-align: center;
+}
+
+.playerTag-container.player1tag{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.playerTag-container.player2tag{
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+}
