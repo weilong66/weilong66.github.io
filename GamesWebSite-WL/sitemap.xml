@@ -2,14 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://weilong66.github.io/GameWebsite-WL/about/</loc>
     <lastmod>2020-07-28T19:27:08+08:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
-    <lastmod>2020-07-28T19:27:08+08:00</lastmod>
+    <loc>https://weilong66.github.io/GameWebsite-WL/categories/</loc>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://weilong66.github.io/GameWebsite-WL/tags/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://weilong66.github.io/GameWebsite-WL/</loc>
   </url>
 </urlset>
