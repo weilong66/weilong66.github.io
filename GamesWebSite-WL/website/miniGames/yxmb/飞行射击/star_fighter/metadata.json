@@ -1,0 +1,7 @@
+{
+    "name": "星际战斗机",
+    "type": "games",
+    "desc": "驾驶飞船在宇宙飞行，摧毁敌方飞船并躲避敌人飞船的攻击。",
+    "img_path": "star_fighter.png",
+    "main_page": "dist/index.html"
+}

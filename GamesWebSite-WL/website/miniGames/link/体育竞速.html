@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="../css/sptx.css">
     <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- 图片懒加载插件 -->
+    <script src="../js/lib/lazyload.min-17.9.0.js"></script>
+</head>
 <body>
     <section class="main">
         <div class="box">
@@ -14,7 +17,7 @@
                         <a target="right" href="../yxmb/体育竞速/HexGL/index.html" title="一个3D科幻飞船竞速游戏。有一点点配置要求，如果感觉游戏卡顿请尝试更换浏览器或更换更好的设备。适用于电脑或手机游玩，支持键盘、触摸屏、手柄操作。">
                             <div>
                                 <div class="logo">
-                                    <img src="../yxmb/体育竞速/HexGL/HexGL.png" alt="Coding">HexGL
+                                    <img class="lazy" src="../images/logo.png" data-src="../yxmb/体育竞速/HexGL/HexGL.png" alt="Coding">HexGL
                                 </div>
                                 <div class="desc">一个3D科幻飞船竞速游戏。有一点点配置要求，如果感觉游戏卡顿请尝试更换浏览器或更换更好的设备。适用于电脑或手机游玩，支持键盘、触摸屏、手柄操作。</div>
                             </div>
@@ -26,7 +29,7 @@
                         <a target="right" href="../yxmb/体育竞速/JS乒乓/index.html" title="使用JavaScript编写的《Pong》游戏，使用方向键上和下控制，最先得到5分的一方获胜。">
                             <div>
                                 <div class="logo">
-                                    <img src="../yxmb/体育竞速/JS乒乓/JS乒乓.png" alt="Coding">JS乒乓
+                                    <img class="lazy" src="../images/logo.png" data-src="../yxmb/体育竞速/JS乒乓/JS乒乓.png" alt="Coding">JS乒乓
                                 </div>
                                 <div class="desc">使用JavaScript编写的《Pong》游戏，使用方向键上和下控制，最先得到5分的一方获胜。</div>
                             </div>
@@ -35,10 +38,22 @@
                     </div>
                 
                     <div class="item">
+                        <a target="right" href="../yxmb/体育竞速/Racer(赛车)/index.html" title="一个HTML赛车游戏，有四种不同的赛道等你来挑战！">
+                            <div>
+                                <div class="logo">
+                                    <img class="lazy" src="../images/logo.png" data-src="../yxmb/体育竞速/Racer(赛车)/Racer(赛车).jpg" alt="Coding">Racer(赛车)
+                                </div>
+                                <div class="desc">一个HTML赛车游戏，有四种不同的赛道等你来挑战！</div>
+                            </div>
+                        </a>
+                        <a class="togo" href="../yxmb/体育竞速/Racer(赛车)/index.html" target="_blank" title="新页面打开"><i class="fa fa-chevron-right"></i></a>
+                    </div>
+                
+                    <div class="item">
                         <a target="right" href="../yxmb/体育竞速/灌篮高手/index.html" title="樱木花道的篮球主场30秒投篮，按住屏幕，力度条在红色区域时松手投篮">
                             <div>
                                 <div class="logo">
-                                    <img src="../yxmb/体育竞速/灌篮高手/灌篮高手.png" alt="Coding">灌篮高手
+                                    <img class="lazy" src="../images/logo.png" data-src="../yxmb/体育竞速/灌篮高手/灌篮高手.png" alt="Coding">灌篮高手
                                 </div>
                                 <div class="desc">樱木花道的篮球主场30秒投篮，按住屏幕，力度条在红色区域时松手投篮</div>
                             </div>
@@ -50,7 +65,7 @@
                         <a target="right" href="../yxmb/体育竞速/赛车游戏/index.html" title="HTML5 Canvas赛车游戏动画，赛车游戏动画演示。">
                             <div>
                                 <div class="logo">
-                                    <img src="../yxmb/体育竞速/赛车游戏/赛车游戏.png" alt="Coding">赛车游戏
+                                    <img class="lazy" src="../images/logo.png" data-src="../yxmb/体育竞速/赛车游戏/赛车游戏.png" alt="Coding">赛车游戏
                                 </div>
                                 <div class="desc">HTML5 Canvas赛车游戏动画，赛车游戏动画演示。</div>
                             </div>
@@ -61,4 +76,10 @@
         </div>
     </section>
 </body>
+<!-- 创建懒加载对象以使用懒加载 -->
+<script>
+    var aLazyLoad = new LazyLoad({
+        /* options here */
+    });
+</script>
 </html>

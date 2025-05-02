@@ -1,0 +1,7 @@
+{
+    "name": "电子木鱼",
+    "type": "games",
+    "desc": "非常简单的一个电子木鱼，兼容移动设备。",
+    "img_path": "wooden-fish-300x300.png",
+    "main_page": "index.html"
+}

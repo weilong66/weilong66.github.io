@@ -1,0 +1,7 @@
+{
+    "name": "SuperChronoPortalMaker",
+    "type": "games",
+    "desc": "类似超级马里奥的平台跳跃游戏，30个级别可供游玩！并且支持自定义关卡！",
+    "img_path": "SuperChronoPortalMaker.jpg",
+    "main_page": "min/index.html"
+}

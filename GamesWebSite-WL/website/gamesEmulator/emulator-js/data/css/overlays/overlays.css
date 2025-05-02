@@ -1,0 +1,101 @@
+/* @import url('VirtualGamepad.css'); */
+
+/* small-遮罩样式 */
+.ejs_overlays_small {
+    background: #765490;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: inherit;
+    height: inherit;
+    cursor: default;
+    overflow: hidden;
+    display: flex;
+}
+.ejs_overlays_small canvas {
+    position: relative;
+    max-width: 58.4%;
+    height: auto;
+    top: -15%;
+}
+
+
+/* gba-遮罩样式 */
+.ejs_overlays_gba {
+    background: url('overlays/images/bg_gba.png') no-repeat top center, #765490;
+    background-size: contain;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: inherit;
+    height: inherit;
+    cursor: default;
+    overflow: hidden;
+    display: flex;
+}
+.ejs_overlays_gba canvas {
+    position: relative;
+    max-width: 58.4%;
+    height: auto;
+    top: -5.4%;
+}
+
+/* nds-遮罩样式 */
+.ejs_overlays_nds {
+    background: url('overlays/images/bg_nds.png') no-repeat center center, #ffffff;
+    background-size: cover;
+    color: #2f2f2f;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: inherit;
+    height: inherit;
+    cursor: default;
+    overflow: hidden;
+    display: flex;
+}
+.ejs_overlays_nds canvas {
+    position: relative;
+    max-width: inherit;
+    height: auto;
+}
+
+
+/* 兼容小屏幕设备 */
+@media (max-width: 768px) {
+    .ejs_overlays_small canvas {
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        top: 2%;
+    }
+
+    .ejs_overlays_gba canvas {
+        position: relative;
+        max-width: 74%;
+        height: auto;
+        top: -5.9%;
+    }
+
+}
+
+/* 兼容中等屏幕设备 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .ejs_overlays_small canvas {
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        top: 2%;
+    }
+    
+    .ejs_overlays_gba canvas {
+        position: relative;
+        max-width: 74%;
+        height: auto;
+        top: -1.2%;
+    }
+
+}

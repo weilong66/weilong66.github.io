@@ -1,0 +1,7 @@
+{
+    "name": "元素入侵者",
+    "type": "games",
+    "desc": "塔防游戏，保护你的土地免受元素入侵者的攻击！",
+    "img_path": "elematter.jpg",
+    "main_page": "src/index.html"
+}

@@ -1,0 +1,28 @@
+/* 虚拟按钮-nds遮罩样式 */
+.ejs_vg_overlays_nds {
+    color: #2f2f2f;
+}
+@media (min-width: 1024px){
+    .ejs_vg_overlays_nds .ejs_virtualGamepad_bottom {
+        top: -80px;
+    }
+
+    .ejs_vg_overlays_nds .ejs_virtualGamepad_button.b_start {
+        left: 315% !important;
+    }
+
+    .ejs_vg_overlays_nds .ejs_virtualGamepad_button.b_select {
+        top: 40px;
+        left: 315% !important;
+    }
+
+    .ejs_vg_overlays_nds .ejs_virtualGamepad_button.b_speed_fast {
+        top: -10px !important;
+        left: -255% !important;
+    }
+
+    .ejs_vg_overlays_nds .ejs_virtualGamepad_button.b_speed_slow {
+        left: auto !important;
+        left: -255% !important;
+    }
+}

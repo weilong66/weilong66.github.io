@@ -1,0 +1,7 @@
+{
+    "name": "棍子忍者",
+    "type": "games",
+    "desc": "帮助忍者搭一座通往下一座塔的桥。",
+    "img_path": "stick-hero.jpg",
+    "main_page": "src/index.html"
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fastkat Navigation</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="content">
+    <div class="transbox">
+      <br>
+      <h1>Fastkat Navigation</h1>
+      <p>Fastkat 是一款驾驶飞船躲避小行星的游戏.<br>
+        Fastkat有多个不同版本，均由其它作者制作.<br>
+        <br>
+        <ul>
+          <li><button class="button-3" onclick="location.href='fastkatremastered.html'">Fastkat</button></li>
+          <br>
+          <li><button class="button-3" onclick="location.href='fastkat2.html'">Fastkat 2</button></li>
+        </ul>
+        <br>
+        <br>
+    </div>
+  </div>
+
+  <!-- 星星 -->
+  <div class="stars">
+    <!-- 星星将由CSS中的 @for循环产生 -->
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <!-- 根据需要重复 -->
+  </div>
+  <!-- 星星End -->
+</body>
+<script>
+  // JavaScript to dynamically generate more stars if needed
+  document.addEventListener('DOMContentLoaded', () => {
+    const starContainer = document.querySelector('.stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      starContainer.appendChild(star);
+    }
+  });
+</script>
+
+</html>

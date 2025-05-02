@@ -1,0 +1,7 @@
+{
+    "name": "Offline Oect",
+    "type": "games",
+    "desc": "收集全部电池修复设施。",
+    "img_path": "offlineOect.png",
+    "main_page": "game/src/index.html"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "烟花模拟器",
+    "type": "games",
+    "desc": "烟花模拟器，支持自动和手动燃放烟花。(默认开启烟花爆炸声音，请注意音量！)",
+    "img_path": "favicon.png",
+    "main_page": "index.html"
+}

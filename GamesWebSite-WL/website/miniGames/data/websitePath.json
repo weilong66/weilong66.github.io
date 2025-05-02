@@ -15,13 +15,13 @@
         "type": "folder"
     },
     {
-        "name": "动作闯关.html",
-        "icon": "fa fa-reddit-alien",
+        "name": "冒险闯关.html",
+        "icon": "fa fa-diamond",
         "type": "folder"
     },
     {
-        "name": "射击游戏.html",
-        "icon": "fa fa-rocket",
+        "name": "动作游戏.html",
+        "icon": "fa fa-reddit-alien",
         "type": "folder"
     },
     {
@@ -35,6 +35,16 @@
         "type": "folder"
     },
     {
+        "name": "模拟经营.html",
+        "icon": "fa fa-hospital-o",
+        "type": "folder"
+    },
+    {
+        "name": "沙盒生存.html",
+        "icon": "fa fa-cube",
+        "type": "folder"
+    },
+    {
         "name": "消除游戏.html",
         "icon": "fa fa-houzz",
         "type": "folder"
@@ -45,8 +55,13 @@
         "type": "folder"
     },
     {
-        "name": "大型游戏.html",
-        "icon": "fa fa-th-large",
+        "name": "策略塔防.html",
+        "icon": "fa fa-fort-awesome",
+        "type": "folder"
+    },
+    {
+        "name": "飞行射击.html",
+        "icon": "fa fa-rocket",
         "type": "folder"
     }
 ]

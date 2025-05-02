@@ -6,10 +6,10 @@
 	<link rel="icon" type="image/png" href="images/logo.png" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>本地小游戏平台</title>
+	<title>WL小游戏平台</title>
 	<!-- meta用于搜索引擎优化 -->
-	<meta name="keywords" content="本地小游戏平台" />
-	<meta name="description" content="本地小游戏平台，一套多个小游戏网站合集，采用响应式布局设计，自适应手机移动端，用户体验更好。" />
+	<meta name="keywords" content="WL小游戏平台" />
+	<meta name="description" content="WL小游戏平台，一套多个小游戏网站合集，采用响应式布局设计，自适应手机移动端，用户体验更好。" />
 	<meta name="author" content="" />
 	<meta name="copyright" content="" />
 
@@ -24,6 +24,12 @@
 	<!--     Fonts and icons     -->
 	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link href='css/2d7207a20f294df196f3a53cae8a0def.css' rel='stylesheet' type='text/css'>
+	<!-- 图片懒加载插件 -->
+	<script src="./js/lib/lazyload.min-17.9.0.js"></script>
+
+	<!-- umami本地网站统计 -->
+	<script defer src="/assets/plugin/umami/umami-script.js" data-website-id="17943f31-5b58-4989-a50c-3b72a4da00ae"></script>
+
 </head>
 
 <body>
@@ -32,7 +38,7 @@
 		<div class="sidebar" data-color="purple" data-image="images/paper.jpg">
 
 			<div class="logo">
-				<a href="index.html" class="simple-text"><img src="images/logo.png " width="30" height="30" />本地小游戏</a>
+				<a href="index.html" class="simple-text"><img src="images/logo.png " width="30" height="30" />WL小游戏平台</a>
 			</div>
 
 			<div class="sidebar-wrapper">
@@ -137,6 +143,13 @@
 			})
 			.catch(error => console.error('Error loading JSON:', error));
 	});
+</script>
+
+<!-- 创建懒加载对象以使用懒加载 -->
+<script>
+    var aLazyLoad = new LazyLoad({
+        /* options here */
+    });
 </script>
 
 <script type="text/javascript">

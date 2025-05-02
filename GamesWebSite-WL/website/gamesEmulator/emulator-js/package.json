@@ -8,9 +8,14 @@
   "license": "GPL-3.0",
   "description": "EmulatorJS is a frontend for RetroArch in the web browser.",
   "scripts": {
-    "start": "http-server"
+    "start": "http-server",
+    "build": "node build.js"
   },
   "dependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "uglify-js": "^3.19.3"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3"
   }
 }

@@ -1,0 +1,7 @@
+{
+    "name": "勇敢的兔子在奔跑",
+    "type": "games",
+    "desc": "在大黑狼的追逐下，躲避刺猬并获取胡萝卜！",
+    "img_path": "the-frantic-run-of-the-valorous-rabbit.png",
+    "main_page": "dist/index.html"
+}
