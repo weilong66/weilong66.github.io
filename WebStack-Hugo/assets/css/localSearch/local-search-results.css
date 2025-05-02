@@ -12,28 +12,32 @@
     list-style-type: none;
     padding: 4px 12px; /*内边距：上下,左右*/
     line-height: 1.5; /* 设置行距 */
-
 }
 
-.search-smart-tips ul li i,
+.search-smart-tips ul li i{
+    display: inline-block; /* 使<i>和<a>标签都成为行内块级元素 */
+    vertical-align: middle; /* 垂直居中对齐，使<i>和<a>标签内的内容垂直方向上对齐 */
+    margin-right: 5px;
+    font-size: 12px;
+}
+
 .search-smart-tips ul li a {
     display: inline-block; /* 使<i>和<a>标签都成为行内块级元素 */
     vertical-align: middle; /* 垂直居中对齐，使<i>和<a>标签内的内容垂直方向上对齐 */
 }
 
+
 .search-smart-tips ul li a {
     white-space: nowrap; /* 防止换行 */
     overflow: hidden; /* 隐藏超出宽度的内容 */
     text-overflow: ellipsis; /* 超出部分用省略号表示 */
-    width: calc(100% - 20px); /* 设置宽度为父元素的100%，确保溢出能够被隐藏并显示省略号 */
-    
+    width: calc(100% - 25px); /* 设置宽度为父元素的100%，确保溢出能够被隐藏并显示省略号 */
 }
 
 /* logo样式 */
 .search-smart-tips img{
     width: 16px;
     height: 16px;
-    margin-right: 4px;
 }
 
 

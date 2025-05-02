@@ -211,7 +211,7 @@
     //为夜间模式悬浮按钮，绑定点击事件，点击时通过AJAX请求切换日/夜模式的（已在别处实现，此处注释掉）
     //此处的 theme.ajaxurl 在 footer.html 第7行附近
     /* $(document).on('click', '.switch-dark-mode', function (event) {
-        event.preventDefault();
+        event.preventDefault(); //阻止默认行为
         $.ajax({
                 url: theme.ajaxurl,
                 type: 'POST',
@@ -228,7 +228,8 @@
                 //$('.switch-dark-mode').removeAttr('aria-describedby');
             })
     }); */
-
+    
+    //切换日/夜模式
     function switch_mode() {
         if ($('body').hasClass('io-black-mode')) {
             if ($(".switch-dark-mode").attr("data-original-title"))
@@ -246,6 +247,7 @@
             $(".mode-ico").addClass("icon-night");
         }
     }
+
     //返回顶部
     $(window).scroll(function () {
         if ($(this).scrollTop() >= 50) {
@@ -260,6 +262,15 @@
         $('body,html').animate({
             scrollTop: 0
         }, 500);
+        // 获取当前URL
+        var currentUrl = window.location.href;
+        // 检查URL中是否包含 '#' 符号
+        if (currentUrl.indexOf('#') !== -1) {
+            // 修改URL，移除 '#' 及其后面的所有内容
+            var newUrl = currentUrl.substring(0, currentUrl.indexOf('#'));
+            // 更新浏览器地址栏中的URL，不会导致页面刷新
+            window.history.pushState({}, document.title, newUrl);
+        }
         return false;
     });
 
@@ -376,46 +387,7 @@
             }
         }
     });
-    //菜单栏最小化
-    $('#mini-button').on('click', function () {
-        trigger_lsm_mini(false);
-
-    });
-
-    function trigger_lsm_mini(isNoAnim) {
-        if ($('.header-mini-btn input[type="checkbox"]').prop("checked")) {
-            $('.sidebar-nav').removeClass('mini-sidebar');
-            //221024: 调整左导航展开时,点击图标锚定定位失效
-            //$('.sidebar-nav .change-href').attr('href','javascript:;');
-            $('.sidebar-menu ul ul').css("display", "none");
-            if (isNoAnim) {
-                $('.sidebar-nav').removeClass('animate-nav');
-                $('.sidebar-nav').width(220);
-            } else {
-                $('.sidebar-nav').addClass('animate-nav');
-                $('.sidebar-nav').stop().animate({
-                    width: 170
-                }, 200);
-            }
-        } else {
-            $('.sidebar-item.sidebar-show').removeClass('sidebar-show');
-            $('.sidebar-menu ul').removeAttr('style');
-            $('.sidebar-nav').addClass('mini-sidebar');
-            $('.sidebar-nav .change-href').each(function () {
-                $(this).attr('href', $(this).data('change'))
-            });
-            if (isNoAnim) {
-                $('.sidebar-nav').removeClass('animate-nav');
-                $('.sidebar-nav').width(60);
-            } else {
-                $('.sidebar-nav').addClass('animate-nav');
-                $('.sidebar-nav').stop().animate({
-                    width: 60
-                }, 200);
-            }
-        }
-        //$('.sidebar-nav').css("transition","width .3s");
-    }
+    
     //显示2级悬浮菜单
     $(document).on('mouseover', '.mini-sidebar .sidebar-menu ul:first>li,.mini-sidebar .flex-bottom ul:first>li', function () {
         var offset = 2;
@@ -526,6 +498,7 @@
     }
 
     // 自定义模块-----------------
+    /* 这段代码的主要功能是处理用户提交的新站点信息，检查是否重复，并将其添加到站点列表中，同时更新本地存储 */
     $(".add-link-form").on("submit", function () {
         var siteName = $(".site-add-name").val(),
             siteUrl = $(".site-add-url").val();
@@ -680,6 +653,7 @@
                 showAlert(JSON.parse('{"status":4,"msg":"网络错误 --."}'));
             })
     });
+    //为表单添加了提交事件的监听器，当用户提交表单时，这个函数会被触发
     $(".add-custom-site-form").on("submit", function () {
         var t = $(this);
         var tt = this;
@@ -840,8 +814,6 @@
             setItem(liveList, "livelists");
         }
     });
-
-    
 
     $('.nav-login-user.dropdown').hover(function () {
         if (!$(this).hasClass('show'))
@@ -1156,10 +1128,10 @@ function ioConfirm(message, btnCallBack) {
     }
     return popup;
 }
-window.addEventListener('load', function() {
+
+window.addEventListener('load', function () {
     console.log("\n %c WebStack-Hugo 导航主题 By ShumLab %c https://www.shumlab.com/ \n", "color: #ffffff; background: #f1404b; padding:5px 0;", "background: #030307; padding:5px 0;");
 });
-
 
 /**
  * Minified by jsDelivr using Terser v5.3.5.
@@ -1181,7 +1153,9 @@ window.addEventListener('load', function() {
         o = "function" == typeof Buffer,
         n = "function" == typeof TextDecoder ? new TextDecoder : void 0,
         a = "function" == typeof TextEncoder ? new TextEncoder : void 0,
-        f = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="],
+        f = [...
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
+        ],
         i = (e => {
             let t = {};
             return e.forEach(((e, r) => t[e] = r)), t

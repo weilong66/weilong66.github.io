@@ -11,6 +11,9 @@
     <link rel="shortcut icon" href="https://weilong66.github.io/WebStack-Hugo/assets/images/wl-favicon.png" />
     <meta name="keywords" content="WL 网址导航" />
     
+    <meta name="description" content="Webstack-Hugo 网址导航 | Hugo 主题 BY Bio IT 爱好者" />
+    
+    
     <link rel="stylesheet" id="block-library-css"
         href="https://weilong66.github.io/WebStack-Hugo/assets/css/block-library.min-5.6.2.css" type="text/css" media="all" />
     <link rel="stylesheet" id="iconfont-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/iconfont-3.03029.1.css"
@@ -21,17 +24,20 @@
         type="text/css" media="all" />
     <link rel="stylesheet" id="iowen-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/style-3.03029.1.css"
         type="text/css" media="all" />
-    <link rel="stylesheet" id="custom-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/custom-style.css"
-        type="text/css" media="all" />
     <link rel="stylesheet" id="custom-css" href="https://weilong66.github.io/WebStack-Hugo/assets/icon/QWeather-Icons-1.6.0/font/qweather-icons.css"
         type="text/css" media="all" />
     <link rel="stylesheet" id="fortawesome-css" href="https://weilong66.github.io/WebStack-Hugo/assets/icon/fontawesome-free-6.7.2-web/css/all.min.css" type="text/css" />
+    <link rel="stylesheet" id="custom-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/custom-style.css"
+        type="text/css" />
     <script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.min-3.2.1.js" id="jquery-js"></script>
     <script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/lib/qrcode.min.js" id="jquery-js"></script>
     
-     
     
-
+    
+    
+    
+    
+    
     
     
     
@@ -57,7 +63,6 @@
         console.log("当前站点根URL：", absURL);
     </script>
 </head>
-
 
 <div class="main-content flex-fill grid-bg">
     <div class="big-header-banner">
@@ -134,6 +139,21 @@
                                         
                                     </li>
                                     
+                                </ul>
+                            </li>
+                            
+                            <li class="menu-item-has-children" >
+
+                                
+                                
+                                    <a href="">
+                                
+                                    <i class="fa fa-cogs fa-lg mr-2"></i>
+                                    <span>插件</span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    
                                     <li>
                                         
                                         
@@ -144,7 +164,21 @@
                                     <li>
                                         
                                         
-                                        <a href="javascript-load-floating-widget-script">小宠物</a>
+                                        <a href="javascript-load-floating-widget-script">宠物</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        
+                                        <a href="javascript-load-piano-script">钢琴</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        
+                                        <a href="javascript-sakura-switch">樱花</a>
                                         
                                     </li>
                                     
@@ -231,10 +265,18 @@
 
     
     if (newColor && colorPattern.test(newColor)) {
-      let $iframeLi = $('#weather-iframeLi'); 
-      let updatedSrc = $iframeLi.attr('src').replace(/color=[^&]+/, 'color=' + encodeURIComponent(newColor));
-      
-      $iframeLi.attr('src', updatedSrc);
+        let $iframeLi = $('#weather-iframeLi'); 
+        let currentSrc = $iframeLi.attr('src');
+        let expectedColorParam = 'color=' + encodeURIComponent(newColor);
+
+        
+        if (currentSrc.includes(expectedColorParam)) {
+            return;
+        }
+
+        
+        let updatedSrc = currentSrc.replace(/color=[^&]+/, 'color=' + encodeURIComponent(newColor));
+        $iframeLi.attr('src', updatedSrc);
     }
   }
 
@@ -258,7 +300,7 @@
           
           if (mutation.target.className.indexOf('header-bg') > -1 && $('.io-grey-mode').length > 0) {
             setWeatherTextColor('#010101'); 
-          } else if ($('.io-grey-mode').length > 0) {
+          } else {
             setWeatherTextColor('#ffffff'); 
           }
         }
@@ -317,10 +359,10 @@
 
 <body class="page-body boxed-container">
     <main role="main" class="flex-shrink-0">
-    <div class="container">
-        <h1 class="mt-5"></h1>
-        <div class="content">
-            <h1 id="开始使用">🚀开始使用</h1>
+        <div class="container">
+            <h1 class="mt-5"></h1>
+            <div class="content">
+                <h1 id="开始使用">🚀开始使用</h1>
 <h2 id="一本地安装部署">一、本地安装部署</h2>
 <h3 id="1安装配置">1、安装配置</h3>
 <ol>
@@ -359,7 +401,7 @@
 <ul>
 <li><em>Note</em>：输入任意名称</li>
 <li><em>Expiration</em>：选择生命周期。推荐<code>No expiration</code>或者尽量长一些。</li>
-<li><em>Select scopes</em>：勾选<code>repo:status</code>、<code>repo_deployment</code>、<code>public_repo</code></li>
+<li><em>Select scopes</em>：勾选 <code>repo</code>、<code>workflow</code>。</li>
 <li>最后点击 <strong>Generate token</strong> 生成令牌，并复制保存。</li>
 </ul>
 </li>
@@ -370,23 +412,23 @@
 <li>从你的仓库中打开此项目</li>
 <li>依次进入：Settings -&gt; Security -&gt; Secrets and variables -&gt; Actions</li>
 <li>点击 <strong>New repository secret</strong></li>
-<li><em>Name</em> 使用PERSONAL_ACCESS_TOKEN，<em>Secret</em> 使用刚生成的Token</li>
+<li><em>Name</em> 输入 <code>PERSONAL_ACCESS_TOKEN</code>，<br><em>Secret</em> 输入刚生成的 Token</li>
 </ol>
 </li>
 <li>Github中创建一个新项目，名称设置为 <code>&lt;你的用户名&gt;.github.io</code></li>
-<li>配置完成后，每次本地推送项目到远程仓库的<strong>main</strong>分支时，就会自动通过GitHubActions下载运行hugo生成静态资源，然后将静态资源推送到<code>&lt;你的用户名&gt;.github.io</code>远程仓库中。</li>
+<li>配置完成后，每次本地推送项目到远程仓库的 <strong>main</strong> 分支时，就会自动通过GitHubActions下载运行hugo生成静态资源，然后将静态资源推送到 <code>&lt;你的用户名&gt;.github.io</code> 远程仓库中。</li>
 </ol>
 <hr>
 <h1 id="配置说明">🛠️配置说明</h1>
 <h2 id="configtoml">config.toml</h2>
 <p>主要的配置信息都集成到了 <code>config.toml</code>，一个配置文件即可完成各种自定义的配置。<br/>
-每个配置项都有注释，这里不再解释。</p>
+每个配置项都有注释，这里不再一个一个详细解释。</p>
 <p>建议修改的配置项：</p>
 <ul>
-<li>baseURL：基础URL，需要设置成你的域名根路径，即访问主页的路径；如果为空，则使用使用相对路径。
+<li>baseURL：基础URL，需要设置成你的域名根路径，即访问主页的路径；如果为空，则使用相对路径。
 <ul>
 <li>例如：网站地址为 <code>https://yourname.github.io/WebStack-Hugo/</code>，则baseURL也需要设置成该值，否则网站中所有资源路径会出错。</li>
-<li>也可以使用hugo的启动命令参数 <code>--baseURL=</code> 来指定基础URL。</li>
+<li>也可以在运行 hugo 生成静态文件时，使用启动命令参数 <code>--baseURL=</code> 来指定基础URL。</li>
 </ul>
 </li>
 <li>title：网站标题。</li>
@@ -394,48 +436,118 @@
 <li>copyright：网站底部文本。</li>
 </ul>
 <h2 id="webstackyml">webstack.yml</h2>
-<p>导航的各个信息都集成在 <code>data</code> 文件夹中<code>.yml</code>后缀文件中，方便后续增删改动。</p>
+<p>导航的各个信息都集成在 <code>data</code> 文件夹中 <code>.yml</code> 后缀文件中，方便后续增删改动。</p>
 <ul>
-<li><strong>webstack.yml</strong>：所有收录的网站导航信息。</li>
-<li><strong>headers.yml</strong>：网站底部友情链接中的网站信息。</li>
+<li><strong>webstack.yml</strong>：配置网站主区域中的网址导航。</li>
+<li><strong>headers.yml</strong>：配置网站底部友情链接中的网址导航。</li>
 <li><strong>friendlinks.yml</strong>：配置顶部导航条的选项及链接。</li>
 </ul>
 <p>具体参数说明：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#f92672">taxonomy</span>: <span style="color:#ae81ff">常用网站                       </span> <span style="color:#75715e"># 左侧导航条顶级菜单名称。</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">far fa-star                       </span> <span style="color:#75715e"># 左侧导航条顶级菜单最左侧图标。使用Font Awesome图标，直接输入图标对应名称即可。</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#f92672">taxonomy</span>: <span style="color:#ae81ff">常用网站                     </span> <span style="color:#75715e"># 左侧导航条顶级菜单名称。</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">far fa-star                     </span> <span style="color:#75715e"># 左侧导航条顶级菜单最左侧图标。使用Font Awesome图标，直接输入图标对应名称即可。</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">tab                             </span> <span style="color:#75715e">#导航列表显示类型</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">list</span>:                                
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">term</span>: <span style="color:#ae81ff">常用网站                       </span> <span style="color:#75715e"># 导航条子菜单名称。</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">term</span>: <span style="color:#ae81ff">常用网站                     </span> <span style="color:#75715e"># 导航列表分组名称。</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">links</span>:                           
-</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">title</span>: <span style="color:#ae81ff">邮箱                      </span> <span style="color:#75715e"># 网站名称</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">logo</span>: <span style="color:#ae81ff">邮箱.png                   </span> <span style="color:#75715e"># 网站Logo</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">http://mail.email.com/      </span> <span style="color:#75715e"># 网站URL</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">邮箱网站。          </span> <span style="color:#75715e"># 网站介绍</span>
-</span></span></code></pre></div><p><strong>icon</strong>：左侧导航条菜单项的图标。使用 <a href="https://fontawesome.com/icons">Font Awesome</a> 图标，直接输入图标名称即可。</p>
-<p><strong>logo</strong>: 网站的logo。</p>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">title</span>: <span style="color:#ae81ff">邮箱                    </span> <span style="color:#75715e"># 网站名称</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">logo</span>: <span style="color:#ae81ff">邮箱.png                 </span> <span style="color:#75715e"># 网站Logo</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">url</span>: <span style="color:#ae81ff">http://mail.email.com/    </span> <span style="color:#75715e"># 网站URL</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">邮箱网站。         </span> <span style="color:#75715e"># 网站介绍</span>
+</span></span></code></pre></div><p><code>taxonomy</code>：导航列表总名称。会用作左侧导航条顶级菜单名称。另外如果没有二级分组，也会作为主区域标签名称。</p>
+<p><code>icon</code>：左侧导航条菜单项的图标。使用 <a href="https://fontawesome.com/icons">Font Awesome</a> 图标，直接输入图标名称即可。</p>
+<p><code>type</code>：用于指定导航列表显示类型。<br>目前支持类型：</p>
+<ul>
+<li><strong>空值：正常排列</strong>。一个 <code>links</code> 下的所有内容占用一块区域。（省略 <code>type</code> 配置项也是相同效果）</li>
+<li><strong><code>tab</code> ：选项卡</strong>。整个选项卡显示 <code>list</code> 下的所有内容，单个选项页中显示一个
+<code>links</code> 下所有内容。</li>
+</ul>
+<p><code>list</code>：导航二级分组列表。如果无需二级分组，可以省略该配置项，此时请将 <code>links</code> 配置项与 <code>taxonomy</code> 同级。</p>
+<p><code>term</code>：导航二级列表分组名称。会作为左侧导航子菜单名称，以及主区域标签名称。</p>
+<p><code>links</code>：想要收录的网站信息。</p>
+<p><code>logo</code>: 网站的logo。</p>
 <ul>
 <li>默认使用 <code>config.toml</code> 中的 <code>baseURL</code>+<code>logosPath</code> 配置值作为前缀，拼接 <code>logo</code> 的值作为网站LOGO图片的资源路径。</li>
 <li>如果使用 <code>/</code> 开头，则使用 <code>config.toml</code> 中的 <code>baseURL</code> 配置值作为前缀，拼接 <code>logo</code> 的值作为完整URL设置为图片路径。</li>
-<li>如果使用 <code>http://</code> 或 <code>https://</code> 开头，则直接将 <code>logo</code> 的值作为完整URL设置为图片路径。</li>
-<li>如果不设置值，且 <code>config.toml</code> 中的 <code>websiteLogo</code> 值为 <code>true</code>，则会使用 <code>url</code> 的值拼接 <code>favicon.ico</code> 作为网站logo图片的资源路径。<br/>（因为大部分网站都会有一个 <code>favicon.ico</code> 图标。</li>
+<li>如果使用 <code>http://</code> 或 <code>https://</code> 开头，则直接将 <code>logo</code> 的值当作完整URL直接设置为图片路径。</li>
+<li>如果使用 <code>fa-</code> 开头的值，则会将其视作 <a href="https://fontawesome.com/icons">Font Awesome</a> 图标名称，尝试插入 <a href="https://fontawesome.com/icons">Font Awesome</a> 图标作为网站Logo。</li>
+<li>如果为空，且 <code>config.toml</code> 中的 <code>websiteLogo</code> 值为 <code>true</code>，则会使用 <code>url</code> 配置项的值拼接 <code>favicon.ico</code> 作为网站logo图片的资源路径。<br/>（因为大部分网站都会有一个 <code>favicon.ico</code> 图标。</li>
 </ul>
+<h2 id="特殊参数值">特殊参数值</h2>
+<h3 id="a标签href属性自定义值"><code>&lt;a&gt;</code>标签<code>href</code>属性自定义值</h3>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>javascript-load-asteroidsa-script</code></td>
+<td>运行小飞机插件</td>
+</tr>
+<tr>
+<td><code>javascript-load-floating-widget-script</code></td>
+<td>运行宠物(浮动小部件)插件</td>
+</tr>
+<tr>
+<td><code>javascript-load-piano-script</code></td>
+<td>运行钢琴插件</td>
+</tr>
+<tr>
+<td><code>javascript-http//&lt;value&gt;[/&lt;param&gt;]</code></td>
+<td><code>&lt;value&gt;</code>：子域名名称；<code>&lt;param&gt;</code>：URI及后续参数。<br>页面加载后<code>replace-domain.js</code>脚本会使用 <code>&lt;value&gt;</code>值+当前一级域名 组成新的二级域名替换对应<code>&lt;a&gt;</code>标签的<code>href</code>属性值。<br>(如果有<code>&lt;param&gt;</code>参数值，则也会拼接到新二级域名后面)</td>
+</tr>
+</tbody>
+</table>
 
+            </div>
         </div>
-    </div>
     </main>
 
     <style>
-        .content{font-size:14px;}
-	.content a{color:#007bff;}
-	.content a:hover{color:#f1404b;}
-	.content h1,.content h2,.content h3,.content h4{margin: 15px 15px 15px 0px;}
-	.content p{line-height:1.5;margin:15px 0;}
-	.big-header-banner .page-header{background:gray;}
-	.main-content{margin-left:0px;}
-	.page-header{left:0px;}
-        img{max-width:100%;}
+        .content {
+            font-size: 14px;
+        }
+
+        .content a {
+            color: #007bff;
+        }
+
+        .content a:hover {
+            color: #f1404b;
+        }
+
+        .content h1,
+        .content h2,
+        .content h3,
+        .content h4 {
+            margin: 15px 15px 15px 0px;
+        }
+
+        .content p {
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+
+        .big-header-banner .page-header {
+            background: gray;
+        }
+
+        .main-content {
+            margin-left: 0px;
+        }
+
+        .page-header {
+            left: 0px;
+        }
+
+        img {
+            max-width: 100%;
+        }
     </style>
 
-<footer class="main-footer footer-type-1 text-xs">
+    <footer class="main-footer footer-type-1 text-xs">
     <div id="footer-tools" class="d-flex flex-column">
         
         <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
@@ -493,16 +605,6 @@
     }
 </script>
 <script src="https://weilong66.github.io/WebStack-Hugo/assets/plugin/floating-widget/floating-widget.js"></script>
-<script>
-    
-    const aFloatingWidget = $('ul.site-menu a[href="javascript-load-floating-widget-script"]');
-    aFloatingWidget.css('display', 'none'); 
-    
-    $(function () {
-        
-        aFloatingWidget.css('display', 'block');
-    })
-</script>
 
 
 
@@ -512,15 +614,20 @@
 
 <div class="floating-widget" id="floating-qrcode" style="display: none;">
     
-    <div id="qrcode"></div>
+    <div id="qrcode">
+        <a id="qrcode-fancybox" data-fancybox="gallery" href="#">
+        </a>
+    </div>
 </div>
 
+
 <script type="text/javascript">
+    var qrcodeEle = document.getElementById("qrcode-fancybox")
     
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
+    var qrcode = new QRCode(qrcodeEle, {
         text: window.location.href,
-        width: 128,
-        height: 128,
+        width: 512,
+        height: 512,
         colorDark: "#000000", 
         colorLight: "#ffffff", 
         correctLevel: QRCode.CorrectLevel.H 
@@ -533,11 +640,17 @@
             
             qrcode.makeCode(text);
         }
+
+        var imgElement = qrcodeEle.getElementsByTagName('img')[0];
+        if (imgElement) {
+            
+            qrcodeEle.href = imgElement.src;
+        }
     }
 
     
 
-    function switchQrcodeWidget(){
+    function switchQrcodeWidget() {
         
         if ($('#floating-qrcode').is(':hidden')) {
             
@@ -557,12 +670,11 @@
 </div>
 </div>
 
-<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.ui.touch-punch.min-0.2.2.js"
+    <script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.ui.touch-punch.min-0.2.2.js"
     id='jqueryui-touch-js'></script>
 <script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/clipboard.min-5.6.2.js" id='clipboard-js'></script>
 <script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/tooltip-extend.js" id='iplaycode-nav-js'></script>
 <script type='text/javascript' id='popper-js-extra'>
-
      
     var theme = {
         "ajaxurl": "https:\/\/weilong66.github.io\/WebStack-Hugo\/",
@@ -588,14 +700,31 @@
 <script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/popper.min.js" id='popper-js'></script>
 <script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/bootstrap.min-4.3.1.js" id='bootstrap-js'></script>
 <script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/theia-sticky-sidebar-1.5.0.js" id='sidebar-js'></script>
-<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/lazyload.min-12.4.0.js" id='lazyload-js-12'></script>
+
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/lib/lazyload.min-17.9.0.js" id='lazyload-js-12'></script>
+
+
+<script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/plugin/sakuraPlus.js" id="jquery-js"></script>
 
 
 
 
-<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/app-anim.js" id='appanim-js'></script>
+
+
+
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/app-mini.js" id='appmini-js'></script>
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/app-function.js" id='app-function-js'></script>
+<script type='text/javascript'>
+    
+    $('#mini-button').on('click', function () {
+        
+        trigger_lsm_mini("true", "false");
+    });
+</script>
+
 
 <script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/js/app-search.js" id='appmini-js'></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
         var siteWelcome = $('#loading');
@@ -606,10 +735,26 @@
     });
 </script>
 <script>
+    var $ = layui.jquery,
+        element = layui.element; 
+
+    if (history.scrollRestoration) {
+        if (window.location.hash) {
+            history.scrollRestoration = 'manual'; 
+        } else {
+            history.scrollRestoration = 'auto'; 
+        }
+    }
     $(document).ready(function () {
+        
+        
         setTimeout(function () {
             if ($('a.smooth[href="' + window.location.hash + '"]')[0]) {
                 $('a.smooth[href="' + window.location.hash + '"]').click();
+            } else if ($('a.tab-noajax[href="#' + window.location.hash.replace(/^#site-tab=/, '') +
+                    '"]')[0]) {
+                $('a.tab-noajax[href="#' + window.location.hash.replace(/^#site-tab=/, '') + '"]')
+                    .click();
             } else if (window.location.hash != '') {
                 $("html, body").animate({
                     scrollTop: $(window.location.hash).offset().top - 90
@@ -618,12 +763,15 @@
                     easing: "swing"
                 });
             }
-        }, 300);
+        }, 500);
+
         
         $(document).on('click', 'a.smooth', function (ev) {
+            
             if ($('#sidebar').hasClass('show') && !$(this).hasClass('change-href')) {
                 $('#sidebar').modal('toggle');
             }
+            
             if ($(this).attr("href").substr(0, 1) == "#") {
                 $("html, body").animate({
                     scrollTop: $($(this).attr("href")).offset().top - 90
@@ -632,22 +780,43 @@
                     easing: "swing"
                 });
             }
+            
             if ($(this).hasClass('go-search-btn')) {
                 $('#search-text').focus();
             }
+            
             if (!$(this).hasClass('change-href')) {
                 var menu = $("a" + $(this).attr("href"));
                 menu.click();
                 toTarget(menu.parent().parent(), true, true);
             }
         });
+        
         $(document).on('click', 'a.tab-noajax', function (ev) {
+            
+            if ($(this).attr("href").substr(0, 1) == "#") {
+                $("html, body").animate({
+                    scrollTop: $($(this).attr("href").replace(/^#site-tab=/, '')).offset().top -
+                        120
+                }, {
+                    duration: 500,
+                    easing: "swing"
+                });
+                
+                element.tabChange('site-tab', $(this).attr("href").replace(/^#/, ''));
+            }
+
+            
             var url = $(this).data('link');
-            if (url)
+            
+            if (url) {
+                
                 $(this).parents('.d-flex.flex-fill.flex-tab').children('.btn-move.tab-move').show()
                     .attr('href', url);
-            else
+                
+            } else {
                 $(this).parents('.d-flex.flex-fill.flex-tab').children('.btn-move.tab-move').hide();
+            }
         });
 
     });
@@ -719,7 +888,7 @@
     
     function switchNightMode() {
         var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-        if (night == '0') {
+        if (night == '0') { 
             $("#search-bg").css("background-image", "url(assets\/images\/background\/fluent_w-24.jpg)")
             document.body.classList.remove('io-grey-mode');
             document.body.classList.add('io-black-mode');
@@ -742,9 +911,25 @@
         }
     }
 </script>
+<script>
+    var aLazyLoad = new LazyLoad({
+         
+    });
+</script>
 
 <script src="https://weilong66.github.io/WebStack-Hugo/assets/plugin/website-asteroidsa/load-start.js"></script>
 
+<script type='text/javascript' src="https://weilong66.github.io/WebStack-Hugo/assets/plugin/piano-js/piano.js"></script>
+
 </body>
+
+
+<script>
+    
+
+    window.onload = function () {
+        ``
+    };
+</script>
 
 </html>

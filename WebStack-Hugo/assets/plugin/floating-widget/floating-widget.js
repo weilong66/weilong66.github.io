@@ -12,7 +12,7 @@ var floatingWidgetUrl = getFloatingWidgetUrl(
 );
 
 //小部件临时禁用时间上限（超时则移除小部件以节省资源）
-var expirationTime = 1 * 60 * 1000;//单位毫秒
+var expirationTime = 1 * 60 * 1000; //单位毫秒
 
 //如果配置中设置默认启用小部件，并且url不为空，则加载小部件。
 if (floatingWidgetState && floatingWidgetUrl) {
@@ -58,12 +58,14 @@ if (link) {
 function togglefloatingWidget() {
   // 查找浮动小部件元素
   let $floatingWidgetIframe = $("iframe.floating-widget-iframe");
+  // 查找浮动小部件容器
+  let $floatingWidgetDiv = $(".floating-widget-div");
 
   if ($floatingWidgetIframe.length > 0) {
-    //获取浮动小部件的display样式值
-    let displayValue = $floatingWidgetIframe[0].style.display;
+    //获取浮动小部件容器的display样式值
+    let displayValue = $floatingWidgetDiv[0].style.display;
     if (displayValue === "block") {
-      // 如果存在且为隐藏则禁用
+      // 如果存在且为显示则禁用
       disablefloatingWidget();
     } else {
       //反之启用
@@ -79,11 +81,12 @@ function togglefloatingWidget() {
 var removeTimer = null;
 /* 禁用 浮动小部件 函数 */
 function disablefloatingWidget() {
-  let $floatingWidgetIframe = $(".floating-widget-div");
-  if ($floatingWidgetIframe.length > 0) {
+  // 获取小部件容器
+  let $floatingWidgetDiv = $(".floating-widget-div");
+  if ($floatingWidgetDiv.length > 0) {
     console.log("禁用浮动小部件.");
     // 隐藏浮动小部件
-    $floatingWidgetIframe.css('display', 'none');
+    $floatingWidgetDiv.css('display', 'none');
     // 清除已有的定时器（如果存在），防止重复设定
     if (removeTimer !== null) {
       clearTimeout(removeTimer);
@@ -91,7 +94,7 @@ function disablefloatingWidget() {
     //设置新定时器，指定时间后移除以节省资源
     removeTimer = setTimeout(() => {
       // 清空浮动小部件内元素
-      $floatingWidgetIframe.empty();
+      $floatingWidgetDiv.empty();
       // 移除后将定时器设为空
       removeTimer = null;
       console.log("浮动小部件长时间未启用，为节省资源已移除.")
@@ -102,11 +105,13 @@ function disablefloatingWidget() {
 /* 启用 浮动小部件 函数 */
 function enablefloatingWidget() {
   // 获取小部件
-  let iframe = $('iframe.floating-widget-iframe').first();
-  if (iframe.length > 0) {
+  let $iframe = $('iframe.floating-widget-iframe').first();
+  // 获取小部件容器
+  let $floatingWidgetDiv = $(".floating-widget-div");
+  if ($iframe.length > 0) {
     console.log("启用浮动小部件.");
     //显示小部件
-    iframe.css("display", "block");
+    $floatingWidgetDiv.css("display", "block");
     // 如果有正在等待执行的移除操作，则清除定时器
     if (removeTimer !== null) {
       clearTimeout(removeTimer);
@@ -121,15 +126,15 @@ function enablefloatingWidget() {
 
     //小部件 控件
     // 创建一个<iframe> 元素
-    iframe = document.createElement("iframe");
+    $iframe = document.createElement("iframe");
     // 设置 iframe 的属性
-    iframe.className = "floating-widget-iframe";
-    iframe.src = floatingWidgetUrl;
-    iframe.frameBorder = "0";
-    iframe.width = "400";
-    iframe.height = "300";
-    iframe.style.border = "none"; // 移除边框
-    iframe.style.display = "none"; // 默认隐藏
+    $iframe.className = "floating-widget-iframe";
+    $iframe.src = floatingWidgetUrl;
+    $iframe.frameBorder = "0";
+    $iframe.width = "400";
+    $iframe.height = "300";
+    $iframe.style.border = "none"; // 移除边框
+    $iframe.style.display = "none"; // 默认隐藏
 
     // 显示“加载中”信息
     var errorMessage = document.createElement("div");
@@ -137,36 +142,36 @@ function enablefloatingWidget() {
     errorMessage.style.color = "red";
     errorMessage.style.fontSize = "16px"; // 设置字体大小
     errorMessage.style.fontWeight = "bold"; // 设置字体加粗
-    errorMessage.style.paddingRight = "50px";//设置内边距避免与其它元素重叠
+    errorMessage.style.paddingRight = "50px"; //设置内边距避免与其它元素重叠
 
-    newDiv.append(errorMessage);//添加加载提示信息
+    newDiv.append(errorMessage); //添加加载提示信息
 
     console.log("浮动小部件加载中...");
 
     //设置iframe加载完成后执行的函数
-    iframe.onload = function () {
+    $iframe.onload = function () {
       errorMessage.style.display = "none";
-      iframe.style.display = "block";//显示小部件
+      $iframe.style.display = "block"; //显示小部件
       console.log("浮动小部件加载完成!");
     };
     // 设置iframe加载失败后执行的函数
-    iframe.onerror = function () {
-      newDiv.style.display = "none";//隐藏小部件容器
-      iframe.style.display = "none";//隐藏小部件
-      $(link).css("display", "none");//隐藏切换小部件加载的超链接
+    $iframe.onerror = function () {
+      newDiv.style.display = "none"; //隐藏小部件容器
+      $iframe.style.display = "none"; //隐藏小部件
+      $(link).css("display", "none"); //隐藏切换小部件加载的超链接
       errorMessage.textContent = "加载失败";
       console.log("小部件加载失败: iframe.onerror");
     };
 
     //将小部件添加到的 <div>中
-    $(newDiv).append(iframe);
+    $(newDiv).append($iframe);
   }
 }
 
 /* 新标签页中打开iframe的url */
 function openIframeURL() {
-    // 打开新页面
-    window.open(floatingWidgetUrl, '_blank'); // 在新标签页中打开
+  // 打开新页面
+  window.open(floatingWidgetUrl, '_blank'); // 在新标签页中打开
 }
 
 //根据传参返回
@@ -186,4 +191,3 @@ function getFloatingWidgetUrl(type) {
   }
   return "";
 }
-

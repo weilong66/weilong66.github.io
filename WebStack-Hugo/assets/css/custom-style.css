@@ -203,3 +203,8 @@ footer.main-footer .footer-text a:hover {
 .url-card .url-img>img {
     border-radius: 20%;
 }
+
+/* 樱花特效样式 */
+#canvas_sakura{
+    z-index: 1100;
+}

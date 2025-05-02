@@ -48,7 +48,7 @@
                 callback(data);
                 try {
                     delete window[jsonp];
-                } catch (e) { }
+                } catch (e) {}
                 window[jsonp] = null;
             };
             load(url + query + "callback=" + jsonp);
@@ -928,7 +928,7 @@
                 }
             }));
         },
-        install: function () { },
+        install: function () {},
         getShipId: function () {
             return this.mySiteData && this.mySiteData.settings.ship;
         },
@@ -1017,7 +1017,7 @@
             if (message != this.lastMessage) {
                 try {
                     this.socketPostMessage(message);
-                } catch (e) { }
+                } catch (e) {}
                 this.lastMessage = message;
             }
         },
@@ -1045,7 +1045,7 @@
                 this.game.updateShips(data.data, isInitial);
                 try {
                     window.focus();
-                } catch (e) { }
+                } catch (e) {}
             }));
             if (!isInitial) {
                 this.parent.hideMenu();
@@ -1128,7 +1128,7 @@
                 this.numPoints +
                 "</div>" +
                 '<div id="kickass-esctoquit" class="KICKASSELEMENT">按下 Esc 键退出</div>' +
-                // + this.getShareHTML() //getShareHTML: 生成分享链接（已经改成微博分享了，但本地版也用不上所以注释掉）
+                // + this.getShareHTML() //getShareHTML: 生成分享链接（改为官网链接，但本地版也用不上所以注释掉）
                 //↓用来唤出菜单项，本地版不用菜单所以注释掉
                 "</div>" +
                 '<ul id="kickass-pointstab-menu" class="KICKASSELEMENT" ' +
@@ -1136,9 +1136,10 @@
                 ">" +
                 // '<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-highscores" href="#">提交得分</a></li>' +
                 // '<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-menu" href="#">菜单</a></li>' +
-                '<li class="last-li KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-ships-previous" href="#"><</a></li>' +
-                '<li class="last-li KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-ships" href="#">更换飞船</a></li>' +
-                '<li class="last-li KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-ships-next" href="#">></a></li>' +
+                '<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-ships-previous" ><</a></li>' +
+                '<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-ships" >更换飞船</a></li>' +
+                '<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-ships-next" >></a></li>' +
+                '<li class="last-li KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-switch-online">切换在线版</a></li>' +
                 "</ul>" +
                 "</div>";
             this.pointsTab = document.getElementById('kickass-pointstab');
@@ -1154,6 +1155,7 @@
             this.switchShipLink = document.getElementById('kickass-link-ships');
             this.switchPreviousShipLink = document.getElementById('kickass-link-ships-previous');
             this.switchNextShipLink = document.getElementById('kickass-link-ships-next');
+            this.switchOnlineVersionLink = document.getElementById('kickass-link-switch-online');//切换在线版选项
             var all = this.container.getElementsByTagName('*');
             for (var i = 0; i < all.length; i++) {
                 this.game.registerElement(all[i]);
@@ -1210,9 +1212,9 @@
                     if (randomShipLocal) {
 
                         // 随机选择一个数字作为飞船id
-                        shipIdIndex = Math.floor(Math.random() * shipIds.length);//生成随机索引
-                        shipIdLocal = shipIds[shipIdIndex];//使用生成的随机索引获取随机飞船id
-                    }else{
+                        shipIdIndex = Math.floor(Math.random() * shipIds.length); //生成随机索引
+                        shipIdLocal = shipIds[shipIdIndex]; //使用生成的随机索引获取随机飞船id
+                    } else {
                         //不为true则使用上次使用的飞船皮肤
                         shipIdLocal = shipIds[shipIdIndex];
                     }
@@ -1273,6 +1275,19 @@
                     this.menu.messageTypeChangeShip(shipIdLocal + ",1,initial");
 
                 }
+            }));
+
+            //切换在线版本
+            addEvent(this.switchOnlineVersionLink, 'click', bind(this, function (e) {
+                // 存储对象
+                let localStorageName = 'asteroidsa-online';
+                let localStorageValue = localStorage.getItem(localStorageName);
+                if (localStorageValue  && localStorageValue === 'true') {
+                    localStorage.setItem(localStorageName, 'false');
+                }else{
+                    localStorage.setItem(localStorageName, 'true');
+                }
+                window.location.reload();
             }));
 
             addEvent(this.bombLink, 'click', bind(this, function (e) {
@@ -1337,7 +1352,7 @@
                 );
             } */
 
-            //这里改成了官网链接的徽章
+            //改成微博也没意义，所以这里最终改成了官网链接的徽章（使用 img.shields.io 工具实现）
             var url = 'https://img.shields.io/badge/%E5%AE%98%E7%BD%91-KickAssApp-%23ED5721?style=plastic&link=https%3A%2F%2Fkickassapp.com%2F';
             return (
                 '<iframe class="KICKASSELEMENT kickass-like" src=" ' +
@@ -1908,7 +1923,7 @@
                     dir: this.dir.cp()
                 },
                 to: new Vector(x, y),
-                callback: callback || function () { }
+                callback: callback || function () {}
             };
             this.tween.time = this.getTimeforTween();
         },
@@ -2210,9 +2225,9 @@
             this.pos = new Vector(x, y);
             this.angle = angle || 0;
         },
-        shootPressed: function () { },
-        shootReleased: function () { },
-        checkCollisions: function () { },
+        shootPressed: function () {},
+        shootReleased: function () {},
+        checkCollisions: function () {},
         getExplosionClass: function () {
             return ParticleExplosion;
         },
@@ -2251,7 +2266,7 @@
         getABulletDir: function () {
             return this.player.dir.cp().rotate(this.angle);
         },
-        destroy: function () { }
+        destroy: function () {}
     });
     var LaserCannon = new Class({
         Extends: Cannon,
@@ -2271,7 +2286,7 @@
         checkCollisions: function (tdelta) {
             for (var i = 0, laser; laser = this.lasers[i]; i++) {
                 laser.update(tdelta);
-                if (this.checkCollision(laser)) { }
+                if (this.checkCollision(laser)) {}
             }
         },
         removeOld: function () {
@@ -2453,9 +2468,9 @@
             this.bornAt = now();
             this.pos = pos.cp();
         },
-        update: function (tdelta) { },
-        checkBounds: function () { },
-        destroy: function () { }
+        update: function (tdelta) {},
+        checkBounds: function () {},
+        destroy: function () {}
     });
     var ParticleExplosion = new Class({
         Extends: Explosion,
@@ -2535,7 +2550,7 @@
             this.fx.update();
         },
         set: function (key, value) {
-            if (key == 'opacity') { }
+            if (key == 'opacity') {}
         },
         start: function () {
             var pieces = this.createClones();
@@ -2600,7 +2615,7 @@
                 this.left.parentNode.removeChild(this.left);
                 this.right.parentNode.removeChild(this.right);
                 this.element.parentNode.removeChild(this.element);
-            } catch (e) { }
+            } catch (e) {}
         }
     });
     var Weapons = {
@@ -2624,7 +2639,7 @@
         initialize: function (rect) {
             this.canvas = document.createElement('canvas');
             this.canvas.className = 'KICKASSELEMENT';
-            with (this.canvas.style) {
+            with(this.canvas.style) {
                 position = 'absolute';
                 zIndex = '1000000';
             }

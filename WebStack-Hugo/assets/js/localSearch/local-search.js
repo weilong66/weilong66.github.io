@@ -65,7 +65,9 @@ function search(parents) {
   let regex = new RegExp(keyword, "i"); // 'i' 标志表示不区分大小写
   if (typeof pinyinPro !== "undefined") {
     //https://pinyin-pro.cn/use/match.html
-    var { match: pyMatch } = pinyinPro;
+    var {
+      match: pyMatch
+    } = pinyinPro;
   }
 
   for (var i = 0; i < xCards.length; i++) {
@@ -75,7 +77,19 @@ function search(parents) {
       cardLink.querySelector(".text-sm.overflowClip_1").textContent.trim() +
       " - " +
       cardLink.querySelector(".text-muted.text-xs").textContent.trim();
-    var imgSrc = cardLink.querySelector("img").getAttribute("data-src");
+    //获取当前导航网址容器中的img元素
+    let cardLinkImg = cardLink.querySelector("img");
+    var imgSrc = "";
+    if (cardLinkImg) {
+      imgSrc = cardLink.querySelector("img").getAttribute("data-src");
+    }
+    /* //如果不存在img元素，判断是否存在<i>元素，存在则可能使用了图标而不是图片，获取类名存入 （考虑性能此处不用了）
+          else {
+          let cardLinkI = cardLink.querySelector("i");
+          if (cardLinkI) {
+            imgSrc = cardLink.querySelector("i").getAttribute("class");
+          }
+        } */
     if (cardLink) {
       // 常规匹配
       let wordMatch = clipContent.match(regex);
@@ -101,7 +115,7 @@ function search(parents) {
     }
   }
 
-  $resultsList.text("");// 重置结果列表
+  $resultsList.text(""); // 重置结果列表
   if (results.length > 0) {
     let defaultLogo = logosPath;
     tipsList = results.length;
@@ -117,14 +131,23 @@ function search(parents) {
       let newtext = results[j].text.replace(word, highlight);
       // 结果列表
       listItem = document.createElement("li");
+
       // 加一个img标签用于显示logo
       let newIcon = document.createElement("i");
+      /* 判断dataSrc值是否是 图标，是的话设置类名，否则设置图片 （考虑性能该功能注释不用）
+      if (isFontAwesomeIcon(results[j].dataSrc)) {
+      newIcon.className = results[j].dataSrc;
+      } else { } */
+
       let img = document.createElement("img");
       img.classList.add("lazy");
       img.src = defaultLogo;
-      img.setAttribute("data-src", results[j].dataSrc);
-      img.setAttribute("onerror", `javascript:this.src='${defaultLogo}'`);
+      img.setAttribute("data-src", results[j].dataSrc); //设置到data-src以使用懒加载
+      img.setAttribute("onerror", `useDefaultImage(this,'${defaultLogo}')`); //图片加载失败时加载默认图片(通过useDefaultImage加载避免无限加载)
+      // img.setAttribute("onerror", `javascript:this.src='${defaultLogo}'`); //图片加载失败时加载默认图片
       newIcon.appendChild(img);
+
+
       // 添加a标签
       let newLink = document.createElement("a");
       newLink.href = results[j].href;
@@ -137,7 +160,8 @@ function search(parents) {
       // 将 搜索结果列表 添加到 $resultsList 中
       $resultsList.append(listItem);
     }
-    $("img.lazy").lazyload(); //设置站点logo懒加载
+    aLazyLoad.update(); //使 LazyLoad 重新检查新增的使用懒加载的元素
+    // $("img.lazy").lazyload(); //设置站点logo懒加载
     //获取结果列表单行高度
     resultSingleLiHeight = $(listItem).outerHeight();
   } else {
@@ -158,6 +182,18 @@ function search(parents) {
 function countChineseCharacters(str) {
   //使用正则表达式匹配中文(\u4e00-\u9fa5)和中文符号(\u3000-\u303F)
   return (str.match(/[\u4e00-\u9fa5\u3000-\u303F]/g) || []).length;
+}
+
+//判断是否为Font Awesome图标类
+function isFontAwesomeIcon(datasrc) {
+  // 检查是否为有效的字符串
+  if (typeof datasrc !== 'string') return false;
+
+  // 正则表达式匹配Font Awesome图标类
+  const faIconRegex = /^((fa[srlb])? ?fa-[a-z]+(?:\s+fa-[a-z]+)*)$/;
+
+  // 使用正则表达式测试输入字符串
+  return faIconRegex.test(datasrc.trim());
 }
 
 // 添加输入事件监听，使用防抖函数包裹搜索函数，设置延迟时间为300ms

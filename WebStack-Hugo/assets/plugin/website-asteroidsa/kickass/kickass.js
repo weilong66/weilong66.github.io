@@ -1064,16 +1064,31 @@
 			// ↓添加一个在线提示，可以将其拖到书签上在别处使用，因为太遮挡视线了，所以注释掉（反正你大概率是用在自己网站上，要这玩意也没用）
 			// var adHTML = this.game.shouldShowAd() ? '<iframe style="background: transparent" src="' + GameGlobals.path('hello.html') + '" class="KICKASSELEMENT" id="kickass-hello-sunshine"></iframe>' : "";
 
-			this.container.innerHTML = '<div id="kickass-howto-image" class="KICKASSELEMENT kickass-howto-invisible"></div>' + '<div id="kickass-pointstab" class="KICKASSELEMENT">'
-				// + adHTML 
-				+
-				'<div id="kickass-bomb-menu" class="KICKASSELEMENT KICKASShidden">' + '<ul id="kickass-bomb-list" class="KICKASSELEMENT">' + '</ul>' + '</div>' + '<div id="kickass-weapons-menu" class="KICKASSELEMENT KICKASShidden" style="display:none">' + '<ul id="kickass-weapons-list" class="KICKASSELEMENT">' + '</ul>' + '</div>' + '<div id="kickass-pointstab-wrapper" class="KICKASSELEMENT">' + '<div id="kickass-points" class="KICKASSELEMENT">' +
-				this.numPoints + '</div>' + '<div id="kickass-esctoquit" class="KICKASSELEMENT">按下 Esc 键退出</div>' +
-				this.getShareHTML() 
-				+ '</div>' 
-				+ '<ul id="kickass-pointstab-menu" class="KICKASSELEMENT" ' + (this.game.shouldShowMenu() ? '' : 'style="display:none"') + '>' + '<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-highscores" href="#">提交分数</a></li>' +
+			this.container.innerHTML = '<div id="kickass-howto-image" class="KICKASSELEMENT kickass-howto-invisible"></div>' +
+				 '<div id="kickass-pointstab" class="KICKASSELEMENT">' +
+				// + adHTML  
+				'<div style="font-size:10px;padding:2px;position: absolute;right: 10px;top: 5px;background: rgb(53, 53, 53);"><a class="KICKASSELEMENT" id="kickass-link-switch-online" >切换离线版</a></div>' +
+				'<div id="kickass-bomb-menu" class="KICKASSELEMENT KICKASShidden">' +
+				'<ul id="kickass-bomb-list" class="KICKASSELEMENT">' +
+				'</ul>' +
+				'</div>' +
+				'<div id="kickass-weapons-menu" class="KICKASSELEMENT KICKASShidden" style="display:none">' +
+				'<ul id="kickass-weapons-list" class="KICKASSELEMENT">' +
+				'</ul>' +
+				'</div>' +
+				'<div id="kickass-pointstab-wrapper" class="KICKASSELEMENT">' +
+				'<div id="kickass-points" class="KICKASSELEMENT">' +
+				this.numPoints +
+				'</div>' +
+				'<div id="kickass-esctoquit" class="KICKASSELEMENT">按下 Esc 键退出</div>' +
+				this.getShareHTML() + //getShareHTML: 生成分享链接
+				'</div>' +
+				'<ul id="kickass-pointstab-menu" class="KICKASSELEMENT" ' + (this.game.shouldShowMenu() ? '' : 'style="display:none"') + '>' +
+				'<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-highscores" href="#">提交分数</a></li>' +
 				'<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-menu" href="#">菜单</a></li>' +
-				'<li class="last-li KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-ships" href="#">切换飞船</a></li>' + '</ul>' + '</div>';
+				'<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-ships" href="#">切换飞船</a></li>' +
+				'</ul>' +
+				'</div>';
 			this.pointsTab = document.getElementById('kickass-pointstab');
 			this.pointsTabWrapper = document.getElementById('kickass-pointstab-wrapper');
 			this.points = document.getElementById('kickass-points');
@@ -1085,6 +1100,7 @@
 			this.submitScoreLink = document.getElementById('kickass-link-highscores');
 			this.menuLink = document.getElementById('kickass-link-menu');
 			this.switchShipLink = document.getElementById('kickass-link-ships');
+			this.switchOnlineVersionLink = document.getElementById('kickass-link-switch-online'); //切换在线版选项
 			var all = this.container.getElementsByTagName('*');
 			for (var i = 0; i < all.length; i++) {
 				this.game.registerElement(all[i]);
@@ -1111,6 +1127,18 @@
 			addEvent(this.switchShipLink, 'click', bind(this, function (e) {
 				stopEvent(e);
 				this.navigateTo('ships');
+			}));
+			//切换在线版本
+			addEvent(this.switchOnlineVersionLink, 'click', bind(this, function (e) {
+				// 存储对象
+				let localStorageName = 'asteroidsa-online';
+				let localStorageValue = localStorage.getItem(localStorageName);
+				if (localStorageValue && localStorageValue === 'true') {
+					localStorage.setItem(localStorageName, 'false');
+				} else {
+					localStorage.setItem(localStorageName, 'true');
+				}
+				window.location.reload();
 			}));
 			addEvent(this.bombLink, 'click', bind(this, function (e) {
 				stopEvent(e);
