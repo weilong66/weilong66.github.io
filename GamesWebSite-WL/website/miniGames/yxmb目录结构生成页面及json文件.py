@@ -83,6 +83,7 @@ def generate_html_from_dict(data):
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="../css/sptx.css">
     <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="../js/app-functions.js"></script>
     <!-- 图片懒加载插件 -->
     <script src="../js/lib/lazyload.min-17.9.0.js"></script>
 </head>
@@ -103,13 +104,12 @@ def generate_html_from_dict(data):
                 
                 html_content += f"""
                     <div class="item">
-                        <a target="right" href="{href}" title="{desc_text}">
-                            <div>
-                                <div class="logo">
-                                    <img class="lazy" src="{default_image}" data-src="{img_path}" alt="Coding">{img_text}
-                                </div>
-                                <div class="desc">{desc_text}</div>
+                        <a target="right" href="{href}">
+                            <div class="logo">
+                                <img class="lazy" src="{default_image}" data-src="{img_path}" alt="Coding">
                             </div>
+                            <div class="title" title="{img_text}">{img_text}</div>
+                            <div class="desc" title="{desc_text}">{desc_text}</div>
                         </a>
                         <a class="togo" href="{href}" target="_blank" title="新页面打开"><i class="fa fa-chevron-right"></i></a>
                     </div>
@@ -120,13 +120,12 @@ def generate_html_from_dict(data):
                 
                 html_content += f"""
                     <div class="item">
-                        <a target="right" href="{href}" title="">
-                            <div>
-                                <div class="logo">
-                                    <img class="lazy" src="{default_image}" data-src="" alt="Coding">{img_text}
-                                </div>
-                                <div class="desc"></div>
+                        <a target="right" href="{href}" >
+                            <div class="logo">
+                                <img class="lazy" src="{default_image}" data-src="" alt="Coding">
                             </div>
+                            <div class="title" title="{img_text}">{img_text}</div>
+                            <div class="desc"></div>
                         </a>
                         <a class="togo" href="{href}" target="_blank" title="新页面打开"><i class="fa fa-chevron-right"></i></a>
                     </div>
@@ -141,6 +140,7 @@ def generate_html_from_dict(data):
     var aLazyLoad = new LazyLoad({
         /* options here */
     });
+    initNightMode();
 </script>
 </html>
 """
@@ -166,6 +166,7 @@ def generate_combined_html(games):
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="../css/sptx.css">
     <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="../js/app-functions.js"></script>
     <!-- 图片懒加载插件 -->
     <script src="../js/lib/lazyload.min-17.9.0.js"></script>
 </head>
@@ -184,13 +185,12 @@ def generate_combined_html(games):
         
         html_content += f"""
             <div class="item">
-                <a target="right" href="{href}" title="{desc_text}">
-                    <div>
-                        <div class="logo">
-                            <img class="lazy" src="{default_image}" data-src="{img_path}" alt="Coding">{img_text}
-                        </div>
-                        <div class="desc">{desc_text}</div>
+                <a target="right" href="{href}">
+                    <div class="logo">
+                        <img class="lazy" src="{default_image}" data-src="{img_path}" alt="Coding">
                     </div>
+                    <div class="title" title="{img_text}">{img_text}</div>
+                    <div class="desc" title="{desc_text}">{desc_text}</div>
                 </a>
                 <a class="togo" href="{href}" target="_blank" title="新页面打开"><i class="fa fa-chevron-right"></i></a>
             </div>
@@ -205,6 +205,7 @@ def generate_combined_html(games):
     var aLazyLoad = new LazyLoad({
         /* options here */
     });
+    initNightMode();
 </script>
 </html>
 """

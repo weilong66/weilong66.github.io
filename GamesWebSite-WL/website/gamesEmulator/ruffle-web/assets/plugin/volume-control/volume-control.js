@@ -61,7 +61,6 @@ $(document).ready(function () {
 
     let volume = 0.50; // 初始音量值
     volumeSlider.val(volume);
-
     // 监听音量滑块的变化
     volumeSlider.on('input', function () {
         event.preventDefault();//阻止默认行为
@@ -73,7 +72,6 @@ $(document).ready(function () {
             volumeButton.removeClass('fa-volume-up').addClass('fa-volume-mute'); // 静音图标
         }
     });
-
     // 监听音量按钮的点击事件
     let oldVolume = volume; //上次音量值
     volumeButton.on('click', function () {
@@ -93,5 +91,4 @@ $(document).ready(function () {
             $(this).removeClass('fa-volume-mute').addClass('fa-volume-up'); // 音量图标
         }
     });
-
 })

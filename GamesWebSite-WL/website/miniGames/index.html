@@ -17,18 +17,30 @@
 	<meta name="viewport" content="width=device-width" />
 	<!-- Bootstrap core CSS     -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
-
 	<!--  Material Dashboard CSS    -->
 	<link href="css/material-dashboard.css" rel="stylesheet" />
-
+	<!-- 自定义样式 -->
+	<link rel="stylesheet" type='text/css'  href="css/sptx.css">
 	<!--     Fonts and icons     -->
 	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	
 	<link href='css/2d7207a20f294df196f3a53cae8a0def.css' rel='stylesheet' type='text/css'>
 	<!-- 图片懒加载插件 -->
 	<script src="./js/lib/lazyload.min-17.9.0.js"></script>
 
 	<!-- umami本地网站统计 -->
 	<script defer src="/assets/plugin/umami/umami-script.js" data-website-id="17943f31-5b58-4989-a50c-3b72a4da00ae"></script>
+
+	<!-- 百度统计 -->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?2c2025fc1a7d268a091f0daa1a6d7d34";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
 
 </head>
 
@@ -51,19 +63,23 @@
 					</li>-->
 				</ul>
 				<div align="center">
-					<hr><a id="back-home-link" href="../">返回首页</a>
+					<hr><a id="back-home-link" href="#">返回首页</a>
 				</div>
 			</div>
 		</div>
 
 		<div class="main-panel">
 			<!-- 顶部导航条 -->
-			 <nav class="navbar navbar-transparent navbar-absolute" style="background-color: #fff;">
+			 <nav class="navbar navbar-transparent navbar-absolute" >
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse">
 							<span class="sr-only">切换导航</span>
 							<i class="fa fa-bars"></i>
+						</button>
+						<button type="button" data-toggle="collapse" onclick="switchNightMode()" class="navbar-switch-dark" id="switch-dark-mode">
+							<span class="sr-only">黑暗模式</span>
+							<i class="mode-ico fa fa-moon-o"></i>
 						</button>
 						<!-- <button type="button" class="navbar-hide" data-toggle="collapse">
 							<span class="sr-only">隐藏导航条</span>
@@ -79,12 +95,15 @@
 			<div class="content">
 				<div class="container-fluid">
 					<div class="row" style="margin-top: -15px;">
-						<iframe src="link/全部游戏.html" name="right" width="100%" height="100%" style="border: none;" class="game-page"></iframe>
+						<iframe src="link/全部游戏.html" name="right" width="10%" height="10%" style="border: none;" class="game-page" id="iframe-game-page"></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
-		<button id="full-screen" title="网页全屏" ><i class="fa fa-expand"></i></button>
+		<div id="footer-tools" class="footer-tools">
+			<button id="full-screen" title="网页全屏" ><i class="fa fa-expand"></i></button>
+			<button id="switch-dark-mode" onclick="switchNightMode()" title="切换夜间模式" ><i class="mode-ico fa fa-moon-o"></i></button>
+		</div>
 </body>
 
 <!--   Core JS Files   -->
@@ -99,6 +118,7 @@
 
 <!-- 后编写的js脚本 -->
 <script src="js/plugin.js"></script>
+<script src="js/app-functions.js"></script>
 
 
 
@@ -153,16 +173,23 @@
 </script>
 
 <script type="text/javascript">
+	// 定义一个函数，用于绑定导航栏的点击事件
 	function navBindingClick() {
+		// 给导航栏的每个li元素绑定点击事件
 		$(".nav li").click(function () {
 
+			// 移除所有li元素的active类
 			$(".nav li").removeClass("active");
+			// 给当前点击的li元素添加active类
 			$(this).addClass("active");
 
 		})
 
+		// 获取当前页面的基础URL
 		const baseURL = getBaseURL();
+		// 如果基础URL存在
 		if (baseURL) {
+			// 将返回首页的链接的href属性设置为基础URL
 			document.getElementById('back-home-link').href = baseURL;
 		}
 
@@ -173,12 +200,19 @@
 	function getBaseURL() {
 		// 获取完整的URL
 		const fullUrl = window.location.href;
-		const regex = /^(https?\:\/\/.*\/)miniGames\/?/;
+		const regex = /^(https?\:\/\/.*\/)games\/?/;
 		const matches = fullUrl.match(regex);
 		if (matches) {
-			return matches[1];
+			return matches[0];
 		}
 		return "";
 
 	}
 </script>
+
+<script>
+	initNightMode();
+	dragFooterTools();
+</script>
+
+

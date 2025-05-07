@@ -1,18 +1,29 @@
+/* 夜间/黑暗模式 */
+.io-black-mode .main .box .item {
+  background: #2c2e2f;
+  border: 1px solid #3a3d3f;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.io-black-mode .navbar.navbar-transparent{
+  background-color: #2c2e2f;
+  color: #bfbfbf;
+}
+
 .main .box .sub-category>div {
-  padding: 12px 0 0 2.1%;
+  padding: 12px 2.1% 0 0;
   font-size: 18px;
 }
 
 .main .box .item {
   position: relative;
-  width: 20%;
   border: 1px solid #e4ecf3;
   box-shadow: 1px 2px 3px #f2f6f8;
   border-radius: 6px;
   background: #fff;
+  width: 150px;
   padding: 10px;
-  min-width: 200px;
-  margin: 20px 0 0 2.1%;
+  margin: 20px 0 0 20px;
   float: left;
   overflow: hidden;
   transition: all .3s;
@@ -28,29 +39,21 @@
   font-size: 14px;
 }
 
-.main .box .item .logo {
-  height: 40px;
-  position: relative;
-  font-size: 14px;
-  font-weight: 700;
-  color: #3273dc;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 0 .1rem;
-}
-
+/* 游戏logo图片 */
 .main .box .item .logo img {
-  width: 40px;
+  /* width: 40px;
   height: 40px;
   border-radius: 50%;
-  vertical-align: middle;
+  vertical-align: middle; */
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* 保持宽高比并裁剪 */
 }
 
 .main .box .item .desc {
   color: gray;
   font-size: 12px;
-  padding-top: 10px;
+  padding-top: 5px;
   height: 35px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -63,15 +66,13 @@
   text-decoration: none;
 }
 
-/* WL自定义 */
-
+/* 新页面打开按钮 */
 .box a.togo {
   position: absolute;
   max-width: 20px;
   height: 20px;
-  right: 5%;
-  top: 20%;
-  transform: translateY(-50%);
+  right: 1px;
+  bottom: 21%;
 }
 
 .box a.togo:hover {
@@ -81,11 +82,44 @@
 /* 适配小屏幕设备 */
 @media (max-width: 991px) {
   .main .box .item {
-    min-width: 40%;
-    margin: 16px 0 0 2.1%;
+    margin: 16px 8px 0 0;
+    width: 140px;
+  }
+
+  .main .box .item .logo img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover; /* 保持宽高比并裁剪 */
   }
 
   .main .box .item .desc {
-    height: 40px;
+    height: 30px;
   }
+
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 5px;
+  color: #4385ef;
+}
+
+.footer-tools button{
+  font-size: 14px;
+  text-align: center;
+  width:27px;
+}
+
+.navbar-switch-dark{
+  position: relative;
+  float: left;
+  left: 10px;
+  background-color: transparent;
+  background-image: none;
+  border: 0px solid transparent;
+  border-radius: 4px
 }
