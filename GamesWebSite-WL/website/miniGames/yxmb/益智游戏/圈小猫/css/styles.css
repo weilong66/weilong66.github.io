@@ -1,0 +1,86 @@
+BODY {
+    margin: 0px;
+    background-color: #000000;
+}
+
+BODY {
+    color: #ffffff;
+    font-family: Comic Sans MS;
+    background-image: url(images/bg.jpg);
+    background-repeat: repeat;
+    background-color: #d9d9d9;
+}
+
+TD {
+    color: #ffffff;
+    font-family: Comic Sans MS;
+}
+
+TH {
+    color: #ffffff;
+    font-family: Comic Sans MS;
+}
+
+.style6 {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.style7 {
+    font-size: 18px;
+}
+
+.style8 {
+    font-size: 12px;
+}
+
+.style9 {
+    font-size: 24px;
+    font-family: "楷体_GB2312";
+}
+
+.style10 {
+    color: #ff0000;
+}
+
+body,
+td,
+th {
+    color: #666;
+}
+
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #666;
+}
+
+a:link {
+    text-decoration: none;
+    color: #06f;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #09f;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #09f;
+}
+
+a:active {
+    text-decoration: none;
+    color: #09f;
+}
+
+@media (max-width: 991px) {
+    #catch-the-cat{
+        margin-top: 40%;
+    }
+    #catch-the-cat canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+}

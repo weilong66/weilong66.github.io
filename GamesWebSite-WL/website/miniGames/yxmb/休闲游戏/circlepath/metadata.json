@@ -1,0 +1,7 @@
+{
+    "name": "Circle Path",
+    "type": "games",
+    "desc": "你要在有限时间内精准操控小球沿独特轨迹旋转至目标点，体验速度与精准度的双重挑战。",
+    "img_path": "circlepath.png",
+    "main_page": "index.html"
+}

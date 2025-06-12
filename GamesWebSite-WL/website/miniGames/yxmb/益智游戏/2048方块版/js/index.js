@@ -395,26 +395,36 @@ function handleTouchMove(evt) {
   yDown = null;
 };
 
-function handleKeypress(evt) {
+function handleKeypress(event) {
   var modifiers = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
   var whichKey = event.which;
 
   var prevGame = [].concat(game);
-
   if (!modifiers) {
-    event.preventDefault();
     switch (whichKey) {
       case 37:
+        event.preventDefault();
         game = shiftGameLeft(game);
+        addRandomNumber();
+        updateDOM(prevGame, game);
         break;
       case 38:
+        event.preventDefault();
         game = shiftGameUp(game);
+        addRandomNumber();
+        updateDOM(prevGame, game);
         break;
       case 39:
+        event.preventDefault();
         game = shiftGameRight(game);
+        addRandomNumber();
+        updateDOM(prevGame, game);
         break;
       case 40:
+        event.preventDefault();
         game = shiftGameDown(game);
+        addRandomNumber();
+        updateDOM(prevGame, game);
         break;
     }
     game = game.map(function (tile, index) {
@@ -426,8 +436,6 @@ function handleKeypress(evt) {
         return null;
       }
     });
-    addRandomNumber();
-    updateDOM(prevGame, game);
     if (gameOver()) {
       setTimeout(function () {
         endDiv.classList.add('active');

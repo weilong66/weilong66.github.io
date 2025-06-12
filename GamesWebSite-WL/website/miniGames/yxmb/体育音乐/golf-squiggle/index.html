@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <title>Squiggle Golf</title>
+</head>
+
+<body>
+  <main class="splash">
+
+    <img id="icon" src="./img/hole1.jpeg" alt="Squiggle Golf">
+    <h1>Squiggle Golf</h1>
+    <p>由 <a href="https://www.natedonato.com">Nate Donato</a> 设计的一款弯曲的网状高尔夫游戏.</p>
+    <a class="playbutton" href="./game/index.html">
+      <span class="playbutton__shadow"></span>
+      <span class="edge"></span>
+      <span class="playbutton__face">
+        立即开始游玩!
+      </span>
+    </a>
+    <p>Squiggle Golf 是一款免费的 2D 迷你高尔夫游戏，具有手绘、粗略的图形风格，您可以直接在浏览器中游玩。
+    </p>
+    
+    <p>
+      通过随机生成的每日球场、一套预制球场（即将推出）和自定义关卡编辑器（即将推出），Squiggle Golf 总会有新的挑战等着您！</p>
+      <video class="vid" autoplay="" loop="" muted="" playsinline="" src="./howto.mov" onclick="this.play()"></video>
+    </main>
+    <footer>
+      <p>使用 JavaScript、HTML Canvas、Rough.js 和 Matter.js 制作</p>
+      <p><a href="https://twitter.com/SquiggleGolf">在 Twitter 上关注我们以获取最新资讯</a></p>
+      <!-- <p class="tagline">A game by <a href="https://www.natedonato.com">Nate Donato</a>.</p> -->
+  </footer>
+
+  <script>
+    let icon = document.getElementById('icon')
+    setInterval(changeImg, 1500);
+    let i = 1
+    function changeImg() {
+      i += 1;
+      i %= 19;
+      if (i === 0) { i = 1 }
+      icon.src = './img/hole' + i + '.jpeg'
+    }
+  </script>
+</body>
+
+</html>

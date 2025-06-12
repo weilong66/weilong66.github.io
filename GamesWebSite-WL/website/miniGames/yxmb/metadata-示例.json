@@ -1,0 +1,7 @@
+{
+    "name": "元数据示例",
+    "type": "games",
+    "desc": "游戏描述。另外上面type请设置为：games",
+    "img_path": "logo图片路径(相对路径).png",
+    "main_page": "主页路径(相对路径).html"
+}

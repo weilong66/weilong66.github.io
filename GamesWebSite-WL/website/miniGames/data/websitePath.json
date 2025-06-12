@@ -10,7 +10,7 @@
         "type": "folder"
     },
     {
-        "name": "体育竞速.html",
+        "name": "体育音乐.html",
         "icon": "fa fa-car",
         "type": "folder"
     },
@@ -35,18 +35,8 @@
         "type": "folder"
     },
     {
-        "name": "模拟经营.html",
-        "icon": "fa fa-hospital-o",
-        "type": "folder"
-    },
-    {
-        "name": "沙盒生存.html",
+        "name": "沙盒模拟.html",
         "icon": "fa fa-cube",
-        "type": "folder"
-    },
-    {
-        "name": "消除游戏.html",
-        "icon": "fa fa-houzz",
         "type": "folder"
     },
     {

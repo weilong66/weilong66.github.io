@@ -1,0 +1,7 @@
+{
+    "name": "中国象棋翻翻棋",
+    "type": "games",
+    "desc": "象棋翻翻棋是由象棋变化而来，游戏时，所有的棋子都会翻过来，成为暗棋。",
+    "img_path": "chess-invert.png",
+    "main_page": "index.html"
+}

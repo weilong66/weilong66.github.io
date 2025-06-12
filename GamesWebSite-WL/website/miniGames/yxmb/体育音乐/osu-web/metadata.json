@@ -1,0 +1,8 @@
+{
+    "name": "OSU Web",
+    "type": "games",
+    "desc": "《osu!》是一款同人音乐游戏,这个是OSU的网页版。",
+    "img_path": "osu-web.jpg",
+    "main_page": "index.html",
+    "version": "1.4.0"
+}

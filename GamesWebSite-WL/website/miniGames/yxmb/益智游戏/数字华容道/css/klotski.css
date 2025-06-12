@@ -1,0 +1,79 @@
+/* layui.css */
+.layui-col-space1 {
+	margin: -.5px;
+}
+
+.layui-col-xs1 {
+	float: left;
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+}
+/* auto css */
+.box {
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+	border: 8px solid #aa754f;
+	position: relative;
+	background: #421c0f;
+	padding-bottom: 3px;
+	border-radius: 4px;
+	box-shadow: 3px 3px 3px #7d4d14;
+}
+
+.box .box-item.no-num div {
+	background: #421c0f;
+}
+
+.box .box-item div {
+	border: 1px solid #6d543a;
+	box-sizing: border-box;
+	text-align: center;
+	height: 100%;
+	background: #e4b77c;
+	box-shadow: 1px 1px 1px 1px #673800;
+	border-bottom: 0;
+	color: #8f532f;
+	font-weight: bold;
+	font-family: tahoma, arial, sans-serif;
+	cursor: pointer;
+}
+
+.start {
+	width: 200px;
+	height: 40px;
+	background: #aa754f;
+	box-shadow: 0 3px 3px #7d4d14;
+	margin: 10px auto;
+	display: block;
+	transition: box-shadow .5s;
+	color: #ffffff;
+	border: 1px solid #6d543a;
+	cursor: pointer;
+	font-size: 17px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.start:hover {
+	box-shadow: 0 3px 3px #000;
+}
+
+.opt-desc {
+	width: 320px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.opt-desc span {
+	font-size: 25px;
+	margin-right: 22px;
+	color: #999;
+}
+
+.opt-desc input {
+	width: 18px;
+	height: 18px;
+	/* margin: 0; */
+}

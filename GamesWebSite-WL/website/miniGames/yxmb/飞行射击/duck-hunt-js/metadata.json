@@ -1,0 +1,7 @@
+{
+    "name": "FC打鸭子JS版",
+    "type": "games",
+    "desc": "使用JavaScript将1984年发布在红白机上的打鸭子游戏移植成网页版本。",
+    "img_path": "duck-hunt-js.jpg",
+    "main_page": "index.html"
+}

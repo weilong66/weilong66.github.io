@@ -1,0 +1,181 @@
+﻿<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="俄罗斯方块">
+	<link rel="icon" href="favicon.ico">
+	<title>俄罗斯方块网页版</title>
+	<style>
+		html {
+			background-color: rgb(30, 30, 30);
+			color: silver;
+		}
+
+		a {
+			color: silver;
+		}
+
+		#game-border {
+			display: none;
+			color: rgb(218, 218, 218);
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), 2px 2px 0 rgba(0, 0, 0, 0.5);
+		}
+
+		#canvas-box {
+			position: relative;
+			background-color: rgb(30, 30, 30);
+			border: 1px solid rgba(255, 255, 255, 0.5);
+		}
+
+		#canvas-box canvas {
+			position: absolute;
+			background-color: transparent;
+		}
+
+		.w-border {
+			display: none;
+			border-radius: 0;
+			position: absolute;
+			z-index: 5;
+			color: #FFF;
+			border: 1px solid #FFF;
+			background-color: #175266;
+			box-shadow: 0 0 5px #000;
+			margin: auto;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: fit-content;
+			height: fit-content;
+		}
+
+		.w-body {
+			border-top: 1px solid rgb(31, 31, 31);
+			background-color: #11365f;
+		}
+
+		#name {
+			/*margin: -200px 0 0 0;*/
+			font-size: 50px;
+			font-weight: bold;
+			text-align: center;
+			color: rgba(106, 124, 197, 1);
+			line-height: 70px;
+			/*position: absolute;
+	top:50%;
+	left:0;
+	*/
+		}
+
+		#startBtn {
+			line-height: 120px;
+			background: blue;
+			color: #fff;
+			font-size: 50px;
+			width: 200px;
+			padding: 10px 30px;
+			border: 5px solid #fff;
+			border-radius: 50px;
+			outline: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="game-border">
+		<div style="justify-content: center;display: flex;">
+			<div id='canvas-box'>
+				<canvas id="bg-layer"></canvas>
+				<canvas id="cube-shadow-layer"></canvas>
+			</div>
+		</div> <canvas style="display: none; position: absolute;" id='saveCubeBox'></canvas>
+		<div style="text-align:center;user-select:none;">
+			<span id='sinfo'></span>
+			&nbsp;
+			成绩<span id='score'>0</span>
+		</div>
+	</div> <audio id='clear-sound' preload="auto" style="display: none">
+		<source src="clear2.mp3" type="audio/mpeg">
+	</audio> <audio id='lock-sound' preload="auto" style="display: none">
+		<source src="clear3.mp3" type="audio/mpeg">
+	</audio>
+	<div class="w-border" style="width:300px;" id="u-gameover">
+		<div>
+			提示
+		</div>
+		<div style="text-align:center ;background-color: #11365f;padding:1rem;">
+			<span style="font-size:36px;">Game Over</span>
+			<br><br>
+			<span onclick="ShowStart()" style="cursor: pointer;">[确定]</span>
+			<br>
+		</div>
+	</div>
+	<div id="start">
+		<div style="background:rgba(106,124,197,0.5);	padding: 10px 0 20px;">
+			<div id=name>俄罗斯方块</div>
+			<div style="text-align: center;">
+				初始速度<input id="speed" type="number" style="width:4rem;" value="1000"
+					onchange="localStorage.setItem('speed',this.value);"> <br>
+				加速因子<input id="acc" type="number" style="width:4rem;" value="0"
+					onchange="localStorage.setItem('acc',this.value);"> <br> <span id="startBtn"
+					onclick="startgame();">开始</span> </div>
+		</div>
+	</div>
+	<script src="static/js/fcs.1.22.js"></script>
+	<div id="more">
+		<div style="text-align:center;margin-top:2rem;">
+			<script async
+				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2872916894005511"
+				crossorigin="anonymous"></script>
+			<!-- falling -->
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2872916894005511"
+				data-ad-slot="5150209201" data-ad-format="auto" data-full-width-responsive="true"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+		<div style="text-align: left;padding:1rem;margin-top:1rem;">
+			<br>
+			开始游戏后，方块条自动掉落。旋转和移动方块条，堆积到合适位置。当一行满格时，即被消除。最后没有腾挪的空间，游戏结束。成绩为消掉的行数。
+			<br><br>
+			初始速度：方块条掉落时在每一行停顿的时间(毫秒数)。数值越大掉落越慢。
+			<br>
+			加速因子：每消掉一行，方块条掉落时的在每一行的停顿时间减少的毫秒数。设为0则恒速。
+			<br><br>
+			电脑：
+			<br>
+			← 左移，按住不放则连续移动
+			<br>
+			→ 右移，同上
+			<br>
+			↑ 顺时针旋转
+			<br>
+			↓ 逆时针旋转
+			<br>
+			Ctrl - 按住不放快速下落
+			<br>
+			Space - 按一下立即到底
+			<br>
+			回车键 - 开始游戏
+			<br><br>
+			可以使用鼠标，方法和手机上类似。
+			<br>
+			<br>
+			手机/平板：
+			<br>点击下落的方块条和它的上下方空白处使其顺时针旋转。
+			<br>点方块条的左侧向左移动，点右侧向右移动。点住不放则连续移动。
+			<br>点击方块条阴影或阴影下方使方块条立即到底。 <br><br><br>
+			俄罗斯方块游戏是Alexey Pajitnov于1984年发明的。本网页借鉴了https://zhangxiaoleiwk.gitee.io/t.html。
+		</div>
+		<div style="color:white;padding:1rem;text-align:center;">
+			<br>
+			<hr size="1">
+			<br><br>
+			Minesweeper.cn <br><br><br>
+		</div>
+	</div>
+</body>
+
+</html>

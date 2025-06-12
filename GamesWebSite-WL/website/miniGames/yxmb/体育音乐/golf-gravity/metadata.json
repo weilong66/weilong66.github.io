@@ -1,0 +1,7 @@
+{
+    "name": "重力高尔夫",
+    "type": "games",
+    "desc": "利用重力，在小行星之间击打高尔夫，将高尔夫打到目标星球红色区域上即为进球。",
+    "img_path": "golf-gravity.png",
+    "main_page": "index.html"
+}

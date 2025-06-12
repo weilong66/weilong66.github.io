@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+	<title>圈小猫</title>
+	<link rel="icon" type="image/jpg" href="favicon.jpg">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+	<div align="center">
+		<div id="catch-the-cat"></div>
+	</div>
+	<div class="style6" align="center" style="width: 100%;">
+		<p class="style7" id="time">0</p>
+		<div id="loadad"></div>
+	</div>
+
+	<script src="js/phaser.min.js"></script>
+	<script src="js/catch-the-cat.js"></script>
+	<script>
+		var myVar = null; //定时器
+		var time = 0; //计时
+		function myTimer() {
+			time += 1;
+			document.getElementById("time").innerHTML = time;
+		}
+
+		function handleClickStartTimer(event) {
+			if (myVar == null) {
+				myVar = setInterval(myTimer, 1000);
+			}
+		}
+
+		document.addEventListener("click", handleClickStartTimer); //添加点击事件监听器
+		document.addEventListener("touchstart", handleClickStartTimer); //添加触摸事件监听器
+
+		window.game = new CatchTheCatGame({
+			w: 11, //横向格子数
+			h: 11, //纵向格子数
+			r: 20, //圆半径像素
+			backgroundColor: 16777215, //背景颜色
+			parent: "catch-the-cat", //放置游戏的父元素的 id 或 DOM 对象
+			statusBarAlign: "center", //状态栏左对齐 left 或居中 center
+			credit: "圈小猫" //右下角的备注信息
+		})
+
+		// 停止定时器的函数
+		function stopTimer(timeVar) {
+			// 检查定时器是否在运行
+			if (timeVar == null) {
+				return false;
+			}
+			// 清除定时器
+			clearInterval(timeVar);
+			// 重置定时器ID为null，表示定时器已停止
+			myVar = null;
+			return true;
+		}
+	</script>
+
+</body>
+
+</html>

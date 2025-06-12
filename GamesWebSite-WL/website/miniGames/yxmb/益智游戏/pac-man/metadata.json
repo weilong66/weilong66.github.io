@@ -1,0 +1,7 @@
+{
+    "name": "吃豆人",
+    "type": "games",
+    "desc": "玩家控制黄色圆形的吃豆人在迷宫中移动，目标是吃掉所有豆子并避免被四个鬼面符号捕捉。",
+    "img_path": "pac-man.png",
+    "main_page": "index.html"
+}

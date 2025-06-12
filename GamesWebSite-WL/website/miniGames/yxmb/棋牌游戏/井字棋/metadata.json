@@ -1,0 +1,7 @@
+{
+    "name": "AI井字棋",
+    "type": "games",
+    "desc": "井字棋游戏，支持人机对战和玩家对战。(兼容移动端)",
+    "img_path": "favicon.ico",
+    "main_page": "index.html"
+}

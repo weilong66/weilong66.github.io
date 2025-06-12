@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>别踩小黑</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jQuery-3.4.1.js"></script>
+    <script src="js/index.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=0.39,maximum-scale=0.39,user-scalable=0.39" />
+</head>
+<body>
+<div class="info">
+    <!--开始界面-->
+    <div id="start">
+        <h1><img src="images/title2.png" alt=""></h1>
+        <span class="start">选择模式</span>
+        <div class="help"></div>
+        <i class="helpBtn"></i>
+        <!--模式选择-->
+        <div class="checkModel">
+            <span class="tradition"><i>刻不容缓</i></span>
+            <span class="roll"><i>无尽闪电</i></span>
+        </div>
+        <!--音效选择-->
+        <div class="checkMusic">
+            <span class="piano"><i>钢琴音效</i></span>
+            <span class="keyboard"><i>键盘音效</i></span>
+        </div>
+    </div>
+    <!--地图-->
+    <div class="map"></div>
+    <!--时间条-->
+    <div class="time"></div>
+    <div class="clock"></div>
+
+    <!--滚动模式遮挡条-->
+    <div class="rollerMask"></div>
+    <!--游戏音效-->
+    <audio src="media/1.ogg"></audio>
+    <audio src="media/2.ogg"></audio>
+    <audio src="media/3.ogg"></audio>
+    <audio src="media/4.ogg"></audio>
+    <audio src="media/5.ogg"></audio>
+    <audio src="media/6.ogg"></audio>
+    <audio src="media/7.ogg"></audio>
+    <audio src="media/over2.ogg" class="over"></audio>
+    <audio src="media/2-1.ogg" class="musicTwo"></audio>
+    <audio src="media/over3.ogg" class="musicTwoOver"></audio>
+    <audio src="media/reTime.ogg" class="reTime"></audio>
+    <audio src="media/clock.ogg" class="TimeClock"></audio>
+    <audio src="media/timeover.ogg" class="timeOver"></audio>
+    <audio src="media/lightning.ogg" class="lightning"></audio>
+
+    <!--漂浮文字区域-->
+    <div id="text">
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+        <div class="textItems"></div>
+    </div>
+
+    <!--游戏结束界面-->
+    <div id="over">
+        <p>取得分数</p>
+        <span id="score"></span>
+        <div class="restart">重新开始</div>
+        <div class="return"><a href="">返回主页</a></div>
+    </div>
+
+    <div class="mask"></div>
+</div>
+</body>
+</html>

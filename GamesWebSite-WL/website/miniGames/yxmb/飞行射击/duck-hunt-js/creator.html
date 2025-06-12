@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<head>
+    <title>DuckHuntJS Level Creator</title>
+    <meta name="description"
+          content="An open source, web based, responsive implementation of Duck Hunt in canvas or webgl depending on your client.">
+    <meta name="author" content="Matt Surabian">
+    <style>
+        body {
+            background-color: #64b0ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        p {
+            font-size: 2.25em;
+        }
+
+        input {
+            font-size: 2.25em;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        button[type=submit] {
+            font-size: 2.25em;
+            border-radius: 12px;
+            grid-column: span;
+        }
+
+        h1 {
+            font-size: 4em;
+            color: #ffffff;
+        }
+
+        label {
+            font-size: 2.25em;
+            display: block;
+        }
+
+        small {
+            font-size: 1.2em;
+        }
+
+        form div {
+            margin: 10px 0;
+        }
+
+        .form-grid {
+            display: block;
+        }
+
+        ul {
+            overflow: visible;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 700px),(max-height: 500px) {
+            body {
+                font-size: 9px;
+            }
+        }
+
+        @media (min-width: 700px) and (min-height: 500px) {
+            body {
+                font-size: 12px;
+            }
+
+            .form-grid {
+                display: grid;
+                grid-template-columns: 50% 50%;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+<h1>设计 DuckHuntJS 自定义关卡</h1>
+<p>
+  <strong>此页面将生成指向 Duckhuntjs 自定义关卡的链接，您可以与朋友分享!</strong><br>
+  字段限制是为了避免因渲染过载导致浏览器崩溃，并用于表示合理的数值范围。 <br>
+</p>
+<form action="index.html">
+    <div class="form-grid">
+        <div><label for="title">关卡名称:</label> <input type="text" id="title" name="title"></div>
+        <div><label for="waves">总波次数*:</label> <input type="number" id="waves" name="waves" min="1" max="100"
+                                                       placeholder="1-100" value="3" required></div>
+        <div><label for="ducks">每波野鸭数量*:</label> <input type="number" id="ducks" name="ducks" min="1" max="5000"
+                                                       placeholder="1-5000" value="50" required></div>
+        <div><label for="points">每只野鸭得分*:</label> <input type="number" id="points" name="points" min="1" max="1000"
+                                                         placeholder="1-1000" value="100" required></div>
+        <div><label for="bullets">每波子弹数量*:</label> <input type="number" id="bullets" name="bullets" min="1"
+                                                           max="10000" placeholder="1-10000" value="100" required>
+        </div>
+        <div><label for="radius">子弹爆炸半径*:</label><input type="number" id="radius" name="radius" min="30"
+                                                              max="200" placeholder="30-200" value="60"></div>
+        <div><label for="speed">野鸭飞行速度*:</label> <input type="number" id="speed" name="speed" min="1" max="10"
+                                                       placeholder="1-10" value="6" required></div>
+        <div><label for="time">每波时间上限:</label> <input type="number" id="time" name="time" min="10" max="120"
+                                                    placeholder="10-120" value="30"></div>
+    </div>
+    <br><br>
+    <button type="submit" title="( 祝你玩的开心! )">生成关卡</button>
+</form>
+
+<br><br>
+<small>游戏中不执行场地限制验证，因此如果您真的想看看一次<a
+        href="index.html?title=1%20Click%20Challenge&ducks=1000&radius=1000">射击 1000 只鸭子</a>时会发生什么，您可以点击这个<a
+        href="index.html?title=1%20Click%20Challenge&ducks=1000&radius=1000">链接</a>。<br>*注意，低配置设备请勿点击，以免设备死机。</small>
+<br><br>
+<h2>示例关卡</h2>
+<ul>
+    <li><a href="index.html?title=10+for+10&waves=10&ducks=1&points=1&bullets=1&radius=30&speed=10&time=10">10 对 10</a></li>
+    <li><a href="index.html?title=Splits-ville&waves=5&ducks=2&points=100&bullets=1&radius=100&speed=6&time=30">一箭双雕</a></li>
+    <li><a href="index.html?title=Marathon&waves=26&ducks=2&points=100&bullets=2&radius=60&speed=6&time=5">马拉松</a></li>
+</ul>
+</body>
+</html>

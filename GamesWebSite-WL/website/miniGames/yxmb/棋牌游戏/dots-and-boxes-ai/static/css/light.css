@@ -1,0 +1,14 @@
+:root {
+  --accent-color: #5859ff;
+  --secondary-color: #fad639;
+  --background-color: white;
+  --text-color: #202731;
+  --text-btn-color: white;
+  --box-side-color: #b3bfd3;
+  --wave1: url("./img/purple-wave1.png");
+  --wave2: url("./img/purple-wave2.png");
+}
+
+.icon {
+  filter: invert(1);
+}

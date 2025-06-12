@@ -1,0 +1,7 @@
+{
+    "name": "数独(HTML5)",
+    "type": "games",
+    "desc": "使用HTML5和JavaScript创建",
+    "img_path": "favicon.ico",
+    "main_page": "index.html"
+}

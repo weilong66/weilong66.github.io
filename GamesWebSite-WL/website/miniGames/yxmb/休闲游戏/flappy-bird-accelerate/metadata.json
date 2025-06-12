@@ -1,0 +1,7 @@
+{
+    "name": "像素鸟飞行(加速版)",
+    "type": "games",
+    "desc": "控制一只小鸟，跨越由各种不同长度水管所组成的障碍。该版本增加了速度，使得初始速度就很快。",
+    "img_path": "flappy-bird-accelerate.png",
+    "main_page": "index.html"
+}

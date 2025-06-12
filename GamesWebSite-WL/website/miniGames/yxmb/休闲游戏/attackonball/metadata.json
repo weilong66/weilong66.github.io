@@ -1,0 +1,7 @@
+{
+    "name": "躲避攻击球",
+    "type": "games",
+    "desc": "躲开砸向你的球，不要碰到它们！",
+    "img_path": "attackonball.png",
+    "main_page": "index.html"
+}

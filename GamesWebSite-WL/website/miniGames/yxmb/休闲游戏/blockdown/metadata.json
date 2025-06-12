@@ -1,0 +1,7 @@
+{
+    "name": "物理搭方块",
+    "type": "games",
+    "desc": "将俄罗斯方块垒起来，不要让他们掉下去。支持双人模式。",
+    "img_path": "blockdown.png",
+    "main_page": "index.html"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "像素鸟飞行",
+    "type": "games",
+    "desc": "控制一只一只胖乎乎的小鸟，跨越由各种不同长度水管所组成的障碍。",
+    "img_path": "flappy-bird.png",
+    "main_page": "index.html"
+}

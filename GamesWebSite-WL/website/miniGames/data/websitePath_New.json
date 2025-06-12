@@ -5,7 +5,7 @@
         "type": "folder"
     },
     {
-        "name": "体育竞速.html",
+        "name": "体育音乐.html",
         "icon": "",
         "type": "folder"
     },
@@ -30,17 +30,7 @@
         "type": "folder"
     },
     {
-        "name": "模拟经营.html",
-        "icon": "",
-        "type": "folder"
-    },
-    {
-        "name": "沙盒生存.html",
-        "icon": "",
-        "type": "folder"
-    },
-    {
-        "name": "消除游戏.html",
+        "name": "沙盒模拟.html",
         "icon": "",
         "type": "folder"
     },

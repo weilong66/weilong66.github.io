@@ -1,0 +1,27 @@
+{
+    "name": "kks-magic",
+    "version": "0.15.12",
+    "description": "a-frame particles entity plugin.",
+    "main": "./dist/kksMagic/kksMagic.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zhyuzh3d/kksMagic.git"
+    },
+    "keywords": [
+    "a-frame",
+    "aframe",
+    "threejs",
+    "particle",
+    "firework",
+    "snow"
+  ],
+    "author": "zhyuzh",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/zhyuzh3d/kksMagic/issues"
+    },
+    "homepage": "https://github.com/zhyuzh3d/kksMagic#readme"
+}

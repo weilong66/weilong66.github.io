@@ -20,16 +20,17 @@
 	<!--  Material Dashboard CSS    -->
 	<link href="css/material-dashboard.css" rel="stylesheet" />
 	<!-- 自定义样式 -->
-	<link rel="stylesheet" type='text/css'  href="css/sptx.css">
+	<link rel="stylesheet" type='text/css' href="css/sptx.css">
 	<!--     Fonts and icons     -->
 	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-	
+
 	<link href='css/2d7207a20f294df196f3a53cae8a0def.css' rel='stylesheet' type='text/css'>
 	<!-- 图片懒加载插件 -->
 	<script src="./js/lib/lazyload.min-17.9.0.js"></script>
 
 	<!-- umami本地网站统计 -->
-	<script defer src="/assets/plugin/umami/umami-script.js" data-website-id="17943f31-5b58-4989-a50c-3b72a4da00ae"></script>
+	<script defer src="/assets/plugin/umami/umami-script.js" data-website-id="17943f31-5b58-4989-a50c-3b72a4da00ae">
+	</script>
 
 	<!-- 百度统计 -->
 	<script>
@@ -50,7 +51,8 @@
 		<div class="sidebar" data-color="purple" data-image="images/paper.jpg">
 
 			<div class="logo">
-				<a href="index.html" class="simple-text"><img src="images/logo.png " width="30" height="30" />WL小游戏平台</a>
+				<a href="index.html" class="simple-text"><img src="images/logo.png " width="30"
+						height="30" />WL小游戏平台</a>
 			</div>
 
 			<div class="sidebar-wrapper">
@@ -70,14 +72,15 @@
 
 		<div class="main-panel">
 			<!-- 顶部导航条 -->
-			 <nav class="navbar navbar-transparent navbar-absolute" >
+			<nav class="navbar navbar-transparent navbar-absolute">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse">
 							<span class="sr-only">切换导航</span>
 							<i class="fa fa-bars"></i>
 						</button>
-						<button type="button" data-toggle="collapse" onclick="switchNightMode()" class="navbar-switch-dark" id="switch-dark-mode">
+						<button type="button" data-toggle="collapse" onclick="switchNightMode()"
+							class="navbar-switch-dark" id="switch-dark-mode">
 							<span class="sr-only">黑暗模式</span>
 							<i class="mode-ico fa fa-moon-o"></i>
 						</button>
@@ -95,14 +98,16 @@
 			<div class="content">
 				<div class="container-fluid">
 					<div class="row" style="margin-top: -15px;">
-						<iframe src="link/全部游戏.html" name="right" width="10%" height="10%" style="border: none;" class="game-page" id="iframe-game-page"></iframe>
+						<iframe src="link/全部游戏.html" name="right" width="10%" height="10%" style="border: none;" class="game-page"
+							id="iframe-game-page"></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div id="footer-tools" class="footer-tools">
-			<button id="full-screen" title="网页全屏" ><i class="fa fa-expand"></i></button>
-			<button id="switch-dark-mode" onclick="switchNightMode()" title="切换夜间模式" ><i class="mode-ico fa fa-moon-o"></i></button>
+			<button id="full-screen" title="网页全屏"><i class="fa fa-expand"></i></button>
+			<button id="switch-dark-mode" onclick="switchNightMode()" title="切换夜间模式"><i
+					class="mode-ico fa fa-moon-o"></i></button>
 		</div>
 </body>
 
@@ -128,16 +133,19 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
+		//遍历JSON文件数据
 		fetch('data/websitePath.json')
 			.then(response => response.json())
 			.then(data => {
 				const navList = document.querySelector('.nav');
+				//遍历json数据，创建导航项
 				data.forEach((item, index) => {
 					if (item.type === 'folder') {
-						const li = document.createElement('li');
+						let li = document.createElement('li');
 						if (index === 0) {
 							li.className = 'active';
 						}
+
 
 						const a = document.createElement('a');
 						a.href = `link/${item.name}`;
@@ -151,7 +159,8 @@
 						}
 
 						const p = document.createElement('p');
-						p.textContent = item.name.replace('.html', '');
+						p.textContent = item.name.replace('.html', ''); //将分类名称设置给P元素
+						li.setAttribute('data-value', p.textContent); //同样也设置给li标签的data-value属性
 
 						a.appendChild(i);
 						a.appendChild(p);
@@ -159,7 +168,10 @@
 						navList.appendChild(li);
 					}
 				});
-				navBindingClick();//绑定导航栏点击事件
+				//导航项创建完成后为每个导航项绑定点击事件
+				navBindingClick();
+				//根据URL哈希值选中并点击对应导航项。
+				highlightCurrentLi();
 			})
 			.catch(error => console.error('Error loading JSON:', error));
 	});
@@ -167,9 +179,9 @@
 
 <!-- 创建懒加载对象以使用懒加载 -->
 <script>
-    var aLazyLoad = new LazyLoad({
-        /* options here */
-    });
+	var aLazyLoad = new LazyLoad({
+		/* options here */
+	});
 </script>
 
 <script type="text/javascript">
@@ -183,6 +195,16 @@
 			// 给当前点击的li元素添加active类
 			$(this).addClass("active");
 
+			// 使用 data 属性来存储和获取值，因为 value 主要用于表单元素
+			var dataValue = this.getAttribute('data-value');
+			if (dataValue) {
+				// 构建新的哈希值
+				var newHash = '#' + encodeURIComponent(dataValue);
+				// 如果新旧哈希不同，则更新 URL 并阻止默认行为（如果有的话）
+				if (window.location.hash !== newHash) {
+					window.location.hash = newHash;
+				}
+			}
 		})
 
 		// 获取当前页面的基础URL
@@ -208,11 +230,39 @@
 		return "";
 
 	}
+
+	/**
+	 * 页面加载时自动选中点击对应的 li
+	 */
+	function highlightCurrentLi() {
+		const currentHash = window.location.hash;
+
+		// 仅在当前 URL 的 hash 非空时执行
+		if (currentHash) {
+			const decodedHash = decodeURIComponent(currentHash.substring(1)); // 去掉 # 并解码
+			document.querySelectorAll('ul.nav li').forEach(li => {
+				const dataValue = li.getAttribute('data-value');
+				if (dataValue === decodedHash) {
+					li.classList.add('active'); // 添加高亮样式
+					// 获取当前元素中的a标签，如果存在则触发其点击事件
+					const aTag = li.querySelector('a');
+					if (aTag) {
+						aTag.click(); // 触发 a 标签的 click 事件
+					}
+				} else {
+					li.classList.remove('active');
+				}
+			});
+		}/*  else {
+			const aTag = document.querySelector('ul.nav li a');
+			if (aTag) {
+				aTag.click(); // 触发 a 标签的 click 事件
+			}
+		} */
+	}
 </script>
 
 <script>
 	initNightMode();
 	dragFooterTools();
 </script>
-
-

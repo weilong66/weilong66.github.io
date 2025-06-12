@@ -1,0 +1,7 @@
+{
+    "name": "宠物派对消消乐",
+    "type": "games",
+    "desc": "可爱画风的关卡型消除游戏。",
+    "img_path": "petpop-party.png",
+    "main_page": "index.html"
+}

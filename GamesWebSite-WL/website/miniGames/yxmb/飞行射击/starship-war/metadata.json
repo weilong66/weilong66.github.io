@@ -1,0 +1,7 @@
+{
+    "name": "宇宙飞船大战",
+    "type": "games",
+    "desc": "使用Phaser.js编写的宇宙飞船大战游戏，鼠标控制飞船移动，鼠标左键射击。",
+    "img_path": "starship-war.png",
+    "main_page": "index.html"
+}

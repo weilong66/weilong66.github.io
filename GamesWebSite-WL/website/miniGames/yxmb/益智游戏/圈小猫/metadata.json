@@ -1,0 +1,7 @@
+{
+    "name": "圈小猫",
+    "type": "games",
+    "desc": "点击小圆点，围住小猫咪。",
+    "img_path": "favicon.jpg",
+    "main_page": "index.html"
+}

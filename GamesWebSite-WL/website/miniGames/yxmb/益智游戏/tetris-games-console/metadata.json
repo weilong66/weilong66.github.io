@@ -1,0 +1,7 @@
+{
+    "name": "俄罗斯方块(游戏机版)",
+    "type": "games",
+    "desc": "一个老式游戏机风格的俄罗斯方块游戏（兼容移动端）",
+    "img_path": "tetris-games-console.png",
+    "main_page": "index.html"
+}

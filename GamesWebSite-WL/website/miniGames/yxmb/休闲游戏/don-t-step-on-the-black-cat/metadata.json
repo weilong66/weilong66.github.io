@@ -1,0 +1,7 @@
+{
+    "name": "别踩小黑",
+    "type": "games",
+    "desc": "小黑藏在白色方块下睡觉，请不要踩到小黑，不然小黑就要生气了！（兼容移动端）",
+    "img_path": "favicon.ico",
+    "main_page": "index.html"
+}

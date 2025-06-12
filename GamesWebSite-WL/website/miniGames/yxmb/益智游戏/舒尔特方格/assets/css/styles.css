@@ -1,0 +1,169 @@
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schulte-container {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.table-small td {
+    width: 55px;
+    height: 55px;
+    font-size: 18px;
+}
+
+td:not(.clicked):not(.click-wrong):hover {
+    background-color: #ddd;
+}
+
+.clicked {
+    background-color: #a9d08e;
+}
+
+.click-wrong {
+    background-color: #FF5722;
+}
+
+.timer {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* 提示信息容器 */
+.message-box {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+}
+
+/* 说明容器 */
+.about-box {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+}
+
+.about-box ul {
+    padding-left: 24px;
+}
+
+/* 说明链接 */
+.about {
+    color: blue;
+    /* 蓝色文字 */
+    text-decoration: none;
+    /* 去除下划线 */
+    cursor: pointer;
+    /* 鼠标悬停时显示手型图标 */
+}
+
+/* 说明容器关闭按钮 */
+.about-box-close {
+    margin: 20px 0 0 0;
+    width: 45px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.about-text-box li {
+    margin-bottom: 10px;
+}
+
+/* 说明容器关闭按钮悬停状态 */
+.about-box-close:hover {
+    color: red;
+    /* 悬停时文字变为红色 */
+}
+
+/* 悬停状态 */
+.about:hover {
+    color: red;
+    /* 悬停时文字变为红色 */
+    text-decoration: underline;
+    /* 悬停时添加下划线 */
+}
+
+.restart-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.restart-button:hover {
+    background-color: #0056b3;
+    color: #cf1212;
+}
+
+.level-select {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.layui-form-item {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .about-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        font-size: 12px;
+        transform: unset;
+        padding: 5px 10px;
+    }
+
+    .about-box ul{
+        padding-left: 22px;
+    }
+}

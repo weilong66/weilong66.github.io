@@ -47,6 +47,7 @@
       width: 99px;
       height: 149px;
       border: solid 1px #222;
+      background-color: #fff;
       float: left;
       border-top-width: 0;
       border-left-width: 0;
@@ -80,7 +81,7 @@
           <div id="main"></div>
       </div> 
           <div id="count"></div>
-          <h3>只要不是白块，一个个点吧。</h3>
+          <h3>点击非白色方块，不要让其落下</h3>
     </div> 
     
   <script>
@@ -151,7 +152,7 @@
   //关闭定时器
               clearInterval(obj.timer);
   //显示开始游戏
-              go.children[0].innerHTML = '失 败';
+              go.children[0].innerHTML = '重新开始';
               go.style.display = "block";  
             }
           }  

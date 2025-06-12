@@ -55,9 +55,9 @@ header {
 header span {
   display: inline-block;
   box-sizing: border-box;
-  width: 4rem;
-  height: 4rem;
-  line-height: 4rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
   margin: 0 0.4rem;
   background: #FFC43D;
 }
@@ -76,7 +76,7 @@ h1 {
 }
 
 .directions {
-  padding: 2rem;
+  padding: 5px 0;
   border-top: 1px solid #9a9a95;
   border-bottom: 1px solid #9a9a95;
 }
@@ -93,7 +93,7 @@ h1 {
 }
 header .container {
   padding: 0;
-  padding: 2rem 4rem;
+  padding: 20px 4px;
   max-width: 900px;
 }
 
@@ -116,7 +116,7 @@ header .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1.8rem;
+  margin: 6px 1.8rem 5px 1.8rem;
   font-size: 1.2rem;
   line-height: 1;
   color: #555;
@@ -139,6 +139,7 @@ header .container {
   margin: 0 auto;
   background: #9a9a95;
   padding: 7px;
+  margin: 5px 0 10px 0;
   display: inline-block;
   border-radius: 3px;
   box-sizing: border-box;
@@ -409,7 +410,7 @@ header .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 3rem;
+  margin-top: 10px;
 }
 .not-recommended * + * {
   margin-left: 10px;

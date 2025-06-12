@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>舒尔特方格</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+</head>
+
+<body>
+    <div class="layui-form-item" id="resultStatusArea">
+        <div style="font-size: 18px;">
+            <span>测试状态：</span><span id="status-text" style="margin-right: 10px;color:#000;">未开始</span>
+            <span>正确：</span>
+            <span id="right-count" style="margin-right: 10px;color:#009688;">0</span>
+            <span>错误：</span>
+            <span id="error-count" style="margin-right: 10px;color:#FF5722;">0</span>
+        </div>
+    </div>
+    <div id="timer" class="timer">用时: 00小时 00分钟 00秒 000毫秒</div>
+    <div class="schulte-container">
+        <table id="schulte-grid"></table>
+    </div>
+    <select id="level-select" class="level-select">
+        <option value="2">2x2</option>
+        <option value="3">3x3</option>
+        <option value="4">4x4</option>
+        <option value="5" selected>5x5</option>
+        <option value="6">6x6</option>
+        <option value="7">7x7</option>
+        <option value="8">8x8</option>
+        <option value="9">9x9</option>
+        <option value="10">10x10</option>
+    </select>
+    <label class="layui-form-label" style="margin-top: 10px;" title="可取消勾选以训练记忆能力">
+        <input type="checkbox" id="hold-color-checkbox" checked> 持续高亮正确项
+    </label>
+    <button id="restart-button" class="restart-button">重新开始</button>
+    <div id="message-box" class="message-box"></div>
+    <div id="about" class="about">说明</div>
+    <div id="about-box" class="about-box">
+        <div id="about-text-box" class="about-text-box"></div><button class="about-box-close"
+            onclick="document.getElementById('about-box').style.display='none';">关闭</button>
+    </div>
+</body>
+<script src="assets/js/schulte-grid.js"></script>
+
+</html>

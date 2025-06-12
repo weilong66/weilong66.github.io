@@ -1,0 +1,7 @@
+{
+    "name": "节奏大师-小星星",
+    "type": "games",
+    "desc": "节奏大师纯前端仿制版，只有小星星一首歌。仅支持点击屏幕操作，适合移动端游玩。",
+    "img_path": "rhythm.png",
+    "main_page": "index.html"
+}

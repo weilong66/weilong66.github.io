@@ -1,0 +1,7 @@
+{
+    "name": "默契 - tacit",
+    "type": "games",
+    "desc": "2017年CiGA Game Jam上制作的游戏。你需要在规定的时间内，按照中间图标从上到下顺序，在左右两边分别点击相同的图标。",
+    "img_path": "tacit.png",
+    "main_page": "index.html"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "高尔夫冠军赛",
+    "type": "games",
+    "desc": "一款3D高尔夫游戏，我们要在限定的时间内进更多的球累计积分来获得冠军，进洞杆数越少积分越高。",
+    "img_path": "logo.png",
+    "main_page": "index.html"
+}

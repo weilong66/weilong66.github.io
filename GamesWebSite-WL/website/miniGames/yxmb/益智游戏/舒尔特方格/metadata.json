@@ -1,0 +1,7 @@
+{
+    "name": "舒尔特方格",
+    "type": "games",
+    "desc": "舒尔特表（Schulte Grid）是通过动态的练习锻炼视神经末梢的方法。心理学上用此表来研究和发展心理感知的速度，其中包括视觉定向搜索运动的速度。",
+    "img_path": "舒尔特方格.jpg",
+    "main_page": "index.html"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "悠闲农场",
+    "type": "games",
+    "desc": "一个模拟农场种植的点击游戏。（文本已翻译成中文）",
+    "img_path": "idlefarmer.jpg",
+    "main_page": "index.html"
+}

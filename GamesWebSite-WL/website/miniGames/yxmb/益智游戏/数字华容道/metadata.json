@@ -1,0 +1,7 @@
+{
+    "name": "数字华容道",
+    "type": "games",
+    "desc": "基于jquery编写的一个数字华容道小游戏",
+    "img_path": "数字华容道.png",
+    "main_page": "index.html"
+}

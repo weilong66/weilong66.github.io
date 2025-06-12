@@ -1,0 +1,7 @@
+{
+    "name": "涂鸦跳跃",
+    "type": "games",
+    "desc": "控制一直涂鸦小鸟，一直往上跳，不要掉下去。适合手机游玩，但不适合电脑游玩。",
+    "img_path": "graffiti-jump.png",
+    "main_page": "index.html"
+}

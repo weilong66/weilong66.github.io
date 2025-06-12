@@ -1,0 +1,7 @@
+{
+    "name": "点格棋（摩洛哥 90 年代风格）",
+    "type": "games",
+    "desc": "点格棋，或译围地盘，是一种两人纸笔游戏。这个版本还原了经典的纸上游玩体验。",
+    "img_path": "cover.png",
+    "main_page": "index.html"
+}

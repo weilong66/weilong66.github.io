@@ -1,0 +1,7 @@
+{
+    "name": "小矿工 - Minor Miner",
+    "type": "games",
+    "desc": "控制小矿工在地下洞穴闯关，不要让他掉入岩浆或碰到尖刺。",
+    "img_path": "minor-miner.png",
+    "main_page": "index.html"
+}

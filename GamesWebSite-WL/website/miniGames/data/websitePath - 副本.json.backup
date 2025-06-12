@@ -1,0 +1,67 @@
+[
+    {
+        "name": "全部游戏.html",
+        "icon": "fa fa-gamepad",
+        "type": "folder"
+    },
+    {
+        "name": "休闲游戏.html",
+        "icon": "fa fa-modx",
+        "type": "folder"
+    },
+    {
+        "name": "体育竞速.html",
+        "icon": "fa fa-car",
+        "type": "folder"
+    },
+    {
+        "name": "冒险闯关.html",
+        "icon": "fa fa-diamond",
+        "type": "folder"
+    },
+    {
+        "name": "动作游戏.html",
+        "icon": "fa fa-reddit-alien",
+        "type": "folder"
+    },
+    {
+        "name": "手机游戏.html",
+        "icon": "fa fa-mobile",
+        "type": "folder"
+    },
+    {
+        "name": "棋牌游戏.html",
+        "icon": "fa fa-delicious",
+        "type": "folder"
+    },
+    {
+        "name": "模拟经营.html",
+        "icon": "fa fa-hospital-o",
+        "type": "folder"
+    },
+    {
+        "name": "沙盒模拟.html",
+        "icon": "fa fa-cube",
+        "type": "folder"
+    },
+    {
+        "name": "消除游戏.html",
+        "icon": "fa fa-houzz",
+        "type": "folder"
+    },
+    {
+        "name": "益智游戏.html",
+        "icon": "fa fa-twitch",
+        "type": "folder"
+    },
+    {
+        "name": "策略塔防.html",
+        "icon": "fa fa-fort-awesome",
+        "type": "folder"
+    },
+    {
+        "name": "飞行射击.html",
+        "icon": "fa fa-rocket",
+        "type": "folder"
+    }
+]

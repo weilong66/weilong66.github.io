@@ -1,0 +1,7 @@
+{
+    "name": "我的世界WASM版-1.8.8",
+    "type": "games",
+    "desc": "原版 Minecraft-1.8.8 版本。适合高配置设备，该版本采用 WASMGC ，相较于 JS 版 FPS 几乎提高了 2 倍.",
+    "img_path": "Minecraft-1.8.8-wasm.png",
+    "main_page": "index.html"
+}

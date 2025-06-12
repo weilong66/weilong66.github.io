@@ -1,0 +1,7 @@
+{
+    "name": "T-Rex(小恐龙) 3D版",
+    "type": "games",
+    "desc": "谷歌小恐龙游戏的3D版本。",
+    "img_path": "favicon.png",
+    "main_page": "index.html"
+}

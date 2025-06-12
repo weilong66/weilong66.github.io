@@ -1,0 +1,7 @@
+{
+    "name": "压扁像素鸟",
+    "type": "games",
+    "desc": "你恨Flappy Bird吗? 你每天晚上对着那个愚蠢的鸟做噩梦吗? 现在你可以压扁它们!",
+    "img_path": "flappy-bird-the-little-bird.png",
+    "main_page": "index.html"
+}

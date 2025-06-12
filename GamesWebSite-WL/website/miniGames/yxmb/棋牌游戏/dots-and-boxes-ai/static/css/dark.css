@@ -1,0 +1,10 @@
+:root {
+  --accent-color: #d5a403;
+  --secondary-color: #384ede;
+  --background-color: #202731;
+  --text-color: white;
+  --text-btn-color: #202731;
+  --box-side-color: #444466;
+  --wave1: url("./img/yellow-wave1.png");
+  --wave2: url("./img/yellow-wave2.png");
+}

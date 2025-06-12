@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,target-densitydpi=high-dpi,user-scalable=yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="keywords" content="数字华容道, jQuery在线小游戏, 中国益智游戏, " />
+<meta name="description" content="数字华容道, jQuery在线小游戏, 中国益智游戏, " />
+<meta name="author" content="对方正在输入...." />
+<meta name="Copyright" content="对方正在输入...." />
+<meta name="renderer" content="webkit">
+<meta name="application-name" content="lvbee" />
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>数字华容道</title>
+<link href="./css/klotski.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div style="padding: 20px; text-align: center;">
+		<div data-klotski></div>
+		<div class="opt-desc">
+			<!-- 最小为3 -->
+			<span>
+				<input type="radio" name="radix" value="3" checked="checked" />
+				3x3
+			</span>
+			<span>
+				<input type="radio" name="radix" value="4" />
+				4x4
+			</span>
+			<span>
+				<input type="radio" name="radix" value="5" />
+				5x5
+			</span>
+			<span>
+				<input type="radio" name="radix" value="6" />
+				6x6
+			</span>
+			<span>
+				<input type="radio" name="radix" value="7" />
+				7x7
+			</span>
+			<span>
+				<input type="radio" name="radix" value="8" />
+				8x8
+			</span>
+			<span>
+				<input type="radio" name="radix" value="9" />
+				9x9
+			</span>
+			<span>
+				<input type="radio" name="radix" value="10" />
+				10x10
+			</span>
+		</div>
+		<button type="button" class="start">开始游戏</button>
+	</div>
+</body>
+<script src="https://www.jq22.com/jquery/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="./js/klotski.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var $btn = $('.start');
+
+		var myKlotski = new Klotski('[data-klotski]', $btn);
+
+		$btn.click(function() {
+			myKlotski.restart($('[name="radix"]:checked').val());
+		});
+	});
+</script>
+</html>

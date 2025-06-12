@@ -1,0 +1,7 @@
+{
+    "name": "跳一跳(空中版)",
+    "type": "games",
+    "desc": "长按屏幕让小人蓄力跳跃，调到下一个方块上，不要跳的太近或太远。",
+    "img_path": "jumpone.png",
+    "main_page": "index.html"
+}

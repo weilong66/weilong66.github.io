@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.background {
+    background-color: #111111;
+    color: #eeeeee;
+    position:relative ;
+    width:100%;
+    top:0;
+    height: 100vh;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 10;
+}
+.top .score {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    top: -100px;
+}
+.score .count {
+    font-size: 100px;
+    line-height: 120px;
+}
+.score .subtitle {
+    color: #444444;
+    font-size: 30px;
+}
+.top .wooden-fish {
+    display: block;
+    text-align: center;
+}
+.bottom {
+    text-align: center;
+    color: #444444;
+    padding-bottom: 20px;
+}
+.tips{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 25px;
+    top: -50px;
+}
+.tip{
+    z-index: 10;
+    animation: new 1.5s ease-out forwards;
+}
+#muyu svg {
+    transition: all 0.05s;
+}
+.background *{
+    user-select: none;
+}
+@keyframes new {
+    0%{
+        transform:translateY(25px);
+        color:#ffffff;
+    }
+    100%{
+        transform:translateY(0px);
+        color:#ffffff00;
+        display: none;
+    }
+}
+
+.reset:hover{
+    color: #eeeeee;
+}

@@ -1,0 +1,7 @@
+{
+    "name": "2D高尔夫",
+    "type": "games",
+    "desc": "极简画风的2D高尔夫游戏，需要在延绵起伏的地形上，将高尔夫球射进球洞。使用鼠标拖拽打出高尔夫球。",
+    "img_path": "golf-2d-game.png",
+    "main_page": "index.html"
+}

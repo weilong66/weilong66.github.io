@@ -1,0 +1,7 @@
+{
+    "name": "汉诺塔",
+    "type": "games",
+    "desc": "汉诺塔（Tower of Hanoi）问题是源于印度一个古老传说的益智玩具，你需要把所有圆盘保持顺序移动到最右端，每次只能移动一个圆盘，小圆盘必须在大圆盘上面。",
+    "img_path": "tower-of-hanoi.jpg",
+    "main_page": "index.html"
+}

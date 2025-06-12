@@ -1,0 +1,33 @@
+/* 主画板-样式 */
+#gameCanvas {
+    margin-top: 12px;
+    width: 1024px;
+    height: 768px;
+}
+
+/* 针对宽度大于768px的屏幕，比如大多数台式机和笔记本电脑 */
+@media (min-width: 769px) {
+    #gameCanvas {
+        margin-top: 14px;
+        width: 1024px; /* 或者你想要的任何固定宽度 */
+        height: 768px;
+    }
+}
+
+/* 针对宽度在420px到768px之间的屏幕，比如一些平板电脑 */
+@media (min-width: 421px) and (max-width: 768px) {
+    #gameCanvas {
+        margin-top: 20vh;
+        width: 99%; /* 或者适合平板电脑的宽度 */
+        height: auto;
+    }
+}
+
+/* 针对宽度小于等于420px的屏幕，比如大部分手机 */
+@media (max-width: 420px) {
+    #gameCanvas {
+        margin-top: 20vh;
+        width: 99%; /* 全宽以适应小屏幕 */
+        height: auto;
+    }
+}

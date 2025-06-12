@@ -1,0 +1,7 @@
+{
+    "name": "物理弹球打方块",
+    "type": "games",
+    "desc": "朝方块发射物理弹球,不要让他们靠近你。",
+    "img_path": "p2ball.png",
+    "main_page": "index.html"
+}

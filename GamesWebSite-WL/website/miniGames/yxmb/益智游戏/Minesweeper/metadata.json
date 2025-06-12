@@ -1,0 +1,7 @@
+{
+    "name": "扫雷-Minesweeper",
+    "type": "games",
+    "desc": "经典Windows扫雷游戏，支持自定义难度。",
+    "img_path": "Minesweeper.png",
+    "main_page": "index.html"
+}

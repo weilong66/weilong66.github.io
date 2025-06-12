@@ -1,0 +1,7 @@
+{
+    "name": "3D烟花模拟器",
+    "type": "games",
+    "desc": "简易的3D烟花模拟器，PC端可以拖拽调整视角，移动端可以使用陀螺仪调整视角(且支持VR模式)。",
+    "img_path": "favicon.png",
+    "main_page": "index.html"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "小怪物想要糖果",
+    "type": "games",
+    "desc": "喂小怪物吃糖果，不要漏掉扔出来的任何一个糖果哦！",
+    "img_path": "monster-wants-candy.png",
+    "main_page": "index.html"
+}

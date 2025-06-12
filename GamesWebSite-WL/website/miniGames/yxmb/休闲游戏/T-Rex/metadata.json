@@ -1,0 +1,7 @@
+{
+    "name": "T-Rex(小恐龙)",
+    "type": "games",
+    "desc": "T-Rex，谷歌为自家 Chrome 浏览器引入的可离线玩耍的横版跳跃“小恐龙”游戏。",
+    "img_path": "T-Rex.png",
+    "main_page": "index.html"
+}

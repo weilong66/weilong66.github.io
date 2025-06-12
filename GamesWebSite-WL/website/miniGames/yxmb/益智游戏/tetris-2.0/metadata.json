@@ -1,0 +1,7 @@
+{
+    "name": "俄罗斯方块2.0",
+    "type": "games",
+    "desc": "俄罗斯方块游戏(兼容移动端)",
+    "img_path": "favicon.ico",
+    "main_page": "index.html"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Dots&Boxes",
+  "short_name": "Dots&Boxes",
+  "start_url": "index.html",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "The famous dots and boxes game.",
+  "dir": "ltr",
+  "lang": "en-AU",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "static/icons/icosahedron.svg",
+      "sizes": "48x48 72x72 96x96 128x128 150x150 256x256 512x512 1024x1024",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

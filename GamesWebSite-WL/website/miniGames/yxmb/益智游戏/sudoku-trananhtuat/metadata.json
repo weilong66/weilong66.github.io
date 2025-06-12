@@ -1,0 +1,7 @@
+{
+    "name": "数独-卡通风格",
+    "type": "games",
+    "desc": "使用JavaScript制作的数独游戏，兼容移动端。（作者：trananhtuat）",
+    "img_path": "sudoku-trananhtuat.jpg",
+    "main_page": "index.html"
+}

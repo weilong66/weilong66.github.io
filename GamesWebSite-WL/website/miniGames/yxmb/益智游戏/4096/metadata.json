@@ -1,0 +1,7 @@
+{
+    "name": "4096",
+    "type": "games",
+    "desc": "2048同类型游戏，但需要将数字方块合并到4096。",
+    "img_path": "4096.png",
+    "main_page": "index.html"
+}

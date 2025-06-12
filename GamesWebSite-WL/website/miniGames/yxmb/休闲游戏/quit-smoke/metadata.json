@@ -1,0 +1,7 @@
+{
+    "name": "戒烟",
+    "type": "games",
+    "desc": "打砖块类型的游戏，砖块为肺部形状，板子为烟卷形状，以此告诫人们吸烟有害健康。",
+    "img_path": "quit-smoke.png",
+    "main_page": "index.html"
+}

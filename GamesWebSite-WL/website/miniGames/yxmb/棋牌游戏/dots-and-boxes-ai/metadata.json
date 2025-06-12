@@ -1,0 +1,7 @@
+{
+    "name": "点格棋-AI",
+    "type": "games",
+    "desc": "与AI玩点格棋(AI使用Minimax算法)。",
+    "img_path": "dots-and-boxes-ai.png",
+    "main_page": "index.html"
+}

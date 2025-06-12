@@ -1,0 +1,7 @@
+{
+    "name": "NS-Shaft (是男人就下100层)",
+    "type": "games",
+    "desc": "中文译为“是男人就下100层”，使用方向键左右控制角色，避免被托上去挤死、掉下去摔死或被钉板（尖刀）戳死。",
+    "img_path": "icon.png",
+    "main_page": "index.html"
+}

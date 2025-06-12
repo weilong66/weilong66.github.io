@@ -1,0 +1,7 @@
+{
+    "name": "涂鸦高尔夫",
+    "type": "games",
+    "desc": "涂鸦风格的2D高尔夫游戏。",
+    "img_path": "golf-squiggle.jpeg",
+    "main_page": "index.html"
+}

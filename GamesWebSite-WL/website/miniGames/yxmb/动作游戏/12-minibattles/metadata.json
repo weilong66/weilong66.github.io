@@ -1,0 +1,7 @@
+{
+    "name": "1,2迷你对战",
+    "type": "games",
+    "desc": "内含多个迷你双人对战游戏",
+    "img_path": "12-minibattles.png",
+    "main_page": "index.html"
+}
