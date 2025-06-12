@@ -5,32 +5,32 @@ var enableLocalSearch = true;
 function intoSearch() {
   //初始化搜索框
 
-  /* 从本地缓存取出上次选择的搜索分类和标签（个人更喜欢不记住上次选择，所以这里注释掉）
-         if (window.localStorage.getItem("searchlist")) {
-            $(".hide-type-list input#" + window.localStorage.getItem("searchlist")).prop('checked', true);
-            $(".hide-type-list input#m_" + window.localStorage.getItem("searchlist")).prop('checked', true);
-        }
-        if (window.localStorage.getItem("searchlistmenu")) {
-            $('.s-type-list.big label').removeClass('active');
-            $(".s-type-list [data-id=" + window.localStorage.getItem("searchlistmenu") + "]").addClass('active');
-        } 
-        */
+  // 从本地缓存取出上次选择的搜索分类和标签
+  if (window.localStorage.getItem("searchlist")) {
+    $(".hide-type-list input#" + window.localStorage.getItem("searchlist")).prop('checked', true);
+    $(".hide-type-list input#m_" + window.localStorage.getItem("searchlist")).prop('checked', true);
+  }
+  if (window.localStorage.getItem("searchlistmenu")) {
+    $('.s-type-list.big label').removeClass('active');
+    $(".s-type-list [data-id=" + window.localStorage.getItem("searchlistmenu") + "]").addClass('active');
+  }
+
 
   toTarget($(".s-type-list.big"), false, false);
   $(".hide-type-list .s-current").removeClass("s-current");
   //查找默认选中的搜索框标签(type)
   let inputTypeChecked = $('.hide-type-list input:radio[name="type"]:checked');
-  inputTypeChecked.parents(".search-group").addClass("s-current");//设置分组为默认搜索类型所在分组
+  inputTypeChecked.parents(".search-group").addClass("s-current"); //设置分组为默认搜索类型所在分组
   //查找默认选中的悬浮搜索框标签(type2)
   let inputType2Checked = $('.hide-type-list input:radio[name="type2"]:checked');
-  inputType2Checked.parents(".search-group").addClass("s-current");//设置分组为默认搜索类型所在分组
+  inputType2Checked.parents(".search-group").addClass("s-current"); //设置分组为默认搜索类型所在分组
 
   //设置搜索框的搜索URL；这里假设所有搜索框默认选中同一种搜索，所以设置悬浮搜索框的值给所有搜索框。
   if ($(".super-search-fm").length > 1) {
     $(".super-search-fm").each(function (index, element) {
-      let checkedInput = $('.hide-type-list input:radio:checked').eq(index);//匹配当前选中的搜索类型的input元素。
-      $(element).attr("action", checkedInput.val());//设置搜索框的foram元素的action属性
-      $(element).children('input').attr("placeholder", checkedInput.data("placeholder"));//设置搜索框的input元素的占位符属性
+      let checkedInput = $('.hide-type-list input:radio:checked').eq(index); //匹配当前选中的搜索类型的input元素。
+      $(element).attr("action", checkedInput.val()); //设置搜索框的foram元素的action属性
+      $(element).children('input').attr("placeholder", checkedInput.data("placeholder")); //设置搜索框的input元素的占位符属性
       //如果当前选中的搜索类型值为"javascript:local-search"则禁用搜索按钮
       if (checkedInput.val() === "javascript:local-search") {
         $(element).children('button').attr("disabled", true);
@@ -63,9 +63,8 @@ $(document).on("click", ".s-type-list label", function (event) {
   // 调用 toTarget 函数处理目标元素的滚动
   toTarget($(this).parents(".s-type-list"), false, false);
 
-  /*  // 将当前分类标签的 data-id 属性值存储到 localStorage 中的 searchlistmenu 键中(即将选择的分类缓存到本地)
-        （个人更喜欢不记住上次选择，所以这里注释掉）
-         window.localStorage.setItem("searchlistmenu", $(this).data("id")); */
+  // 将当前分类标签的 data-id 属性值存储到 localStorage 中的 searchlistmenu 键中(即将选择的分类缓存到本地)
+  window.localStorage.setItem("searchlistmenu", $(this).data("id"));
 });
 
 //为搜索控件中的底部标签绑定点击事件，点击输入框时设置输入框属性并聚焦到输入框
@@ -88,9 +87,8 @@ $(".hide-type-list .search-group input").on("click", function () {
     parent.find(".search-key").attr("zhannei", "");
   } */
 
-  /* // 将当前标签的ID去掉前缀m_后存储到localStorage中的searchlist键中(即将选择的标签缓存到本地)
-        （个人更喜欢不记住上次选择，所以这里注释掉）
-        window.localStorage.setItem("searchlist", $(this).attr("id").replace("m_", ""));  */
+  // 将当前标签的ID去掉前缀m_后存储到localStorage中的searchlist键中(即将选择的标签缓存到本地)
+  window.localStorage.setItem("searchlist", $(this).attr("id").replace("m_", ""));
 
   //选择并聚焦.search-key输入框
   parent.find(".search-key").select();
@@ -122,8 +120,7 @@ $(document).on("submit", ".super-search-fm", function () {
 function getSmartTipsGoogle(value, parents) {
   $.ajax({
     type: "GET",
-    url:
-      "//suggestqueries.google.com/complete/search?client=firefox&callback=iowenHot",
+    url: "//suggestqueries.google.com/complete/search?client=firefox&callback=iowenHot",
     async: true,
     data: {
       q: value
@@ -217,7 +214,7 @@ $(document).on("focus", ".smart-tips.search-key", function () {
     return;
   }
 
-  
+
   // 如果当前搜索框的值不为空
   if ($(this).val()) {
     enableLocalSearch = $(this).parents(".super-search-fm").attr("action") === "javascript:local-search"; //获取当前是否是本地搜索框
@@ -241,7 +238,7 @@ $(document).on("focus", ".smart-tips.search-key", function () {
     // 将 listIndex 初始化为 -1
     listIndex = -1;
   }
-  
+
 });
 
 // 绑定 keyup 事件到 .smart-tips.search-key 元素；输入框有按键事件时，查询并显示提示词。
@@ -312,7 +309,7 @@ $(document).on("keydown", ".smart-tips.search-key", function (e) {
     const bottomOffset = topOffset + resultSingleLiHeight; // 新选中项底部距离ul顶部的距离
     const scrollTop = $itemUl.scrollTop(); // 当前滚动条的位置
     const scrollBottom = scrollTop + resultUlHeight; // 当前滚动条底部位置
-    if (topOffset < scrollTop || bottomOffset > scrollBottom) {// 如果新选中项不在可视区域内，则调整滚动条
+    if (topOffset < scrollTop || bottomOffset > scrollBottom) { // 如果新选中项不在可视区域内，则调整滚动条
       $itemUl.get(0).scrollTo({
         top: topOffset,
         behavior: 'auto' // 平滑滚动
@@ -347,7 +344,7 @@ $(document).on("keydown", ".smart-tips.search-key", function (e) {
     const bottomOffset = topOffset + resultSingleLiHeight; // 新选中项底部距离ul顶部的距离
     const scrollTop = $itemUl.scrollTop(); // 当前滚动条的位置
     const scrollBottom = scrollTop + resultUlHeight; // 当前滚动条底部位置
-    if (topOffset < scrollTop || bottomOffset > scrollBottom) {// 如果新选中项不在可视区域内，则调整滚动条
+    if (topOffset < scrollTop || bottomOffset > scrollBottom) { // 如果新选中项不在可视区域内，则调整滚动条
       $itemUl.get(0).scrollTo({
         top: topOffset,
         behavior: 'smooth' // 平滑滚动
@@ -376,5 +373,3 @@ $(document).on("keydown", ".smart-tips.search-key", function (e) {
     }
   }
 });
-
-

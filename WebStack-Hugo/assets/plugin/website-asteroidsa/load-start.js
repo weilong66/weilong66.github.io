@@ -48,7 +48,7 @@ if (link) {
       // 将新创建的<script>元素添加到文档的<head>部分
       document.head.appendChild(script);
 
-      console.log("彩蛋已加载"); // 在控制台输出加载成功的消息
+      // console.log("小飞机加载成功"); // 在控制台输出加载成功的消息
     }
   });
 } else {
