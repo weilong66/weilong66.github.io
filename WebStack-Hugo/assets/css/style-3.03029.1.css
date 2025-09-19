@@ -1419,7 +1419,7 @@ footer.main-footer {
     text-align: center;
     line-height: 40px;
     padding: unset;
-    display: block;
+    /* display: block; */
     border: unset
 }
 

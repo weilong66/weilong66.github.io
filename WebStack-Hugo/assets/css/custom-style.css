@@ -146,13 +146,13 @@ html {
 }
 
 /* 热词提示列表-高亮样式 */
-.search-smart-tips ul li.current{
+.search-smart-tips ul li.current {
     background: #f1f1f1;
     color: #2196f3;
 }
 
 /* 热词提示列表-鼠标划上样式 */
-.search-smart-tips ul li:hover{
+.search-smart-tips ul li:hover {
     background: #f1f1f1;
     color: #2196f3;
     cursor: pointer;
@@ -202,9 +202,93 @@ footer.main-footer .footer-text a:hover {
 /*导航 Logo 图标裁剪边角*/
 .url-card .url-img>img {
     border-radius: 20%;
+    /* 添加穿透效果，因为导航logo没有交互需求 */
+    pointer-events: none; 
 }
 
 /* 樱花特效样式 */
-#canvas_sakura{
+#canvas_sakura {
     z-index: 1100;
 }
+
+
+/* 浮动二维码-样式 */
+.floating-widget #qrcode{
+    position: relative; /* 绝对定位 */
+    top: -60px;
+    padding: 15px;
+    background:rgb(255, 255, 255);
+    border-radius: 20px / 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+#qrcode-fancybox img {
+    max-width: 200px;
+}
+
+
+.qrcode-title {
+    text-align: center;
+    width: 200px;
+    font-size: 16px;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: -10px;
+    color: blue;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.qrcode-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* 让点击事件穿透logo到二维码 */
+}
+
+
+/* 拖放区样式 */
+.drop-area {
+    width: 220px;
+    height: 240px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2px dashed #ccc;
+    color: #999;
+    transition: border-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 18px/18px;
+}
+
+.drop-area.drag-over {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.drop-area ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width:767.98px) {
+
+    /*获取浮动二维码按钮*/
+    .floating-qr-code {
+        display: none;
+    }
+
+    #floating-qrcode {
+        display: none;
+    }
+}
+

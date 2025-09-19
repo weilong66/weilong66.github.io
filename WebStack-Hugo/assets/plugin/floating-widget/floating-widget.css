@@ -55,16 +55,5 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* 阴影 */
 }
 
-/* 浮动二维码-样式 */
-.floating-widget #qrcode{
-    position: relative; /* 绝对定位 */
-    top: -60px;
-    padding: 15px;
-    background:rgb(255, 255, 255);
-    border-radius: 20px / 20px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-}
-.floating-widget #qrcode img{
-    width: auto;
-    max-height: 128px;
-}
+
+

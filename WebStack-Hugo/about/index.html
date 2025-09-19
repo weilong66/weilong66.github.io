@@ -30,7 +30,6 @@
     <link rel="stylesheet" id="custom-css" href="https://weilong66.github.io/WebStack-Hugo/assets/css/custom-style.css"
         type="text/css" />
     <script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/jquery.min-3.2.1.js" id="jquery-js"></script>
-    <script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/lib/qrcode.min.js" id="jquery-js"></script>
     
     
     
@@ -520,8 +519,8 @@
 
         
         <a href="javascript:" onclick="window.location.href='javascript:switchQrcodeWidget()'" 
-            id="qr-code" class="btn rounded-circle m-1" data-toggle="tooltip" data-placement="left"
-            title="获取当前页面二维码">
+            id="qr-code" class="btn floating-qr-code rounded-circle m-1" data-toggle="tooltip" data-placement="left"
+            title="获取二维码">
             <i class="fas fa-qrcode"></i>
         </a>
         
@@ -567,58 +566,30 @@
 
 
 
-
 <div class="floating-widget" id="floating-qrcode" style="display: none;">
     
     <div id="qrcode">
         <a id="qrcode-fancybox" data-fancybox="gallery" href="#">
         </a>
+        <div id="qrcode-title" class="qrcode-title"></div>
+        <div id="qrcode-logo" class="qrcode-logo"></div>
+        <div class="drop-area" id="drop-area" ondragover="event.preventDefault(); handleDragOver(event)"
+            ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+            <ul>
+                <li>将链接拖到此处</li>
+                <li>生成二维码</li>
+            </ul>
+        </div>
     </div>
 </div>
 
 
-<script type="text/javascript">
-    var qrcodeEle = document.getElementById("qrcode-fancybox")
-    
-    var qrcode = new QRCode(qrcodeEle, {
-        text: window.location.href,
-        width: 512,
-        height: 512,
-        colorDark: "#000000", 
-        colorLight: "#ffffff", 
-        correctLevel: QRCode.CorrectLevel.H 
-    });
+<script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/lib/qrcode.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://weilong66.github.io/WebStack-Hugo/assets/js/plugin/floating-qr-code.js"></script>
 
-    
 
-    function makeCode(text) {
-        if (text) {
-            
-            qrcode.makeCode(text);
-        }
 
-        var imgElement = qrcodeEle.getElementsByTagName('img')[0];
-        if (imgElement) {
-            
-            qrcodeEle.href = imgElement.src;
-        }
-    }
 
-    
-
-    function switchQrcodeWidget() {
-        
-        if ($('#floating-qrcode').is(':hidden')) {
-            
-            $('#floating-qrcode').show();
-            
-            makeCode(window.location.href);
-        } else {
-            
-            $('#floating-qrcode').hide();
-        }
-    }
-</script>
 
 
 
