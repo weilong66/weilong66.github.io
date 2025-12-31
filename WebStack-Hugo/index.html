@@ -233,44 +233,6 @@
                                                     
                                                     <a href="javascript:;"
                                                         class="smooth change-href"
-                                                        data-change="#dbb448b242b8682a57d4426e059f78ac">
-                                                    
-                                                        <i class="fa-regular fa-face-laugh-squint icon-fw icon-lg mr-2"></i>
-                                                        <span>趣味网站</span>
-                                                        <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
-                                                    </a>
-                                                    <ul>
-                                                        
-                                                        <li>
-                                                            <a href="#dbb448b242b8682a57d4426e059f78ac" class="smooth">
-                                                                <span>趣味站点</span>
-                                                            </a>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <a href="#370575df65f90b8ee423231cabf75960" class="smooth">
-                                                                <span>趣图生成</span>
-                                                            </a>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <a href="#232ac90e360f3b7d34d68e7a2fa285a0" class="smooth">
-                                                                <span>游戏工具</span>
-                                                            </a>
-                                                        </li>
-                                                        
-                                                    </ul>
-                                                </li>
-                                            
-                                        
-                                        
-                                        
-                                            
-                                            
-                                                <li class="sidebar-item">
-                                                    
-                                                    <a href="javascript:;"
-                                                        class="smooth change-href"
                                                         data-change="#a20a4b60ffe4f7fc9624c45f861283ea">
                                                     
                                                         <i class="fas fa-download icon-fw icon-lg mr-2"></i>
@@ -930,7 +892,8 @@
                         <label for="type-github" data-id="group-d"><span>社区</span></label>
                         <label for="type-taobao1" data-id="group-e"><span>生活</span></label>
                         <label for="type-whois" data-id="group-c"><span>工具</span></label>
-                        <label for="type-zhaopin" data-id="group-f"><span>求职</span></label>
+                        <label for="type-runoob" data-id="group-f"><span>职研</span></label>
+                        <label for="type-nami-ai" data-id="group-g"><span>Ai</span></label>
                     </div>
                 </div>
             </div>
@@ -956,14 +919,17 @@
                                 value="https://www.bing.com/search?q=" data-placeholder="微软 Bing 搜索">
                             <label for="type-bing"><span class="text-muted">必应</span></label>
                         </li>
+                        <li><input hidden="" type="radio" name="type" id="type-google1"
+                                value="https://www.google.com/search?q=" data-placeholder="谷歌搜索">
+                            <label for="type-google1"><span class="text-muted">谷歌</span></label>
+                        </li>
+                        <li><input hidden="" type="radio" name="type" id="type-bilibili"
+                            value="https://search.bilibili.com/all?keyword=" data-placeholder="在B站搜索视频、番剧等">
+                            <label for="type-bilibili"><span class="text-muted">B站</span></label>
+                        </li>
                         <li><input hidden="" type="radio" name="type" id="type-software"
                                 value="https://lestore.lenovo.com/search?k=" data-placeholder="联想应用商店搜索电脑软件">
                             <label for="type-software"><span class="text-muted">软件</span></label>
-                        </li>
-                        <li><input hidden="" type="radio" name="type" id="type-literature"
-                                value="https://kns.cnki.net/kns8s/defaultresult/index?kw="
-                                data-placeholder="中国知网 搜索/文章标题/关键字">
-                            <label for="type-literature"><span class="text-muted">文献</span></label>
                         </li>
                     </ul>
                 </div>
@@ -1005,8 +971,16 @@
                                 value="https://github.com/search?q=" data-placeholder="在 GitHub 搜索开源项目">
                             <label for="type-github"><span class="text-muted">GitHub</span></label>
                         </li>
+                        <li><input hidden="" type="radio" name="type" id="type-bilibili"
+                            value="https://search.bilibili.com/all?keyword=" data-placeholder="在B站搜索视频、番剧等">
+                            <label for="type-bilibili"><span class="text-muted">B站</span></label>
+                        </li>
+                        <li><input hidden="" type="radio" name="type" id="type-douyin"
+                            value="https://www.douyin.com/root/search/" data-placeholder="在抖音搜索短视频">
+                            <label for="type-douyin"><span class="text-muted">抖音</span></label>
+                        </li>
                         <li><input hidden="" type="radio" name="type" id="type-zhihu"
-                                value="https://www.zhihu.com/search?type=content&q=" data-placeholder="搜索知乎中的问答与文章">
+                                value="https://www.zhihu.com/search?type=content&q=" data-placeholder="在知乎搜索知识、经验和见解">
                             <label for="type-zhihu"><span class="text-muted">知乎</span></label>
                         </li>
                         <li><input hidden="" type="radio" name="type" id="type-wechat"
@@ -1014,11 +988,11 @@
                             <label for="type-wechat"><span class="text-muted">微信</span></label>
                         </li>
                         <li><input hidden="" type="radio" name="type" id="type-weibo" value="https://s.weibo.com/weibo/"
-                                data-placeholder="新浪微博搜索">
+                                data-placeholder="在新浪微博中搜索新鲜事">
                             <label for="type-weibo"><span class="text-muted">微博</span></label>
                         </li>
                         <li><input hidden="" type="radio" name="type" id="type-douban"
-                                value="https://www.douban.com/search?q=" data-placeholder="豆瓣搜索">
+                                value="https://www.douban.com/search?q=" data-placeholder="在豆瓣上搜索影视和书籍的相关信息及讨论">
                             <label for="type-douban"><span class="text-muted">豆瓣</span></label>
                         </li>
                     </ul>
@@ -1033,20 +1007,20 @@
                                 value="https://search.jd.com/Search?keyword=" data-placeholder="京东商品搜索">
                             <label for="type-jd"><span class="text-muted">京东</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" id="type-baidumap"
-                                value="https://map.baidu.com/search?querytype=s&wd=" data-placeholder="百度地图搜地点、查公交、找路线">
-                            <label for="type-baidumap"><span class="text-muted">百度地图</span></label>
-                        </li>
                         <li><input hidden="" type="radio" name="type" id="type-amap"
                                 value="https://www.amap.com/search?query=" data-placeholder="高德地图搜索位置、公交站、地铁站">
                             <label for="type-amap"><span class="text-muted">高德地图</span></label>
+                        </li>
+                        <li><input hidden="" type="radio" name="type" id="type-baidumap"
+                                value="https://map.baidu.com/search?querytype=s&wd=" data-placeholder="百度地图搜地点、查公交、找路线">
+                            <label for="type-baidumap"><span class="text-muted">百度地图</span></label>
                         </li>
                         <li><input hidden="" type="radio" name="type" id="type-xiachufang"
                                 value="https://www.xiachufang.com/search/?keyword=" data-placeholder="下厨房菜谱搜索">
                             <label for="type-xiachufang"><span class="text-muted">下厨房</span></label>
                         </li>
                         <li><input hidden="" type="radio" name="type" id="type-xiangha"
-                                value="https://www.xiangha.com/so/?q=caipu&s=" data-placeholder="香哈菜谱搜索">
+                                value="https://www.xiangha.com/so/?q=caipu&s=" data-placeholder="香哈网菜谱搜索">
                             <label for="type-xiangha"><span class="text-muted">香哈菜谱</span></label>
                         </li>
                     </ul>
@@ -1078,9 +1052,20 @@
                 </div>
                 <div class="search-group group-f">
                     <ul class="search-type">
+                        <li><input hidden="" type="radio" name="type" id="type-runoob"
+                                value="https://www.runoob.com/?s="
+                                data-placeholder="在菜鸟教程搜索编程知识">
+                            <label for="type-runoob"><span class="text-muted">菜鸟教程</span></label>
+                        </li>
+                        <li><input hidden="" type="radio" name="type" id="type-literature"
+                                value="https://kns.cnki.net/kns8s/defaultresult/index?kw="
+                                data-placeholder="中国知网 搜索/文章标题/关键字">
+                            <label for="type-literature"><span class="text-muted">中国知网</span></label>
+                        </li>
                         <li><input hidden="" type="radio" name="type" id="type-zhaopin"
-                                value="https://sou.zhaopin.com/jobs/searchresult.ashx?kw=" data-placeholder="智联招聘">
-                            <label for="zhaopin"><span class="text-muted">智联招聘</span></label>
+                                value="https://sou.zhaopin.com/jobs/searchresult.ashx?kw="
+                                data-placeholder="智联招聘">
+                            <label for="type-zhaopin"><span class="text-muted">智联招聘</span></label>
                         </li>
                         <li><input hidden="" type="radio" name="type" id="type-bosszhipin"
                                 value="https://www.zhipin.com/web/geek/job?query=" data-placeholder="BOSS直聘">
@@ -1093,6 +1078,35 @@
                         <li><input hidden="" type="radio" name="type" id="type-liepin"
                                 value="https://www.liepin.com/zhaopin/?key=" data-placeholder="猎聘网">
                             <label for="type-liepin"><span class="text-muted">猎聘网</span></label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search-group group-g ">
+                    <ul class="search-type">
+                        <li><input hidden="" type="radio" name="type" id="type-nami-ai"
+                            value="https://www.n.cn/?fromsou=1&q="
+                            data-placeholder="纳米AI - 直接给答案，让搜索变得简单直观">
+                            <label for="type-nami-ai"><span class="text-muted">纳米AI</span></label>
+                        </li>
+                        <li><input hidden="" type="radio" name="type" id="type-chat-baidu"
+                                value="https://chat.baidu.com/search?word="
+                                data-placeholder="百度AI搜索 - 办公学习一站解决">
+                            <label for="type-chat-baidu"><span class="text-muted">百度AI</span></label>
+                        </li>
+                        <li><input hidden="" type="radio" name="type" id="type-metaso"
+                                value="https://metaso.cn/?q="
+                                data-placeholder="秘塔AI搜索 - 没有广告，直达结果">
+                            <label for="type-metaso"><span class="text-muted">秘塔AI</span></label>
+                        </li>
+                        <li><input hidden="" type="radio" name="type" id="type-felo-ai"
+                            value="https://felo.ai/search?q="
+                            data-placeholder="Felo - 你的免费AI智能搜索引擎">
+                            <label for="type-felo-ai"><span class="text-muted">Felo</span></label>
+                        </li>
+                        <li><input hidden="" type="radio" name="type" id="type-jyshare-ai"
+                                value="https://www.jyshare.com/front-end/9235/?q="
+                                data-placeholder="AI编程助理：欢迎向我咨询编程相关问题">
+                            <label for="type-jyshare-ai"><span class="text-muted">AI编程</span></label>
                         </li>
                     </ul>
                 </div>
@@ -1986,6 +2000,56 @@
                         
                                 
                                 
+                                <a href="https://dos.zone/" target="_blank" data-id="" data-url="https://dos.zone/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="在浏览器游玩曾经DOS时代的热门游戏">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="./assets/images/logos/dos_games.ico"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="DOS怀旧游戏">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>DOS怀旧游戏</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">在浏览器游玩曾经DOS时代的热门游戏
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://dos.zone/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
                                 <a href="https://www.famicn.com/" target="_blank" data-id="" data-url="https://www.famicn.com/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
                                     data-original-title="体验那些历史上上由中国大陆及港澳台开发者开发的，以家用游戏机和掌上游戏机为平台的电子游戏。">
@@ -2122,6 +2186,104 @@
                                     
 
                                     <a href="https://zaixianwan.app/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://www.zachji.com/" target="_blank" data-id="" data-url="https://www.zachji.com/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="该站收集了B站UP自制的各种游戏并提供下载链接">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="https://www.zachji.com/icon.ico?7626d6ab6fed5220"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="B站UP自制游戏">
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>B站UP自制游戏</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">该站收集了B站UP自制的各种游戏并提供下载链接
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://www.zachji.com/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://js13kgames.com/" target="_blank" data-id="" data-url="https://js13kgames.com/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="js13kgames 是一项网页小游戏开发竞赛，以其 13KB 大小限制而闻名。">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="./assets/images/logos/js13kgames.png"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="js13kgames">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>js13kgames</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">js13kgames 是一项网页小游戏开发竞赛，以其 13KB 大小限制而闻名。
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://js13kgames.com/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -2284,54 +2446,6 @@
                         
                                 
                                 
-                                <a href="https://www.zachji.com/" target="_blank" data-id="" data-url="https://www.zachji.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="该站收集了B站UP自制的各种游戏并提供下载链接">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://www.zachji.com/icon.ico?7626d6ab6fed5220"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="B站UP自制游戏">
-                                                    
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>B站UP自制游戏</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">该站收集了B站UP自制的各种游戏并提供下载链接
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://www.zachji.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
                                 <a href="http://slither.io/" target="_blank" data-id="" data-url="http://slither.io/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
                                     data-original-title="Slither.io 是一款多人在线贪吃蛇游戏，您可以在其中控制一条蛇并与其他玩家竞争以成长为最长。">
@@ -2382,7 +2496,7 @@
                                 
                                 <a href="https://www.mc.js.cool/" target="_blank" data-id="" data-url="https://www.mc.js.cool/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="网页版MC最佳中文版，可以在线游玩 Minecraft，包含完全汉化版本。">
+                                    data-original-title="网页版MC中文版，可以在线游玩 Minecraft，包含完全汉化版本。">
                                     
                                         
                                         <div class="card-body">
@@ -2393,11 +2507,13 @@
                                                     
                                                     
                                                     
+                                                    
+                                                    
+                                                    
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://www.mc.js.cool/images/favicon.ico"
+                                                        data-src="./assets/images/logos/mc.ico"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
                                                         alt="mc.js">
-                                                    
                                                     
                                                     
                                                 </div>
@@ -2405,7 +2521,7 @@
                                                     <div class="text-sm overflowClip_1">
                                                         <strong>mc.js</strong>
                                                     </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">网页版MC最佳中文版，可以在线游玩 Minecraft，包含完全汉化版本。
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">网页版MC中文版，可以在线游玩 Minecraft，包含完全汉化版本。
                                                     </p>
                                                 </div>
                                             </div>
@@ -2441,11 +2557,13 @@
                                                     
                                                     
                                                     
+                                                    
+                                                    
+                                                    
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://eaglercraft.com/img/favicon.png"
+                                                        data-src="./assets/images/logos/mc.ico"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
                                                         alt="Eaglercraft">
-                                                    
                                                     
                                                     
                                                 </div>
@@ -2798,6 +2916,56 @@
                         
                                 
                                 
+                                <a href="https://www.gying.org/" target="_blank" data-id="" data-url="https://www.gying.org/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="一个可在线观看和下载的影视网站，逐日搜集全网最新的电影、电视剧、动漫。">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="./assets/images/logos/%e8%a7%82%e5%bd%b1_gying.ico"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="观影 GYING">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>观影 GYING</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">一个可在线观看和下载的影视网站，逐日搜集全网最新的电影、电视剧、动漫。
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://www.gying.org/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
                                 <a href="https://ddys.info/" target="_blank" data-id="" data-url="https://ddys.info/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
                                     data-original-title="低端影视，免费的超清在线视频站。">
@@ -2984,56 +3152,6 @@
                                     
 
                                     <a href="https://www.molikankan.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://www.gying.org/" target="_blank" data-id="" data-url="https://www.gying.org/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="一个可在线观看和下载的影视网站，逐日搜集全网最新的电影、电视剧、动漫。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/general/video.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="观影 GYING">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>观影 GYING</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">一个可在线观看和下载的影视网站，逐日搜集全网最新的电影、电视剧、动漫。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://www.gying.org/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -3684,56 +3802,6 @@
                     </div>
                 </div>
                 
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://www.hsmy.fun/" target="_blank" data-id="" data-url="https://www.hsmy.fun/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="浑水阅读是一个热点内容聚合网站，汇集了网上各个热门网站热榜榜单。最大的特点是提供“摸鱼模式”，一键切换到 Word 样式。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/%e6%b5%91%e6%b0%b4%e9%98%85%e8%af%bb.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="浑水阅读">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>浑水阅读</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">浑水阅读是一个热点内容聚合网站，汇集了网上各个热门网站热榜榜单。最大的特点是提供“摸鱼模式”，一键切换到 Word 样式。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://www.hsmy.fun/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
                 
             </div>
             
@@ -3948,829 +4016,6 @@
                                     
 
                                     <a href="https://www.nmbxd1.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                
-            </div>
-            
-            <br />
-        </div>
-        
-        
-        
-        
-        
-        
-        
-    
-    
-    
-    
-        
-        
-        
-        
-        <div class="site-category-list">
-            <div class="d-flex flex-fill">
-                <h4 class="text-gray text-lg mb-4">
-                    <i class="site-tag iconfont icon-tag icon-lg mr-1" id="dbb448b242b8682a57d4426e059f78ac"></i>
-                    趣味站点
-                </h4>
-                <div class="flex-fill"></div>
-                
-            </div>
-            
-            <div class="row">
-                
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://flipclocker.com/" target="_blank" data-id="" data-url="https://flipclocker.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="在线翻页时钟。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/FlipClocker.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="FlipClocker">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>FlipClocker</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">在线翻页时钟。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://flipclocker.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://theuselessweb.com/" target="_blank" data-id="" data-url="https://theuselessweb.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="发现那些无意义的网站。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/theuselessweb.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="无意义网站">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>无意义网站</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">发现那些无意义的网站。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://theuselessweb.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://www.linerider.com/" target="_blank" data-id="" data-url="https://www.linerider.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="发挥创意，让雪橇小人滑行！">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/linerider.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="Line Rider">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>Line Rider</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">发挥创意，让雪橇小人滑行！
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://www.linerider.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://hammyhome.com/" target="_blank" data-id="" data-url="https://hammyhome.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="在线饲养小仓鼠。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/HammyHome.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="HammyHome">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>HammyHome</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">在线饲养小仓鼠。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://hammyhome.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://www.abowman.com/" target="_blank" data-id="" data-url="https://www.abowman.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="一些可以在线饲养小动物的网站或插件。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/abowman.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="abowman">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>abowman</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">一些可以在线饲养小动物的网站或插件。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://www.abowman.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://kickassapp.com/" target="_blank" data-id="" data-url="https://kickassapp.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="驾驶飞船摧毁网页！">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/KickAss.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="KickAssApp">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>KickAssApp</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">驾驶飞船摧毁网页！
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://kickassapp.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="http://www.websiteasteroids.com/" target="_blank" data-id="" data-url="http://www.websiteasteroids.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="驾驶飞船摧毁网页！">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/general/games.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="websiteasteroids">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>websiteasteroids</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">驾驶飞船摧毁网页！
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="http://www.websiteasteroids.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://panzi.github.io/Browser-Ponies/" target="_blank" data-id="" data-url="https://panzi.github.io/Browser-Ponies/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="Browser Ponies允许您将彩虹小马放置在网站上。您可以创建一个书签，将您最喜欢的小马添加到任何网站。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://panzi.github.io/Browser-Ponies/favicon.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="Browser Ponies">
-                                                    
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>Browser Ponies</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">Browser Ponies允许您将彩虹小马放置在网站上。您可以创建一个书签，将您最喜欢的小马添加到任何网站。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://panzi.github.io/Browser-Ponies/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                
-            </div>
-            
-            <br />
-        </div>
-        
-        
-        
-        
-        <div class="site-category-list">
-            <div class="d-flex flex-fill">
-                <h4 class="text-gray text-lg mb-4">
-                    <i class="site-tag iconfont icon-tag icon-lg mr-1" id="370575df65f90b8ee423231cabf75960"></i>
-                    趣图生成
-                </h4>
-                <div class="flex-fill"></div>
-                
-            </div>
-            
-            <div class="row">
-                
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://www.zuomeme.com/" target="_blank" data-id="" data-url="https://www.zuomeme.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="在线制作meme迷因模因梗图生成器。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://www.zuomeme.com/favicon.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="meme生成器">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>meme生成器</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">在线制作meme迷因模因梗图生成器。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://www.zuomeme.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://lab.nulla.top/ba-logo" target="_blank" data-id="" data-url="https://lab.nulla.top/ba-logo"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="自定义生成蔚蓝档案标题风格的句子。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://lab.nulla.top/favicon.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="蔚蓝档案标题生成器">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>蔚蓝档案标题生成器</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">自定义生成蔚蓝档案标题风格的句子。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://lab.nulla.top/ba-logo" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="http://mc.whitegem.net/" target="_blank" data-id="" data-url="http://mc.whitegem.net/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="创建你自己的 Minecraft 成就！">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/general/smiling2.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="创建Minecraft成就">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>创建Minecraft成就</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">创建你自己的 Minecraft 成就！
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="http://mc.whitegem.net/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://minecraft.novaskin.me/wallpapers" target="_blank" data-id="" data-url="https://minecraft.novaskin.me/wallpapers"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="动态生成带有指定玩家皮肤的 Minecraft 游戏壁纸。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://minecraft.novaskin.me/favicon.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="生成Minecraft壁纸">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>生成Minecraft壁纸</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">动态生成带有指定玩家皮肤的 Minecraft 游戏壁纸。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://minecraft.novaskin.me/wallpapers" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://mccag.cn/" target="_blank" data-id="" data-url="https://mccag.cn/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="生成 Minecraft 玩家皮肤的大头照。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://mccag.cn/Resources/Logo.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="Minecraft可爱头像生成器">
-                                                    
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>Minecraft可爱头像生成器</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">生成 Minecraft 玩家皮肤的大头照。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://mccag.cn/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                
-            </div>
-            
-            <br />
-        </div>
-        
-        
-        
-        
-        <div class="site-category-list">
-            <div class="d-flex flex-fill">
-                <h4 class="text-gray text-lg mb-4">
-                    <i class="site-tag iconfont icon-tag icon-lg mr-1" id="232ac90e360f3b7d34d68e7a2fa285a0"></i>
-                    游戏工具
-                </h4>
-                <div class="flex-fill"></div>
-                
-            </div>
-            
-            <div class="row">
-                
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://mcpixelart.com/" target="_blank" data-id="" data-url="https://mcpixelart.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="在线制作 Minecraft 像素画、地图画、雕塑和红石音乐">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://mcpixelart.com/favicon.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="Minecraft 在线艺术">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>Minecraft 在线艺术</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">在线制作 Minecraft 像素画、地图画、雕塑和红石音乐
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://mcpixelart.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://minecraft.novaskin.me/" target="_blank" data-id="" data-url="https://minecraft.novaskin.me/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="一款支持在线制作 Minecraft 玩家皮肤的编辑器。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://minecraft.novaskin.me/favicon.ico"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="Minecraft 皮肤编辑器">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>Minecraft 皮肤编辑器</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">一款支持在线制作 Minecraft 玩家皮肤的编辑器。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://minecraft.novaskin.me/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -5658,7 +4903,7 @@
                         
                                 
                                 
-                                <a href="https://music.gdstudio.xyz/" target="_blank" data-id="" data-url="https://music.gdstudio.xyz/"
+                                <a href="https://music.gdstudio.org/" target="_blank" data-id="" data-url="https://music.gdstudio.org/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
                                     data-original-title="全网曲库最全&amp;音质最高的听歌工具">
                                     
@@ -5672,7 +4917,7 @@
                                                     
                                                     
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://music.gdstudio.xyz/favicon.ico"
+                                                        data-src="https://music.gdstudio.org/favicon.ico"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
                                                         alt="GD音乐台">
                                                     
@@ -5691,7 +4936,7 @@
                                     </a>
                                     
 
-                                    <a href="https://music.gdstudio.xyz/" class="togo text-center text-muted is-views" data-id="689"
+                                    <a href="https://music.gdstudio.org/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -7430,57 +6675,7 @@
                         
                                 
                                 
-                                <a href="https://chat.deepseek.com/" target="_blank" data-id="" data-url="https://chat.deepseek.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="DeepSeek - 探索未至之境。其拥有的深度思考推理大模型，能力强大性能消耗又相对较小。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/DeepSeek.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="DeepSeek | 深度求索">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>DeepSeek | 深度求索</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">DeepSeek - 探索未至之境。其拥有的深度思考推理大模型，能力强大性能消耗又相对较小。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://chat.deepseek.com/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://tongyi.aliyun.com/" target="_blank" data-id="" data-url="https://tongyi.aliyun.com/"
+                                <a href="https://www.tongyi.com/" target="_blank" data-id="" data-url="https://www.tongyi.com/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
                                     data-original-title="通义千问 - 通情、达义，你的全能AI助手。提供代码生成、PPT创作、音视频速读、长文档阅读、文档格式转换等功能。">
                                     
@@ -7515,7 +6710,7 @@
                                     </a>
                                     
 
-                                    <a href="https://tongyi.aliyun.com/" class="togo text-center text-muted is-views" data-id="689"
+                                    <a href="https://www.tongyi.com/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -7530,9 +6725,9 @@
                         
                                 
                                 
-                                <a href="https://www.tiangong.cn/" target="_blank" data-id="" data-url="https://www.tiangong.cn/"
+                                <a href="https://www.doubao.com/chat/create-image" target="_blank" data-id="" data-url="https://www.doubao.com/chat/create-image"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="天工AI - 让知识流通起来。拥有强大的联网搜索和总结能力。">
+                                    data-original-title="豆包是字节跳动公司推出的多功能人工智能工具,基于豆包大模型构建。豆包具备文案创作、PDF问答、长文本分析、学习辅助、图像生成、信息搜索与整合、AI智能体等能力.">
                                     
                                         
                                         <div class="card-body">
@@ -7543,21 +6738,19 @@
                                                     
                                                     
                                                     
-                                                    
-                                                    
-                                                    
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/%e5%a4%a9%e5%b7%a5AI.png"
+                                                        data-src="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/logo-icon.png"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="天工AI">
+                                                        alt="豆包">
+                                                    
                                                     
                                                     
                                                 </div>
                                                 <div class="url-info flex-fill">
                                                     <div class="text-sm overflowClip_1">
-                                                        <strong>天工AI</strong>
+                                                        <strong>豆包</strong>
                                                     </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">天工AI - 让知识流通起来。拥有强大的联网搜索和总结能力。
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">豆包是字节跳动公司推出的多功能人工智能工具,基于豆包大模型构建。豆包具备文案创作、PDF问答、长文本分析、学习辅助、图像生成、信息搜索与整合、AI智能体等能力.
                                                     </p>
                                                 </div>
                                             </div>
@@ -7565,7 +6758,55 @@
                                     </a>
                                     
 
-                                    <a href="https://www.tiangong.cn/" class="togo text-center text-muted is-views" data-id="689"
+                                    <a href="https://www.doubao.com/chat/create-image" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://www.n.cn/" target="_blank" data-id="" data-url="https://www.n.cn/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="首创多智能体蜂群，一句话生成专家级视频、报告、PPT">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="https://p1.ssl.qhimg.com/t11098f6bcdb3c1c166a74ad70c.png"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="纳米AI">
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>纳米AI</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">首创多智能体蜂群，一句话生成专家级视频、报告、PPT
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://www.n.cn/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -7630,9 +6871,9 @@
                         
                                 
                                 
-                                <a href="https://www.doubao.com/chat/create-image" target="_blank" data-id="" data-url="https://www.doubao.com/chat/create-image"
+                                <a href="https://chat.deepseek.com/" target="_blank" data-id="" data-url="https://chat.deepseek.com/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="豆包是字节跳动公司推出的多功能人工智能工具,基于豆包大模型构建。豆包具备文案创作、PDF问答、长文本分析、学习辅助、图像生成、信息搜索与整合、AI智能体等能力.">
+                                    data-original-title="DeepSeek - 探索未至之境。其拥有的深度思考推理大模型，能力强大性能消耗又相对较小。">
                                     
                                         
                                         <div class="card-body">
@@ -7643,19 +6884,21 @@
                                                     
                                                     
                                                     
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/logo-icon.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="豆包">
                                                     
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="./assets/images/logos/DeepSeek.png"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="DeepSeek | 深度求索">
                                                     
                                                     
                                                 </div>
                                                 <div class="url-info flex-fill">
                                                     <div class="text-sm overflowClip_1">
-                                                        <strong>豆包</strong>
+                                                        <strong>DeepSeek | 深度求索</strong>
                                                     </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">豆包是字节跳动公司推出的多功能人工智能工具,基于豆包大模型构建。豆包具备文案创作、PDF问答、长文本分析、学习辅助、图像生成、信息搜索与整合、AI智能体等能力.
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">DeepSeek - 探索未至之境。其拥有的深度思考推理大模型，能力强大性能消耗又相对较小。
                                                     </p>
                                                 </div>
                                             </div>
@@ -7663,7 +6906,7 @@
                                     </a>
                                     
 
-                                    <a href="https://www.doubao.com/chat/create-image" class="togo text-center text-muted is-views" data-id="689"
+                                    <a href="https://chat.deepseek.com/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -7678,9 +6921,59 @@
                         
                                 
                                 
-                                <a href="https://chatglm.paluai.com/zhipu" target="_blank" data-id="" data-url="https://chatglm.paluai.com/zhipu"
+                                <a href="https://www.tiangong.cn/" target="_blank" data-id="" data-url="https://www.tiangong.cn/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="智谱 AI推出的生成式AI工具。具备“通用问答、多轮对话、创意写作、代码生成以及虚拟对话”等丰富能力，已开放多模态生成能力：文生图、文生视频、图生视频等.c">
+                                    data-original-title="天工AI - 调用海量工具完成各种任务">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="./assets/images/logos/%e5%a4%a9%e5%b7%a5AI.png"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="天工AI">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>天工AI</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">天工AI - 调用海量工具完成各种任务
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://www.tiangong.cn/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://chatglm.cn/" target="_blank" data-id="" data-url="https://chatglm.cn/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="智谱 AI推出的生成式AI工具。具备“通用问答、多轮对话、创意写作、代码生成以及虚拟对话”等丰富能力.">
                                     
                                         
                                         <div class="card-body">
@@ -7703,7 +6996,7 @@
                                                     <div class="text-sm overflowClip_1">
                                                         <strong>智谱清言</strong>
                                                     </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">智谱 AI推出的生成式AI工具。具备“通用问答、多轮对话、创意写作、代码生成以及虚拟对话”等丰富能力，已开放多模态生成能力：文生图、文生视频、图生视频等.c
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">智谱 AI推出的生成式AI工具。具备“通用问答、多轮对话、创意写作、代码生成以及虚拟对话”等丰富能力.
                                                     </p>
                                                 </div>
                                             </div>
@@ -7711,7 +7004,55 @@
                                     </a>
                                     
 
-                                    <a href="https://chatglm.paluai.com/zhipu" class="togo text-center text-muted is-views" data-id="689"
+                                    <a href="https://chatglm.cn/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://metaso.cn/" target="_blank" data-id="" data-url="https://metaso.cn/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="没有广告，直达结果">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="https://metaso.cn/android-chrome-192x192.png"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="秘塔AI搜索">
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>秘塔AI搜索</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">没有广告，直达结果
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://metaso.cn/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -10259,56 +9600,6 @@
                     </div>
                 </div>
                 
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://dlj.li/" target="_blank" data-id="" data-url="https://dlj.li/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="将长链接缩短，支持自定义后缀和设置密码。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/default/copy_link_icon.svg"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="厘短链">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>厘短链</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">将长链接缩短，支持自定义后缀和设置密码。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://dlj.li/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
                 
             </div>
             
@@ -11132,9 +10423,9 @@
                         
                                 
                                 
-                                <a href="https://paste.liumingye.cn/" target="_blank" data-id="" data-url="https://paste.liumingye.cn/"
+                                <a href="https://www.remove.bg/zh" target="_blank" data-id="" data-url="https://www.remove.bg/zh"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="在线全自动免费抠图工具。">
+                                    data-original-title="在线免费抠图工具。">
                                     
                                         
                                         <div class="card-body">
@@ -11148,16 +10439,16 @@
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
                                                         data-src="https://www.remove.bg/favicon.ico"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="remove.bg">
+                                                        alt="Remove.bg">
                                                     
                                                     
                                                     
                                                 </div>
                                                 <div class="url-info flex-fill">
                                                     <div class="text-sm overflowClip_1">
-                                                        <strong>remove.bg</strong>
+                                                        <strong>Remove.bg</strong>
                                                     </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">在线全自动免费抠图工具。
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">在线免费抠图工具。
                                                     </p>
                                                 </div>
                                             </div>
@@ -11165,7 +10456,7 @@
                                     </a>
                                     
 
-                                    <a href="https://paste.liumingye.cn/" class="togo text-center text-muted is-views" data-id="689"
+                                    <a href="https://www.remove.bg/zh" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -11238,6 +10529,56 @@
                                     
 
                                     <a href="https://www.piskelapp.com/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://www.pixilart.com/" target="_blank" data-id="" data-url="https://www.pixilart.com/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="Pixilart - 免费在线艺术社区和像素艺术工具">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="./assets/images/logos/pixilart.png"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="Pixilart">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>Pixilart</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">Pixilart - 免费在线艺术社区和像素艺术工具
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://www.pixilart.com/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -12727,6 +12068,154 @@
                         
                                 
                                 
+                                <a href="https://www.flaticon.com/" target="_blank" data-id="" data-url="https://www.flaticon.com/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="收录了634,000&#43; 个免费矢量图标，包含SVG, PSD, PNG, EPS格式或字体。">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="./assets/images/logos/flaticon.png"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="Flaticon">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>Flaticon</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">收录了634,000&#43; 个免费矢量图标，包含SVG, PSD, PNG, EPS格式或字体。
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://www.flaticon.com/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://www.iconninja.com/tag/sun-icon" target="_blank" data-id="" data-url="https://www.iconninja.com/tag/sun-icon"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="数万个矢量图标和数十万个PNG图标免费下载。">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="https://www.iconninja.com/public/css/favicon.ico"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="iconninja">
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>iconninja</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">数万个矢量图标和数十万个PNG图标免费下载。
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://www.iconninja.com/tag/sun-icon" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://icon-icons.com/zh/" target="_blank" data-id="" data-url="https://icon-icons.com/zh/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="数以千计的SVG/ICON/PNG免费图标">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="https://icon-icons.com/favicon.ico"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="icon-icons">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>icon-icons</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">数以千计的SVG/ICON/PNG免费图标
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://icon-icons.com/zh/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
                                 <a href="http://www.iconfont.cn/" target="_blank" data-id="" data-url="http://www.iconfont.cn/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
                                     data-original-title="阿里巴巴矢量图标库。">
@@ -12863,56 +12352,6 @@
                                     
 
                                     <a href="https://icomoon.io/app/" class="togo text-center text-muted is-views" data-id="689"
-                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
-                                        <i class="iconfont icon-goto"></i>
-                                    </a>
-                    </div>
-                </div>
-                
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-                        
-                        
-                        
-                        
-                                
-                                
-                                <a href="https://www.flaticon.com/" target="_blank" data-id="" data-url="https://www.flaticon.com/"
-                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="收录了634,000&#43; 个免费矢量图标，包含SVG, PSD, PNG, EPS格式或字体。">
-                                    
-                                        
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div
-                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/flaticon.png"
-                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="flaticon">
-                                                    
-                                                    
-                                                </div>
-                                                <div class="url-info flex-fill">
-                                                    <div class="text-sm overflowClip_1">
-                                                        <strong>flaticon</strong>
-                                                    </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">收录了634,000&#43; 个免费矢量图标，包含SVG, PSD, PNG, EPS格式或字体。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-
-                                    <a href="https://www.flaticon.com/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -13299,6 +12738,56 @@
                         
                                 
                                 
+                                <a href="https://biemoyu.com/" target="_blank" data-id="" data-url="https://biemoyu.com/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="别摸鱼导航 | 最全ai工具集合网站,摸鱼网站,设计师导航,考拉新媒体,产品经理,运营人必备">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="https://biemoyu.com/favicon.ico"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="别摸鱼导航">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>别摸鱼导航</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">别摸鱼导航 | 最全ai工具集合网站,摸鱼网站,设计师导航,考拉新媒体,产品经理,运营人必备
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://biemoyu.com/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
                                 <a href="https://www.aigei.com/" target="_blank" data-id="" data-url="https://www.aigei.com/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
                                     data-original-title="提供音效配乐|3D模型|视频|游戏素材资源下载。其中部分资源免费，部分资源收费。">
@@ -13521,6 +13010,54 @@
                         
                                 
                                 
+                                <a href="https://www.kisspng.net/" target="_blank" data-id="" data-url="https://www.kisspng.net/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="数百万个PNG图片免费下载">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="https://www.kisspng.net/favicon.ico"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="KissPng">
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>KissPng</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">数百万个PNG图片免费下载
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://www.kisspng.net/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
                                 <a href="https://www.freepik.com/" target="_blank" data-id="" data-url="https://www.freepik.com/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
                                     data-original-title="超过一百万个免费矢量、PSD、照片和免费图标">
@@ -13540,13 +13077,13 @@
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
                                                         data-src="./assets/images/logos/freepik.png"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="freepik">
+                                                        alt="Freepik">
                                                     
                                                     
                                                 </div>
                                                 <div class="url-info flex-fill">
                                                     <div class="text-sm overflowClip_1">
-                                                        <strong>freepik</strong>
+                                                        <strong>Freepik</strong>
                                                     </div>
                                                     <p class="overflowClip_1 m-0 text-muted text-xs">超过一百万个免费矢量、PSD、照片和免费图标
                                                     </p>
@@ -13571,9 +13108,9 @@
                         
                                 
                                 
-                                <a href="https://medialoot.com/" target="_blank" data-id="" data-url="https://medialoot.com/"
+                                <a href="https://iconscout.com/" target="_blank" data-id="" data-url="https://iconscout.com/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="免费高级设计资源; Medialoot.">
+                                    data-original-title="精心挑选的 SVG、矢量图标、插画、3D 图形和 Lottie 动画。">
                                     
                                         
                                         <div class="card-body">
@@ -13588,17 +13125,17 @@
                                                     
                                                     
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/Medialoot.png"
+                                                        data-src="https://iconscout.com/favicon.ico"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="Medialoot">
+                                                        alt="IconScout">
                                                     
                                                     
                                                 </div>
                                                 <div class="url-info flex-fill">
                                                     <div class="text-sm overflowClip_1">
-                                                        <strong>Medialoot</strong>
+                                                        <strong>IconScout</strong>
                                                     </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">免费高级设计资源; Medialoot.
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">精心挑选的 SVG、矢量图标、插画、3D 图形和 Lottie 动画。
                                                     </p>
                                                 </div>
                                             </div>
@@ -13606,7 +13143,7 @@
                                     </a>
                                     
 
-                                    <a href="https://medialoot.com/" class="togo text-center text-muted is-views" data-id="689"
+                                    <a href="https://iconscout.com/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -13621,9 +13158,9 @@
                         
                                 
                                 
-                                <a href="https://www.pexels.com/zh-cn/" target="_blank" data-id="" data-url="https://www.pexels.com/zh-cn/"
+                                <a href="https://igoutu.cn/" target="_blank" data-id="" data-url="https://igoutu.cn/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="4万&#43;免费商用美图">
+                                    data-original-title="免费的图标、剪贴画插图、照片和音乐。为创作人员和开发人员准备的终极设计套件!">
                                     
                                         
                                         <div class="card-body">
@@ -13634,21 +13171,19 @@
                                                     
                                                     
                                                     
-                                                    
-                                                    
-                                                    
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/pexels-icon.png"
+                                                        data-src="https://maxst.icons8.com/vue-static/landings/primary-landings/favs/icons8_fav_32%C3%9732.png"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="Pexels">
+                                                        alt="igoutu">
+                                                    
                                                     
                                                     
                                                 </div>
                                                 <div class="url-info flex-fill">
                                                     <div class="text-sm overflowClip_1">
-                                                        <strong>Pexels</strong>
+                                                        <strong>igoutu</strong>
                                                     </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">4万&#43;免费商用美图
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">免费的图标、剪贴画插图、照片和音乐。为创作人员和开发人员准备的终极设计套件!
                                                     </p>
                                                 </div>
                                             </div>
@@ -13656,7 +13191,7 @@
                                     </a>
                                     
 
-                                    <a href="https://www.pexels.com/zh-cn/" class="togo text-center text-muted is-views" data-id="689"
+                                    <a href="https://igoutu.cn/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -13721,9 +13256,9 @@
                         
                                 
                                 
-                                <a href="http://www.lanrentuku.com/" target="_blank" data-id="" data-url="http://www.lanrentuku.com/"
+                                <a href="https://www.pexels.com/zh-cn/" target="_blank" data-id="" data-url="https://www.pexels.com/zh-cn/"
                                     class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
-                                    data-original-title="懒人图库专注于提供网页素材下载。">
+                                    data-original-title="4万&#43;免费商用精美照片">
                                     
                                         
                                         <div class="card-body">
@@ -13738,17 +13273,17 @@
                                                     
                                                     
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="./assets/images/logos/lanrentuku.png"
+                                                        data-src="./assets/images/logos/pexels-icon.png"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
-                                                        alt="懒人图库">
+                                                        alt="Pexels">
                                                     
                                                     
                                                 </div>
                                                 <div class="url-info flex-fill">
                                                     <div class="text-sm overflowClip_1">
-                                                        <strong>懒人图库</strong>
+                                                        <strong>Pexels</strong>
                                                     </div>
-                                                    <p class="overflowClip_1 m-0 text-muted text-xs">懒人图库专注于提供网页素材下载。
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">4万&#43;免费商用精美照片
                                                     </p>
                                                 </div>
                                             </div>
@@ -13756,7 +13291,7 @@
                                     </a>
                                     
 
-                                    <a href="http://www.lanrentuku.com/" class="togo text-center text-muted is-views" data-id="689"
+                                    <a href="https://www.pexels.com/zh-cn/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -13807,6 +13342,56 @@
                                     
 
                                     <a href="https://magdeleine.co/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://www.lanrentuku.com/vector/" target="_blank" data-id="" data-url="https://www.lanrentuku.com/vector/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="懒人图库专注于提供网页素材下载。">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="./assets/images/logos/lanrentuku.png"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="懒人图库">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>懒人图库</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">懒人图库专注于提供网页素材下载。
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://www.lanrentuku.com/vector/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -14728,11 +14313,13 @@
                                                     
                                                     
                                                     
+                                                    
+                                                    
+                                                    
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://www.sounds-resource.com/resources/images/master/icon.png"
+                                                        data-src="./assets/images/logos/sounds-resource.png"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
                                                         alt="Sounds Resource">
-                                                    
                                                     
                                                     
                                                 </div>
@@ -14776,11 +14363,13 @@
                                                     
                                                     
                                                     
+                                                    
+                                                    
+                                                    
                                                     <img class="lazy" src="./assets/images/logos/default/external_link.svg"
-                                                        data-src="https://www.tosound.com/favicon.ico"
+                                                        data-src="./assets/images/logos/%e6%b7%98%e5%a3%b0%e7%bd%91.ico"
                                                         onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
                                                         alt="淘声网">
-                                                    
                                                     
                                                     
                                                 </div>
@@ -14797,6 +14386,56 @@
                                     
 
                                     <a href="https://www.tosound.com/" class="togo text-center text-muted is-views" data-id="689"
+                                        data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
+                                        <i class="iconfont icon-goto"></i>
+                                    </a>
+                    </div>
+                </div>
+                
+                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        
+                        
+                        
+                        
+                                
+                                
+                                <a href="https://bitmidi.com/" target="_blank" data-id="" data-url="https://bitmidi.com/"
+                                    class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom"
+                                    data-original-title="在 BitMidi 上聆听您最喜爱的 MIDI 文件">
+                                    
+                                        
+                                        <div class="card-body">
+                                            <div class="url-content d-flex align-items-center">
+                                                <div
+                                                    class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <img class="lazy" src="./assets/images/logos/default/external_link.svg"
+                                                        data-src="./assets/images/logos/BitMidi.ico"
+                                                        onerror="useDefaultImage(this,'.\/assets\/images\/logos\/default\/external_link.svg')"
+                                                        alt="BitMidi">
+                                                    
+                                                    
+                                                </div>
+                                                <div class="url-info flex-fill">
+                                                    <div class="text-sm overflowClip_1">
+                                                        <strong>BitMidi</strong>
+                                                    </div>
+                                                    <p class="overflowClip_1 m-0 text-muted text-xs">在 BitMidi 上聆听您最喜爱的 MIDI 文件
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+
+                                    <a href="https://bitmidi.com/" class="togo text-center text-muted is-views" data-id="689"
                                         data-toggle="tooltip" data-placement="right" title="当前页面打开" rel="nofollow">
                                         <i class="iconfont icon-goto"></i>
                                     </a>
@@ -14827,7 +14466,7 @@
                 
                 <a href="https://github.com/WebStackPage/WebStackPage.github.io" title="WebStack导航页原始版本。" target="_blank">WebStackPage</a>
                 
-                <a href="https://github.com/shenweiyan/WebStack-Hugo" title="WebStackPage魔改版本，使用Hugo快速生成，当前导航页就是基于该版本搭建。" target="_blank">WebStack-Hugo</a>
+                <a href="https://github.com/shenweiyan/WebStack-Hugo" title="将WebStackPage制作成了Hugo主题，一边使用Hugo便捷地生成静态页面。" target="_blank">WebStack-Hugo</a>
                 
                 <a href="https://github.com/shenweiyan/WebStack-Hugo" title="WebStack-Hugo的作者制作的该主题的使用教程" target="_blank">WebStack-Hugo 安装教程</a>
                 
@@ -14865,9 +14504,14 @@
 
 
             
-            var layid = location.hash.replace(/^#site-tab=/, '');
-            element.tabChange('site-tab', layid);
+            var hash = location.hash;
+            var match = hash.match(/^#site-tab=(.+)$/);
+            if (match) {
+                var layid = match[1];
+                element.tabChange('site-tab', layid);
+            }
 
+            
             element.on('tab(site-tab)', function (elem) {
                 location.hash = 'site-tab=' + $(this).attr('lay-id');
             });
@@ -14988,6 +14632,7 @@
                                 <label for="m_type-taobao1" data-id="group-e">生活</label>
                                 <label for="m_type-whois" data-id="group-c">工具</label>
                                 <label for="m_type-zhaopin" data-id="group-f">求职</label>
+                                <label for="m_type-nami-ai" data-id="group-g">Ai</label>
                             </div>
                         </div>
                         <div class="search-group group-a"><span class="type-text text-muted">常用</span>
@@ -15004,14 +14649,17 @@
                                         value="https://www.bing.com/search?q=" data-placeholder="微软必应搜索">
                                     <label for="m_type-bing"><span class="text-muted">必应</span></label>
                                 </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-google1"
+                                        value="https://www.google.com/search?q=" data-placeholder="谷歌搜索"><label
+                                        for="m_type-google1"><span class="text-muted">谷歌</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-bilibili"
+                                    value="https://search.bilibili.com/all?keyword=" data-placeholder="在B站搜索视频、番剧等">
+                                    <label for="m_type-bilibili"><span class="text-muted">B站</span></label>
+                                </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-software"
                                         value="https://lestore.lenovo.com/search?k=" data-placeholder="联想应用商店搜索电脑软件">
                                     <label for="m_type-software"><span class="text-muted">软件</span></label>
-                                </li>
-                                <li><input hidden="" type="radio" name="type2" id="m_type-literature"
-                                        value="https://kns.cnki.net/kns8s/defaultresult/index?kw="
-                                        data-placeholder="中国知网 搜索/文章标题/关键字">
-                                    <label for="m_type-literature"><span class="text-muted">文献</span></label>
                                 </li>
                             </ul>
                         </div>
@@ -15053,8 +14701,16 @@
                                         value="https://github.com/search?q=" data-placeholder="在 GitHub 搜索开源项目">
                                     <label for="m_type-github"><span class="text-muted">GitHub</span></label>
                                 </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-bilibili"
+                                    value="https://search.bilibili.com/all?keyword=" data-placeholder="在B站搜索视频、番剧等">
+                                    <label for="m_type-bilibili"><span class="text-muted">B站</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-douyin"
+                                    value="https://www.douyin.com/root/search/" data-placeholder="在抖音搜索短视频">
+                                    <label for="m_type-douyin"><span class="text-muted">抖音</span></label>
+                                </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-zhihu"
-                                        value="https://www.zhihu.com/search?type=content&q=" data-placeholder="搜索知乎中的问答与文章">
+                                        value="https://www.zhihu.com/search?type=content&q=" data-placeholder="在知乎搜索知识、经验和见解">
                                     <label for="m_type-zhihu"><span class="text-muted">知乎</span></label>
                                 </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-wechat"
@@ -15063,11 +14719,11 @@
                                     <label for="m_type-wechat"><span class="text-muted">微信</span></label>
                                 </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-weibo"
-                                        value="https://s.weibo.com/weibo/" data-placeholder="新浪微博搜索">
+                                        value="https://s.weibo.com/weibo/" data-placeholder="在新浪微博中搜索新鲜事">
                                     <label for="m_type-weibo"><span class="text-muted">微博</span></label>
                                 </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-douban"
-                                        value="https://www.douban.com/search?q=" data-placeholder="豆瓣搜索">
+                                        value="https://www.douban.com/search?q=" data-placeholder="在豆瓣上搜索影视和书籍的相关信息及讨论">
                                     <label for="m_type-douban"><span class="text-muted">豆瓣</span></label>
                                 </li>
                             </ul>
@@ -15075,29 +14731,29 @@
                         <div class="search-group group-e"><span class="type-text text-muted">生活</span>
                             <ul class="search-type">
                                 <li><input hidden="" type="radio" name="type2" id="m_type-taobao1"
-                                        value="https://s.taobao.com/search?q=" data-placeholder="淘宝">
+                                        value="https://s.taobao.com/search?q=" data-placeholder="淘宝商品搜索">
                                     <label for="m_type-taobao1"><span class="text-muted">淘宝</span></label>
                                 </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-jd"
-                                        value="https://search.jd.com/Search?keyword=" data-placeholder="京东">
+                                        value="https://search.jd.com/Search?keyword=" data-placeholder="京东商品搜索">
                                     <label for="m_type-jd"><span class="text-muted">京东</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-amap"
+                                        value="https://www.amap.com/search?query=" data-placeholder="高德地图搜索位置、公交站、地铁站">
+                                    <label for="m_type-amap"><span class="text-muted">高德地图</span></label>
                                 </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-baidumap"
                                         value="https://map.baidu.com/search?querytype=s&wd="
                                         data-placeholder="百度地图搜地点、查公交、找路线">
                                     <label for="m_type-baidumap"><span class="text-muted">百度地图</span></label>
                                 </li>
-                                <li><input hidden="" type="radio" name="type2" id="m_type-amap"
-                                        value="https://www.amap.com/search?query=" data-placeholder="高德地图搜索位置、公交站、地铁站">
-                                    <label for="m_type-amap"><span class="text-muted">高德地图</span></label>
-                                </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-xiachufang"
-                                        value="https://www.xiachufang.com/search/?keyword=" data-placeholder="下厨房">
+                                        value="https://www.xiachufang.com/search/?keyword=" data-placeholder="在下厨房搜索菜谱">
                                     <label for="m_type-xiachufang"><span class="text-muted">下厨房</span></label>
                                 </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-xiangha"
-                                        value="https://www.xiangha.com/so/?q=caipu&s=" data-placeholder="香哈菜谱">
-                                    <label for="m_type-xiangha"><span class="text-muted">香哈菜谱</span></label>
+                                        value="https://www.xiangha.com/so/?q=caipu&s=" data-placeholder="在香哈网搜索菜谱">
+                                    <label for="m_type-xiangha"><span class="text-muted">香哈网</span></label>
                                 </li>
                             </ul>
                         </div>
@@ -15129,8 +14785,18 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="search-group group-f"><span class="type-text text-muted">求职</span>
+                        <div class="search-group group-f"><span class="type-text text-muted">职研</span>
                             <ul class="search-type">
+                                <li><input hidden="" type="radio" name="type2" id="m_type-runoob"
+                                        value="https://www.runoob.com/?s="
+                                        data-placeholder="在菜鸟教程搜索编程知识">
+                                    <label for="m_type-runoob"><span class="text-muted">菜鸟教程</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-literature"
+                                        value="https://kns.cnki.net/kns8s/defaultresult/index?kw="
+                                        data-placeholder="中国知网 搜索/文章标题/关键字">
+                                    <label for="m_type-literature"><span class="text-muted">中国知网</span></label>
+                                </li>
                                 <li><input hidden="" type="radio" name="type2" id="m_type-zhaopin"
                                         value="https://sou.zhaopin.com/jobs/searchresult.ashx?kw="
                                         data-placeholder="智联招聘">
@@ -15147,6 +14813,35 @@
                                 <li><input hidden="" type="radio" name="type2" id="m_type-liepin"
                                         value="https://www.liepin.com/zhaopin/?key=" data-placeholder="猎聘网">
                                     <label for="m_type-liepin"><span class="text-muted">猎聘网</span></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="search-group group-g "><span class="type-text text-muted">Ai</span>
+                            <ul class="search-type">
+                                <li><input hidden="" type="radio" name="type2" id="m_type-nami-ai"
+                                    value="https://www.n.cn/?fromsou=1&q="
+                                    data-placeholder="纳米AI - 直接给答案，让搜索变得简单直观">
+                                    <label for="m_type-nami-ai"><span class="text-muted">纳米AI</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-chat-baidu"
+                                        value="https://chat.baidu.com/search?word="
+                                        data-placeholder="百度AI搜索 - 办公学习一站解决">
+                                    <label for="m_type-chat-baidu"><span class="text-muted">百度AI</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-metaso"
+                                        value="https://metaso.cn/?q="
+                                        data-placeholder="秘塔AI搜索 - 没有广告，直达结果">
+                                    <label for="m_type-metaso"><span class="text-muted">秘塔AI</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-felo-ai"
+                                    value="https://felo.ai/search?q="
+                                    data-placeholder="Felo - 你的免费AI智能搜索引擎">
+                                    <label for="m_type-felo-ai"><span class="text-muted">Felo</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-jyshare-ai"
+                                        value="https://www.jyshare.com/front-end/9235/?q="
+                                        data-placeholder="AI编程助理：欢迎向我咨询编程相关问题">
+                                    <label for="m_type-jyshare-ai"><span class="text-muted">AI编程</span></label>
                                 </li>
                             </ul>
                         </div>
